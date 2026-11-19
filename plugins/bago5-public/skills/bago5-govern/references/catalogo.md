@@ -1,0 +1,61 @@
+# Habilidades de BAGO5 Público
+
+- [`$bago5-activity-monitor`](../../bago5-activity-monitor/SKILL.md) — Consulta la actividad registrada y comprueba qué procesos siguen vivos durante una misión.
+- [`$bago5-agent-relay`](../../bago5-agent-relay/SKILL.md) — Reparte trabajo entre agentes y entrega a otra sesión una tarea con alcance y aceptación explícitos.
+- [`$bago5-app-game-development`](../../bago5-app-game-development/SKILL.md) — Implementa y prueba un recorrido de la aplicación o una interacción jugable en el motor y la plataforma acordados.
+- [`$bago5-architecture-audit`](../../bago5-architecture-audit/SKILL.md) — Rastrea dependencias, límites de módulos y contratos a partir de puntos de entrada reales.
+- [`$bago5-audit`](../../bago5-audit/SKILL.md) — Inventaría un conjunto de fuentes y elabora hallazgos verificables de alcance, contradicción, duplicación y cobertura.
+- [`$bago5-auditors`](../../bago5-auditors/SKILL.md) — Coordina revisiones de arquitectura, backend, frontend, contratos, seguridad, pruebas y rendimiento sobre una candidata común.
+- [`$bago5-canon-contract`](../../bago5-canon-contract/SKILL.md) — Compara un contrato versionado con su implementación y clasifica las cláusulas demostradas y pendientes.
+- [`$bago5-capability-demonstration`](../../bago5-capability-demonstration/SKILL.md) — Prepara una demostración reproducible de una función con resultados observables y límites claros.
+- [`$bago5-codex-memory-handoff`](../../bago5-codex-memory-handoff/SKILL.md) — Prepara una continuación en Codex con la memoria elegida por el usuario y permisos comprobables en el destino.
+- [`$bago5-cognitive-mission`](../../bago5-cognitive-mission/SKILL.md) — Organiza un ciclo breve de hipótesis, prueba, revisión y decisión sobre una pregunta concreta.
+- [`$bago5-context-lifecycle`](../../bago5-context-lifecycle/SKILL.md) — Recupera, actualiza y transfiere el contexto verificable de un proyecto durante una tarea.
+- [`$bago5-continuity-reconcile`](../../bago5-continuity-reconcile/SKILL.md) — Resuelve discrepancias entre un relevo, el registro del trabajo y el estado vivo del controlador.
+- [`$bago5-decision-ui-engineer`](../../bago5-decision-ui-engineer/SKILL.md) — Construye una pantalla de decisiones que respeta el contrato de datos, los permisos y los estados desconocidos.
+- [`$bago5-decision-ux-engineer`](../../bago5-decision-ux-engineer/SKILL.md) — Diseña cómo inspeccionar una conclusión, contrastar su evidencia y decidir qué acción tomar.
+- [`$bago5-development`](../../bago5-development/SKILL.md) — Implementa un cambio de software con preservación de contratos, datos existentes y comprobación de regresiones.
+- [`$bago5-editorial`](../../bago5-editorial/SKILL.md) — Edita un documento preservando la intención del autor y verifica tanto el contenido como el formato de entrega.
+- [`$bago5-evidence-guard`](../../bago5-evidence-guard/SKILL.md) — Genera o verifica un manifiesto de archivos y contrasta las huellas declaradas en un informe.
+- [`$bago5-evidence-provenance-engineer`](../../bago5-evidence-provenance-engineer/SKILL.md) — Define y verifica el vínculo entre una afirmación, las fuentes que la apoyan y la revisión observada.
+- [`$bago5-final-verifier`](../../bago5-final-verifier/SKILL.md) — Revisa la candidata final contra los criterios de aceptación y emite una decisión de cierre con evidencias.
+- [`$bago5-frontend`](../../bago5-frontend/SKILL.md) — Cambia una interfaz real preservando navegación, estado, accesibilidad y contrato con la aplicación.
+- [`$bago5-github-repository-admin`](../../bago5-github-repository-admin/SKILL.md) — Crear un repositorio GitHub solicitado y verificar su propiedad, visibilidad e identidad.
+- [`$bago5-goal`](../../bago5-goal/SKILL.md) — Convertir una petición de objetivo en criterios, alcance, estado y una decisión verificable de cierre.
+- [`$bago5-govern`](../../bago5-govern/SKILL.md) — Coordinar una misión BAGO5 y seleccionar las habilidades, permisos y verificaciones que necesita.
+- [`$bago5-governance-action-engineer`](../../bago5-governance-action-engineer/SKILL.md) — Diseñar y probar los estados de una acción propuesta por un agente, desde la autorización hasta el recibo.
+- [`$bago5-installer-identity`](../../bago5-installer-identity/SKILL.md) — Reparar una discrepancia de identidad entre programa instalado, manifiesto y versión mostrada.
+- [`$bago5-installer-sync`](../../bago5-installer-sync/SKILL.md) — Sincronizar fuente, instalador y distribución de una misma candidata con comprobaciones de instalación y recuperación.
+- [`$bago5-local-folder-access`](../../bago5-local-folder-access/SKILL.md) — Inspeccionar texto en la carpeta autorizada de un conector local de lectura.
+- [`$bago5-locution`](../../bago5-locution/SKILL.md) — Leer un texto en voz alta usando un receptor de voz local autorizado y distinguir recepción y reproducción.
+- [`$bago5-math`](../../bago5-math/SKILL.md) — Formalizar una consulta y emplear verificadores matemáticos autorizados con condiciones de validez explícitas.
+- [`$bago5-memoria-viva`](../../bago5-memoria-viva/SKILL.md) — Consultar y modificar registros de Memoria Viva a través de un conector autenticado con revisión verificable.
+- [`$bago5-memory`](../../bago5-memory/SKILL.md) — Traducir una solicitud de recordar en una operación mínima y comprobable sobre la memoria elegida.
+- [`$bago5-memory-federation`](../../bago5-memory-federation/SKILL.md) — Seleccionar memorias independientes, comprobar concesiones y trasladar datos mediante exportaciones verificables.
+- [`$bago5-modularity`](../../bago5-modularity/SKILL.md) — Revisar límites de módulos, dependencias y duplicación de comportamiento antes de refactorizar.
+- [`$bago5-pack-delivery`](../../bago5-pack-delivery/SKILL.md) — Preparar y entregar archivos de distribución o relevo con contenido, destino, integridad y descarga verificables.
+- [`$bago5-pdf`](../../bago5-pdf/SKILL.md) — Crear o revisar un PDF preservando el contenido fuente y comprobando las páginas renderizadas.
+- [`$bago5-phased`](../../bago5-phased/SKILL.md) — Descomponer un objetivo en fases, dependencias y criterios con evidencia de ejecución y aceptación.
+- [`$bago5-private-mode`](../../bago5-private-mode/SKILL.md) — Preparar una operación sensible con entrada privada controlada por el usuario y comprobación del efecto.
+- [`$bago5-procedural-behavior`](../../bago5-procedural-behavior/SKILL.md) — Examinar procedimientos, efectos, transiciones, parada y evidencia mediante recorridos reproducibles.
+- [`$bago5-promotion`](../../bago5-promotion/SKILL.md) — Emitir un dictamen de promoción para una candidata concreta a partir de criterios y pruebas independientes.
+- [`$bago5-pytest-checkpoint`](../../bago5-pytest-checkpoint/SKILL.md) — Ejecutar o reanudar pruebas Python solicitadas con recibos vinculados a la candidata y al entorno.
+- [`$bago5-rc4-goals`](../../bago5-rc4-goals/SKILL.md) — Coordinar objetivos con un controlador local cuando el host lo ofrece.
+- [`$bago5-repair`](../../bago5-repair/SKILL.md) — Reparar un defecto demostrado y comprobar la regresión.
+- [`$bago5-reparador`](../../bago5-reparador/SKILL.md) — Diagnosticar fallos entre código, paquete instalado y entorno de ejecución.
+- [`$bago5-repository-engineering`](../../bago5-repository-engineering/SKILL.md) — Gestionar cambios de repositorio con base, alcance, verificación y recuperación.
+- [`$bago5-runtime-bridge`](../../bago5-runtime-bridge/SKILL.md) — Comprobar si un runtime disponible puede ejecutar una operación concreta.
+- [`$bago5-semantic-audit`](../../bago5-semantic-audit/SKILL.md) — Contrastar afirmaciones y comprobar contradicciones sobre modelos explícitos.
+- [`$bago5-session-context`](../../bago5-session-context/SKILL.md) — Inventariar el contexto accesible de una sesión y recuperar su procedencia.
+- [`$bago5-session-hooks`](../../bago5-session-hooks/SKILL.md) — Aplicar manualmente los controles de inicio, memoria, relevo y cierre.
+- [`$bago5-sites-source-alignment`](../../bago5-sites-source-alignment/SKILL.md) — Contrastar un sitio desplegado con sus fuentes, interfaces y plantillas.
+- [`$bago5-stop-impact`](../../bago5-stop-impact/SKILL.md) — Determinar qué operaciones quedan afectadas por una parada o revocación.
+- [`$bago5-team-orchestrator`](../../bago5-team-orchestrator/SKILL.md) — Asignar trabajo sin solapamientos y aceptar resultados de agentes.
+- [`$bago5-trace-observability-engineer`](../../bago5-trace-observability-engineer/SKILL.md) — Vincular las acciones observadas con su origen y recibo verificable.
+- [`$bago5-ui-expert`](../../bago5-ui-expert/SKILL.md) — Auditar flujos de interfaz y corregir barreras de interacción y accesibilidad.
+- [`$bago5-verification`](../../bago5-verification/SKILL.md) — Contrastar afirmaciones contra una candidata exacta y emitir dictamen.
+- [`$bago5-verification-engineer`](../../bago5-verification-engineer/SKILL.md) — Verificar de forma independiente evidencias, autorizaciones y navegación entre resultados.
+- [`$bago5-workers`](../../bago5-workers/SKILL.md) — Ejecutar trabajos acotados de implementación o transformación mecánica.
+- [`$bago5-workflow`](../../bago5-workflow/SKILL.md) — Seleccionar las habilidades necesarias para una consulta o tarea con una política verificable.
+- [`$bago5-workspace-m`](../../bago5-workspace-m/SKILL.md) — Operar en un espacio multirrepositorio respetando las reglas de cada proyecto.
+- [`$bago5-zip-audit`](../../bago5-zip-audit/SKILL.md) — Inspeccionar un archivo comprimido y verificar sus entradas antes de cualquier uso.

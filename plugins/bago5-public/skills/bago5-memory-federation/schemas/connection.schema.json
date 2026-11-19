@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"BAGO5 Memory Connection (registry record, not credential)",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["alias","endpoint","expected_identity","state","selected"],
+  "properties":{
+    "alias":{"type":"string","pattern":"^[A-Za-z][A-Za-z0-9_.-]{1,63}$"},
+    "endpoint":{"type":"string","pattern":"^https://[^?#]+/mcp$"},
+    "expected_identity":{"type":"string","minLength":1},
+    "state":{"enum":["UNVERIFIED","VERIFIED_HOST","REVOKED","BLOCKED"]},
+    "selected":{"type":"boolean"}
+  },
+  "description":"Record a new connection as UNVERIFIED. VERIFIED_HOST requires independent evidence from an authenticated client."
+}

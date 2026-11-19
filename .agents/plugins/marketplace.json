@@ -1,0 +1,20 @@
+{
+  "name": "bago5-public-tools",
+  "interface": {
+    "displayName": "BAGO5 Público"
+  },
+  "plugins": [
+    {
+      "name": "bago5-public",
+      "source": {
+        "source": "local",
+        "path": "./plugins/bago5-public"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

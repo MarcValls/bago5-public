@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Solicitud de cálculo",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "link_id",
+    "operation",
+    "payload"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+    },
+    "link_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+    },
+    "operation": {
+      "enum": [
+        "catalog",
+        "lsi_check",
+        "logic",
+        "goal_trace",
+        "symbolic",
+        "emit_predicate"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "description": "Structure only. Link id is an untrusted selector until server authorization. No credentials, paid, owner or entitlement claims are accepted."
+}

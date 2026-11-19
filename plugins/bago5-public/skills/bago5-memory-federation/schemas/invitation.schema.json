@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"BAGO5 Local Hub Invitation Metadata",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["id","store_id","role","recipient_id","expires_at"],
+  "properties":{
+    "id":{"type":"string","format":"uuid"},
+    "store_id":{"type":"string","format":"uuid"},
+    "project_id":{"oneOf":[{"type":"string","format":"uuid"},{"type":"null"}]},
+    "role":{"enum":["viewer","editor"]},
+    "recipient_id":{"type":"string","minLength":1},
+    "expires_at":{"type":"string","format":"date-time"},
+    "accepted_at":{"type":["string","null"]},
+    "revoked_at":{"type":["string","null"]}
+  },
+  "description":"Invitations are scoped to an authenticated recipient. The opaque one-time token is not stored in metadata exports."
+}

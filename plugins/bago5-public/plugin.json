@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bago5-public",
+  "version": "0.1.0",
+  "description": "Habilidades de BAGO5 para planificar, desarrollar y verificar trabajo con evidencia.",
+  "author": {
+    "name": "MarcValls"
+  },
+  "homepage": "https://github.com/MarcValls/bago5-public",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "BAGO5 Público",
+        "shortDescription": "Desarrollo y verificación",
+        "longDescription": "Habilidades de BAGO5 para planificar, desarrollar y verificar trabajo con evidencia. Elige un proyecto y un resultado, asigna tareas y comprueba qué se ejecutó. Las operaciones de memoria requieren un conector que el usuario haya autorizado en su cliente.",
+        "category": "Developer Tools",
+        "defaultPrompt": [
+          "Usa $bago5-govern para organizar una tarea con un criterio de aceptación.",
+          "Usa $bago5-verification para contrastar el resultado con las pruebas disponibles."
+        ],
+        "websiteURL": "https://github.com/MarcValls/bago5-public",
+        "supportURL": "https://github.com/MarcValls/bago5-public/issues",
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png"
+      }
+    }
+  }
+}
