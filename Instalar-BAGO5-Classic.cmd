@@ -6,13 +6,17 @@ set "BAGO5_SELECTOR=bago5-governed-classic@bago5-public-tools"
 set "BAGO5_SOURCE=MarcValls/bago5-public@v0.4.59"
 set "PATH=%PATH%;%LOCALAPPDATA%\Microsoft\WinGet\Links;%ProgramFiles%\Git\cmd;%LOCALAPPDATA%\Programs\Git\cmd"
 rem Git for Windows: enable long paths for this installer and its children only.
-set "GIT_CONFIG_PARAMETERS=%GIT_CONFIG_PARAMETERS% 'core.longpaths=true'"
+if defined GIT_CONFIG_PARAMETERS (
+  set "GIT_CONFIG_PARAMETERS=%GIT_CONFIG_PARAMETERS% 'core.longpaths=true'"
+) else (
+  set "GIT_CONFIG_PARAMETERS='core.longpaths=true'"
+)
 set "MODE=asistido"
 if /i "%~1"=="--solo-instalar" set "MODE=terminal"
 if not "%~1"=="" if /i not "%~1"=="--solo-instalar" goto :uso
 
 echo BAGO5 Classic 0.4.59 para Codex
-echo Origen: https://github.com/MarcValls/bago5-public/releases/tag/v0.4.59
+echo Instalador r2: https://github.com/MarcValls/bago5-public/releases/tag/v0.4.59-r2
 echo.
 call :requisito git Git.Git
 if errorlevel 1 goto :fallo
