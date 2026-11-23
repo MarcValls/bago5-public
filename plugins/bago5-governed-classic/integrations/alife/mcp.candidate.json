@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "alife": {
+      "type": "streamable-http",
+      "url": "https://alifememories.com/mcp/gestor",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {"mode": "dcr"},
+            "baseScopes": ["manager.read"],
+            "defaultScopes": ["manager.read", "manager.memories"]
+          }
+        }
+      }
+    },
+    "memoria-viva": {
+      "type": "streamable-http",
+      "url": "https://alifememories.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {"mode": "dcr"},
+            "baseScopes": ["memory.read"],
+            "defaultScopes": ["memory.read"]
+          }
+        }
+      }
+    }
+  }
+}

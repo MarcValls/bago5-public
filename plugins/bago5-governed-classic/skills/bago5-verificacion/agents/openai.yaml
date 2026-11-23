@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-verificacion
+  short_description: "Comprobar el resultado y emitir un dictamen con evidencia"
+  default_prompt: "Comprobar el resultado y emitir un dictamen con evidencia."

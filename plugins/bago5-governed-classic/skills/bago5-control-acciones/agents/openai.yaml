@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-control-acciones
+  short_description: "Resolver alcance, autorización y parada antes de un efecto"
+  default_prompt: "Resolver alcance, autorización y parada antes de un efecto."

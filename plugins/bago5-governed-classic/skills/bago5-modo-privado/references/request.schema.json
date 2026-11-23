@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Private mode model request - no sensitive values",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "operation"
+  ],
+  "properties": {
+    "schema": {
+      "const": "bago.private.request/v1"
+    },
+    "operation": {
+      "enum": [
+        "prepare",
+        "status",
+        "cancel"
+      ]
+    }
+  }
+}

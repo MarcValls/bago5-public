@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bago5.local/schemas/handoff.v0.2",
+  "title": "BAGO5 Conversational Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "mission_id",
+    "candidate",
+    "operation",
+    "scope",
+    "acceptance",
+    "stop_status",
+    "sources",
+    "decisions",
+    "evidence",
+    "status",
+    "pending"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "minLength": 2
+    },
+    "mission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation": {
+      "enum": [
+        "QUESTION",
+        "GOAL",
+        "PHASED",
+        "AUDIT",
+        "DEVELOPMENT",
+        "UI",
+        "APP",
+        "EDITORIAL",
+        "CONTEXT",
+        "COGNITIVE",
+        "PYTEST",
+        "RELAY",
+        "ZIP_AUDIT",
+        "CAPABILITY_DEMONSTRATION",
+        "VERIFICATION",
+        "REPAIR",
+        "PROMOTION"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "acceptance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stop_status": {
+      "enum": [
+        "NOT_STOPPED",
+        "STOP_REQUESTED",
+        "STOP_CONFIRMED",
+        "UNKNOWN"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ref",
+          "version",
+          "retrieved"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string"
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "retrieved": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "check",
+          "result"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "check": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "candidate_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scope": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": {
+      "enum": [
+        "PROPOSED",
+        "PREPARED",
+        "EXECUTED",
+        "VERIFIED",
+        "VALIDATED",
+        "BLOCKED",
+        "NOT_RUN",
+        "NO_RECUPERADO",
+        "NO_COMPROBADO",
+        "PROPUESTO",
+        "IMPLEMENTADO",
+        "CANCELADO",
+        "DESCARTADO"
+      ]
+    },
+    "pending": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resumption_authorized": {
+      "type": "boolean",
+      "default": false
+    },
+    "privacy_reviewed": {
+      "type": "boolean",
+      "default": false
+    },
+    "route": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "collaboration_status": {
+      "enum": [
+        "NOT_USED",
+        "AWAITING_HOST_WORKER",
+        "ASSIGNED",
+        "HANDOFF_PENDING",
+        "HANDOFF_VALIDATED",
+        "NOT_RUN"
+      ]
+    },
+    "capability_status": {
+      "enum": [
+        "PROPOSED",
+        "IMPLEMENTED",
+        "VERIFIED",
+        "DEMONSTRABLE",
+        "BLOCKED"
+      ]
+    }
+  }
+}

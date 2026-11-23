@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "bago5-local-folder": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["${PLUGIN_ROOT}/server.py"],
+      "cwd": "${PLUGIN_ROOT}",
+      "env": {
+        "BAGO5_MCP_ROOT": "C:\\CAMBIAR\\POR\\LA\\CARPETA\\DEL\\PROYECTO"
+      }
+    }
+  }
+}

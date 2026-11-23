@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-lectura-carpeta
+  short_description: "Localizar y leer archivos de la carpeta autorizada"
+  default_prompt: "Localizar y leer archivos de la carpeta autorizada."

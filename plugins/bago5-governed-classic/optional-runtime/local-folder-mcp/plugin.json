@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bago5-local-folder-mcp",
+  "version": "0.1.0",
+  "description": "Servidor MCP local de solo lectura para consultar archivos dentro de una carpeta elegida.",
+  "author": {
+    "name": "Marc Valls"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "BAGO5 · Carpeta local",
+        "shortDescription": "Lectura local de proyectos",
+        "longDescription": "Conecta un servidor MCP local con una carpeta configurada y permite listar, buscar y leer archivos de texto sin modificarlos.",
+        "developerName": "Marc Valls",
+        "capabilities": []
+      }
+    }
+  }
+}

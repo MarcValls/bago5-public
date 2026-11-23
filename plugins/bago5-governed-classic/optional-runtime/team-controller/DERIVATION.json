@@ -1,0 +1,60 @@
+{
+  "source": ".bago/team/kit",
+  "source_files": [
+    {
+      "path": "LICENSE",
+      "sha256": "e9e8f3a6cced95dd4d876916303514540238c1c385d0d92b90d5f2d7bef52e75"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "cdceb38795ad91f06f3aed720ae192b700e70efcb9c584f161340fd771be6cf1"
+    },
+    {
+      "path": "SOURCE_LOCK.json",
+      "sha256": "b45aaa8951043d1bf682f7eb25b594563b2d4b2a689b9694f8244ad2db64586f"
+    },
+    {
+      "path": "protocol/COMMUNICATION.md",
+      "sha256": "a02d685b5b683db1d505662f53e0ea50738904c273d18edc47b08f8f26bc8d09"
+    },
+    {
+      "path": "protocol/handoff.schema.json",
+      "sha256": "8e75c14a1479ceeffd75c0db5d49a2d8069feed999954b32c380648849408cea"
+    },
+    {
+      "path": "protocol/mission.schema.json",
+      "sha256": "ba63cdf23eeca183e1c2472d51c1ae01103af4f913a57b1105e6837fbef69905"
+    },
+    {
+      "path": "protocol/pairing_rules.json",
+      "sha256": "b849d4574d57f2f16ea0d0b579d41ad15804fd3db43249f7a110ba599dc69684"
+    },
+    {
+      "path": "protocol/TEAM_PROTOCOL.md",
+      "sha256": "26508c678346577b26b0e98d5019c0fd096bde350189f99f2a016878759ba022"
+    },
+    {
+      "path": "protocol/work_item.schema.json",
+      "sha256": "09bc87f8219308c70074f29728494642c11dac15ea7e6ccf3cb9dd0d73c84328"
+    },
+    {
+      "path": "scripts/teamctl.py",
+      "sha256": "17ace00bb34b0b74aedb30251830ba4136fd4a9b234adff1b40d542ad7d51652"
+    },
+    {
+      "path": "scripts/team_safety.py",
+      "sha256": "8bf080d42be147509f8ad9e521e4ea124fa7d92a2a3fa16ebc8088a3147441d3"
+    },
+    {
+      "path": "templates/handoff-draft.example.json",
+      "sha256": "ad18dfd95c9e55bf580d9f98c39c9bcbcc9cb37c3e4d93dce4fc5975281af925"
+    }
+  ],
+  "changes": [
+    "Package-relative candidate identity",
+    "Explicit --root required",
+    "Separate .bago5-team/runtime state",
+    "No ADL default mission bundled"
+  ],
+  "status": "PREPARED; behavioral verification pending"
+}

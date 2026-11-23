@@ -1,0 +1,44 @@
+{
+  "author": {
+    "name": "MarcValls"
+  },
+  "description": "Habilidades BAGO5 y servicios nativos de alifememories.com para gobernanza, memoria, planes, relevos y archivos.",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/bago5/SKILL.md"
+    }
+  },
+  "homepage": "https://alifememories.com",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "capabilities": [],
+    "category": "Developer Tools",
+    "composerIcon": "./assets/alife.png",
+    "composerIconDark": "./assets/alife.png",
+    "defaultPrompt": [
+      "Usa $bago5 para guiarme en mi primer proyecto."
+    ],
+    "developerName": "MarcValls",
+    "displayName": "BAGO5 Classic (0.4.59)",
+    "logo": "./assets/alife.png",
+    "logoDark": "./assets/alife.png",
+    "longDescription": "Organiza proyectos en Codex con habilidades de BAGO5. Puedes trabajar localmente o conectar tu propio espacio ALIFE con OAuth.",
+    "shortDescription": "BAGO5 con Memoria Viva, planes por fases, relevos y Vault de ALIFE.",
+    "websiteURL": "https://alifememories.com"
+  },
+  "keywords": [
+    "bago5",
+    "governance",
+    "memory",
+    "codex",
+    "copilot-cli",
+    "m-workspace",
+    "private-mode",
+    "behavior-recovery",
+    "distribution"
+  ],
+  "mcpServers": "./.mcp.json",
+  "name": "bago5-governed-classic",
+  "skills": "./skills",
+  "version": "0.4.59"
+}

@@ -1,0 +1,10 @@
+{
+  "LEEME.md": "065427db356b1b0cbeca61ab674549ed9959359170b515ea08e22d19e6d63767",
+  "VERIFICAR_PACK.py": "ac0aa3a0024e12494af6a1a2bd242b2fcf38212ff924ede1f2412430f2f0acd2",
+  "ZIP_AUDITOR/schemas/report.v0.2.schema.json": "50478ff56e9b7d11ecc8f2e631f1a2ace37a2ff3a73dcb1c6c42b0d2290be389",
+  "ZIP_AUDITOR/un_clic.py": "84fd06f001b0e00fd7af4eef35d2d831f1c38fee13c33a76cf1aeb06b2d062e8",
+  "ZIP_AUDITOR/verify_results.py": "549e230fed22196c40d34cec76d21b78dbd2361f3f7734c607912d338df8287a",
+  "ZIP_AUDITOR/zip_analysis.py": "aece84d3a845e4058d0c83f1b44f259ea997b57872486a53e165107746461be3",
+  "ZIP_AUDITOR/zip_auditor.py": "3945c1c7c6fed186f4dcbdf30cb0411754a2a155ecc7132f40d3ebef646460af",
+  "ZIP_AUDITOR/zip_reporting.py": "434cb1f1e3f6926776cfe1a6052241cb4865f445d2472d752c1eeb3250d312aa"
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:memoria-viva:traceability:2.0.0",
+  "title": "Memoria Viva — Objetivos y planes: trazabilidad v2 (candidato)",
+  "description": "Contrato de intercambio propuesto. Verificar el soporte del backend seleccionado antes de usarlo para persistencia.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "memory_id", "owner_id", "project_id", "goal", "plans", "test_cases", "executions", "evidences", "verifications", "acceptances", "events"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "memory_id": {"$ref": "#/$defs/id"},
+    "owner_id": {"$ref": "#/$defs/id"},
+    "project_id": {"$ref": "#/$defs/id"},
+    "goal": {"type": "object", "additionalProperties": false, "required": ["goal_id", "version", "literal", "status"], "properties": {
+      "goal_id": {"$ref": "#/$defs/id"}, "version": {"$ref": "#/$defs/version"}, "literal": {"$ref": "#/$defs/literal"}, "status": {"enum": ["proposed", "in_progress", "achieved", "cancelled"]}, "criteria": {"type": "array", "items": {"type": "string"}}
+    }},
+    "plans": {"type": "array", "items": {"$ref": "#/$defs/plan"}},
+    "test_cases": {"type": "array", "items": {"$ref": "#/$defs/test"}},
+    "executions": {"type": "array", "items": {"$ref": "#/$defs/execution"}},
+    "evidences": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "verifications": {"type": "array", "items": {"$ref": "#/$defs/verification"}},
+    "acceptances": {"type": "array", "items": {"$ref": "#/$defs/acceptance"}},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "maxLength": 250},
+    "version": {"type": "integer", "minimum": 1},
+    "literal": {"type": "object", "additionalProperties": false, "required": ["text", "sha256", "utf8_length", "source_ref"], "properties": {"text": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "utf8_length": {"type": "integer", "minimum": 0}, "source_ref": {"$ref": "#/$defs/id"}}},
+    "plan": {"type": "object", "additionalProperties": false, "required": ["plan_id", "goal_id", "version", "status", "literal", "phases"], "properties": {
+      "plan_id": {"$ref": "#/$defs/id"}, "goal_id": {"$ref": "#/$defs/id"}, "version": {"$ref": "#/$defs/version"}, "status": {"$ref": "#/$defs/phase_status"}, "literal": {"$ref": "#/$defs/literal"}, "phases": {"type": "array", "items": {"$ref": "#/$defs/phase"}}
+    }},
+    "phase_status": {"enum": ["draft", "in_progress", "paused", "completed", "cancelled"]},
+    "phase": {"type": "object", "additionalProperties": false, "required": ["phase_id", "plan_id", "version", "phase_order", "status", "literal", "tasks", "depends_on_phases"], "properties": {
+      "phase_id": {"$ref": "#/$defs/id"}, "plan_id": {"$ref": "#/$defs/id"}, "version": {"$ref": "#/$defs/version"}, "phase_order": {"type": "integer", "minimum": 1}, "status": {"$ref": "#/$defs/phase_status"}, "literal": {"$ref": "#/$defs/literal"}, "depends_on_phases": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}}
+    }},
+    "task": {"type": "object", "additionalProperties": false, "required": ["task_id", "phase_id", "title", "status", "acceptance_criteria", "depends_on_tasks", "mandatory"], "properties": {
+      "task_id": {"$ref": "#/$defs/id"}, "phase_id": {"$ref": "#/$defs/id"}, "title": {"type": "string", "minLength": 1}, "status": {"enum": ["pending", "in_progress", "completed", "blocked", "cancelled"]}, "acceptance_criteria": {"type": "array", "items": {"type": "string", "minLength": 1}}, "depends_on_tasks": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "mandatory": {"type": "boolean"}
+    }},
+    "test": {"type": "object", "additionalProperties": false, "required": ["test_id", "task_id", "version", "mandatory", "polarity", "expected"], "properties": {"test_id": {"$ref": "#/$defs/id"}, "task_id": {"$ref": "#/$defs/id"}, "version": {"$ref": "#/$defs/version"}, "mandatory": {"type": "boolean"}, "polarity": {"enum": ["positive", "negative"]}, "expected": {"type": "string", "minLength": 1}}},
+    "execution": {"type": "object", "additionalProperties": false, "required": ["run_id", "test_id", "candidate", "client", "actor_ref", "result", "evidence_ids"], "properties": {"run_id": {"$ref": "#/$defs/id"}, "test_id": {"$ref": "#/$defs/id"}, "candidate": {"$ref": "#/$defs/id"}, "client": {"$ref": "#/$defs/id"}, "actor_ref": {"$ref": "#/$defs/id"}, "result": {"enum": ["NOT_RUN", "PASS", "FAIL", "BLOCKED"]}, "evidence_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}}},
+    "evidence": {"type": "object", "additionalProperties": false, "required": ["evidence_id", "source_ref", "sha256", "utf8_length", "captured_at"], "properties": {"evidence_id": {"$ref": "#/$defs/id"}, "source_ref": {"$ref": "#/$defs/id"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "utf8_length": {"type": "integer", "minimum": 0}, "captured_at": {"type": "string", "format": "date-time"}}},
+    "verification": {"type": "object", "additionalProperties": false, "required": ["verification_id", "run_id", "verifier_ref", "result", "evidence_ids", "independent"], "properties": {"verification_id": {"$ref": "#/$defs/id"}, "run_id": {"$ref": "#/$defs/id"}, "verifier_ref": {"$ref": "#/$defs/id"}, "result": {"enum": ["NOT_RUN", "PASS", "FAIL", "BLOCKED"]}, "evidence_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "independent": {"type": "boolean"}}},
+    "acceptance": {"type": "object", "additionalProperties": false, "required": ["acceptance_id", "gate_ref", "candidate", "actor_ref", "status", "verification_ids", "open_critical_issues"], "properties": {"acceptance_id": {"$ref": "#/$defs/id"}, "gate_ref": {"$ref": "#/$defs/id"}, "candidate": {"$ref": "#/$defs/id"}, "actor_ref": {"$ref": "#/$defs/id"}, "status": {"enum": ["PENDING", "GO", "NO_GO"]}, "verification_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "open_critical_issues": {"type": "integer", "minimum": 0}}},
+    "event": {"type": "object", "additionalProperties": false, "required": ["event_id", "actor_ref", "timestamp", "object_ref", "action", "source_ref"], "properties": {"event_id": {"$ref": "#/$defs/id"}, "actor_ref": {"$ref": "#/$defs/id"}, "timestamp": {"type": "string", "format": "date-time"}, "object_ref": {"$ref": "#/$defs/id"}, "action": {"type": "string", "minLength": 1}, "source_ref": {"$ref": "#/$defs/id"}}}
+  }
+}

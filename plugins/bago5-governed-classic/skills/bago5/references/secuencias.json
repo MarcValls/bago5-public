@@ -1,0 +1,244 @@
+[
+  {
+    "id": "inicio",
+    "intent": "Conocer el producto, crear una memoria, conectar una existente o probar sin memoria",
+    "owner": "bago5",
+    "next": {
+      "demo": "fin:demo_local",
+      "alta": "fin:abrir_alta_nativa",
+      "conectar": "bago5-memoria-viva",
+      "sin_seleccion": "fin:pedir_preferencia"
+    }
+  },
+  {
+    "id": "recuerdo",
+    "intent": "Consultar o guardar recuerdos",
+    "owner": "bago5-memoria-viva",
+    "next": {
+      "lectura": "fin:mostrar_lectura",
+      "escritura_verificada": "fin:mostrar_registro",
+      "sin_escritura": "fin:mostrar_borrador",
+      "sin_identidad": "fin:reconectar",
+      "conflicto": "bago5-memoria-viva"
+    }
+  },
+  {
+    "id": "fases",
+    "intent": "Actualizar progreso, tareas o tarjetas de fases",
+    "owner": "bago5-plan-por-fases",
+    "next": {
+      "sin_identidad": "fin:reconectar",
+      "sin_escritura": "fin:mostrar_borrador",
+      "criterio_pendiente": "fin:mostrar_pendiente",
+      "conflicto": "bago5-plan-por-fases",
+      "relectura_coincide": "fin:mostrar_tarjeta",
+      "relectura_difiere": "fin:investigar_discrepancia",
+      "cambio_mismo_campo": "fin:conciliar_con_el_usuario",
+      "cambio_ajeno_delta_vigente": "bago5-plan-por-fases"
+    }
+  },
+  {
+    "id": "archivo",
+    "intent": "Guardar o recuperar los bytes de un archivo en el Vault",
+    "owner": "bago5-alife-vault",
+    "next": {
+      "sin_herramientas": "fin:transferencia_NOT_RUN",
+      "sin_permiso": "fin:transferencia_NOT_RUN",
+      "hash_distinto": "fin:rechazar_archivo",
+      "hash_igual": "fin:entregar_recibo"
+    }
+  },
+  {
+    "id": "relevo",
+    "intent": "Continuar en otro chat, agente o cliente",
+    "owner": "bago5-memoria-codex",
+    "next": {
+      "sin_conexion_destino": "fin:entregar_relevo_pendiente",
+      "destino_verificado": "fin:entregar_relevo",
+      "requiere_archivo": "bago5-alife-vault",
+      "identidad_diferente": "fin:verificar_destino"
+    }
+  },
+  {
+    "id": "cambio",
+    "intent": "Corregir o implementar un cambio solicitado en un repositorio",
+    "owner": "bago5-ingenieria-repositorios",
+    "next": {
+      "inspeccion_pedida": "bago5-auditoria",
+      "candidata_preparada": "bago5-verificacion",
+      "sin_permiso": "fin:mostrar_propuesta"
+    }
+  },
+  {
+    "id": "revision",
+    "intent": "Inspeccionar un defecto y localizar su causa",
+    "owner": "bago5-auditoria",
+    "next": {
+      "solo_informe": "fin:mostrar_hallazgos",
+      "reparacion_autorizada": "bago5-ingenieria-repositorios"
+    }
+  },
+  {
+    "id": "comprobacion",
+    "intent": "Comprobar una candidata o cerrar con evidencia",
+    "owner": "bago5-verificacion",
+    "next": {
+      "prueba_fallida": "fin:mostrar_fallo",
+      "falta_prueba": "fin:mostrar_pendiente",
+      "criterios_cumplidos": "fin:mostrar_evidencia"
+    }
+  },
+  {
+    "id": "retomar",
+    "intent": "Recuperar y mantener el contexto de una sesión",
+    "owner": "bago5-ciclo-contexto",
+    "next": {
+      "contexto_verificado": "fin:mostrar_contexto",
+      "fuentes_en_conflicto": "fin:conciliar_fuentes"
+    }
+  },
+  {
+    "id": "autoridad",
+    "intent": "Resolver alcance, autorización y parada antes de un efecto",
+    "owner": "bago5-control-acciones",
+    "next": {
+      "alcance_resuelto": "fin:mostrar_alcance",
+      "revocacion": "fin:detenido"
+    }
+  },
+  {
+    "id": "evidencia",
+    "intent": "Vincular una afirmación con archivos de evidencia verificables",
+    "owner": "bago5-integridad-evidencias",
+    "next": {
+      "origen_y_huella_verificados": "fin:entregar_recibo",
+      "origen_incierto": "fin:mostrar_pendiente"
+    }
+  },
+  {
+    "id": "interfaz",
+    "intent": "Diseñar e implementar interfaces utilizables",
+    "owner": "bago5-interfaces",
+    "next": {
+      "cambio_visible_preparado": "bago5-verificacion",
+      "solo_diseno": "fin:entregar_diseno"
+    }
+  },
+  {
+    "id": "documento",
+    "intent": "Preparar documentos y comprobar su presentación",
+    "owner": "bago5-documentos",
+    "next": {
+      "requiere_entrega_instalable": "bago5-entrega-paquetes",
+      "presentacion_comprobada": "fin:entregar_documento"
+    }
+  },
+  {
+    "id": "motor",
+    "intent": "Resolver el motor local autorizado y comprobar su disponibilidad",
+    "owner": "bago5-acceso-motor-local",
+    "next": {
+      "runtime_disponible": "fin:informar_capacidad",
+      "runtime_ausente": "fin:mostrar_pendiente"
+    }
+  },
+  {
+    "id": "pruebas",
+    "intent": "Ejecutar y recuperar una campaña de pruebas Python",
+    "owner": "bago5-pruebas-python",
+    "next": {
+      "fallo_reproducible": "fin:mostrar_fallo",
+      "suite_superada": "fin:mostrar_evidencia"
+    }
+  },
+  {
+    "id": "leer",
+    "intent": "Localizar y leer archivos de la carpeta autorizada",
+    "owner": "bago5-lectura-carpeta",
+    "next": {
+      "fuente_localizada": "fin:mostrar_lectura",
+      "fuera_de_alcance": "fin:mostrar_pendiente"
+    }
+  },
+  {
+    "id": "paquete",
+    "intent": "Construir una entrega instalable con identidad verificable",
+    "owner": "bago5-entrega-paquetes",
+    "next": {
+      "solicitada_promocion": "bago5-dictamen-promocion",
+      "paquete_verificado": "fin:entregar_paquete"
+    }
+  },
+  {
+    "id": "promocion",
+    "intent": "Decidir si una candidata puede promoverse al destino",
+    "owner": "bago5-dictamen-promocion",
+    "next": {
+      "criterios_cumplidos": "fin:emitir_dictamen",
+      "criterio_pendiente": "fin:mostrar_pendiente"
+    }
+  },
+  {
+    "id": "remoto",
+    "intent": "Administrar el repositorio remoto y sus permisos autorizados",
+    "owner": "bago5-repositorios-github",
+    "next": {
+      "destino_verificado": "fin:entregar_recibo",
+      "sin_permiso": "fin:mostrar_pendiente"
+    }
+  },
+  {
+    "id": "calculo",
+    "intent": "Resolver un cálculo con las herramientas disponibles",
+    "owner": "bago5-matematicas",
+    "next": {
+      "calculo_comprobado": "fin:mostrar_resultado",
+      "faltan_datos": "fin:pedir_dato"
+    }
+  },
+  {
+    "id": "voz",
+    "intent": "Producir una locución a partir de un texto",
+    "owner": "bago5-locucion",
+    "next": {
+      "audio_reproducido": "fin:entregar_audio",
+      "sin_reproduccion": "fin:mostrar_pendiente"
+    }
+  },
+  {
+    "id": "actividad",
+    "intent": "Consultar actividad efectiva y su historial",
+    "owner": "bago5-monitor-actividad",
+    "next": {
+      "actividad_observada": "fin:mostrar_actividad",
+      "solo_historial": "fin:mostrar_historial"
+    }
+  },
+  {
+    "id": "deliberacion",
+    "intent": "Contrastar hipótesis mediante deliberación solicitada expresamente",
+    "owner": "bago5-cognitivo",
+    "next": {
+      "seleccion_explicita": "fin:entregar_contraste",
+      "sin_seleccion_explicita": "fin:pedir_preferencia"
+    }
+  },
+  {
+    "id": "proyecto_local",
+    "intent": "Localizar el proyecto apropiado en la unidad M",
+    "owner": "bago5-espacio-m",
+    "next": {
+      "proyecto_inequivoco": "fin:mostrar_ruta",
+      "varios_proyectos": "fin:pedir_preferencia"
+    }
+  },
+  {
+    "id": "app_local",
+    "intent": "Implementar aplicaciones y juegos con la herramienta local autorizada",
+    "owner": "bago5-aplicaciones-locales",
+    "next": {
+      "candidata_preparada": "bago5-verificacion",
+      "sin_motor": "fin:mostrar_pendiente"
+    }
+  }
+]

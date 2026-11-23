@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-auditoria
+  short_description: "Identificar y documentar defectos por inspección"
+  default_prompt: "Identificar y documentar defectos por inspección."

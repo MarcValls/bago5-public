@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-pruebas-python
+  short_description: "Ejecutar y recuperar una campaña de pruebas Python"
+  default_prompt: "Ejecutar y recuperar una campaña de pruebas Python."

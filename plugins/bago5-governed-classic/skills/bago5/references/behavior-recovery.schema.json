@@ -1,0 +1,958 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bago5.local/schemas/behavior-recovery.v1",
+  "title": "BAGO5-CCR-001 correction and current observation",
+  "description": "Metadata only. behavior_recovery checks timestamps, identity, conservation, event deduplication and resolution binding. Schema validity does not authenticate observations or authorize execution.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/spec"
+    },
+    {
+      "$ref": "#/$defs/observation"
+    },
+    {
+      "$ref": "#/$defs/record"
+    }
+  ],
+  "$defs": {
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "mission_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "goal_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "scope_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "goal_revision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "project_id",
+        "mission_id",
+        "goal_id",
+        "candidate_id",
+        "scope_id",
+        "session_id",
+        "goal_revision"
+      ]
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "enum": [
+            "ALLOWED",
+            "DENIED",
+            "UNKNOWN",
+            "REVOKED"
+          ]
+        },
+        "source_type": {
+          "enum": [
+            "USER_INSTRUCTION",
+            "HOST_PERMISSION",
+            "EXPLICIT_APPROVAL"
+          ]
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "current": {
+          "type": "boolean"
+        },
+        "binding": {
+          "$ref": "#/$defs/binding"
+        }
+      },
+      "required": [
+        "state",
+        "source_type",
+        "source_ref",
+        "current",
+        "binding"
+      ]
+    },
+    "definition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "expected_basis": {
+          "enum": [
+            "OBSERVATION",
+            "DECLARATION",
+            "ARTIFACT"
+          ]
+        },
+        "expected_outcome": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "min_independent_origins": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "required",
+        "expected_basis",
+        "expected_outcome",
+        "min_independent_origins"
+      ]
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "action_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "cause_kind": {
+          "enum": [
+            "CONDITION",
+            "AUTHORITY",
+            "PROHIBITION",
+            "UNCERTAIN_RESULT"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "correct_behavior": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "activation_condition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "description"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "expires_at": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "maxLength": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prior_execution": {
+          "enum": [
+            "NOT_RUN",
+            "UNCERTAIN"
+          ]
+        },
+        "restriction_source_type": {
+          "enum": [
+            "USER_INSTRUCTION",
+            "HOST_PERMISSION",
+            "EXPLICIT_APPROVAL"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "action_id",
+        "cause_kind",
+        "reason",
+        "source_ref",
+        "correct_behavior",
+        "activation_condition",
+        "conditions",
+        "expires_at",
+        "prior_execution"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "cause_kind": {
+                "const": "PROHIBITION"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "restriction_source_type"
+            ]
+          }
+        }
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "correction_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "binding": {
+          "$ref": "#/$defs/binding"
+        },
+        "action_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 100
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 100
+        },
+        "current": {
+          "type": "boolean"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              },
+              "state": {
+                "enum": [
+                  "SATISFIED",
+                  "UNSATISFIED",
+                  "UNKNOWN"
+                ]
+              },
+              "source_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "state",
+              "source_ref"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "relevance": {
+          "enum": [
+            "NEEDED",
+            "OBSOLETE",
+            "UNKNOWN"
+          ]
+        },
+        "prior_result": {
+          "enum": [
+            "NOT_RUN",
+            "RECONCILED_NOT_EXECUTED",
+            "VERIFIED_COMPLETE",
+            "UNCERTAIN"
+          ]
+        },
+        "restriction_resolution": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "restriction_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 10000,
+                  "pattern": "\\S"
+                },
+                "authority": {
+                  "$ref": "#/$defs/authority"
+                }
+              },
+              "required": [
+                "restriction_ref",
+                "authority"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "correction_id",
+        "binding",
+        "action_id",
+        "observed_at",
+        "valid_until",
+        "current",
+        "source_ref",
+        "conditions",
+        "relevance",
+        "prior_result",
+        "restriction_resolution"
+      ]
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "action_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "cause_kind": {
+          "enum": [
+            "CONDITION",
+            "AUTHORITY",
+            "PROHIBITION",
+            "UNCERTAIN_RESULT"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "correct_behavior": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "activation_condition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "description"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "expires_at": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "maxLength": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prior_execution": {
+          "enum": [
+            "NOT_RUN",
+            "UNCERTAIN"
+          ]
+        },
+        "schema": {
+          "const": "bago5.behavior-recovery.record.v1"
+        },
+        "binding": {
+          "$ref": "#/$defs/binding"
+        },
+        "goal": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "baseline": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000,
+              "pattern": "\\S"
+            },
+            "current": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "baseline",
+            "current"
+          ]
+        },
+        "baseline_criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/definition"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        },
+        "criterion_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10000,
+            "pattern": "\\S"
+          },
+          "minItems": 1,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "initial_blocker": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 10000,
+                  "pattern": "\\S"
+                },
+                "source_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 10000,
+                  "pattern": "\\S"
+                },
+                "intervention": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 10000,
+                  "pattern": "\\S"
+                },
+                "basis": {
+                  "enum": [
+                    "OBSERVATION",
+                    "CAPABILITY",
+                    "AUTHORITY",
+                    "INSTRUCTION",
+                    "REQUIRED_INPUT"
+                  ],
+                  "description": "Cause type, backed by the precise source_ref. Labels such as NOT_RUN are result states, not causes."
+                },
+                "current": {
+                  "type": "boolean",
+                  "description": "True only when the cited cause still applies to this action and scope after the latest result or human intervention. Metadata is supplied by the caller, not authenticated here."
+                }
+              },
+              "required": [
+                "reason",
+                "source_ref",
+                "intervention"
+              ],
+              "description": "Existing v1 receipts remain readable. A documented pause additionally needs basis and current=true; omitted or stale details require closure review without authorizing execution. An instruction or permission boundary is sufficient evidence without attempting a prohibited action."
+            }
+          ]
+        },
+        "initial_authorization": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "enum": [
+                "ALLOWED",
+                "DENIED",
+                "UNKNOWN",
+                "REVOKED"
+              ]
+            },
+            "source_type": {
+              "enum": [
+                "USER_INSTRUCTION",
+                "HOST_PERMISSION",
+                "EXPLICIT_APPROVAL"
+              ]
+            },
+            "source_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "state",
+            "source_type",
+            "source_ref"
+          ]
+        },
+        "registered_at": {
+          "type": "string",
+          "format": "date-time",
+          "maxLength": 100
+        },
+        "state": {
+          "enum": [
+            "WAITING_CONDITIONS",
+            "PROHIBITED",
+            "RECONCILE",
+            "RESOLVED",
+            "EXPIRED",
+            "OBSOLETE"
+          ]
+        },
+        "target_action_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10000,
+          "pattern": "\\S"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              },
+              "fingerprint": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "observation": {
+                "$ref": "#/$defs/observation"
+              },
+              "result_state": {
+                "enum": [
+                  "WAITING_CONDITIONS",
+                  "PROHIBITED",
+                  "RECONCILE",
+                  "RESOLVED",
+                  "EXPIRED",
+                  "OBSOLETE"
+                ]
+              },
+              "result_action_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              },
+              "authority_snapshot": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "state": {
+                    "enum": [
+                      "ALLOWED",
+                      "DENIED",
+                      "UNKNOWN",
+                      "REVOKED"
+                    ]
+                  },
+                  "source_type": {
+                    "enum": [
+                      "USER_INSTRUCTION",
+                      "HOST_PERMISSION",
+                      "EXPLICIT_APPROVAL"
+                    ]
+                  },
+                  "source_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 10000,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "state",
+                  "source_type",
+                  "source_ref"
+                ]
+              },
+              "sequence": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              },
+              "assessed_at": {
+                "type": "string",
+                "format": "date-time",
+                "maxLength": 100
+              }
+            },
+            "required": [
+              "id",
+              "fingerprint",
+              "observation",
+              "result_state",
+              "result_action_id",
+              "authority_snapshot",
+              "sequence",
+              "assessed_at"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "invalidations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000,
+                "pattern": "\\S"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time",
+                "maxLength": 100
+              },
+              "sequence": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              },
+              "authority_snapshots": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "ALLOWED",
+                        "DENIED",
+                        "UNKNOWN",
+                        "REVOKED"
+                      ]
+                    },
+                    "source_type": {
+                      "enum": [
+                        "USER_INSTRUCTION",
+                        "HOST_PERMISSION",
+                        "EXPLICIT_APPROVAL"
+                      ]
+                    },
+                    "source_ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "source_type",
+                    "source_ref"
+                  ]
+                },
+                "maxItems": 256
+              }
+            },
+            "required": [
+              "source_ref",
+              "observed_at",
+              "sequence",
+              "authority_snapshots"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "resolution": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "receipt_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "valid_until": {
+                  "type": "string",
+                  "format": "date-time",
+                  "maxLength": 100
+                },
+                "event_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 10000,
+                  "pattern": "\\S"
+                },
+                "action_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 10000,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "receipt_sha256",
+                "valid_until",
+                "event_id",
+                "action_id"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "restriction_source_type": {
+          "enum": [
+            "USER_INSTRUCTION",
+            "HOST_PERMISSION",
+            "EXPLICIT_APPROVAL"
+          ]
+        },
+        "invalidated_authority_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10000,
+            "pattern": "\\S"
+          },
+          "uniqueItems": true,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "id",
+        "action_id",
+        "cause_kind",
+        "reason",
+        "source_ref",
+        "correct_behavior",
+        "activation_condition",
+        "conditions",
+        "expires_at",
+        "prior_execution",
+        "schema",
+        "binding",
+        "goal",
+        "baseline_criteria",
+        "criterion_ids",
+        "initial_blocker",
+        "initial_authorization",
+        "registered_at",
+        "state",
+        "target_action_id",
+        "events",
+        "invalidations",
+        "resolution",
+        "invalidated_authority_refs"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "RESOLVED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "resolution": {
+                "type": "object"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "resolution": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "cause_kind": {
+                "const": "PROHIBITION"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "restriction_source_type"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

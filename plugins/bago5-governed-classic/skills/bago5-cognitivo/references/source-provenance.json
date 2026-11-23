@@ -1,0 +1,22 @@
+{
+  "component": "ADL chat cognitive focus",
+  "repository": "MarcValls/BAGO_AGENTIC_DATA_LAB",
+  "commit": "fb81877d35a80dabe37fefd5fdb1f643190c6a24",
+  "upstream_path": "src/cognition/bago5_chat.py",
+  "packaged_path": "scripts/adl_focus.py",
+  "sha256": "b3670e47ed88548846fe50856c936b2a8eea48db652fc2060718a4a45dd59943",
+  "recovered_at": "2026-11-20",
+  "changes": "NONE; byte-identical upstream module",
+  "scope": "Deterministic lexical cue focus only; not model reasoning, learned weights, persistent memory or execution authority",
+  "wrapper": "scripts/cognitive_mode.py adds an explicit opt-in selector; no new attention algorithm",
+  "source_identity_check": "PASS_BYTES_EQUAL",
+  "runtime_integration": "NOT_RUN",
+  "license": {
+    "name": "MIT",
+    "copyright": "Copyright (c) 2026 MarcValls",
+    "upstream_path": "LICENSE",
+    "packaged_path": "references/ADL-LICENSE.txt",
+    "git_blob_sha1": "8915d998230828562fa50af956cf76715129d713",
+    "sha256": "3ae1416a8ae21b4a838f4afe6e520316940095449cf66db30a5488d393441744"
+  }
+}

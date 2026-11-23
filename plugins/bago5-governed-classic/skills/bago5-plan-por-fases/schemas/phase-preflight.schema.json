@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bago5:phase-preflight:1",
+  "title": "BAGO5 — recibo local de preflight por fase",
+  "description": "Clasifica evidencia declarada; no constituye autorización ni impone un esquema al backend.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "context", "captured_at", "max_age_seconds", "stop", "requirements", "observations", "environment_change", "user_interventions", "required_target_actions", "target_preflights"],
+  "properties": {
+    "schema_version": {"const": "bago5.phase-preflight.v1"},
+    "context": {"$ref": "#/$defs/context"},
+    "captured_at": {"$ref": "#/$defs/timestamp"},
+    "max_age_seconds": {"type": "integer", "minimum": 1, "maximum": 3600},
+    "stop": {"type": "boolean"},
+    "requirements": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/requirement"}},
+    "observations": {"type": "array", "items": {"$ref": "#/$defs/observation"}},
+    "environment_change": {"oneOf": [
+      {"type": "object", "additionalProperties": false, "required": ["required"], "properties": {"required": {"const": false}}},
+      {"type": "object", "additionalProperties": false, "required": ["required", "destination", "reason", "handoff_ref"], "properties": {
+        "required": {"const": true}, "destination": {"$ref": "#/$defs/text"}, "reason": {"$ref": "#/$defs/text"}, "handoff_ref": {"$ref": "#/$defs/text"}
+      }}
+    ]},
+    "user_interventions": {"type": "array", "items": {"$ref": "#/$defs/intervention"}},
+    "preparation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["steps", "authorization_ref", "authorization_source_type", "notice_ref", "context_key"],
+      "properties": {
+        "steps": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "authorization_ref": {"$ref": "#/$defs/text"}, "authorization_source_type": {"enum": ["USER_INSTRUCTION", "EXPLICIT_APPROVAL"]},
+        "notice_ref": {"$ref": "#/$defs/text"}, "context_key": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "required_target_actions": {"type": "array", "uniqueItems": true, "items": {
+      "type": "object", "additionalProperties": false, "required": ["action_id", "target_id", "environment"],
+      "properties": {"action_id": {"$ref": "#/$defs/text"}, "target_id": {"$ref": "#/$defs/text"}, "environment": {"$ref": "#/$defs/text"}}
+    }},
+    "target_preflights": {"type": "array", "items": {"type": "object"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "context": {
+      "type": "object", "additionalProperties": false,
+      "required": ["project_id", "goal_id", "plan_id", "plan_version", "phase_id", "phase_revision", "session_id", "host", "environment", "candidate_ref", "scope_ref", "acceptance_ref", "attempt_id"],
+      "properties": {
+        "project_id": {"$ref": "#/$defs/text"}, "goal_id": {"$ref": "#/$defs/text"}, "plan_id": {"$ref": "#/$defs/text"},
+        "plan_version": {"$ref": "#/$defs/text"}, "phase_id": {"$ref": "#/$defs/text"}, "phase_revision": {"$ref": "#/$defs/text"},
+        "session_id": {"$ref": "#/$defs/text"}, "host": {"$ref": "#/$defs/text"}, "environment": {"$ref": "#/$defs/text"},
+        "candidate_ref": {"$ref": "#/$defs/text"}, "scope_ref": {"$ref": "#/$defs/text"}, "acceptance_ref": {"$ref": "#/$defs/text"}, "attempt_id": {"$ref": "#/$defs/text"}
+      }
+    },
+    "requirement": {
+      "type": "object", "additionalProperties": false, "required": ["id", "area", "description"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"},
+        "area": {"enum": ["tools", "access", "authorization", "execution", "verification", "delivery", "dependencies"]},
+        "description": {"$ref": "#/$defs/text"}
+      }
+    },
+    "observation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requirement_id", "status", "source_type", "source_ref", "captured_at", "context_key", "detail"],
+      "properties": {
+        "requirement_id": {"$ref": "#/$defs/text"}, "status": {"enum": ["PASS", "FAIL", "NO_COMPROBADO"]},
+        "source_type": {"enum": ["USER_INSTRUCTION", "EXPLICIT_APPROVAL", "HOST_TOOL", "AUTHENTICATED_ACCESS", "SOURCE_READ", "TARGET_PROBE"]},
+        "source_ref": {"$ref": "#/$defs/text"}, "captured_at": {"$ref": "#/$defs/timestamp"},
+        "context_key": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "detail": {"$ref": "#/$defs/text"}
+      }
+    },
+    "intervention": {
+      "type": "object", "additionalProperties": false, "required": ["id", "status", "stage", "who", "action", "when", "reason"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "status": {"enum": ["PENDING", "COMPLETED"]},
+        "stage": {"enum": ["BEFORE_START", "BEFORE_COMPLETION"]},
+        "who": {"$ref": "#/$defs/text"}, "action": {"$ref": "#/$defs/text"}, "when": {"$ref": "#/$defs/text"}, "reason": {"$ref": "#/$defs/text"},
+        "evidence_ref": {"$ref": "#/$defs/text"}, "completed_at": {"$ref": "#/$defs/timestamp"},
+        "captured_at": {"$ref": "#/$defs/timestamp"}, "context_key": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "allOf": [{"if": {"properties": {"status": {"const": "COMPLETED"}}}, "then": {"required": ["evidence_ref", "completed_at", "captured_at", "context_key"]}}]
+    }
+  }
+}

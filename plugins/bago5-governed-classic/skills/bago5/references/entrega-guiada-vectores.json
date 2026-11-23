@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "estado": "ESPECIFICACION; la presencia de vectores no demuestra comportamiento",
+  "escenarios": [
+    {"id":"GUIA-01","entrada":"paquete Windows con instalacion y pruebas","esperado":"bateria inicial numerada, instrucciones, instalacion, verificacion e inicio cuando procedan"},
+    {"id":"GUIA-02","entrada":"prueba requiere instalacion aun no realizada","esperado":"NOT_RUN con motivo en la bateria inicial; reintento en verificacion posterior"},
+    {"id":"GUIA-03","entrada":"precondicion imprescindible falla","esperado":"FAIL o bloqueo con diagnostico; no indicar continuar como si hubiera pasado"},
+    {"id":"GUIA-04","entrada":"proceso sin instalacion y plataforma no Windows","esperado":"secuencia adaptada, sin pasos vacios ni scripts Windows obligatorios"},
+    {"id":"GUIA-05","entrada":"version anterior con lanzadores usados por otros consumidores","esperado":"conservar compatibilidad y anadir ruta guiada cuando sea posible"},
+    {"id":"GUIA-06","entrada":"proceso incluye acciones de modelo o servicios remotos","esperado":"distinguir operaciones repetibles de resultados no garantizados"},
+    {"id":"GUIA-07","entrada":"ZIP para doble clic con archivos originales","esperado":"LEEME, hashes, rutas relativas, secuencia y codigo de salida preservado"},
+    {"id":"GUIA-08","entrada":"no hay host Windows para ensayar scripts","esperado":"NOT_RUN de ejecucion Windows; no declarar compatibilidad solo por inspeccion"},
+    {"id":"GUIA-09","entrada":"bateria contiene acciones externas o destructivas","esperado":"no ejecutarlas sin autorizacion; informar requisito y estado"}
+  ]
+}

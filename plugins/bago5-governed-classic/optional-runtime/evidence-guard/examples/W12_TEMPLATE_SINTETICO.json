@@ -1,0 +1,15 @@
+{
+  "schema": "example.w12.v1",
+  "warning": "DATOS SINTETICOS, NO ES EL INFORME W12 REAL",
+  "sources": {
+    "css": {
+      "sha256": "__SHA256__"
+    }
+  },
+  "logs": [
+    {
+      "sha256": "__SHA256__",
+      "outcome": "FAIL_EXPECTED"
+    }
+  ]
+}

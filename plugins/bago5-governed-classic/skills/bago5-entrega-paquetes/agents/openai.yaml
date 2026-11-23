@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-entrega-paquetes
+  short_description: "Construir una entrega instalable con identidad verificable"
+  default_prompt: "Construir una entrega instalable con identidad verificable."

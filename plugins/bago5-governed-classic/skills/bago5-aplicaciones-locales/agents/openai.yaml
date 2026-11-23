@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-aplicaciones-locales
+  short_description: "Implementar aplicaciones y juegos con la herramienta local autorizada"
+  default_prompt: "Implementar aplicaciones y juegos con la herramienta local autorizada."
