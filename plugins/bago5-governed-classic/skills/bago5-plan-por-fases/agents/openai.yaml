@@ -1,0 +1,6 @@
+interface:
+  display_name: $bago5-plan-por-fases
+  short_description: "Gestionar objetivos, fases y tareas con su evidencia"
+  default_prompt: "Gestionar objetivos, fases y tareas con su evidencia."
+  icon_small: "./assets/alife.png"
+  icon_large: "./assets/alife.png"

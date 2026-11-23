@@ -1,0 +1,6 @@
+interface:
+  display_name: $bago5-memoria-codex
+  short_description: "Entregar la continuidad de un trabajo al siguiente agente o cliente"
+  default_prompt: "Entregar la continuidad de un trabajo al siguiente agente o cliente."
+  icon_small: "./assets/alife.png"
+  icon_large: "./assets/alife.png"

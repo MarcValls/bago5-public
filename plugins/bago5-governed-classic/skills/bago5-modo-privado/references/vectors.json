@@ -1,0 +1,36 @@
+{
+  "schema": "bago.private.vectors/v1",
+  "positive": [
+    "NORMAL admitted work",
+    "quiesced PRIVATE",
+    "explicit acknowledged done",
+    "explicit cancel-resume",
+    "shared SQLite denies another process"
+  ],
+  "negative": [
+    "missing host",
+    "unknown coverage",
+    "active observer timeout",
+    "new tool while PREPARING or PRIVATE",
+    "second controller",
+    "orphan active ticket",
+    "crash PRIVATE",
+    "invalid executable",
+    "resume without acknowledgment",
+    "replay done",
+    "cancel must not resume",
+    "resume adapter fails",
+    "storage disappears",
+    "secret exception suppressed",
+    "close UI while preparing",
+    "secret/environment/CLI argument rejected"
+  ],
+  "external_not_run": [
+    "Windows installation and signature",
+    "KeePassXC GUI actual",
+    "host-wide channel inventory",
+    "all real agents/sessions",
+    "ACL and bypass enforcement",
+    "real end-to-end synthetic-key leak probe"
+  ]
+}

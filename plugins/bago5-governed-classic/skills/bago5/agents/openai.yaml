@@ -1,0 +1,6 @@
+interface:
+  display_name: $bago5 (0.4.59)
+  short_description: "Elegir el siguiente paso y guiar el primer uso"
+  default_prompt: "Quiero empezar con BAGO5 ALIFE. Guíame para crear mi memoria, conectar una que ya tengo o probarlo sin memoria."
+  icon_small: "./assets/alife.png"
+  icon_large: "./assets/alife.png"

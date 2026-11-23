@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-integridad-evidencias
+  short_description: "Vincular una afirmación con archivos de evidencia verificables"
+  default_prompt: "Vincular una afirmación con archivos de evidencia verificables."

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "ONB2-01",
+    "case": "new_user_no_memory",
+    "outcome": "OFFERED",
+    "invariant": "no creation or content access",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-02",
+    "case": "existing_memory_authenticated_authorized",
+    "outcome": "READY",
+    "invariant": "reuse connection without repeating onboarding",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-03",
+    "case": "developer_app_bound_other_user",
+    "outcome": "OFFERED",
+    "invariant": "do not read developer content",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-04",
+    "case": "create_selected_activation_unavailable",
+    "outcome": "BLOCKED",
+    "invariant": "continue independent work; no Site fallback",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-05",
+    "case": "create_selected_form_not_submitted",
+    "outcome": "OFFERED",
+    "invariant": "no email",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-06",
+    "case": "form_submit_authorizes_confirmation_email",
+    "outcome": "EMAIL_PENDING",
+    "invariant": "provider acceptance not delivery",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-07",
+    "case": "scanner_get_confirmation_link",
+    "outcome": "EMAIL_PENDING",
+    "invariant": "no token consumption or provisioning",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-08",
+    "case": "valid_interactive_post_confirmation",
+    "outcome": "SPACE_PROVISIONED",
+    "invariant": "atomic owner-bound empty memory",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-09",
+    "case": "email_verified_without_host_oauth",
+    "outcome": "CONNECTION_PENDING",
+    "invariant": "never READY",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-10",
+    "case": "expired_or_reused_token",
+    "outcome": "BLOCKED",
+    "invariant": "no provisioning; no token replay",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-11",
+    "case": "concurrent_confirmation_same_request",
+    "outcome": "SPACE_PROVISIONED",
+    "invariant": "one allocation, no duplicate memory",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-12",
+    "case": "existing_account_existing_memories",
+    "outcome": "CONNECTION_PENDING",
+    "invariant": "preserve; selection required if ambiguous",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-13",
+    "case": "two_accounts",
+    "outcome": "SPACE_PROVISIONED",
+    "invariant": "server-enforced isolation; no cross-owner access",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-14",
+    "case": "same_email_separate_hosts",
+    "outcome": "CONNECTION_PENDING",
+    "invariant": "independent host authorization",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-15",
+    "case": "mcp_connected_identity_mismatch",
+    "outcome": "BLOCKED",
+    "invariant": "no memory content read or write",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-16",
+    "case": "mcp_connected_authorized_read_verified",
+    "outcome": "READY",
+    "invariant": "no unauthorized write",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-17",
+    "case": "connect_url_without_owner_grant",
+    "outcome": "BLOCKED",
+    "invariant": "no connection claim",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-18",
+    "case": "continue_without_memory",
+    "outcome": "SKIPPED",
+    "invariant": "no memory access or repeated offer this conversation",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-19",
+    "case": "stop_active",
+    "outcome": "BLOCKED",
+    "invariant": "no new actions",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-20",
+    "case": "no_uses_memory",
+    "outcome": "SKIPPED",
+    "invariant": "no identity or content access",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-21",
+    "case": "no_write_authority",
+    "outcome": "CONNECTED",
+    "invariant": "read only within authorization",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-22",
+    "case": "creator_authorization_still_current",
+    "outcome": "READY",
+    "invariant": "reuse only same subject destination and scope",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-23",
+    "case": "new_memory_requested_existing_selected",
+    "outcome": "OFFERED",
+    "invariant": "preserve selected memory; explicit new allocation",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-24",
+    "case": "installer_event_missing",
+    "outcome": "UNCONFIGURED",
+    "invariant": "first invocation fallback; no fabricated hook",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-25",
+    "case": "local_preference_skipped",
+    "outcome": "SKIPPED",
+    "invariant": "preference is not server identity or authorization",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-26",
+    "case": "non_memory_site_requested",
+    "outcome": "UNCONFIGURED",
+    "invariant": "independent development workflow",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-27",
+    "case": "uncertain_response_on_retry",
+    "outcome": "CONNECTION_PENDING",
+    "invariant": "reconcile before repeating email or provisioning",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-28",
+    "case": "authenticated_chat_create_memory",
+    "outcome": "SPACE_PROVISIONED",
+    "invariant": "native owner-bound allocation; no Site and no new project in another memory",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-29",
+    "case": "legacy_manager_write_create_memory",
+    "outcome": "BLOCKED",
+    "invariant": "manager.memories requires separate consent",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-30",
+    "case": "same_request_retry_across_grants",
+    "outcome": "SPACE_PROVISIONED",
+    "invariant": "same account UUID returns one memory",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-31",
+    "case": "select_memory_existing_content_grant",
+    "outcome": "CONNECTION_PENDING",
+    "invariant": "account preference does not retarget an OAuth grant",
+    "remote_verification": "NOT_RUN"
+  },
+  {
+    "id": "ONB2-32",
+    "case": "new_memory_connector_access_disabled",
+    "outcome": "CONNECTION_PENDING",
+    "invariant": "explicit owner gate and OAuth required before READY",
+    "remote_verification": "NOT_RUN"
+  }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-interfaces
+  short_description: "Diseñar e implementar interfaces utilizables"
+  default_prompt: "Diseñar e implementar interfaces utilizables."

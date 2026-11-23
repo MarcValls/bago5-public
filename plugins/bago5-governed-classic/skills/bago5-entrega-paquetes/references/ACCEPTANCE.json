@@ -1,0 +1,67 @@
+{
+  "contract": "BAGO5-ARTIFACT-DELIVERY-001",
+  "version": "0.1.0",
+  "state": "SPECIFICATION_NOT_E2E",
+  "cases": [
+    {
+      "id": "D01",
+      "case": "one produced ZIP",
+      "expected": "single download section strictly after NOTA FINAL"
+    },
+    {
+      "id": "D02",
+      "case": "multiple artifacts in response",
+      "expected": "all download links grouped together at absolute end, pack first"
+    },
+    {
+      "id": "D03",
+      "case": "new version higher than last",
+      "expected": "show destination, preserve previous, explain installation/patch rather than overwrite"
+    },
+    {
+      "id": "D04",
+      "case": "pack size limit reached",
+      "expected": "close existing pack, start next, index missing previous bytes and link continuity"
+    },
+    {
+      "id": "D05",
+      "case": "old versions unavailable",
+      "expected": "NO_RECUPERADO, do not invent or list as included"
+    },
+    {
+      "id": "D06",
+      "case": "Windows script process",
+      "expected": "relative cmd->ps1, first battery, LEEME, SHA, Windows test status"
+    },
+    {
+      "id": "D07",
+      "case": "ZIP not actually present",
+      "expected": "no sandbox link created from name or guess"
+    },
+    {
+      "id": "D08",
+      "case": "user requests only raw/literal output",
+      "expected": "respect higher-priority formatting; do not append unwanted links"
+    },
+    {
+      "id": "D09",
+      "case": "user requests explanation only",
+      "expected": "do not create files or invent package"
+    },
+    {
+      "id": "D10",
+      "case": "two projects in conversation",
+      "expected": "do not mix independent private artifacts or version lines"
+    },
+    {
+      "id": "D11",
+      "case": "pack contains current and prior real versions",
+      "expected": "VERSIONES/INVENTARIO/SHA256SUMS agree with ZIP members and bytes"
+    },
+    {
+      "id": "D12",
+      "case": "ZIP was verified only by checksum",
+      "expected": "integrity claim only; operation NOT_RUN"
+    }
+  ]
+}

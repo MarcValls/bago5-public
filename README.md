@@ -1,44 +1,45 @@
-# BAGO5 Público
+# BAGO5 Classic para Codex
 
-BAGO5 Público reúne 59 habilidades en español para planificar, desarrollar y comprobar trabajos en Codex. Esta guía te acompaña desde la instalación hasta tu primer guion para una exposición.
+BAGO5 Classic 0.4.59 te ayuda a organizar un proyecto en fases, ejecutar tareas y comprobar el resultado. Puedes empezar en una carpeta local y conectar tu propia Memoria Viva de ALIFE cuando la necesites.
 
-## 1. Encuentra el plugin
+## Instalar en Windows con doble clic
 
-- **Desde Alife Memories**, abre «Plugin BAGO5». Allí tienes el botón de descarga y el enlace al código y a la guía de GitHub. [Abrir la página del plugin](https://alifememories.com/plugin/)
-- **Desde GitHub**, puedes seguir los pasos de instalación de este README directamente. Si quieres examinar los archivos, descarga el ZIP y su suma SHA-256 desde la última versión. [Repositorio](https://github.com/MarcValls/bago5-public) · [ZIP](https://github.com/MarcValls/bago5-public/releases/latest/download/bago5-public.zip) · [SHA-256](https://github.com/MarcValls/bago5-public/releases/latest/download/bago5-public.zip.sha256)
-- **Si ya tienes el ZIP**, puedes extraerlo en una carpeta nueva y abrir `README.md` para leer esta misma guía. Extraerlo solo permite inspeccionar su contenido. La instalación en Codex se hace con los comandos del paso 2.
+1. [Descarga Instalar-BAGO5-Classic.cmd](https://github.com/MarcValls/bago5-public/releases/download/v0.4.59/Instalar-BAGO5-Classic.cmd) y ábrelo con doble clic. Windows abre una terminal. Si falta Git o Codex CLI, el instalador te ofrece instalar cada herramienta con WinGet y te pide permiso. También ofrece Python si lo necesitas para los hooks y auxiliares locales.
+2. Elige tu carpeta de trabajo. Codex se abre en modo de lectura y te explica los cambios que necesita hacer en tu perfil. Si es tu primera sesión, inicia sesión en el propio Codex. Autoriza la instalación cuando quieras continuar.
+3. Cuando Codex confirme la instalación, escribe `/quit`. El instalador comprueba la versión y te ofrece abrir una sesión nueva en tu carpeta con Classic cargado.
 
-## 2. Instala el plugin en Codex
+## Instalar desde la terminal
 
-Abre **PowerShell** en Windows o **Terminal** en macOS o Linux. Necesitas Git, Codex CLI y acceso a GitHub. Escribe `git --version` y `codex --version` para comprobar que ambas herramientas están disponibles. Si falta alguna, instala la que te indique la terminal antes de continuar.
-
-Ejecuta estas dos órdenes, una por línea:
+Con Git y Codex CLI instalados, ejecuta estas órdenes en PowerShell, macOS o Linux. La etiqueta fija la versión que vas a recibir.
 
 ```sh
-codex plugin marketplace add MarcValls/bago5-public
-codex plugin add bago5-public@bago5-public-tools
+codex plugin marketplace add MarcValls/bago5-public@v0.4.59
+codex plugin add bago5-governed-classic@bago5-public-tools
+codex plugin list --marketplace bago5-public-tools --json
 ```
 
-La primera registra el catálogo de BAGO5 Público. La segunda instala el plugin desde ese catálogo.
+En `installed` busca `bago5-governed-classic@bago5-public-tools`, versión `0.4.59`, con `enabled: true`. En Windows también puedes ejecutar `.\Instalar-BAGO5-Classic.cmd --solo-instalar` para instalar desde la terminal con confirmación y sin abrir el chat.
 
-## 3. Abre tu carpeta de trabajo
+Abre Codex en la carpeta de tu proyecto y escribe:
 
-Elige una carpeta donde quieras trabajar, por ejemplo una carpeta vacía llamada `exposicion-agua`. Abre una terminal en ella o usa `cd` para entrar en la ruta de la carpeta. Allí escribe `codex` y pulsa Intro para iniciar **una sesión nueva**. Si Codex solicita iniciar sesión, completa ese paso en tu propio cliente. A partir de aquí escribe las peticiones en el chat de Codex.
+```text
+Usa $bago5 para ayudarme a organizar este proyecto. Muéstrame el primer paso.
+```
 
-## 4. Prepara una exposición de cinco minutos sobre el ciclo del agua
+## Herramientas opcionales
 
-1. **Pide un guion en tres partes.** Copia esta petición:
+- Las habilidades de planificación y revisión funcionan con Codex. Para los auxiliares de Python y los hooks locales necesitas Python 3.11 o posterior. En Windows comprueba `py -3 --version`. Codex gestiona la confianza de los hooks.
+- Si quieres memoria persistente, elige tu espacio en [ALIFE Memoria Viva](https://alifememories.com/memoria-viva) y autoriza el conector en tu cliente. La instalación del plugin y el acceso a tu cuenta ALIFE son decisiones separadas.
+- El paquete público distribuye las habilidades Classic, sus scripts portables y los descriptores MCP. RC4 y los flujos que usan TaskStore necesitan una instalación externa identificada de BAGO Operating Suite. Los paquetes históricos, las fichas privadas, los datos de usuarios y los binarios del intérprete se excluyen de esta edición.
 
-   > Usa $bago5-govern para ayudarme a preparar una exposición oral de cinco minutos sobre el ciclo del agua para mi clase. Dame un guion en tres partes: una apertura que despierte curiosidad, una explicación con un ejemplo y un cierre que resuma la idea principal. Indica el tiempo aproximado de cada parte.
+## Instalaciones existentes y desinstalación
 
-2. **Lee el guion en voz alta** y cronometra cuánto tardas. Anota dónde te cuesta seguir la explicación o qué parte necesitas acortar. Tu ritmo real permite ajustar el texto.
+Si ya registraste el catálogo siguiendo la guía de 0.1.2, actualízalo con `codex plugin marketplace upgrade bago5-public-tools` y ejecuta la orden `codex plugin add` de arriba. Si fijaste expresamente el catálogo a una etiqueta antigua, conserva el nombre de esa etiqueta antes de cambiarla. Puedes registrar la nueva con `codex plugin marketplace remove bago5-public-tools` y la primera orden de instalación. Para volver, registra tu etiqueta anterior.
 
-3. **Pide que compruebe duración y contenidos.** Sustituye el espacio en blanco por tu tiempo:
+Classic tiene su propio identificador. Si ya usas BAGO5 Público 0.1.2, puedes conservarlo junto a Classic. Para quitar únicamente Classic:
 
-   > Usa $bago5-final-verifier para revisar este guion. Al leerlo he tardado __ minutos y segundos. Comprueba si las tres partes suman cinco minutos y si explico bien la evaporación, la condensación, la precipitación y el retorno del agua a ríos, suelos y mares. Si algo falla, señala el fragmento y propón un ajuste que pueda ensayar.
+```sh
+codex plugin remove bago5-governed-classic@bago5-public-tools
+```
 
-4. **Si quieres conservarlo**, pide a Codex: «Guarda la versión revisada en un archivo nuevo llamado `guion-ciclo-del-agua.md` dentro de esta carpeta y comprueba que puedo abrirlo». Si ya existe ese nombre, elige otro para preservar tu copia.
-
-Al terminar tendrás un guion con tres partes, una revisión de los conceptos y una estimación de la duración. Repite la lectura con cronómetro para comprobar si el ajuste funciona con tu ritmo. Si pediste guardarlo, podrás volver a abrir el archivo desde tu carpeta.
-
-El ejemplo funciona sin conectar una memoria externa. Si quieres usar una, configura su conector y los permisos de lectura o escritura para la cuenta y el proyecto elegidos. Otras habilidades disponibles son `$bago5-goal` para fijar criterios y `$bago5-workflow` para seleccionar especialistas. Para pedir ayuda, describe los pasos con datos de ejemplo. [Abrir una incidencia](https://github.com/MarcValls/bago5-public/issues)
+[Descarga del paquete y sumas SHA-256](https://github.com/MarcValls/bago5-public/releases/tag/v0.4.59) · [Guía de BAGO5 Público 0.1.2](plugins/bago5-public/README.md)

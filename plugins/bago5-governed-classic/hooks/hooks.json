@@ -1,0 +1,118 @@
+{
+  "description": "BAGO5 session continuity; local lifecycle hooks require host trust and an explicit project binding.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event SessionStart",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event SessionStart",
+            "timeout": 8,
+            "additionalContextLimit": 6500
+          }
+        ],
+        "matcher": "startup|resume|clear|compact|fork"
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event UserPromptSubmit",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event UserPromptSubmit",
+            "timeout": 8,
+            "additionalContextLimit": 6500
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PreToolUse",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PreToolUse",
+            "timeout": 8,
+            "additionalContextLimit": 6500
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PostToolUse",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PostToolUse",
+            "timeout": 8,
+            "additionalContextLimit": 6500
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PreCompact",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PreCompact",
+            "timeout": 8
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PostCompact",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event PostCompact",
+            "timeout": 8
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event Stop",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event Stop",
+            "timeout": 8
+          }
+        ]
+      }
+    ],
+    "Interrupt": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event Interrupt",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event Interrupt",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event SessionEnd",
+            "commandWindows": "py -3 -B -I -c \"import os,runpy; runpy.run_path(os.path.join(os.environ['PLUGIN_ROOT'],'skills','bago5-ganchos-sesion','scripts','native_hooks.py'),run_name='__main__')\" --host CODEX --event SessionEnd",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "bago5.vault-source.v1",
+  "source_plugin": "referencia-de-origen",
+  "source_version": "1.0.4",
+  "source_skill": "alife-vault",
+  "files": [
+    {
+      "source_path": "scripts/vault_bytes.py",
+      "source_sha256": "0a1c34f169b585631fcdeb683944a562ee7ada26335ce837c68a8ba4c91ce1a1",
+      "packaged_path": "scripts/vault_bytes.py",
+      "packaged_sha256": "0a1c34f169b585631fcdeb683944a562ee7ada26335ce837c68a8ba4c91ce1a1",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source_path": "tests/test_vault_bytes.py",
+      "source_sha256": "ba90ce3d770380db18cd54b87357b5c01722478f471f61b4a5ac30d56b8c308b",
+      "packaged_path": "tests/test_vault_bytes.py",
+      "packaged_sha256": "ba90ce3d770380db18cd54b87357b5c01722478f471f61b4a5ac30d56b8c308b",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source_path": "SKILL.md",
+      "source_sha256": "d00a6d3325a6550567fda36a59e7e9788c8f25538a82b3da6befe54fe169b559",
+      "packaged_path": "references/vault-protocol.md",
+      "packaged_sha256": "4589716f7d9bc2f0c2a8798aaf0a1b1f42f6e4a29d5931a6d2b623a90129ceda",
+      "adaptation": "relative helper link; native PHP identity profile and explicit file scopes"
+    }
+  ],
+  "scope": "client instructions and local bytes; no remote server, credentials or data",
+  "package_version": "0.4.57",
+  "native_skill_source_sha256": "efeb13f2e5d6d203493672ba35b085fdbf82ed48acdff1edfa033ab01cde1a10"
+}

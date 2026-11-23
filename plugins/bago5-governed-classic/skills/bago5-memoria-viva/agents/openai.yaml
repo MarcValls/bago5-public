@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-memoria-viva
+  short_description: "Leer o guardar recuerdos en el espacio nativo seleccionado"
+  default_prompt: "Leer o guardar recuerdos en el espacio nativo seleccionado."

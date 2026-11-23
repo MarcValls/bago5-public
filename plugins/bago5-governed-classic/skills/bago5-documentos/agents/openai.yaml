@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-documentos
+  short_description: "Preparar documentos y comprobar su presentación"
+  default_prompt: "Preparar documentos y comprobar su presentación."
