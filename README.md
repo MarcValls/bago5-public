@@ -4,7 +4,7 @@ BAGO5 Classic 0.4.59 te ayuda a organizar un proyecto en fases, ejecutar tareas 
 
 ## Instalar en Windows con doble clic
 
-1. [Descarga Instalar-BAGO5-Classic.cmd](https://github.com/MarcValls/bago5-public/releases/download/v0.4.59/Instalar-BAGO5-Classic.cmd) y ábrelo con doble clic. Windows abre una terminal. Si falta Git o Codex CLI, el instalador te ofrece instalar cada herramienta con WinGet y te pide permiso. También ofrece Python si lo necesitas para los hooks y auxiliares locales.
+1. [Descarga Instalar-BAGO5-Classic.cmd](https://github.com/MarcValls/bago5-public/releases/latest/download/Instalar-BAGO5-Classic.cmd) y ábrelo con doble clic. Windows abre una terminal. Si falta Git o Codex CLI, el instalador te ofrece instalar cada herramienta con WinGet y te pide permiso. También ofrece Python si lo necesitas para los hooks y auxiliares locales.
 2. Elige tu carpeta de trabajo. Codex se abre en modo de lectura y te explica los cambios que necesita hacer en tu perfil. Si es tu primera sesión, inicia sesión en el propio Codex. Autoriza la instalación cuando quieras continuar.
 3. Cuando Codex confirme la instalación, escribe `/quit`. El instalador comprueba la versión y te ofrece abrir una sesión nueva en tu carpeta con Classic cargado.
 
@@ -42,4 +42,4 @@ Classic tiene su propio identificador. Si ya usas BAGO5 Público 0.1.2, puedes c
 codex plugin remove bago5-governed-classic@bago5-public-tools
 ```
 
-[Descarga del paquete y sumas SHA-256](https://github.com/MarcValls/bago5-public/releases/tag/v0.4.59) · [Guía de BAGO5 Público 0.1.2](plugins/bago5-public/README.md)
+[Descarga del paquete y sumas SHA-256](https://github.com/MarcValls/bago5-public/releases/latest) · [Guía de BAGO5 Público 0.1.2](plugins/bago5-public/README.md)

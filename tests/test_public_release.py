@@ -1,6 +1,8 @@
 """Distribution checks for the public Codex marketplace (standard library only)."""
 import importlib.util
 import json
+import os
+import tempfile
 from pathlib import Path
 import re
 import subprocess
@@ -27,6 +29,26 @@ class PublicRelease(unittest.TestCase):
         version = json.loads(result.stdout)["package_version"]
         for path in [ROOT / "README.md", ROOT / "Instalar-BAGO5-Classic.cmd"]:
             self.assertIn("v" + version, path.read_text(encoding="utf8"))
+
+    @unittest.skipUnless(os.name == "nt", "Windows installer")
+    def test_git_long_paths_with_and_without_inherited_options(self):
+        installer = (ROOT / "Instalar-BAGO5-Classic.cmd").read_text(encoding="ascii")
+        start = installer.index("rem Git for Windows:")
+        end = installer.index('set "MODE=asistido"', start)
+        with tempfile.TemporaryDirectory() as temp:
+            check = Path(temp) / "comprobar.cmd"
+            check.write_text("@echo off\n" + installer[start:end] +
+                             "git config --get core.longpaths\n", encoding="ascii")
+            for inherited in (None, "'core.autocrlf=false'"):
+                env = os.environ.copy()
+                if inherited is None:
+                    env.pop("GIT_CONFIG_PARAMETERS", None)
+                else:
+                    env["GIT_CONFIG_PARAMETERS"] = inherited
+                with self.subTest(inherited=inherited):
+                    result = subprocess.run(["cmd", "/d", "/c", check.name], cwd=temp,
+                                            env=env, capture_output=True, text=True, check=True)
+                    self.assertEqual(result.stdout.strip(), "true")
 
     def test_routes_and_optional_modules(self):
         route = PLUGIN / "skills/bago5-flujo-trabajo/scripts/route_suite.py"
