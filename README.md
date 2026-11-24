@@ -5,8 +5,8 @@ BAGO5 Classic 0.4.59 te ayuda a organizar un proyecto en fases, ejecutar tareas 
 
 ## Complemento para ChatGPT Classic: BAGO5 ALIFE
 
-- [Descargar BAGO5 ALIFE Classic 0.4.60-rc.11 (ZIP)](https://raw.githubusercontent.com/MarcValls/bago5-public/main/dist/bago5-alife-classic-0.4.60-rc.11.zip)
-- SHA-256: `9e26debddebc556dad66571684c067a69dea00868ff16a5138b9566cd1386774` (archivo [dist/bago5-alife-classic-0.4.60-rc.11.zip.sha256](https://raw.githubusercontent.com/MarcValls/bago5-public/main/dist/bago5-alife-classic-0.4.60-rc.11.zip.sha256))
+- [Descargar BAGO5 ALIFE Classic 0.4.60-rc.12 (ZIP)](https://raw.githubusercontent.com/MarcValls/bago5-public/main/dist/bago5-alife-classic-0.4.60-rc.12.zip)
+- SHA-256: `08caa6a3958397d281e1899b4b2fc1102f35f9b9d25e6715bd875772bbc6de06` (archivo [dist/bago5-alife-classic-0.4.60-rc.12.zip.sha256](https://raw.githubusercontent.com/MarcValls/bago5-public/main/dist/bago5-alife-classic-0.4.60-rc.12.zip.sha256))
 - Ficha del servicio ALIFE: [alifememories.com](https://alifememories.com/soporte#classic)
 
 Este paquete corresponde al complemento de ChatGPT Classic y es independiente del plugin BAGO5 para Codex descrito abajo.
