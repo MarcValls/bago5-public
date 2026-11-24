@@ -1,0 +1,15 @@
+{
+  "schema": "bago5os.context-lifecycle.incident.v1",
+  "origin": "USER_WINDOWS_REPORT_2026_10_29",
+  "python": "3.14.5",
+  "platform": "win32",
+  "status": "FAIL",
+  "baseline_sha256": "3337ef769c9ad9c2356dbd5eedc2025be56c4bf746d2a879ad0d20ec6e71b0eb",
+  "baseline_distribution_verify": "FAIL",
+  "baseline_session_demo": "FAIL",
+  "new_tests": "PASS_25_SKIPPED_1",
+  "stop_e2e": "NOT_RUN",
+  "codex_cli": "NOT_RUN",
+  "identified_mechanism": "pathlib.Path ordering differs between Windows/POSIX; serialized identity list assumes POSIX order",
+  "claim": "CAUSAL_HYPOTHESIS_SUPPORTED_BY_STATIC_REPRODUCTION_AND_SOURCE; LIVE_WINDOWS_RETEST_PENDING"
+}

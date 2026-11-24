@@ -1,0 +1,141 @@
+{
+  "schema": "bago5.turn-decision.release-evidence.v1",
+  "version": "0.4.28",
+  "base_version": "0.4.26",
+  "base_release_id": "pluginrel_6afc9d306da88191a9ec28cf6f933a63",
+  "scope": "Local implementation of turn decision policy, shared instructions and read-only Suite TaskStore bridge; no external services or controller installation.",
+  "verification": {
+    "created_at": "2026-11-18T00:39:46.496319+00:00",
+    "python": "3.12.14",
+    "command": "python -B -m unittest discover -s skills/bago5-govern/tests -v",
+    "returncode": 0,
+    "test_count": 89,
+    "seconds": 7.548,
+    "result": "PASS",
+    "source_stable_during_tests": true,
+    "tested_source_sha256": {
+      "skills/bago5-govern/scripts/turn_decision.py": "05c5caa3cd249184eb918120dfde054b683ea3c8bfb0dafadbd845d7ef650a81",
+      "skills/bago5-govern/scripts/runtime_turn_decision.py": "00f52ae3998fa6284aa9f67eebb910a3810f5aaf2eff49c5955371e37457dc07",
+      "skills/bago5-govern/tests/test_turn_decision.py": "31f147c441bae9c650d0408c7e83065fb7617f940413dfed4ecf11b3f3d8826b",
+      "skills/bago5-govern/tests/test_runtime_turn_decision.py": "519fdc0867c099bdc8a779a0b1d4915729bda2b86c3fb6b1c15bcacbbae16f6c"
+    },
+    "log_sha256": "b3b74ec969ae2ef7de50eab9699c61dc123096126346973866429fa4473c1a36",
+    "groups": {
+      "policy": 46,
+      "runtime_adapter": 31,
+      "existing_governance": 12
+    }
+  },
+  "test_log": "turn-decision-0.4.28-tests.log",
+  "runtime_identity": {
+    "command": "python -B optional-runtime/bago-operating-suite/scripts/suite_orchestrator.py identity",
+    "returncode": 0,
+    "result": {
+      "identity": {
+        "candidate": "UNIFIED-CODEX-ENTRYPOINT",
+        "display_name": "BAGO Operating Suite 1.4.8",
+        "identity_sha256": "c4b084678e3d3059fb0c7b0b91c26de365e152910773f06fa9978ce5271d27cd",
+        "package_id": "bago-operating-suite",
+        "payload_files": 601,
+        "payload_sha256": "60794235ba0febf81476bc12e3736493bae0d63812ba282db26e944b7c806f74",
+        "release_id": "BAGO-SUITE-148-UNIFIED-CODEX-20261104",
+        "schema": "bago.suite.candidate-identity.v1",
+        "scope": "exact installed skill bytes; unsigned integrity, not publisher authentication",
+        "version": "1.4.8"
+      },
+      "status": "PASS"
+    }
+  },
+  "preservation": {
+    "base_version": "0.4.26",
+    "candidate_version": "0.4.28",
+    "base_files": 996,
+    "candidate_files": 1015,
+    "retained": 996,
+    "removed": [],
+    "changed": [
+      ".codex-plugin/plugin.json",
+      "plugin.json",
+      "skills/bago5-cognitive-mission/SKILL.md",
+      "skills/bago5-goal/SKILL.md",
+      "skills/bago5-govern/SKILL.md",
+      "skills/bago5-govern/references/autonomia-recuperacion.md",
+      "skills/bago5-govern/references/autonomia-vectores.json",
+      "skills/bago5-govern/references/core/CLOSURE_PROTOCOL.md",
+      "skills/bago5-govern/references/core/EVIDENCE_PROTOCOL.md",
+      "skills/bago5-govern/tests/test_autonomia_structure.py",
+      "skills/bago5-phased/SKILL.md",
+      "skills/bago5-phased/references/agentic-plan.md",
+      "skills/bago5-procedural-behavior/SKILL.md",
+      "skills/bago5-runtime-bridge/SKILL.md"
+    ],
+    "added": [
+      "skills/bago5-govern/evidence/turn-decision-0.4.28-tests.log",
+      "skills/bago5-govern/evidence/turn-decision-0.4.28.json",
+      "skills/bago5-govern/references/turn-decision.md",
+      "skills/bago5-govern/references/turn-decision.schema.json",
+      "skills/bago5-govern/scripts/runtime_turn_decision.py",
+      "skills/bago5-govern/scripts/turn_decision.py",
+      "skills/bago5-govern/tests/fixtures/host-probe/inventory.json",
+      "skills/bago5-govern/tests/fixtures/host-probe/migration_001.sql",
+      "skills/bago5-govern/tests/fixtures/host-probe/migration_002.sql",
+      "skills/bago5-govern/tests/fixtures/host-probe/migration_003.sql",
+      "skills/bago5-govern/tests/fixtures/host-probe/migration_004.sql",
+      "skills/bago5-govern/tests/fixtures/host-probe/migration_005.sql",
+      "skills/bago5-govern/tests/fixtures/host-probe/request.json",
+      "skills/bago5-govern/tests/fixtures/turn-decision/blocked-panel.json",
+      "skills/bago5-govern/tests/fixtures/turn-decision/close-identification.json",
+      "skills/bago5-govern/tests/fixtures/turn-decision/continue-work.json",
+      "skills/bago5-govern/tests/fixtures/turn-decision/stop-before-second-step.json",
+      "skills/bago5-govern/tests/test_runtime_turn_decision.py",
+      "skills/bago5-govern/tests/test_turn_decision.py"
+    ],
+    "portable_skills_preserved": 61,
+    "runtime_files_unchanged": true,
+    "manifests_preserved_except_version": true,
+    "app_binding_preserved": true,
+    "changed_document_links": "PASS",
+    "schema_and_four_fixtures": "PASS",
+    "python_compile": "PASS"
+  },
+  "independent_review": {
+    "role": "separate reviewing agent; no candidate edits",
+    "result": "GO_WITHIN_REVIEWED_SCOPE",
+    "open_p0_p1": 0,
+    "tests_reexecuted": 77,
+    "coverage_note": "These 77 repeat covered tests; they are not added to the 89 unique tests. Additional adversarial reproductions reviewed dependencies, lineage order, metadata and closure scope.",
+    "documented_limit": "JSON Schema structural validation accepts 1.0 as an integer; runtime requires strict integer serialization."
+  },
+  "behavior_probe": {
+    "kind": "single delegated host session, read-only synthetic task",
+    "task": "Resolve inventory and compare all five migration hashes in one interaction",
+    "result": "All five compared, four matched and migration-4 mismatched; audit completed with product-integrity FAIL preserved.",
+    "decision_observed": "CLOSE",
+    "continued_without_user_followup": true,
+    "agent_reported_tool_outputs": [
+      "2c3a85",
+      "ff01e0"
+    ],
+    "root_recheck_tool_output": "31e79c",
+    "fixture_directory": "../tests/fixtures/host-probe",
+    "fixture_sha256": {
+      "migration_001.sql": "996da6894cbebe4de831322027009acdc00cfc11f7d1f5c18cc03b2228a3520d",
+      "migration_004.sql": "3bf9d9ba93904c981b191917b9bc318e869225481d9cb276ed25cc74facc235f",
+      "inventory.json": "235312d2b9fc865ddd5af525287e5641c65955883b4826915893516f5281a275",
+      "migration_003.sql": "e5534644109a093d0532d6f7dcd689a4d5d0182a9ff66389e730da55a69008a1",
+      "migration_005.sql": "0d6e004759ae8af8985ec2c5bc51360ce3cf7f207194b2d45c1ee2d16167f4fa",
+      "migration_002.sql": "041afbdb80af4010ae549c17e151b1573b8e9e6d30fa7d21a1c398c89dd5c69d",
+      "request.json": "3b55f6e6e53b8a3b7c4e04620714c984f3854079af43e0a2388d6af7d3467d61"
+    },
+    "limit": "Controlled single-session observation; not universal host invocation or proof of behavior across all hosts."
+  },
+  "limits": [
+    "Receipts are caller-supplied metadata, not authenticated permission or evidence.",
+    "CONTINUE does not grant admission to a native runtime action.",
+    "No automatic final-response hook or background process is installed.",
+    "Classic, Codex and Windows fresh-session conformance is NOT_RUN.",
+    "Generalizing the ConfigManager cognitive mission is deferred.",
+    "No memories, database contents, website deployment, ACL or app endpoints were changed."
+  ],
+  "publication": "PREPARED at packaging; verify saved release separately."
+}

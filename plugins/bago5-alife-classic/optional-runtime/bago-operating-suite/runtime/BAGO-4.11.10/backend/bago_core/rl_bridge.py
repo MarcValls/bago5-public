@@ -1,0 +1,138 @@
+from __future__ import annotations
+
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+from .user_state_paths import state_root
+
+try:
+    from .bago_true_bridge import detect_bago_true
+except ImportError:
+    from bago_true_bridge import detect_bago_true
+
+DEFAULT_MODE = "shadow"
+ALLOWED_MODES = {"off", "shadow"}
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+class RLBridge:
+    """Shadow-first RL bridge. It records observations; it never executes actions."""
+
+    _CREATED_VERSION = "4.0.0"  # Version en que fue creado este archivo
+
+    def __init__(self, base_path: str | Path, true_root: str | Path | None = None) -> None:
+        self.base_path = Path(base_path)
+        self.true_root = true_root
+        # The trainer and bridge must consume the same canonical user state.
+        # Historical .gabo files are not read, moved or removed here.
+        self.state_dir = state_root()
+        self.state_file = self.state_dir / "rl_bridge.json"
+        self.transition_log = self.state_dir / "rl_transitions.jsonl"
+
+    def _read_state(self) -> dict[str, Any]:
+        if not self.state_file.exists():
+            return {
+                "mode": DEFAULT_MODE,
+                "enabled": True,
+                "can_execute": False,
+                "updated_at": None,
+            }
+        try:
+            data = json.loads(self.state_file.read_text(encoding="utf-8"))
+        except Exception:
+            data = {}
+        mode = data.get("mode") if data.get("mode") in ALLOWED_MODES else DEFAULT_MODE
+        return {
+            "mode": mode,
+            "enabled": mode == "shadow",
+            "can_execute": False,
+            "updated_at": data.get("updated_at"),
+        }
+
+    def _write_state(self, mode: str) -> dict[str, Any]:
+        if mode not in ALLOWED_MODES:
+            raise ValueError(f"unsupported RL mode: {mode}")
+        from bago_core.atomic_json import write_json_atomic
+
+        payload = {
+            "mode": mode,
+            "enabled": mode == "shadow",
+            "can_execute": False,
+            "updated_at": _utc_now(),
+        }
+        receipt = write_json_atomic(self.state_file, payload)
+        if not isinstance(receipt, dict) or receipt.get("ok") is not True:
+            raise RuntimeError("RL state write returned no success receipt")
+        return payload
+
+    def append_transition(self, event: dict[str, Any]) -> None:
+        from bago_core.atomic_json import append_text_durable
+
+        if not isinstance(event, dict):
+            raise ValueError("RL transition must be an object")
+        payload = {
+            "ts": _utc_now(),
+            **event,
+            "can_execute": False,
+        }
+        receipt = append_text_durable(self.transition_log, json.dumps(payload, ensure_ascii=False) + "\n")
+        if not isinstance(receipt, dict) or receipt.get("ok") is not True:
+            raise RuntimeError("RL transition write returned no success receipt")
+
+    def status(self) -> dict[str, Any]:
+        state = self._read_state()
+        external = detect_bago_true(self.true_root)
+        try:
+            from .rl_policies import bc_policy_path
+            local_policy_path = bc_policy_path(self.base_path)
+        except Exception:
+            local_policy_path = None
+        return {
+            **state,
+            "state_file": str(self.state_file),
+            "transition_log": str(self.transition_log),
+            "external_rl": external["rl"],
+            "local_policy": {
+                "available": bool(local_policy_path and local_policy_path.is_file()),
+                "path": str(local_policy_path) if local_policy_path else "",
+            },
+            "rules": {
+                "executes_actions": False,
+                "default_mode": DEFAULT_MODE,
+                "allowed_modes": sorted(ALLOWED_MODES),
+            },
+        }
+
+    def shadow(self, enabled: bool) -> dict[str, Any]:
+        mode = "shadow" if enabled else "off"
+        state = self._write_state(mode)
+        self.append_transition({
+            "kind": "mode_change",
+            "mode": mode,
+            "status": "enabled" if enabled else "disabled",
+            "source": "cli",
+        })
+        return self.status() | state
+
+def render_status(status: dict[str, Any]) -> str:
+    external = status.get("external_rl", {})
+    local_policy = status.get("local_policy", {})
+    lines = [
+        "BAGO RL STATUS",
+        "-" * 40,
+        f"mode       : {status['mode']}",
+        f"enabled    : {'yes' if status['enabled'] else 'no'}",
+        f"can execute: {'yes' if status['can_execute'] else 'no'}",
+        f"external rl: {'available' if external.get('available') else 'unavailable'}",
+        f"shadow src : {'yes' if external.get('shadow_adapter') else 'no'}",
+        f"policy src : {'yes' if external.get('policies_py') else 'no'}",
+        f"local policy: {'yes' if local_policy.get('available') else 'no'}",
+        f"policy file : {local_policy.get('path', '')}",
+        f"state file : {status['state_file']}",
+        f"log file   : {status['transition_log']}",
+        "rule       : RL observes/recommends only; v4 decides",
+    ]
+    return "\n".join(lines)

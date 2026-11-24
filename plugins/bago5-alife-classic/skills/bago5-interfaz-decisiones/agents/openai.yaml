@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-interfaz-decisiones
+  short_description: Implementa interfaces de inspección de decisiones
+  default_prompt: Usa $bago5-interfaz-decisiones. Implementa interfaces para inspeccionar conclusiones, evidencias,
+    acciones y recibos según los contratos acordados.

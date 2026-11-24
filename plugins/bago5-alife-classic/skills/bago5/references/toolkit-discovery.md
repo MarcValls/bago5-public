@@ -1,0 +1,7 @@
+# Descubrimiento de fuentes y adaptadores
+
+Seleccionar primero el proyecto. Consultar ROUTES.json para capacidades ya incluidas; evitar duplicar motores o cargar toda una suite por defecto. En un proyecto BAGO/Copilot que realmente los contenga, consultar .github/copilot-kit/README.md, .github/agents, .github/prompts, .github/instructions y backend/.bago/{workflows,roles,prompts,templates,tools,mcp}, junto a tools.manifest.json. Estas rutas son fuentes condicionales, no recursos incluidos ni autoridad de otros proyectos.
+
+Leer solo los activos pertinentes, resolver propietario y vigencia, reutilizar antes de adaptar. Mantener .gabo/copilot separado del estado .bago y de las fuentes backend/.bago. Configuraciones .codex, Pi, hooks y extension.mjs requieren adaptacion y pruebas en su host; copiar archivos no registra herramientas. No cargar estado/credenciales de otro proyecto. Registrar inspeccion/adaptacion/carga/ejecucion por separado.
+
+Usar las rutas de auditoria para lectura, workers para cambios autorizados, frontend para UI y bago5-ingenieria-repositorios para baseline y gobierno. Auditores no reparan. Revisar permisos, rutas de trabajo y fallo seguro antes de habilitar integraciones. No exponer shell arbitrario o rutas de scripts como herramientas de invocacion automatica. Si la funcion no existe o el host no la soporta, informar NOT_AVAILABLE/NOT_RUN con la alternativa concreta, sin simularla.

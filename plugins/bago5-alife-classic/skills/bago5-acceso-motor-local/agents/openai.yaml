@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-acceso-motor-local
+  short_description: "Resolver el motor local autorizado y comprobar su disponibilidad"
+  default_prompt: "Resolver el motor local autorizado y comprobar su disponibilidad."

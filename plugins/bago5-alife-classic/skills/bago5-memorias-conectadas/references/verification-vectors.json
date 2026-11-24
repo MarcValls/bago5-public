@@ -1,0 +1,20 @@
+{
+  "schema": "bago5-mvf-checks.v0.1",
+  "status": "EXECUTABLE_LOCAL_TESTS",
+  "positive": [
+    {"id": "MVF-01", "test": "test_registry_persistent_and_distinct", "expected": "Per-user aliases survive restart; never become VERIFIED by selection"},
+    {"id": "MVF-02", "test": "test_invite_requires_authenticated_recipient_and_token", "expected": "Recipient plus token required"},
+    {"id": "MVF-03", "test": "test_editor_can_write_only_granted_project", "expected": "Editor scoped write"},
+    {"id": "MVF-04", "test": "test_pack_export_import_preview_repeat_and_history", "expected": "Dry-run, commit, history and idempotence"},
+    {"id": "MVF-05", "test": "test_origin_provenance_transitive_through_two_imports", "expected": "Origin identity retained"}
+  ],
+  "negative": [
+    {"id": "MVF-06", "test": "test_viewer_denied_write_and_other_scope", "expected": "ACL blocks write"},
+    {"id": "MVF-07", "test": "test_revoke_invite_also_revokes_grant", "expected": "Server revocation enforces lost access"},
+    {"id": "MVF-08", "test": "test_expired_invite", "expected": "Expired invitation denied"},
+    {"id": "MVF-09", "test": "test_pack_tamper_rejected", "expected": "Hash mismatch denies import"},
+    {"id": "MVF-10", "test": "test_import_conflict_is_atomic", "expected": "Atomic fail-closed import"},
+    {"id": "MVF-11", "test": "test_connections_reject_alias_reuse_and_secret_url", "expected": "Alias and credentials not overwritten or exposed"}
+  ],
+  "not_run": ["External Sites onboarding", "Remote share on existing Site", "OAuth via Codex", "A new ChatGPT session activating the published plugin", "Remote network / TLS deployment"]
+}

@@ -1,0 +1,29 @@
+test_01_seal_json_no_manual_hash_and_verify (test_guard.EvidenceGuardTests.test_01_seal_json_no_manual_hash_and_verify) ... ok
+test_02_prevent_overwriting_existing_report (test_guard.EvidenceGuardTests.test_02_prevent_overwriting_existing_report) ... ok
+test_03_css_65_char_redundant_d_rejected_with_diagnostic (test_guard.EvidenceGuardTests.test_03_css_65_char_redundant_d_rejected_with_diagnostic) ... ok
+test_04_log_65_char_redundant_1_rejected_with_diagnostic (test_guard.EvidenceGuardTests.test_04_log_65_char_redundant_1_rejected_with_diagnostic) ... ok
+test_05_64_char_wrong_hash_rejected (test_guard.EvidenceGuardTests.test_05_64_char_wrong_hash_rejected) ... ok
+test_06_source_changed_after_receipt_rejected (test_guard.EvidenceGuardTests.test_06_source_changed_after_receipt_rejected) ... ok
+test_07_control_chars_in_markdown_rejected (test_guard.EvidenceGuardTests.test_07_control_chars_in_markdown_rejected) ... ok
+test_08_escaped_control_in_json_rejected (test_guard.EvidenceGuardTests.test_08_escaped_control_in_json_rejected) ... ok
+test_09_duplicate_json_keys_rejected (test_guard.EvidenceGuardTests.test_09_duplicate_json_keys_rejected) ... ok
+test_10_nonstandard_json_number_rejected (test_guard.EvidenceGuardTests.test_10_nonstandard_json_number_rejected) ... ok
+test_11_path_traversal_and_absolute_paths_rejected (test_guard.EvidenceGuardTests.test_11_path_traversal_and_absolute_paths_rejected) ... ok
+test_12_symlink_rejected (test_guard.EvidenceGuardTests.test_12_symlink_rejected) ... ok
+test_13_directory_symlink_rejected (test_guard.EvidenceGuardTests.test_13_directory_symlink_rejected) ... ok
+test_14_manifest_generation_and_15_files_verify (test_guard.EvidenceGuardTests.test_14_manifest_generation_and_15_files_verify) ... ok
+test_15_manifest_source_change_detected (test_guard.EvidenceGuardTests.test_15_manifest_source_change_detected) ... ok
+test_16_modified_manifest_detected (test_guard.EvidenceGuardTests.test_16_modified_manifest_detected) ... ok
+test_17_invalid_extra_hash_claim_rejected (test_guard.EvidenceGuardTests.test_17_invalid_extra_hash_claim_rejected) ... ok
+test_18_nonempty_template_digest_cannot_be_replaced (test_guard.EvidenceGuardTests.test_18_nonempty_template_digest_cannot_be_replaced) ... ok
+test_19_wrong_size_field_detected (test_guard.EvidenceGuardTests.test_19_wrong_size_field_detected) ... ok
+test_20_markdown_tampering_detected (test_guard.EvidenceGuardTests.test_20_markdown_tampering_detected) ... ok
+test_21_template_empty_hash_cover_fail (test_guard.EvidenceGuardTests.test_21_template_empty_hash_cover_fail) ... ok
+test_22_byte_only_source_allowed_no_text_assumptions (test_guard.EvidenceGuardTests.test_22_byte_only_source_allowed_no_text_assumptions) ... ok
+test_23_explicit_15_claims_required_catches_2_only (test_guard.EvidenceGuardTests.test_23_explicit_15_claims_required_catches_2_only) ... ok
+test_24_unbound_numerical_hash_claim_rejected (test_guard.EvidenceGuardTests.test_24_unbound_numerical_hash_claim_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.087s
+
+OK

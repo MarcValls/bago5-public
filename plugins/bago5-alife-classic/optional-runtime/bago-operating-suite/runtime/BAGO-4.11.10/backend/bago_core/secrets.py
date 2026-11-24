@@ -1,0 +1,208 @@
+"""Backend-owned secret storage.
+
+API surfaces may call this module, but the session kernel never imports an
+HTTP/API implementation to resolve secrets.
+"""
+
+from __future__ import annotations
+
+import base64
+import ctypes
+import hashlib
+import os
+import re
+import stat
+import sys
+from ctypes import wintypes
+from pathlib import Path
+from typing import Optional
+
+from bago_core.user_state_paths import secrets_root, user_read_candidates
+
+
+class _DATA_BLOB(ctypes.Structure):
+    _fields_ = [("cbData", wintypes.DWORD), ("pbData", ctypes.POINTER(ctypes.c_byte))]
+
+
+def _dpapi_protect(plaintext: bytes) -> bytes:
+    source = _DATA_BLOB(len(plaintext), ctypes.cast(ctypes.c_char_p(plaintext), ctypes.POINTER(ctypes.c_byte)))
+    target = _DATA_BLOB()
+    if not ctypes.windll.crypt32.CryptProtectData(ctypes.byref(source), None, None, None, None, 0, ctypes.byref(target)):
+        raise OSError("CryptProtectData falló: " + ctypes.FormatError())
+    try:
+        return bytes(ctypes.string_at(target.pbData, target.cbData))
+    finally:
+        ctypes.windll.kernel32.LocalFree(target.pbData)
+
+
+def _dpapi_unprotect(ciphertext: bytes) -> bytes:
+    source = _DATA_BLOB(len(ciphertext), ctypes.cast(ctypes.c_char_p(ciphertext), ctypes.POINTER(ctypes.c_byte)))
+    target = _DATA_BLOB()
+    if not ctypes.windll.crypt32.CryptUnprotectData(ctypes.byref(source), None, None, None, None, 0, ctypes.byref(target)):
+        raise OSError("CryptUnprotectData falló: " + ctypes.FormatError())
+    try:
+        return bytes(ctypes.string_at(target.pbData, target.cbData))
+    finally:
+        ctypes.windll.kernel32.LocalFree(target.pbData)
+
+
+def _fallback_key() -> bytes:
+    import hashlib
+
+    user = os.environ.get("USER") or os.environ.get("USERNAME") or "anon"
+    host = os.uname().nodename if hasattr(os, "uname") else "host"
+    return hashlib.sha256(f"{user}@{host}".encode("utf-8")).digest()
+
+
+def _fallback_protect(plaintext: bytes) -> bytes:
+    key = _fallback_key()
+    encrypted = bytes(value ^ key[index % len(key)] for index, value in enumerate(plaintext))
+    return b"FALLBACK:" + base64.b64encode(encrypted)
+
+
+def _fallback_unprotect(ciphertext: bytes) -> bytes:
+    if not ciphertext.startswith(b"FALLBACK:"):
+        raise ValueError("Cifrado no es fallback")
+    key = _fallback_key()
+    encrypted = base64.b64decode(ciphertext[len(b"FALLBACK:") :])
+    return bytes(value ^ key[index % len(key)] for index, value in enumerate(encrypted))
+
+
+def _is_windows() -> bool:
+    return sys.platform.startswith("win")
+
+
+def _safe_key_name(key: str) -> str:
+    safe = re.sub(r"[^a-z0-9-]", "-", key.lower()).strip("-") or "key"
+    return f"{safe}.bin"
+
+
+def _key_to_path(key: str) -> Path:
+    return secrets_root() / _safe_key_name(key)
+
+
+def secret_state_digest(store: "SecretStore", key: str) -> str:
+    """Return identity of the canonical encrypted secret bytes without decrypting them."""
+    path = Path(store.path_for_key(key)).expanduser()
+    try:
+        metadata = path.lstat()
+    except FileNotFoundError:
+        return "missing"
+    except OSError as exc:
+        raise OSError(f"Cannot inspect canonical secret state: {exc}") from exc
+    is_junction = getattr(path, "is_junction", None)
+    if path.is_symlink() or bool(is_junction and is_junction()) or bool(
+        getattr(metadata, "st_file_attributes", 0) & 0x400
+    ):
+        raise OSError("Canonical secret state cannot be a link or reparse point")
+    if not path.is_file():
+        raise OSError("Canonical secret state must be a regular file")
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _key_read_candidates(key: str) -> tuple[Path, ...]:
+    return user_read_candidates(Path("secrets") / _safe_key_name(key))
+
+
+class SecretStoreError(RuntimeError):
+    """Base error for canonical secret entries that cannot be read safely."""
+
+
+class SecretStoreReadError(SecretStoreError):
+    """A secret entry exists but its bytes cannot be read safely."""
+
+
+class SecretDecryptionError(SecretStoreError):
+    """A secret entry exists but cannot be decrypted or decoded."""
+
+
+class SecretStore:
+    """Read-only OS-bound secret store; writes belong to ``credential.write``."""
+
+    def _platform_is_windows(self) -> bool:
+        """Keep platform selection overridable for compatibility facades/tests."""
+        return _is_windows()
+
+    def path_for_key(self, key: str) -> Path:
+        """Return the canonical file identity without creating its parent."""
+        return _key_to_path(key)
+
+    def protect_secret(self, value: str) -> bytes:
+        if not isinstance(value, str):
+            raise TypeError("value debe ser str")
+        raw = value.encode("utf-8")
+        return _dpapi_protect(raw) if self._platform_is_windows() else _fallback_protect(raw)
+
+    def set_secret(self, key: str, value: str) -> None:
+        raise RuntimeError("La escritura directa de secretos está deshabilitada; use credential.write.")
+
+    def get_secret(self, key: str) -> Optional[str]:
+        """Return ``None`` only when every canonical/legacy candidate is absent.
+
+        A present but unreadable or undecryptable candidate raises a typed error
+        instead of allowing callers to select an older credential.
+        """
+        for path in _key_read_candidates(key):
+            try:
+                metadata = path.lstat()
+            except FileNotFoundError:
+                continue
+            except OSError:
+                raise SecretStoreReadError(
+                    "Canonical secret entry cannot be inspected."
+                ) from None
+            is_junction = getattr(path, "is_junction", None)
+            if (
+                not stat.S_ISREG(metadata.st_mode)
+                or path.is_symlink()
+                or bool(is_junction and is_junction())
+                or bool(getattr(metadata, "st_file_attributes", 0) & 0x400)
+            ):
+                raise SecretStoreReadError(
+                    "Canonical secret entry is not a regular file."
+                )
+            try:
+                cipher = path.read_bytes()
+            except OSError:
+                raise SecretStoreReadError(
+                    "Canonical secret entry cannot be read."
+                ) from None
+            try:
+                plain = _dpapi_unprotect(cipher) if self._platform_is_windows() else _fallback_unprotect(cipher)
+                value = plain.decode("utf-8")
+            except Exception:
+                raise SecretDecryptionError(
+                    "Canonical secret entry cannot be decrypted."
+                ) from None
+            if not value:
+                raise SecretDecryptionError(
+                    "Canonical secret entry contains no usable value."
+                )
+            return value
+        return None
+
+    def delete_secret(self, key: str) -> bool:
+        raise RuntimeError("El borrado directo de secretos está deshabilitado; use credential.write.")
+
+    def list_keys(self) -> list[str]:
+        keys: set[str] = set()
+        for directory in user_read_candidates("secrets"):
+            if not directory.is_dir():
+                continue
+            for path in directory.glob("*.bin"):
+                if path.stem:
+                    keys.add(path.stem)
+        return sorted(keys)
+
+    def has_secret(self, key: str) -> bool:
+        return any(path.exists() for path in _key_read_candidates(key))
+
+
+_default: SecretStore | None = None
+
+
+def get_secret_store() -> SecretStore:
+    global _default
+    if _default is None:
+        _default = SecretStore()
+    return _default

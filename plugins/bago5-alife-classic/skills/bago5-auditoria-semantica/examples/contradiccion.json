@@ -1,0 +1,44 @@
+{
+  "claims": [
+    {
+      "source": "ejemplo-propuesto:1",
+      "quote": "El modo está activo.",
+      "context": {
+        "project": "demostración sintética",
+        "referent": "switch",
+        "time": "same",
+        "condition": "always",
+        "modality": "fact",
+        "scope": "v1"
+      },
+      "atoms": {
+        "p": "El modo está activo en el contexto indicado"
+      },
+      "expression": "p",
+      "mapping": "reviewed",
+      "assumptions": [
+        "Pure stable booleans"
+      ]
+    },
+    {
+      "source": "ejemplo-propuesto:2",
+      "quote": "El modo no está activo.",
+      "context": {
+        "project": "demostración sintética",
+        "referent": "switch",
+        "time": "same",
+        "condition": "always",
+        "modality": "fact",
+        "scope": "v1"
+      },
+      "atoms": {
+        "p": "El modo está activo en el contexto indicado"
+      },
+      "expression": "not p",
+      "mapping": "reviewed",
+      "assumptions": [
+        "Pure stable booleans"
+      ]
+    }
+  ]
+}

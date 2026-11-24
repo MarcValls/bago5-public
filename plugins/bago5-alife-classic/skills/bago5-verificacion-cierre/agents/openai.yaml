@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-verificacion-cierre
+  short_description: Comprueba el cierre y el resultado en el destino real
+  default_prompt: Usa $bago5-verificacion-cierre. Verifica cierre, regresiones y resultado en el destino real, sin
+    reparar la candidata ni sustituir pruebas por recibos.

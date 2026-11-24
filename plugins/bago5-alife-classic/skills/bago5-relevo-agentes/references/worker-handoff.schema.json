@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bago5.local/schemas/relay-handoff.v1",
+  "title": "BAGO5 Codex Worker Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "work_item_id",
+    "candidate",
+    "scope",
+    "acceptance",
+    "status"
+  ],
+  "properties": {
+    "work_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "PREPARED",
+        "AWAITING_HOST_WORKER",
+        "EXECUTED",
+        "VERIFIED",
+        "BLOCKED",
+        "STOPPED"
+      ]
+    },
+    "worker_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "changed_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "digest": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([A-Fa-f0-9]{64})?$"
+    }
+  }
+}

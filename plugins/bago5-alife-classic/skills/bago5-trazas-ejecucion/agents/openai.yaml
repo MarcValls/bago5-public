@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-trazas-ejecucion
+  short_description: Relaciona pasos, herramientas y acciones mediante trazas
+  default_prompt: Usa $bago5-trazas-ejecucion. Vincula pasos del agente y llamadas a herramientas con conclusiones,
+    acciones y recibos mediante trazas.

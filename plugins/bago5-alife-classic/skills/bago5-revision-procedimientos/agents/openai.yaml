@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-revision-procedimientos
+  short_description: Revisa procedimientos, permisos y transiciones de estado
+  default_prompt: Usa $bago5-revision-procedimientos. Revisa procedimientos, transiciones de estado, permisos, STOP
+    y evidencias para detectar fallos de conducta.

@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-auditoria-arquitectura
+  short_description: Revisa arquitectura y dependencias sin editar
+  default_prompt: Usa $bago5-auditoria-arquitectura. Revisa arquitectura, responsabilidades y dependencias del repositorio
+    sin modificar sus archivos.

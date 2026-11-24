@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: false
+interface:
+  display_name: $bago5-contrato-canonico
+  short_description: Contrasta una instalación con su contrato canónico
+  default_prompt: Usa $bago5-contrato-canonico. Compara una instalación BAGO con su contrato canónico y prepara
+    o aplica correcciones autorizadas.

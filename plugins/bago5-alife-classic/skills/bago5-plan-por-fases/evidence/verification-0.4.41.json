@@ -1,0 +1,118 @@
+{
+  "schema": "bago5.release-verification.v1",
+  "candidate_version": "0.4.41",
+  "base_version": "0.4.40",
+  "base_release_id": "pluginrel_6affb909b45c8191bde90dcbb0a06da9",
+  "initial_version": "0.4.39",
+  "scope": "Local verification before publishing; tests of phase decisions, version identity, generic clone configuration, runtime identity and session controls",
+  "captured_at": "2026-11-20T03:09:13.197205+00:00",
+  "tests": [
+    {
+      "suite": "core",
+      "tests": 192,
+      "status": "PASS",
+      "output": "----------------------------------------------------------------------\nRan 192 tests in 14.637s\n\nOK\n",
+      "log_sha256": "95c6c3cc73979fb351f88efa924b1ed76e8bf4e41ad8453f1b682be92bbffd7b"
+    },
+    {
+      "suite": "session",
+      "tests": 136,
+      "status": "PASS",
+      "output": "----------------------------------------------------------------------\nRan 136 tests in 19.723s\n\nOK\n",
+      "log_sha256": "7925dba46a6c456379b9a8e9f20fc5aea38c2e681b325aff0179f1254c9e5a0f"
+    },
+    {
+      "suite": "phase",
+      "tests": 30,
+      "status": "PASS",
+      "output": "----------------------------------------------------------------------\nRan 30 tests in 0.956s\n\nOK\n",
+      "log_sha256": "4d6cbfc1c6dfb15798c12eded5e910c6d03db09b1373b1afc1eb6a133e708c21"
+    },
+    {
+      "suite": "traceability",
+      "tests": 15,
+      "status": "PASS",
+      "output": "test_event_object_must_exist (__main__.ContractV2Tests.test_event_object_must_exist) ... ok\ntest_go_requires_a_case_for_each_mandatory_task (__main__.ContractV2Tests.test_go_requires_a_case_for_each_mandatory_task) ... ok\ntest_go_requires_matching_candidate (__main__.ContractV2Tests.test_go_requires_matching_candidate) ... ok\ntest_negative_cross_phase_dependency (__main__.ContractV2Tests.test_negative_cross_phase_dependency) ... ok\ntest_negative_duplicate_id (__main__.ContractV2Tests.test_negative_duplicate_id) ... ok\ntest_negative_fake_independent_verifier (__main__.ContractV2Tests.test_negative_fake_independent_verifier) ... ok\ntest_negative_go_with_fail (__main__.ContractV2Tests.test_negative_go_with_fail) ... ok\ntest_negative_go_with_not_run (__main__.ContractV2Tests.test_negative_go_with_not_run) ... ok\ntest_negative_go_with_p1 (__main__.ContractV2Tests.test_negative_go_with_p1) ... ok\ntest_negative_literal_modified (__main__.ContractV2Tests.test_negative_literal_modified) ... ok\ntest_negative_missing_evidence (__main__.ContractV2Tests.test_negative_missing_evidence) ... ok\ntest_negative_orphan_phase (__main__.ContractV2Tests.test_negative_orphan_phase) ... ok\ntest_negative_orphan_plan (__main__.ContractV2Tests.test_negative_orphan_plan) ... ok\ntest_negative_orphan_test (__main__.ContractV2Tests.test_negative_orphan_test) ... ok\ntest_positive (__main__.ContractV2Tests.test_positive) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.022s\n\nOK\n",
+      "log_sha256": "2b1f70913da557cee52af5083a500a8be2c9167eb5ca258545693d283b366dc6"
+    }
+  ],
+  "total_tests": 373,
+  "version_check": {
+    "status": "PASS",
+    "package_version": "0.4.41",
+    "source": "distribución inspeccionada; plugin.json y superficies de versión",
+    "root": "/workspace/scratch/d43f2e8401e6/bago5-update",
+    "active_host_release_verified": false,
+    "checked": {
+      "plugin": "0.4.41",
+      "codex": "0.4.41",
+      "plugin_interface": "0.4.41",
+      "skill_interface": "0.4.41",
+      "skill": "0.4.41",
+      "catalog": "0.4.41",
+      "catalog_entry": "0.4.41",
+      "catalog_skill": "0.4.41",
+      "routes": "0.4.41"
+    },
+    "issues": []
+  },
+  "independent_review": {
+    "status": "PASS",
+    "resolved_findings": [
+      "P1: future human acceptance blocked preparation of the reviewable candidate",
+      "P2: distinguish observed operational evidence from declared receipt classification",
+      "Reject a pending intervention duplicated as an allowed preparation step"
+    ],
+    "phase_script_sha256": "f42c9cd0eccd3b281a593ba958ed9329a2fdd96f9f2424d942b9b1b42d6d9d49",
+    "phase_schema_sha256": "1eeb4cc072ee0305d5787da7b71c509d3e48760a148c15e1dc2140eec6fca356"
+  },
+  "preservation": {
+    "portable_skills": 61,
+    "public_catalog_entries": 61,
+    "canonical_invocations": 61,
+    "local_modules": 13,
+    "assignable_skills": 60,
+    "app_bindings": "unchanged",
+    "native_hook_manifests": "unchanged",
+    "source_locks": "unchanged",
+    "audience": "PRIVATE USER preserved by update workflow"
+  },
+  "limits": [
+    "The phase checker classifies supplied evidence and does not authenticate sources or intercept host tools.",
+    "Real native events in Codex, Work and Copilot and execution on the user PC were not exercised.",
+    "Cloning tests cover configuration, persistence and dispatch, not executing native workers.",
+    "Publication and post-publication source readback are outside this pre-publication record."
+  ],
+  "changed_source_sha256": {
+    ".codex-plugin/plugin.json": "00239415d5e8e08dc07b4cfbe3cdaae2d363752cdf69f671bd57eed57af9fdf0",
+    "com.github.copilot/agents/bago5-project.agent.md": "a407f5e550435778c96d2fe4f8a8b388bcabf3e916d3302af81323431d6d819c",
+    "optional-runtime/bago-operating-suite/PACKAGE_IDENTITY.json": "6e4182a61ea77c16d7468de0baf90121f0398936c9af164ca06a4149eec36615",
+    "plugin.json": "239fc170a78888da3352f5482869749d67ded9f4a822d7d66e63c3393c5b7ea9",
+    "scripts/bago5_version.py": "a2182cca9ed0e4bedd1fc73b4c1a9315a9531c3ffdd96c1ec8827c010ffb7c89",
+    "skills/bago5-ejecucion-tareas/SKILL.md": "c16d2983559d77c8a951a6ea6c36c1da0ac11e0740d7e45164cc19a41a6472e2",
+    "skills/bago5-equipo-decisiones/SKILL.md": "ca5246360cf9e70f1186e7263be72a21c835586f269970cec9d5e4f94a1aa7c6",
+    "skills/bago5-flujo-trabajo/SKILL.md": "ae8413be6d294ba428f19fe93399bb8be0488f59479e09ba998abd70eac9d4a9",
+    "skills/bago5-ganchos-sesion/SKILL.md": "3fd16fee38d1054a1d3774ad0c00836a3c8a648ddfce830ed359112fa77b0649",
+    "skills/bago5-ganchos-sesion/references/lifecycle.md": "9b859506bc588efca5a3ba9fa89dd9bf243ba7b54055bc3c743a28d64592d660",
+    "skills/bago5-objetivos/SKILL.md": "1e90d88cf0c8a4b7e44bc30cf8cca783a1da492bcc58bfcbc3ab33dada84b17d",
+    "skills/bago5-plan-por-fases/SKILL.md": "6c4fe636dd19e86b742c9446017f61ebb666c78f95f3db211cb0693824df91f5",
+    "skills/bago5-plan-por-fases/agents/openai.yaml": "e7db1caa4fbdde2d028734ea360aea1d5eeb8b0d8c47e98b560a0f389796f4d9",
+    "skills/bago5-plan-por-fases/references/agentic-plan.md": "69b47caf0badae9d422374bb96e5cb93030990779cc39373ba78749d139109bb",
+    "skills/bago5-plan-por-fases/references/phase-preflight.md": "2e8a9021246e0dbbb9939cd9f2db22346b0f717f3af8c8a3e144a3664bdec123",
+    "skills/bago5-plan-por-fases/references/plan-fase.md": "f623b476b364a2ae273d184a27566878044f7cee3be70505a4fba6bd900045f5",
+    "skills/bago5-plan-por-fases/schemas/phase-preflight.schema.json": "1eeb4cc072ee0305d5787da7b71c509d3e48760a148c15e1dc2140eec6fca356",
+    "skills/bago5-plan-por-fases/scripts/phase_preflight.py": "f42c9cd0eccd3b281a593ba958ed9329a2fdd96f9f2424d942b9b1b42d6d9d49",
+    "skills/bago5-plan-por-fases/tests/test_phase_preflight.py": "11b0c781a5ebe33c8aff701d683a2926c177233275277eeebd9084fb0d4c60e2",
+    "skills/bago5/SKILL.md": "ac6c66a38ad7695eb87e66024ad3037025f83041409fbe15c945850de2cafc18",
+    "skills/bago5/agents/openai.yaml": "e2d79bc62e006c816fc6fbff6abd02c828a74a05f252ec5205968ee505fc565a",
+    "skills/bago5/references/CATALOGO_HABILIDADES.json": "cfc71ae0bbf9ee4c7a63e3039875ccee755e5db6ba5f503b4f671e3454527ec2",
+    "skills/bago5/references/ROUTES.json": "d0ef40d629622ed88b05f1e62698ecfa1bbeefffe58ee659211ecc672c9a860c",
+    "skills/bago5/references/VERSION_ACTIVA.md": "4b96cf4ad45eeb354917438a9bf7fb7a7d0866eef4b69c8ea58ddd7f400861c7",
+    "skills/bago5/references/controller-selection.md": "d2e88813e6dd51d971d60d9c597f1d78b2433ea6b5c2ffe5b5f31aa8767a5c91",
+    "skills/bago5/references/target-preflight.md": "2495104cca9521bb86f4bef34cc79a5eaf7f7209b5a29ba8de35b2d329c22b96",
+    "skills/bago5/scripts/runtime_turn_decision.py": "7ebb3b6a2a93e06ad99fd83ddc18110a8eb3509cd63d6fd2470f1d80ac340977",
+    "skills/bago5/tests/test_generic_agent_cloning.py": "0bcfdd90b5a1b5fdfd8dc7d42f4d3e5b1d07208039fa38c95232186cdc49505c",
+    "skills/bago5/tests/test_runtime_turn_decision.py": "f99b7d965e265c533c3a844681c3a57008ec8bd12f4e5ed8f639ffe9d11cd490",
+    "skills/bago5/tests/test_version_identity.py": "1aac147c6e8dfcbfda113e8ed2b109c62264c37dd3a519599a23d6d774989c16"
+  }
+}

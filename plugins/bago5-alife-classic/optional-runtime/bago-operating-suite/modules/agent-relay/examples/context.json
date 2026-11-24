@@ -1,0 +1,15 @@
+{
+  "schema": "bago.suite.relay.context.v1",
+  "summary": "Sustituir por resumen del trabajo realmente realizado.",
+  "completed": [],
+  "pending": [
+    "Ejecutar y registrar el check work sobre el candidato fijo."
+  ],
+  "decisions": [
+    "Las afirmaciones narrativas no sustituyen evidencias."
+  ],
+  "risks": [
+    "El host conserva el control de permisos y procesos."
+  ],
+  "artifacts": []
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "bago.goals.document.v1",
+  "goal_id": "mision_ejemplo",
+  "status": "OPEN",
+  "text": "Objetivo de ejemplo: inspeccionar el proyecto sin modificar archivos.",
+  "task_dir": "tarea_ejemplo",
+  "check_id": "codex_exec"
+}

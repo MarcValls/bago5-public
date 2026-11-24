@@ -1,0 +1,8 @@
+interface:
+  display_name: $bago5-modo-privado
+  short_description: Protege operaciones sensibles sin recibir secretos
+  default_prompt: Aplica $bago5-modo-privado antes de pedir datos o usar memoria/herramientas para contraseñas.
+    No recibas secretos. Sin adaptador real del host, BLOCKED; las pruebas sintéticas no activan privacidad. No
+    abrir el gestor ni reanudar observación por una afirmación del modelo.
+policy:
+  allow_implicit_invocation: true

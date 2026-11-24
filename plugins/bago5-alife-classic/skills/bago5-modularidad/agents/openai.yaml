@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-modularidad
+  short_description: Revisa responsabilidades y dependencias entre módulos
+  default_prompt: Usa $bago5-modularidad. Revisa responsabilidades, duplicaciones y dependencias entre módulos;
+    propone o aplica cambios autorizados.

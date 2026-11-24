@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "archive_bytes": 377207,
+      "archive_sha256": "6c88b082fe3f3fd0d6e6cffe176bee15a3e81e750459f7edefe8e6e1686e8dd1",
+      "authority": "UNCHANGED",
+      "host_integration": "NOT_RUN",
+      "inner_hashes": "PASS",
+      "inner_items_verified": 11,
+      "module": "architecture",
+      "status": "PASS",
+      "zip_members": 12
+    },
+    {
+      "archive_bytes": 42548,
+      "archive_sha256": "581d2d23b973a02e5704c27f8c480de8bd7817bf93e0db3078352529818b103b",
+      "authority": "UNCHANGED",
+      "host_integration": "NOT_RUN",
+      "inner_hashes": "PASS",
+      "inner_items_verified": 31,
+      "module": "bpbr",
+      "status": "PASS",
+      "zip_members": 33
+    },
+    {
+      "archive_bytes": 3519894,
+      "archive_sha256": "a40d2b32f8ecc77240693f4ec9d79342f2dd070461eabb817171072008776a22",
+      "authority": "UNCHANGED",
+      "host_integration": "NOT_RUN",
+      "inner_hashes": "PASS",
+      "inner_items_verified": 24,
+      "module": "frontend",
+      "nested_pack_copies": 10,
+      "status": "PASS",
+      "zip_members": 35
+    },
+    {
+      "archive_bytes": 163424,
+      "archive_sha256": "9d1bcd0c6aa7ea63723fe699dd748353d1f7b2167d4be8aa05cef7c3676b1852",
+      "authority": "UNCHANGED",
+      "host_integration": "NOT_RUN",
+      "inner_hashes": "PASS",
+      "inner_items_verified": 57,
+      "module": "editorial",
+      "status": "PASS",
+      "zip_members": 58
+    }
+  ],
+  "claim": "bundled source integrity ONLY",
+  "live_bpbr": "NOT_RUN",
+  "live_frontend": "NOT_RUN",
+  "new_architecture_audit": "NOT_RUN",
+  "status": "PASS"
+}

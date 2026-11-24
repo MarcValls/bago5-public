@@ -1,0 +1,8 @@
+interface:
+  display_name: $bago5-ganchos-sesion
+  short_description: Coordina continuidad, memoria y cierre de sesión
+  default_prompt: Usa $bago5-ganchos-sesion para coordinar esta misión con un solo ciclo de contexto y memoria.
+    Identifica proyecto, alcance, STOP y destino; aplica los ganchos realmente disponibles y distingue la ejecución
+    nativa del procedimiento del agente. No crees estado persistente ni operes una memoria sin autorización vigente.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,27 @@
+{
+  "schema": "bago.evidence.guard.local-execution.v1",
+  "component": "BAGO Evidence Guard v1.0.0",
+  "test_host": {
+    "os": "Linux",
+    "python": "3.13.5"
+  },
+  "unit_tests": {
+    "executed": 24,
+    "passed": 24,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "synthetic_demo": {
+    "executed": true,
+    "status": "PASS",
+    "negative_digest_cases": 2,
+    "negative_text_cases": 1,
+    "positive_json_cases": 2,
+    "positive_manifest_cases": 2
+  },
+  "windows_real": "NOT_RUN",
+  "w12_r4_real": "NOT_RUN",
+  "bago_rc4_integration": "NOT_RUN",
+  "generator_sha256": "e9d956b96d66778321a31bce3da7c444b938a088094e7c65c46df3e84256fe68",
+  "authority_boundary": "offline file integrity utility; does not install/execute RC4, does not authorize effects or close goals"
+}

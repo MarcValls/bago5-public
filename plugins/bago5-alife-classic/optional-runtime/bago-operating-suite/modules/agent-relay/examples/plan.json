@@ -1,0 +1,30 @@
+{
+  "schema": "bago.suite.task.plan.v1",
+  "mission_id": "mi-mision-01",
+  "candidate_id": "candidato-01",
+  "operation": "REPAIR",
+  "scope": [
+    "candidate.txt",
+    "work_check.py",
+    "verify_check.py"
+  ],
+  "max_rounds": 10,
+  "checks": [
+    {
+      "id": "work",
+      "kind": "execution",
+      "mandatory": true,
+      "depends_on": [],
+      "artifacts": []
+    },
+    {
+      "id": "verify",
+      "kind": "execution",
+      "mandatory": true,
+      "depends_on": [
+        "work"
+      ],
+      "artifacts": []
+    }
+  ]
+}

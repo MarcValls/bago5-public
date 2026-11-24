@@ -1,0 +1,30 @@
+{
+  "schema": "probe.migrations.v1",
+  "files": [
+    {
+      "id": "migration-1",
+      "path": "migration_001.sql",
+      "sha256": "996da6894cbebe4de831322027009acdc00cfc11f7d1f5c18cc03b2228a3520d"
+    },
+    {
+      "id": "migration-2",
+      "path": "migration_002.sql",
+      "sha256": "041afbdb80af4010ae549c17e151b1573b8e9e6d30fa7d21a1c398c89dd5c69d"
+    },
+    {
+      "id": "migration-3",
+      "path": "migration_003.sql",
+      "sha256": "e5534644109a093d0532d6f7dcd689a4d5d0182a9ff66389e730da55a69008a1"
+    },
+    {
+      "id": "migration-4",
+      "path": "migration_004.sql",
+      "sha256": "d961147b354ba8a2673974b069827bfd45c8d7f4dc6401618389a635dec94502"
+    },
+    {
+      "id": "migration-5",
+      "path": "migration_005.sql",
+      "sha256": "0d6e004759ae8af8985ec2c5bc51360ce3cf7f207194b2d45c1ee2d16167f4fa"
+    }
+  ]
+}

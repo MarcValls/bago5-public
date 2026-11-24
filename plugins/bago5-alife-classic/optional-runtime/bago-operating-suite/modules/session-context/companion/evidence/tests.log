@@ -1,0 +1,33 @@
+test_all_disabled_are_not_read (test_session_start.HookTests.test_all_disabled_are_not_read) ... ok
+test_bad_shape_and_unhashable_id (test_session_start.HookTests.test_bad_shape_and_unhashable_id) ... ok
+test_bom_json_is_supported (test_session_start.HookTests.test_bom_json_is_supported) ... ok
+test_case_collisions_and_structure_collision (test_session_start.HookTests.test_case_collisions_and_structure_collision) ... ok
+test_core_policy_and_templates_cannot_change_silently (test_session_start.HookTests.test_core_policy_and_templates_cannot_change_silently) ... ok
+test_custom_mapping_and_disabled_file (test_session_start.HookTests.test_custom_mapping_and_disabled_file) ... ok
+test_directory_artifact_does_not_count_as_document (test_session_start.HookTests.test_directory_artifact_does_not_count_as_document) ... ok
+test_empty_root_never_initializes (test_session_start.HookTests.test_empty_root_never_initializes) ... ok
+test_existing_documents_require_review_and_are_not_injected (test_session_start.HookTests.test_existing_documents_require_review_and_are_not_injected) ... ok
+test_fifo_does_not_block (test_session_start.HookTests.test_fifo_does_not_block) ... ok
+test_five_sources_use_real_entrypoint (test_session_start.HookTests.test_five_sources_use_real_entrypoint) ... ok
+test_git_root_missing_structure_uses_pinned_paths (test_session_start.HookTests.test_git_root_missing_structure_uses_pinned_paths) ... ok
+test_guarded_runtime_has_no_write_network_or_process_effects (test_session_start.HookTests.test_guarded_runtime_has_no_write_network_or_process_effects) ... ok
+test_invalid_cwd_does_not_fall_back_to_process_directory (test_session_start.HookTests.test_invalid_cwd_does_not_fall_back_to_process_directory) ... ok
+test_invalid_json_state_is_not_reported_healthy (test_session_start.HookTests.test_invalid_json_state_is_not_reported_healthy) ... ok
+test_large_or_invalid_structure_is_blocked (test_session_start.HookTests.test_large_or_invalid_structure_is_blocked) ... ok
+test_malformed_duplicate_nonfinite_and_oversize_input (test_session_start.HookTests.test_malformed_duplicate_nonfinite_and_oversize_input) ... ok
+test_non_utf8_and_large_content_are_bounded (test_session_start.HookTests.test_non_utf8_and_large_content_are_bounded) ... ok
+test_other_event_is_noop (test_session_start.HookTests.test_other_event_is_noop) ... ok
+test_output_cap_keeps_only_an_explicit_limit_diagnostic (test_session_start.HookTests.test_output_cap_keeps_only_an_explicit_limit_diagnostic) ... ok
+test_pinned_schema_and_generated_cli_configuration (test_session_start.HookTests.test_pinned_schema_and_generated_cli_configuration) ... ok
+test_schema_tampering_is_reported (test_session_start.HookTests.test_schema_tampering_is_reported) ... ok
+test_subfolder_does_not_adopt_parent_project (test_session_start.HookTests.test_subfolder_does_not_adopt_parent_project) ... ok
+test_symlink_artifact_and_symlink_root_rejected (test_session_start.HookTests.test_symlink_artifact_and_symlink_root_rejected) ... ok
+test_transcript_and_unrelated_files_are_not_read (test_session_start.HookTests.test_transcript_and_unrelated_files_are_not_read) ... ok
+test_traversal_absolute_ads_and_windows_alias_paths (test_session_start.HookTests.test_traversal_absolute_ads_and_windows_alias_paths) ... ok
+test_unknown_source_never_approves (test_session_start.HookTests.test_unknown_source_never_approves) ... ok
+test_unknown_structure_version (test_session_start.HookTests.test_unknown_structure_version) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 1.974s
+
+OK

@@ -1,0 +1,16 @@
+{
+  "schema": "bago.frontend.derived_preview.v1",
+  "source": "BAGO5_FRONTEND_PACKS_v0.1.zip / PACK_08_PREVIEW_REFERENCES/preview.html",
+  "source_html_sha256": "9d4595f8209797851ce7018766707781b48676d9e0f9f1da891102320a889d75",
+  "derived_file": "preview_auditada.html",
+  "derived_sha256": "1304a11db19fc83437386c8d33ae59d3632efc28b80414e6258db26541d990c9",
+  "changes": [
+    "Edit provider preserves identity/model references and does not append provider",
+    "Prefilled edit fields",
+    "Associated labels for named controls",
+    "Focus trap, inert background and focus restoration",
+    "Explicit derived offline mock banner"
+  ],
+  "backend": "NOT_CONNECTED",
+  "original_archive": "UNCHANGED"
+}

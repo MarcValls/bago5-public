@@ -1,0 +1,117 @@
+{
+  "schema": "bago5.turn-decision.v1",
+  "binding": {
+    "project_id": "synthetic-alife",
+    "mission_id": "synthetic-staging-review",
+    "goal_id": "verify-staging",
+    "goal_revision": 1,
+    "candidate_id": "synthetic-candidate-01",
+    "scope_id": "isolated-fixture",
+    "session_id": "synthetic-session-01"
+  },
+  "current_host": "WORK",
+  "goal": {
+    "baseline": "Identify checked staging URL and database name as declared by operator.",
+    "current": "Identify checked staging URL and database name as declared by operator.",
+    "change_authority": null
+  },
+  "control": {
+    "state": "RUNNING",
+    "source_ref": "fixture:current-control",
+    "current": true,
+    "binding": {
+      "project_id": "synthetic-alife",
+      "mission_id": "synthetic-staging-review",
+      "goal_id": "verify-staging",
+      "goal_revision": 1,
+      "candidate_id": "synthetic-candidate-01",
+      "scope_id": "isolated-fixture",
+      "session_id": "synthetic-session-01"
+    }
+  },
+  "baseline_criteria": [
+    {
+      "id": "verify-db",
+      "description": "Record the database name declared by the operator; no application-connection verification is requested.",
+      "required": true,
+      "expected_basis": "DECLARATION",
+      "expected_outcome": "PASS",
+      "min_independent_origins": 1
+    },
+    {
+      "id": "staging-url",
+      "description": "Check that the declared HTTPS staging URL responds within the authorized read-only scope.",
+      "required": true,
+      "expected_basis": "OBSERVATION",
+      "expected_outcome": "PASS",
+      "min_independent_origins": 1
+    }
+  ],
+  "criteria": [
+    {
+      "id": "verify-db",
+      "description": "Record the database name declared by the operator; no application-connection verification is requested.",
+      "required": true,
+      "expected_basis": "DECLARATION",
+      "expected_outcome": "PASS",
+      "min_independent_origins": 1,
+      "status": "PASS",
+      "evidence_ids": [
+        "operator-declaration"
+      ],
+      "waiver": null
+    },
+    {
+      "id": "staging-url",
+      "description": "Check that the declared HTTPS staging URL responds within the authorized read-only scope.",
+      "required": true,
+      "expected_basis": "OBSERVATION",
+      "expected_outcome": "PASS",
+      "min_independent_origins": 1,
+      "status": "PASS",
+      "evidence_ids": [
+        "url-probe"
+      ],
+      "waiver": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "operator-declaration",
+      "criterion_id": "verify-db",
+      "binding": {
+        "project_id": "synthetic-alife",
+        "mission_id": "synthetic-staging-review",
+        "goal_id": "verify-staging",
+        "goal_revision": 1,
+        "candidate_id": "synthetic-candidate-01",
+        "scope_id": "isolated-fixture",
+        "session_id": "synthetic-session-01"
+      },
+      "kind": "DECLARATION",
+      "outcome": "PASS",
+      "source_ref": "fixture:operator-declaration",
+      "origin_id": "origin-operator-declaration",
+      "derived_from": []
+    },
+    {
+      "id": "url-probe",
+      "criterion_id": "staging-url",
+      "binding": {
+        "project_id": "synthetic-alife",
+        "mission_id": "synthetic-staging-review",
+        "goal_id": "verify-staging",
+        "goal_revision": 1,
+        "candidate_id": "synthetic-candidate-01",
+        "scope_id": "isolated-fixture",
+        "session_id": "synthetic-session-01"
+      },
+      "kind": "OBSERVATION",
+      "outcome": "PASS",
+      "source_ref": "fixture:read-only-https-response",
+      "origin_id": "origin-url-probe",
+      "derived_from": []
+    }
+  ],
+  "actions": []
+}

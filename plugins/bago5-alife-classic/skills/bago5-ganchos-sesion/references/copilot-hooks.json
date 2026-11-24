@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "python3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event sessionStart",
+        "powershell": "py -3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event sessionStart",
+        "timeoutSec": 8
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event preToolUse",
+        "powershell": "py -3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event preToolUse",
+        "timeoutSec": 8
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event postToolUse",
+        "powershell": "py -3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event postToolUse",
+        "timeoutSec": 8
+      }
+    ],
+    "agentStop": [
+      {
+        "type": "command",
+        "bash": "python3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event agentStop",
+        "powershell": "py -3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event agentStop",
+        "timeoutSec": 8
+      }
+    ],
+    "preCompact": [
+      {
+        "type": "command",
+        "bash": "python3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event preCompact",
+        "powershell": "py -3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event preCompact",
+        "timeoutSec": 8
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": "python3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event sessionEnd",
+        "powershell": "py -3 -B -I -c \"import os,runpy; from pathlib import Path; runpy.run_path(str(Path(os.environ['COPILOT_HOOK_DIR']).resolve().parents[1]/'skills'/'bago5-ganchos-sesion'/'scripts'/'native_hooks.py'),run_name='__main__')\" --host COPILOT --event sessionEnd",
+        "timeoutSec": 3
+      }
+    ]
+  }
+}

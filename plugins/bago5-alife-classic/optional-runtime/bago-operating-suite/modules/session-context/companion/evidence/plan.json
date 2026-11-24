@@ -1,0 +1,121 @@
+{
+  "schema": "bago.app_game.change_plan.v1",
+  "change_id": "BAGO-SCR-001",
+  "baseline_id": "BAGO-SCR-BASE-001",
+  "baseline_snapshot_sha256": "6822fb5e6d2daaaa29af9aadd4978c034a2f482c2a4c7d550fcc411316d3fb67",
+  "intent": "Create an additive read-only SessionStart companion for the supplied BAGO context schema. Prepare and verify a standalone prototype; Codex CLI activation remains a separate host test.",
+  "change_scope": [
+    "hooks/**",
+    "tests/**",
+    "scripts/**",
+    "README.md",
+    "CONTINUIDAD.md",
+    "CONTRATO.md",
+    "DEMO.ps1"
+  ],
+  "features": [
+    {
+      "id": "SCR-01",
+      "assertion": "stdin SessionStart becomes bounded metadata-only additionalContext at the exact cwd candidate; no root inference",
+      "check_refs": [
+        "local-suite",
+        "demo"
+      ]
+    },
+    {
+      "id": "SCR-02",
+      "assertion": "No content writes, process launch, network or transcript access by hook; no auto-approval or bootstrap init",
+      "check_refs": [
+        "local-suite"
+      ]
+    }
+  ],
+  "preservation": {
+    "required_properties": []
+  },
+  "authorized_changes": [],
+  "tests": [
+    {
+      "test_id": "local-suite",
+      "target_type": "FEATURE",
+      "target_id": "SCR-01",
+      "boundary": "INTEGRATION",
+      "mandatory": true,
+      "expected": "Positive and negative fixtures PASS; byte and tree preservation",
+      "command_ref": "python -B -I -m unittest discover -s tests -v"
+    },
+    {
+      "test_id": "demo",
+      "target_type": "FEATURE",
+      "target_id": "SCR-01",
+      "boundary": "RUNTIME",
+      "mandatory": true,
+      "expected": "Real subprocess stdin/stdout contract and unchanged fixture",
+      "command_ref": "python -B -I scripts/demo.py"
+    },
+    {
+      "test_id": "codex-cli-windows",
+      "target_type": "FEATURE",
+      "target_id": "SCR-01",
+      "boundary": "RUNTIME",
+      "mandatory": true,
+      "expected": "Observed CLI /hooks trust, hook invocation and cwd binding on startup/resume/fork/compact; no assumed folder-open event",
+      "command_ref": null
+    }
+  ],
+  "standard_first": {
+    "decision": "ADAPT",
+    "justification": "Use documented Codex hooks and the supplied unchanged BAGO context structure. No new context store, ledger, MCP or authorization mechanism.",
+    "candidates_considered": [
+      "Codex SessionStart command hook",
+      "Existing project_context_bootstrap.py inspect; rejected for direct auto-run because it requires a confirmed root and emits content previews"
+    ]
+  },
+  "extensions": {
+    "protected_bytes": [
+      "Source ZIP SHA-256 from source-lock.json",
+      "Copied schemas/project-context-structure.v1.json exact SHA-256"
+    ],
+    "capability_demonstrations": [
+      {
+        "capability_id": "SCR-01",
+        "state": "PROPOSED",
+        "preconditions": [
+          "Python 3.10+",
+          "Disposable synthetic project created by demo runner"
+        ],
+        "steps": [
+          "Generate fixture",
+          "Snapshot tree",
+          "Invoke hook via stdin/stdout with startup event",
+          "Compare tree and hashes",
+          "Emit evidence to stdout"
+        ],
+        "observable": "hookSpecificOutput.additionalContext with bounded inventory and candidate root",
+        "expected_result": "REVIEW_REQUIRED; disabled artifacts skipped; missing artifacts listed; project bytes unchanged",
+        "check_refs": [
+          "local-suite",
+          "demo"
+        ],
+        "evidence_refs": [
+          "demo.json",
+          "tests.log"
+        ],
+        "limits": [
+          "Synthetic event; not a Codex CLI invocation",
+          "Native Windows CLI, cwd binding and trust flow NOT_RUN",
+          "Does not prove semantic compatibility"
+        ]
+      }
+    ],
+    "not_in_scope": [
+      "Change original suite",
+      "Install or trust hooks automatically",
+      "PreToolUse enforcement",
+      "New skills or merged specialist bundle",
+      "MCP/UI",
+      "Whole suite regression audit"
+    ],
+    "scope_update": "User clarified REALMENTE UTILIZO CLI; removed plugin manifests, added stdout-only native CLI config proposal; /hooks review remains host-side."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Memoria Viva Portable Pack Manifest v1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema","source_store_id","exported_at","counts","scope","credential_free"],
+  "properties":{
+    "schema":{"const":"memoria-viva-pack.v1"},
+    "source_store_id":{"type":"string","minLength":1},
+    "exported_at":{"type":"string","format":"date-time"},
+    "counts":{"type":"object","additionalProperties":false,"required":["projects","memories","revisions"],"properties":{"projects":{"type":"integer","minimum":0},"memories":{"type":"integer","minimum":0},"revisions":{"type":"integer","minimum":0}}},
+    "scope":{"type":"string","minLength":1},
+    "credential_free":{"const":true}
+  }
+}

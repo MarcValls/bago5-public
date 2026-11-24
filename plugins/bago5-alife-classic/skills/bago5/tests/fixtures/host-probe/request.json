@@ -1,0 +1,5 @@
+{
+  "inventory": "inventory.json",
+  "required_count": 5,
+  "operation": "Read the inventory and compare SHA-256 for every declared migration file."
+}

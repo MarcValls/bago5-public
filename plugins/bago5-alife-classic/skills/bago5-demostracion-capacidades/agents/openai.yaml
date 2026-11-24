@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-demostracion-capacidades
+  short_description: Demuestra capacidades con resultados observados
+  default_prompt: Usa $bago5-demostracion-capacidades. Define, integra y demuestra capacidades mediante recorridos
+    reproducibles y resultados observados.

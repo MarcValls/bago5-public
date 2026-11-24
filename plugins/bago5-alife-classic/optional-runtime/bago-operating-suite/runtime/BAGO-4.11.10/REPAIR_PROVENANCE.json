@@ -1,0 +1,150 @@
+{
+  "schema": "bago.runtime.repair-provenance.v1",
+  "repair_id": "BAGO-SUITE-141-REPAIR-RC1",
+  "source_lock_preserved": true,
+  "declared_original_commit_lookup": "404: No commit found for the ref",
+  "recovered_from_repository": "MarcValls/BAGO",
+  "recovered_from_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0",
+  "effect_registry_parser_exact_bytes_match": true,
+  "recovered_files": [
+    {
+      "path": "backend/.bago/contracts/bago.capability-definition.v1.schema.json",
+      "git_blob_sha1": "761e37f4a60b80a9d47e4ba2d4d35ae867768f0c",
+      "sha256": "b103b03c903536efb568ce83249e28d906d9041c7ce53eb36090d974b29f815e",
+      "source_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0"
+    },
+    {
+      "path": "backend/.bago/contracts/bago.effect-registry.v1.json",
+      "git_blob_sha1": "4ae5a180cf5c93e9e3fc2d4be172909265b03bbd",
+      "sha256": "ab1edad052f705ae01092b120858c876ce1ec760e88875beb89b37d55fd61f30",
+      "source_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0"
+    },
+    {
+      "path": "backend/.bago/contracts/bago.execution-request.v2.json",
+      "git_blob_sha1": "fdd5f60d7bc74eac258a667462c64471f10a4a00",
+      "sha256": "f2d862e96c67420b6ae24178d247e9de0197b09ab16679cd7dd244f19c4c0dd7",
+      "source_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0"
+    },
+    {
+      "path": "backend/.bago/contracts/bago.execution-request.v3.json",
+      "git_blob_sha1": "4227f45c854a629b18a7da07c395f54ec764f598",
+      "sha256": "d22546be9e7ee2359398753cfde63f595fa08d2271ae66e8ee8e2063e83200e5",
+      "source_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0"
+    },
+    {
+      "path": "backend/.bago/contracts/bago.kernel-boundary.v1.json",
+      "git_blob_sha1": "375a6e5b01a858be5a1bfb514f589107b356435b",
+      "sha256": "8e991d277e4d8fc34615018ea08803b89c61bd8bf0a1eb48bd411f22fad0a02b",
+      "source_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0"
+    },
+    {
+      "path": "backend/.bago/contracts/bago.package.v1.schema.json",
+      "git_blob_sha1": "5d15d81f8cd84ba28bd3511cec5da1fb530428e3",
+      "sha256": "7b6986a36823c4ad778345552635356f1c3187095493e530d1a250dcce5e63b4",
+      "source_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0"
+    },
+    {
+      "path": "backend/.bago/contracts/bago.pipeline-definition.v1.schema.json",
+      "git_blob_sha1": "e7c1619d323f621bec1ac0266005b0d277771616",
+      "sha256": "a9d8c467f33b2e7240f47791cfbb2a4053c5b40c20f23795f9bc6358d28cf554",
+      "source_commit": "f3804a7e9333607561d28fd5075569e725aa0bb0"
+    }
+  ],
+  "runtime_scope": "selected repaired paths only; not an upstream BAGO release",
+  "runtime_tests": {
+    "state": "LOCAL_PATHS_EXECUTED",
+    "scope": "Contratos, persistencia, agente espiral y aprendizaje controlado; no suite autónoma general",
+    "final_evidence_binding": "El informe externo del pack identifica el SHA-256 del MANIFEST.json final y los inventarios de ejecución.",
+    "not_run": [
+      "Windows/PowerShell",
+      "CLI/API completa",
+      "proveedores",
+      "BAGO5/ADL real",
+      "mejora en tareas reales",
+      "entorno limpio con todas las versiones heredadas fijadas"
+    ]
+  },
+  "base_package_version": "1.4.0",
+  "package_version": "1.4.1",
+  "candidate": "REPAIR-RC1",
+  "runtime_source": {
+    "release": "4.11.10",
+    "repository": "MarcValls/BAGO",
+    "commit": "5fb6f2f0c57f29de1b42bbb2efb4a57c86aa032d"
+  },
+  "source_lock_sha256": "0a4ca36a1281aab74500b5a56fd21118914b8507f81ed015f0b19bc08d583dd3",
+  "patches": [
+    {
+      "path": "backend/.bago/core/learning_writer.py",
+      "original": {
+        "sha256": "b29db8ac2d554c2a280b90426c4a2a201dbacdfc0151809b53986274bb108d20",
+        "git_blob": "f37d01e6a941641f80cbb63789ca645b35b5c99e"
+      },
+      "patched": {
+        "sha256": "0437017e9221790814b075bf57283a1dae53935ff047fd1d637f35a40aac8552",
+        "git_blob": "88b981450aea3b4e9ccd6f73ff00a821e2e1b2a8"
+      },
+      "reason": "Errores visibles, observaciones válidas, registro corrupto explícito y promoción atómica reintentable."
+    },
+    {
+      "path": "backend/.bago/core/session_context_policy_mixin.py",
+      "original": {
+        "sha256": "a74933f7b8a14b3b1f6766a8deee68bafc793087e7605af6551a14860f88da3c",
+        "git_blob": "c2ed878e549c77129c6bfed9140f6b0ca591ddd3"
+      },
+      "patched": {
+        "sha256": "a354529aedf67f2629828610e497a8c89466b617f24d06fa80b25edf625bcdd0",
+        "git_blob": "36db0b72e1b99cbd070877ac596d8ac2ce0e0402"
+      },
+      "reason": "Evitar éxito global falso de auto_evolve y distinguir resultados parciales."
+    },
+    {
+      "path": "backend/.bago/core/tool_registry.py",
+      "original": {
+        "sha256": "120a12dc211b0f2e724b0454438362d4219d6c32fb31e046e6d84b83a2570c0c",
+        "git_blob": "c5a8ee82a3fbfc7cb75e7ba3096d516234b1bbdb"
+      },
+      "patched": {
+        "sha256": "4f1110646a92f128983cf82de60aa2c8d540cea815cb7b893c099a16af0affeb",
+        "git_blob": "44792151c6d766df8975aa1777bbd4ed5cf43e95"
+      },
+      "reason": "Declarar NOT_IMPLEMENTED el reentrenamiento de intenciones sin cambiar su firma."
+    },
+    {
+      "path": "backend/.bago/tools/spiral_agent.py",
+      "original": {
+        "sha256": "2377158df3f94009e683c679fd69bcc2dbf2005d00bef5eeb1535a7fe8dc8849",
+        "git_blob": "936b3168b4d956622bd07ce50c382675e6ea5b26"
+      },
+      "patched": {
+        "sha256": "e38512920a815f2662cbf504ff6a49d63489e66641afbed92e385739294ade8f",
+        "git_blob": "7f542e6ff6fe52657ebea1ddf8c78580b6135502"
+      },
+      "reason": "Carga directa, persistencia comprobada, orden de etapas, avance de fase y denegaciones entre skills efectivas."
+    },
+    {
+      "path": "backend/bago_core/rl_bridge.py",
+      "original": {
+        "sha256": "c577d90ca589693a3c73f0b08b7d9effcb5f576529ac3e709dca5333eea130eb",
+        "git_blob": "bc43777cc945f2dd8fe7a7b4d80e5194b1d9ecad"
+      },
+      "patched": {
+        "sha256": "3783169bad634e8af2138d40f510869f7f2675aed260cf90a2296e502976bd08",
+        "git_blob": "dcb99b3ac549b971579b17252e5971f02ce41427"
+      },
+      "reason": "Conectar estado canónico con entrenador, mantener shadow/off y can_execute=False, exigir recibos de persistencia."
+    },
+    {
+      "path": "backend/bago_core/rl_policies.py",
+      "original": {
+        "sha256": "fe3f72043d923a266dccbfde122d7eaac3bed4754545a76e3faa11527a78b05f",
+        "git_blob": "f6497a6057b4467c64d0e04e1be0be9915506210"
+      },
+      "patched": {
+        "sha256": "265436b1163ba4bc32b97d55b212d50f0fa5e24600fae2fb140c55b0713a91ef",
+        "git_blob": "999414619ce038ffc385a2b97d2430758e86b29e"
+      },
+      "reason": "Validación numérica, preservación de política ante muestras inútiles, evaluación acotada y procedencia de entrenamiento válida."
+    }
+  ]
+}

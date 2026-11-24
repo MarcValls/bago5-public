@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-auditoria-comprimidos
+  short_description: Revisa archivos ZIP y TAR sin ejecutar su contenido
+  default_prompt: Usa $bago5-auditoria-comprimidos. Inventaría y revisa archivos ZIP o TAR sin ejecutar su contenido
+    ni modificar los originales.

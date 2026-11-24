@@ -1,0 +1,15 @@
+{
+  "name": "ialp-kit-maquetacion-editorial",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Diagramas Mermaid del kit editorial IALP",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "mermaid": "mmdc"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "12.0.0"
+  }
+}

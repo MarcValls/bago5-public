@@ -1,0 +1,82 @@
+{
+  "review": "Independent adversarial regression, prior findings; final stabilized bytes",
+  "executed_at": "2026-11-20T01:35:50.075653+00:00",
+  "execution": "PYTHONDONTWRITEBYTECODE=1 python -B -; seven in-memory scenarios, no source edits",
+  "source_hashes": {
+    "skills/bago5/scripts/behavior_recovery.py": "e0743be9b9c28999b2ebbda465d46f4fc8d7d3679901ddde0205510ba0b0ca50",
+    "skills/bago5-ganchos-sesion/scripts/session_engine.py": "e7f9729bc469441ea4561d0daf9778e44971dda4fb1ac939ac16bfdde02efb97",
+    "skills/bago5-ganchos-sesion/scripts/session_cli.py": "08dd19633f771e25501681dc842fc6709c315021236bfd03f2d796420809f1e6",
+    "skills/bago5/scripts/runtime_turn_decision.py": "fc22f3401dbabf19399c960cb8260595a36e62c92ce44f5af0c1ed78f12dafcc"
+  },
+  "source_hashes_after": {
+    "skills/bago5/scripts/behavior_recovery.py": "e0743be9b9c28999b2ebbda465d46f4fc8d7d3679901ddde0205510ba0b0ca50",
+    "skills/bago5-ganchos-sesion/scripts/session_engine.py": "e7f9729bc469441ea4561d0daf9778e44971dda4fb1ac939ac16bfdde02efb97",
+    "skills/bago5-ganchos-sesion/scripts/session_cli.py": "08dd19633f771e25501681dc842fc6709c315021236bfd03f2d796420809f1e6",
+    "skills/bago5/scripts/runtime_turn_decision.py": "fc22f3401dbabf19399c960cb8260595a36e62c92ce44f5af0c1ed78f12dafcc"
+  },
+  "source_unchanged_during_review": true,
+  "cases": [
+    {
+      "case": "material-change-before-first-resolution-and-duplicate-invalidation",
+      "result": "PASS",
+      "details": {
+        "decision": "BLOCKED",
+        "invalidation_count": 1,
+        "duplicate_idempotent": true
+      }
+    },
+    {
+      "case": "older-success-cannot-override-newer-failure",
+      "result": "PASS",
+      "details": {
+        "decision": "BLOCKED"
+      }
+    },
+    {
+      "case": "explicit-approval-resolves-user-prohibition",
+      "result": "PASS",
+      "details": {
+        "decision": "CONTINUE"
+      }
+    },
+    {
+      "case": "set-receipt-revocation-rollback-and-fresh-grant",
+      "result": "PASS",
+      "details": {
+        "old_receipt": "BLOCKED",
+        "fresh_observation_old_permission": "BLOCKED",
+        "new_permission": "CONTINUE"
+      }
+    },
+    {
+      "case": "same-goal-candidate-switch-preserves-prohibition",
+      "result": "PASS",
+      "details": {
+        "decision": "BLOCKED",
+        "active_state": "PROHIBITED",
+        "history_count": 1
+      }
+    },
+    {
+      "case": "duplicate-event-preserves-other-resolutions",
+      "result": "PASS",
+      "details": {
+        "before": "CONTINUE",
+        "after": "CONTINUE",
+        "changed": false,
+        "all_records_equal": true
+      },
+      "review_setup": "Observations at t2; both are at or after the material invalidation watermark. Same setup as the corrected previous review."
+    },
+    {
+      "case": "rebind-does-not-own-unrelated-blocker",
+      "result": "PASS",
+      "details": {
+        "decision": "BLOCKED",
+        "other_blocker_preserved": true
+      }
+    }
+  ],
+  "passed": 7,
+  "failed": 0
+}

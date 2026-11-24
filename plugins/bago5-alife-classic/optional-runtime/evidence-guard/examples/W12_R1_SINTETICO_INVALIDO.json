@@ -1,0 +1,15 @@
+{
+  "schema": "example.w12.v1",
+  "warning": "DATOS SINTETICOS, DOS DIGESTS DE 65 CARACTERES",
+  "sources": {
+    "css": {
+      "sha256": "1f7188824f57fa3c76e34c5fedf5d4fc50c3d7d07064192893575299d8d091ad4"
+    }
+  },
+  "logs": [
+    {
+      "sha256": "5e83c91c931136869b54ed81b4c71314ad713076c7c85913defffdd9eba6b8ad6",
+      "outcome": "FAIL_EXPECTED"
+    }
+  ]
+}

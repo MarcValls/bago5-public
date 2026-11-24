@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-reparacion
+  short_description: Corrige defectos demostrados y comprueba regresiones
+  default_prompt: Usa $bago5-reparacion. Corrige defectos demostrados dentro del alcance autorizado y comprueba
+    regresiones sin perder capacidades.

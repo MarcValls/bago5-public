@@ -1,0 +1,48 @@
+{
+  "baseline_id": "BAGO-SCR-BASE-001",
+  "capabilities": [],
+  "captured_at": "2026-10-29T09:27:37.522574+00:00",
+  "environment": {
+    "configuration": "local",
+    "platform": "Linux",
+    "runtime": null,
+    "target": "source:scoped"
+  },
+  "evidence": [],
+  "extensions": {
+    "file_manifest": [
+      {
+        "bytes": 2915,
+        "path": "schemas/project-context-structure.v1.json",
+        "sha256": "39c33b10406c5e56b4613530e7405283c3ce0e2ebde4f4659c8ba8f9cace7177"
+      }
+    ],
+    "snapshot_limits": {
+      "max_bytes": 100000000,
+      "max_files": 10000
+    },
+    "total_bytes": 2915
+  },
+  "origin": {
+    "git_dirty": null,
+    "git_revision": null,
+    "root_ref": "project://BAGO-SESSION-CONTEXT-RO",
+    "snapshot_sha256": "6822fb5e6d2daaaa29af9aadd4978c034a2f482c2a4c7d550fcc411316d3fb67"
+  },
+  "project_id": "BAGO-SESSION-CONTEXT-RO",
+  "schema": "bago.app_game.baseline.v1",
+  "scope": {
+    "coverage_gaps": [],
+    "exclude": [],
+    "files_scanned": 1,
+    "include": [
+      "schemas/**",
+      "hooks/**",
+      "tests/**",
+      "scripts/**",
+      "plugin.json"
+    ],
+    "inventory_status": "COMPLETE",
+    "truncated": false
+  }
+}

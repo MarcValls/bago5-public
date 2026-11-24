@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-diseno-revision-decisiones
+  short_description: Diseña la revisión humana de decisiones y acciones
+  default_prompt: Usa $bago5-diseno-revision-decisiones. Diseña flujos claros y accesibles para revisar decisiones,
+    incertidumbre, evidencias y acciones propuestas.

@@ -1,0 +1,162 @@
+{
+  "receipt": {
+    "schema": "bago5.turn-decision.v1",
+    "binding": {
+      "project_id": "synthetic-alife",
+      "mission_id": "synthetic-staging-review",
+      "goal_id": "verify-staging",
+      "goal_revision": 1,
+      "candidate_id": "synthetic-candidate-01",
+      "scope_id": "isolated-fixture",
+      "session_id": "synthetic-session-01"
+    },
+    "current_host": "WORK",
+    "goal": {
+      "baseline": "Verify isolated staging in this authorized session.",
+      "current": "Verify isolated staging in this authorized session.",
+      "change_authority": null
+    },
+    "control": {
+      "state": "RUNNING",
+      "source_ref": "fixture:current-control",
+      "current": true,
+      "binding": {
+        "project_id": "synthetic-alife",
+        "mission_id": "synthetic-staging-review",
+        "goal_id": "verify-staging",
+        "goal_revision": 1,
+        "candidate_id": "synthetic-candidate-01",
+        "scope_id": "isolated-fixture",
+        "session_id": "synthetic-session-01"
+      }
+    },
+    "baseline_criteria": [
+      {
+        "id": "verify-db",
+        "description": "Verify effective database name through application connection.",
+        "required": true,
+        "expected_basis": "OBSERVATION",
+        "expected_outcome": "PASS",
+        "min_independent_origins": 1
+      }
+    ],
+    "criteria": [
+      {
+        "id": "verify-db",
+        "description": "Verify effective database name through application connection.",
+        "required": true,
+        "expected_basis": "OBSERVATION",
+        "expected_outcome": "PASS",
+        "min_independent_origins": 1,
+        "status": "PENDING",
+        "evidence_ids": [],
+        "waiver": null
+      }
+    ],
+    "evidence": [],
+    "actions": [
+      {
+        "id": "inspect-application-db",
+        "binding": {
+          "project_id": "synthetic-alife",
+          "mission_id": "synthetic-staging-review",
+          "goal_id": "verify-staging",
+          "goal_revision": 1,
+          "candidate_id": "synthetic-candidate-01",
+          "scope_id": "isolated-fixture",
+          "session_id": "synthetic-session-01"
+        },
+        "criterion_ids": [
+          "verify-db"
+        ],
+        "depends_on": [],
+        "target_host": "WORK",
+        "capability": {
+          "state": "AVAILABLE",
+          "source_ref": "fixture:available-executor",
+          "current": true,
+          "binding": {
+            "project_id": "synthetic-alife",
+            "mission_id": "synthetic-staging-review",
+            "goal_id": "verify-staging",
+            "goal_revision": 1,
+            "candidate_id": "synthetic-candidate-01",
+            "scope_id": "isolated-fixture",
+            "session_id": "synthetic-session-01"
+          }
+        },
+        "authorization": {
+          "state": "ALLOWED",
+          "source_type": "USER_INSTRUCTION",
+          "source_ref": "fixture:explicit-inspection-request",
+          "current": true,
+          "binding": {
+            "project_id": "synthetic-alife",
+            "mission_id": "synthetic-staging-review",
+            "goal_id": "verify-staging",
+            "goal_revision": 1,
+            "candidate_id": "synthetic-candidate-01",
+            "scope_id": "isolated-fixture",
+            "session_id": "synthetic-session-01"
+          }
+        },
+        "preconditions": "UNSATISFIED",
+        "blocker": {
+          "reason": "La conexión de staging observada no está disponible.",
+          "source_ref": "synthetic:connection-unavailable",
+          "intervention": "Comprobar de nuevo la conexión cuando se recupere el servicio.",
+          "basis": "OBSERVATION",
+          "current": true
+        },
+        "handoff": null
+      }
+    ]
+  },
+  "spec": {
+    "id": "CCR-001",
+    "action_id": "inspect-application-db",
+    "cause_kind": "CONDITION",
+    "reason": "Conexión requerida temporalmente no disponible.",
+    "source_ref": "synthetic:connection-unavailable",
+    "correct_behavior": "Verificar la base por la conexión vigente cuando sea pertinente y esté autorizada.",
+    "activation_condition": "El encargo sigue pendiente y la conexión requerida está comprobada.",
+    "conditions": [
+      {
+        "id": "connection",
+        "description": "Conexión correcta disponible y comprobada."
+      }
+    ],
+    "expires_at": null,
+    "prior_execution": "NOT_RUN"
+  },
+  "observation": {
+    "id": "connection-restored-1",
+    "correction_id": "CCR-001",
+    "binding": {
+      "project_id": "synthetic-alife",
+      "mission_id": "synthetic-staging-review",
+      "goal_id": "verify-staging",
+      "goal_revision": 1,
+      "candidate_id": "synthetic-candidate-01",
+      "scope_id": "isolated-fixture",
+      "session_id": "synthetic-session-01"
+    },
+    "action_id": "inspect-application-db",
+    "observed_at": "2026-11-20T12:00:01+00:00",
+    "valid_until": "2026-11-20T12:05:00+00:00",
+    "current": true,
+    "source_ref": "synthetic:connection-restored-observed",
+    "conditions": [
+      {
+        "id": "connection",
+        "state": "SATISFIED",
+        "source_ref": "synthetic:current-connection-check"
+      }
+    ],
+    "relevance": "NEEDED",
+    "prior_result": "NOT_RUN",
+    "restriction_resolution": null
+  },
+  "registered_at": "2026-11-20T12:00:00+00:00",
+  "now": "2026-11-20T12:00:02+00:00"
+}

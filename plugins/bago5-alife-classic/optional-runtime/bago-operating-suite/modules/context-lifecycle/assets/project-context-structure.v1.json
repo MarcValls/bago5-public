@@ -1,0 +1,55 @@
+{
+  "schema": "bago.project-context-structure.v1",
+  "version": "1.0.0",
+  "purpose": "Minimal, extensible project continuity for BAGO Operating Suite task entry.",
+  "policy": {
+    "project_local_authority": true,
+    "never_overwrite_existing": true,
+    "context_import_requires_compatibility_review": true,
+    "unknown_facts": "leave_explicitly_unset",
+    "extensions_allowed": true
+  },
+  "artifacts": [
+    {
+      "id": "project_context",
+      "enabled": true,
+      "path": ".bago_skill/context/PROJECT_CONTEXT.md",
+      "format": "markdown",
+      "purpose": "Stable project identity, authorities, boundaries, and working conventions.",
+      "template": "# PROJECT_CONTEXT\n\nLifecycle: PROPOSED\n\n> This file is project-local continuity. Fill only from sources verified in this repository. Unknown or conflicting information stays explicit; this template is not canon.\n\n## Project identity\n- Name: [UNSET]\n- Root: [UNSET; confirm repository root]\n- Purpose: [UNSET]\n\n## Authority and sources\n- Applicable instructions: [UNSET; list exact paths]\n- Canonical project sources: [UNSET; list exact paths]\n\n## Scope and boundaries\n- In scope: [UNSET]\n- Out of scope: [UNSET]\n- Related projects: [UNSET; do not infer relations]\n\n## Conventions and constraints\n- [UNSET]\n\n## Open questions and conflicts\n- [NONE RECORDED; this is not evidence that none exist]\n\n## Provenance\n- Created from structure: bago.project-context-structure.v1 / 1.0.0\n- Last reviewed: [UNSET]\n"
+    },
+    {
+      "id": "project_state",
+      "enabled": true,
+      "path": ".bago_skill/state/PROJECT_STATE.json",
+      "format": "json",
+      "purpose": "Current goal, verified state, checks, blockers, and evidence pointers.",
+      "template": {
+        "schema": "bago.project-state.v1",
+        "lifecycle": "PROPOSED",
+        "project_id": null,
+        "updated_at": null,
+        "current_goal": {
+          "objective": null,
+          "scope": [],
+          "acceptance": [],
+          "status": "NOT_SET"
+        },
+        "verified_state": [],
+        "checks": [],
+        "blockers": [],
+        "next_actions": [],
+        "extensions": {}
+      }
+    },
+    {
+      "id": "active_handoff",
+      "enabled": true,
+      "path": ".bago_skill/runtime/ACTIVE_HANDOFF.md",
+      "format": "markdown",
+      "purpose": "Explicit continuation boundary for the current task or a paused handoff.",
+      "template": "# ACTIVE_HANDOFF\n\nLifecycle: PROPOSED\nStatus: NONE\n\n> No active handoff has been established. Do not treat this template as evidence of prior execution.\n\n## Task and candidate\n- Task ID: [UNSET]\n- Candidate identity: [UNSET]\n- Scope: [UNSET]\n\n## Verified work completed\n- [NONE RECORDED]\n\n## Pending work\n- [UNSET]\n\n## Constraints and unresolved decisions\n- [UNSET]\n\n## Resume conditions\n- [UNSET]\n\n## Evidence pointers\n- [NONE RECORDED]\n"
+    }
+  ],
+  "extensions": {}
+}

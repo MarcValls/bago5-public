@@ -1,0 +1,6 @@
+python313.zip
+bootstrap.zip
+.
+../engine/ZIP_AUDITOR_v0.3.0/ZIP_AUDITOR
+../engine/control
+import site

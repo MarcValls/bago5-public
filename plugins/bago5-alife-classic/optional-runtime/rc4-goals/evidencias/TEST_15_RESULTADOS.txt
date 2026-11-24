@@ -1,0 +1,20 @@
+test_ALL_goals_resumed_as_summary_with_pending_and_orphan (__main__.Fixture.test_ALL_goals_resumed_as_summary_with_pending_and_orphan) ... ok
+test_F01_document_DONE_but_TaskStore_OPEN_remains_pending_and_blocks_run (__main__.Fixture.test_F01_document_DONE_but_TaskStore_OPEN_remains_pending_and_blocks_run) ... ok
+test_F01_document_PAUSED_task_OPEN_not_discarded (__main__.Fixture.test_F01_document_PAUSED_task_OPEN_not_discarded) ... ok
+test_F02_STOP_without_goal_document_or_suite_identity (__main__.Fixture.test_F02_STOP_without_goal_document_or_suite_identity) ... ok
+test_F02_orphan_STOP_outranks_document_and_prevents_other_goal_execution (__main__.Fixture.test_F02_orphan_STOP_outranks_document_and_prevents_other_goal_execution) ... ok
+test_F03_codex_worker_REAL_mock_process_reads_complete_prompt_from_stdin (__main__.Fixture.test_F03_codex_worker_REAL_mock_process_reads_complete_prompt_from_stdin) ... ok
+test_F03_taskstore_governs_REAL_mock_codex_run (__main__.Fixture.test_F03_taskstore_governs_REAL_mock_codex_run) ... ok
+test_F03_windows_portable_command_preserves_argv_and_does_not_embed_prompt (__main__.Fixture.test_F03_windows_portable_command_preserves_argv_and_does_not_embed_prompt) ... ok
+test_F04_cmd_launcher_propagates_child_exit_code (__main__.Fixture.test_F04_cmd_launcher_propagates_child_exit_code) ... ok
+test_F05_sqlite_handles_release_across_four_failed_transient_scenarios (__main__.Fixture.test_F05_sqlite_handles_release_across_four_failed_transient_scenarios) ... ok
+test_UNINDEXED_markdown_goal_is_visible_but_not_executable (__main__.Fixture.test_UNINDEXED_markdown_goal_is_visible_but_not_executable) ... ok
+test_baseline_skill_keeps_exact_RC2_identity_and_archived_bytes (__main__.Fixture.test_baseline_skill_keeps_exact_RC2_identity_and_archived_bytes) ... ok
+test_explicit_resume_required_STOP_persistent (__main__.Fixture.test_explicit_resume_required_STOP_persistent) ... ok
+test_unapproved_execution_does_not_create_runs (__main__.Fixture.test_unapproved_execution_does_not_create_runs) ... ok
+test_wrong_mission_binding_is_blocked (__main__.Fixture.test_wrong_mission_binding_is_blocked) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 16.923s
+
+OK

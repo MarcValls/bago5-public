@@ -1,0 +1,195 @@
+{
+  "schema": "bago.private.verification/v1",
+  "candidate_version": "0.4.22",
+  "baseline_release_id": "pluginrel_6af9b485b98481918c00976085aeb16b",
+  "capability": "BAGO-PRIVATE-001",
+  "environment": "Linux container / Python 3.13 / Tk under Xvfb",
+  "checks": [
+    {
+      "check": "plugin.json: version",
+      "result": "PASS"
+    },
+    {
+      "check": "plugin.json: identity",
+      "result": "PASS"
+    },
+    {
+      "check": "plugin.json: no other semantic changes",
+      "result": "PASS"
+    },
+    {
+      "check": ".codex-plugin/plugin.json: version",
+      "result": "PASS"
+    },
+    {
+      "check": ".codex-plugin/plugin.json: identity",
+      "result": "PASS"
+    },
+    {
+      "check": "defaultPrompt old instructions preserved",
+      "result": "PASS"
+    },
+    {
+      "check": ".codex-plugin/plugin.json: no other semantic changes",
+      "result": "PASS"
+    },
+    {
+      "check": "unchanged tool dependencies",
+      "result": "PASS"
+    },
+    {
+      "check": "unchanged agent invocation policy",
+      "result": "PASS"
+    },
+    {
+      "check": "existing agent prompt retained",
+      "result": "PASS"
+    },
+    {
+      "check": "sensitive task routed to private-mode skill",
+      "result": "PASS"
+    },
+    {
+      "check": "no .app overwrite",
+      "result": "PASS"
+    },
+    {
+      "check": "no runtime modifications",
+      "result": "PASS"
+    },
+    {
+      "check": "new skill discoverable",
+      "result": "PASS"
+    },
+    {
+      "check": "default fail-closed explicit",
+      "result": "PASS"
+    },
+    {
+      "check": "no deployable fixture host",
+      "result": "PASS"
+    },
+    {
+      "check": "AST skills/bago5-private-mode/scripts/private_mode.py",
+      "result": "PASS"
+    },
+    {
+      "check": "AST skills/bago5-private-mode/scripts/private_ui.py",
+      "result": "PASS"
+    },
+    {
+      "check": "AST skills/bago5-private-mode/tests/test_private_mode.py",
+      "result": "PASS"
+    },
+    {
+      "check": "AST skills/bago5-private-mode/tests/test_private_ui.py",
+      "result": "PASS"
+    },
+    {
+      "check": "all JSON parse",
+      "result": "PASS"
+    },
+    {
+      "check": "all YAML parse",
+      "result": "PASS"
+    }
+  ],
+  "scope": "Static differential checks on changed manifests/agent prompt and new component. Not a full runtime regression suite.",
+  "core_tests": {
+    "executed": 32,
+    "passed": 32,
+    "failed": 0
+  },
+  "ui_tests": {
+    "executed": 6,
+    "passed": 6,
+    "failed": 0,
+    "real_widgets": true,
+    "synthetic_host_and_launcher": true
+  },
+  "initial_test_run": {
+    "executed": 31,
+    "failed": 1,
+    "reason": "Negative test expected CONTROLLER_BUSY, but a disappeared store correctly blocked done with INVALID_ACTION. Test corrected to check both done denial and cancel controller mismatch; no relaxation of gate."
+  },
+  "native_windows_keepassxc": "NOT_RUN",
+  "authenticode_actual": "NOT_RUN",
+  "host_binding": "NOT_IMPLEMENTED",
+  "global_secret_use": "NO_GO",
+  "publication": "PENDING",
+  "previous_bago_runtime_regressions": "NOT_RUN; files not altered",
+  "inventory_before_evidence_files": {
+    "plugin.json": {
+      "bytes": 532,
+      "sha256": "28d93c5ddeb8cc351d93e54cabb8706128bdeb2b50e8a4a3ddcb568a8cda81d2"
+    },
+    ".codex-plugin/plugin.json": {
+      "bytes": 1715,
+      "sha256": "2145ee7524faa23af92bb1a5c156165c3d13657321f32a60216ec80c03bf084d"
+    },
+    "skills/bago5-private-mode/SKILL.md": {
+      "bytes": 5734,
+      "sha256": "382efe14a6d459acdc40064c017a16e1c82a704a277b4c372de112d18de9d6e8"
+    },
+    "skills/bago5-govern/agents/openai.yaml": {
+      "bytes": 1932,
+      "sha256": "6ec9a2d9eca5513dfc6b8af64e3ded6d9598e989359de77a189637ccbfa1feae"
+    },
+    "skills/bago5-private-mode/scripts/02_COMPROBAR_HOST.cmd": {
+      "bytes": 187,
+      "sha256": "b940f21c229287eb0db87ed28c586005ca52362bc6fb922a6d12b57409980bbd"
+    },
+    "skills/bago5-private-mode/scripts/01_VERIFICAR.cmd": {
+      "bytes": 313,
+      "sha256": "55fb0cc01766c0fc234c4f2c426a65deef67fce40280fbdab838ecda666662a5"
+    },
+    "skills/bago5-private-mode/scripts/private_mode.py": {
+      "bytes": 19402,
+      "sha256": "5111c9c1aa620156d020db5fb1e776fc7907a5b652e06869d7eb83c48421fb24"
+    },
+    "skills/bago5-private-mode/scripts/private_ui.py": {
+      "bytes": 6356,
+      "sha256": "43b1bc0bab680902cb6a9bf4300d7f4b0cb161c32c3b3aae5bac5a08d9253b5c"
+    },
+    "skills/bago5-private-mode/references/request.schema.json": {
+      "bytes": 421,
+      "sha256": "2797a078714799f181813f650646a44591f1a3d655b52ef4ffba7db4e8a11b97"
+    },
+    "skills/bago5-private-mode/references/VERSIONES.md": {
+      "bytes": 2149,
+      "sha256": "5d63247d4a714b6517d953ff29492f608c15c43b617e576306ca4bcf3d41fc04"
+    },
+    "skills/bago5-private-mode/references/vectors.json": {
+      "bytes": 962,
+      "sha256": "cb5895ec1a2afc6b3bcc5d8faa1499c0ad7b4b0ded1aedbf1a7526878f067cc5"
+    },
+    "skills/bago5-private-mode/references/HOST_CONTRACT.md": {
+      "bytes": 6259,
+      "sha256": "108a13c4ea54090a990a6bd5e0e8f05f0ce7d024a03f5f1bb7c155466608c226"
+    },
+    "skills/bago5-private-mode/references/LEEME.md": {
+      "bytes": 2435,
+      "sha256": "c261300e9113993c071e87c05661a5e102941b2539fb577961caf39fe0133787"
+    },
+    "skills/bago5-private-mode/references/HANDOFF.md": {
+      "bytes": 2539,
+      "sha256": "9daa8d37a202ca4dadf3ecff9eeb6121debd34e93fe16dff5425526fba60882c"
+    },
+    "skills/bago5-private-mode/references/SOURCES.md": {
+      "bytes": 772,
+      "sha256": "4295503fbbceb0cc5280df6fcfe49fda392e66de62562c9c83353862bae0f769"
+    },
+    "skills/bago5-private-mode/tests/test_private_mode.py": {
+      "bytes": 14171,
+      "sha256": "afc629ec5fc858e0b5a15ed348e6c2e31ff65b724b17d60923f4c09e3ac9ae93"
+    },
+    "skills/bago5-private-mode/tests/test_private_ui.py": {
+      "bytes": 4200,
+      "sha256": "af58eee7c45573e07709f80161f32798cb2a8ebf15da491674ba44ce7c924532"
+    },
+    "skills/bago5-private-mode/agents/openai.yaml": {
+      "bytes": 472,
+      "sha256": "28e9611eb8c23899c7e73c2d1de8b267a7f09aa0abb73be9646d413049a31203"
+    }
+  }
+}

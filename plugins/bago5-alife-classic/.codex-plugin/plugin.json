@@ -1,0 +1,42 @@
+{
+  "interface": {
+    "capabilities": [],
+    "category": "Developer Tools",
+    "composerIcon": "./assets/alife.png",
+    "composerIconDark": "./assets/alife.png",
+    "defaultPrompt": "Ayúdame a crear mi memoria, conectar una que ya tengo con su Vault o continuar sin memoria.",
+    "developerName": "Marc Valls Sanvictor",
+    "displayName": "BAGO5 Gobernado Classic (0.4.60-rc.5)",
+    "logo": "./assets/alife.png",
+    "logoDark": "./assets/alife.png",
+    "longDescription": "BAGO5 reúne 77 habilidades en el chat Classic. Permite empezar sin memoria, crear una memoria o conectar la que ya tienes en ALIFE. El acceso a archivos depende de los permisos de Vault disponibles en tu conexión.",
+    "shortDescription": "Memoria y archivos personales",
+    "websiteURL": "https://alifememories.com"
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/bago5/SKILL.md"
+    }
+  },
+  "name": "bago5-alife-classic",
+  "version": "0.4.60-rc.5",
+  "description": "Habilidades de BAGO5 Gobernado para el chat Classic con las aplicaciones nativas de ALIFE Memoria Viva y Gestor.",
+  "author": {
+    "name": "Marc Valls Sanvictor"
+  },
+  "keywords": [
+    "bago5",
+    "governance",
+    "memory",
+    "codex",
+    "copilot-cli",
+    "m-workspace",
+    "private-mode",
+    "behavior-recovery",
+    "distribution"
+  ],
+  "homepage": "https://alifememories.com",
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json"
+}

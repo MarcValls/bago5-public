@@ -1,0 +1,51 @@
+{
+  "mcpServers": {
+    "alife-gestor-nativo": {
+      "type": "streamable-http",
+      "url": "https://alifememories.com/mcp/gestor",
+      "headers": {},
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "provided",
+              "clientId": "bago5-chatgpt-gestor",
+              "tokenEndpointAuthMethod": "none"
+            },
+            "baseScopes": [
+              "manager.read"
+            ],
+            "defaultScopes": [
+              "manager.read"
+            ]
+          }
+        }
+      }
+    },
+    "alife-memoria-viva": {
+      "type": "streamable-http",
+      "url": "https://alifememories.com/mcp",
+      "headers": {},
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "provided",
+              "clientId": "bago5-chatgpt-memoria",
+              "tokenEndpointAuthMethod": "none"
+            },
+            "baseScopes": [
+              "memory.read"
+            ],
+            "defaultScopes": [
+              "memory.read",
+              "memory.write"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

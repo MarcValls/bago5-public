@@ -1,0 +1,272 @@
+{
+  "schema": "bago5.behavior-recovery.verification.v1",
+  "rule": "BAGO5-CCR-001",
+  "version": "0.4.36",
+  "verified_at": "2026-11-20T01:36:36.273756+00:00",
+  "status": "VERIFIED_LOCAL",
+  "release_recommendation": "GO",
+  "publication": "NOT_RUN_AT_VERIFICATION_TIME",
+  "source_release": {
+    "version": "0.4.35",
+    "release_id": "pluginrel_6aff9bae712881918363324a513950fc",
+    "file_count": 1098
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "linux",
+    "runner": "stdlib unittest",
+    "new_dependencies_installed": false
+  },
+  "baseline": {
+    "discovered": 297,
+    "passed": 291,
+    "skipped": 6,
+    "failed": 0,
+    "errors": 0,
+    "unchanged": true
+  },
+  "tests": {
+    "discovered": 362,
+    "passed": 356,
+    "skipped": 6,
+    "failed": 0,
+    "errors": 0,
+    "groups": [
+      {
+        "group": "governance",
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "skills/bago5/tests",
+          "-p",
+          "test*.py",
+          "-v"
+        ],
+        "discovered": 164,
+        "passed": 164,
+        "skipped": 0,
+        "failed": 0,
+        "errors": 0,
+        "elapsed_seconds": 15.967,
+        "log": "governance-tests.log",
+        "log_sha256": "928ede09a0f8fe35c8fdd3adaf70a92834368845d225d0f2fb022e4afb5c816a"
+      },
+      {
+        "group": "session",
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "skills/bago5-ganchos-sesion/tests",
+          "-p",
+          "test*.py",
+          "-v"
+        ],
+        "discovered": 136,
+        "passed": 136,
+        "skipped": 0,
+        "failed": 0,
+        "errors": 0,
+        "elapsed_seconds": 21.545,
+        "log": "session-tests.log",
+        "log_sha256": "6e8f1192cb9e39c1166efc663c4362f19ec0f0a22c1ee339be98b64c7c176c1f"
+      },
+      {
+        "group": "native-adapters",
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_native_hooks.py",
+          "-v"
+        ],
+        "discovered": 24,
+        "passed": 24,
+        "skipped": 0,
+        "failed": 0,
+        "errors": 0,
+        "elapsed_seconds": 0.225,
+        "log": "native-adapters-tests.log",
+        "log_sha256": "8bc4ebf44a1776439cdfee4f4c294daa92adc3ef1ffe0a2fc4a274edf7cd967b"
+      },
+      {
+        "group": "private",
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "skills/bago5-modo-privado/tests",
+          "-p",
+          "test*.py",
+          "-v"
+        ],
+        "discovered": 38,
+        "passed": 32,
+        "skipped": 6,
+        "failed": 0,
+        "errors": 0,
+        "elapsed_seconds": 0.479,
+        "log": "private-tests.log",
+        "log_sha256": "184d1027ef792c6e3aacc558a0bc5dca19ff83223366ace940b6b728383a0821"
+      }
+    ]
+  },
+  "test_source_unchanged_during_final_run": true,
+  "independent_review": {
+    "report": "independent-review.json",
+    "adversarial_cases_passed": 7,
+    "failed": 0,
+    "implementation_hashes_match": true
+  },
+  "preservation": {
+    "original_files_retained": 1098,
+    "removed_files": [],
+    "unique_skill_names": 72,
+    "optional_runtime_bytes_unchanged": true,
+    "app_binding_unchanged": true,
+    "hook_manifests_unchanged": true,
+    "plugin_presentation_and_default_prompts_unchanged": true,
+    "turn_decision_v1_and_evaluator_unchanged": true,
+    "schema_syntax": "PASS_DRAFT_2020_12",
+    "changed_python_syntax": "PASS",
+    "changed_document_links": "PASS"
+  },
+  "changed_source_files": {
+    ".codex-plugin/plugin.json": {
+      "before_sha256": "ef76e496ccf3410c4ae8279bed92e38611ca072c5b5d44cd630bbde874509b78",
+      "after_sha256": "8896e35508419735fac72ae78d48c665df8b479e27ebc2d8665fd0fec58755d9"
+    },
+    "plugin.json": {
+      "before_sha256": "363971af683edeb618bfbac53e76bbefcb7c0bc26570e87098c30f22b68777e3",
+      "after_sha256": "03bb9730a91ab2e1fd9a4149f7ada25ff10afddffde77e37797aef6bf7ffa674"
+    },
+    "skills/bago5-acceso-motor-local/SKILL.md": {
+      "before_sha256": "71e7e47609517a1bc2a6165e5df55b3f87abdb0df1450a1a85484ce07d50c1ab",
+      "after_sha256": "91033f9dd9864db010e189f6a1ec9ef6e0ba4404b01048d7480a8b0fa23ffcc3"
+    },
+    "skills/bago5-control-acciones/SKILL.md": {
+      "before_sha256": "94a65841b94b2ac0dd7cbe8e28b968691702d0258ebc9e59e6275a5701161495",
+      "after_sha256": "d32ed58fd23b8d62c3bc3d716b724ff7403b542848d348d9bc0aee8315cc6032"
+    },
+    "skills/bago5-ganchos-sesion/SKILL.md": {
+      "before_sha256": "00918660d0ab87ee2d58b75bd6d95e73d0ea8bedf825235bf8dc424a5df75351",
+      "after_sha256": "758d906fcba36848eb8087a9ff799e51c322496622933216969e1bdf60b317cc"
+    },
+    "skills/bago5-ganchos-sesion/references/lifecycle.md": {
+      "before_sha256": "216aaf74aa6953286021be7fccdd2e7041b3ec00b52c6273d7e2f7d2926c5646",
+      "after_sha256": "2e4df73d37e5c082589d614733ab704a418e280d8b97b9a3acbfe93b845a1b0b"
+    },
+    "skills/bago5-ganchos-sesion/scripts/session_cli.py": {
+      "before_sha256": "8918688a5baf1bef804e323b6e06fcd06a361fe13c8e6a26f7a8b2b0abc50479",
+      "after_sha256": "08dd19633f771e25501681dc842fc6709c315021236bfd03f2d796420809f1e6"
+    },
+    "skills/bago5-ganchos-sesion/scripts/session_engine.py": {
+      "before_sha256": "78f9175583a57187684d59e45eb0b09dd8cc5c5c329ae50e67d58b2a0f0f1f18",
+      "after_sha256": "e7f9729bc469441ea4561d0daf9778e44971dda4fb1ac939ac16bfdde02efb97"
+    },
+    "skills/bago5-impacto-parada/SKILL.md": {
+      "before_sha256": "98457e36c4447180fde8f1ad43a0efd070615db2698e1075c700285493f3ebb7",
+      "after_sha256": "5759f66d53cb51b1d2e51f2ed0b5de8857c958fd07845e9b0793ecd4c3c07875"
+    },
+    "skills/bago5-revision-continuidad/SKILL.md": {
+      "before_sha256": "342133f7db63d89ca97d21946c2592ead80e032fd35657934296f0a07885962e",
+      "after_sha256": "87d976d6a2332a8b544bd70756222fb2738b61b9976d41525f44b059b0bf76c0"
+    },
+    "skills/bago5-revision-procedimientos/SKILL.md": {
+      "before_sha256": "eb64ca79f169c363af6ad5997568f69d779e15b2e4f4a533db44b9914b44b062",
+      "after_sha256": "5f9992a9d8a7c96ec03ae95f3083db6598a192d4826f30c28bbc089bdb06f643"
+    },
+    "skills/bago5/SKILL.md": {
+      "before_sha256": "670f4d6a2ccc93f8a7818a1f51eb90db32ea165632dc6c4e7bf704027979dc46",
+      "after_sha256": "40788462fa261ce382d5e21d57a64befbcff8356c0d172451b2d3f0083e1cb6c"
+    },
+    "skills/bago5/agents/openai.yaml": {
+      "before_sha256": "62fd8fd03a0ce7b07734163724bed791113d39080cb954908201f1be7d77cb73",
+      "after_sha256": "31a4195c66a8519172cae2932c22b4bf4801efe833b5477dd5f319bfe9b00942"
+    },
+    "skills/bago5/references/CATALOGO_HABILIDADES.json": {
+      "before_sha256": "ab3ee612a1672c742ffe98b588ffe3895dc592b11de385d875cad1239579bb2f",
+      "after_sha256": "0719e5375c7206baa7a7fe62a94c3302e310e4638562689d23b504e4203487e5"
+    },
+    "skills/bago5/references/ROUTES.json": {
+      "before_sha256": "f991fe795faaf8f28d673ec19b428d06908e1e02f3a8c5df81d1f51c82b2d553",
+      "after_sha256": "5a975f01b761ef106352adba23477a8a32913b25736b2182469dcfc8bca587ff"
+    },
+    "skills/bago5/references/autonomia-recuperacion.md": {
+      "before_sha256": "2ab58b397271400bbb9639366ae982a306eb3d11f20f15dfb73b3f23680d01dc",
+      "after_sha256": "99c9adde4b691df074d1f75d88793f68f34448495e535cf6975e7cff33dacffe"
+    },
+    "skills/bago5/references/turn-decision.md": {
+      "before_sha256": "d594bc2019b4b055a6e309e4314a07fbad493ec77e6a0ff9b9d905d31bb06207",
+      "after_sha256": "34c26e895b887c978ac0979727367a4e388eb6f3c0d290a3664ae4d669066d93"
+    },
+    "skills/bago5/scripts/runtime_turn_decision.py": {
+      "before_sha256": "0b05119f8c3eed6f1c16d1f4ebc6c418f4f3fad0c15bedebeda6f093292bce3c",
+      "after_sha256": "fc22f3401dbabf19399c960cb8260595a36e62c92ce44f5af0c1ed78f12dafcc"
+    },
+    "skills/bago5/tests/test_runtime_turn_decision.py": {
+      "before_sha256": "c3d930ab2a945cbb15def90617293dfafc06d2f4c56465422ea5220c236ad9bb",
+      "after_sha256": "e935dfdde568d0f104b60f40c5ae45014e24ca49e1a2b985c70934ded2b92e6c"
+    }
+  },
+  "added_source_files": {
+    "skills/bago5-ganchos-sesion/tests/test_behavior_recovery_integration.py": "dcd2610a49680cfa70a650330135d3d41afdc2d849f5b4494ee231b30c0427ea",
+    "skills/bago5/references/behavior-recovery.md": "f0384742617c06212ab599bc18bb354bfdc9c123820f72b3c87d846c93103f50",
+    "skills/bago5/references/behavior-recovery.schema.json": "98cad0d2786cc67b61e6f716c2c228b8b1b037cd0efad92013583c14a4c01146",
+    "skills/bago5/scripts/behavior_recovery.py": "e0743be9b9c28999b2ebbda465d46f4fc8d7d3679901ddde0205510ba0b0ca50",
+    "skills/bago5/tests/fixtures/behavior-recovery/ccr-001.json": "c3aec68a330f006cef8fa3f95bbd28c082d2fbec3f12e681e4fe4279b14621d8",
+    "skills/bago5/tests/test_behavior_recovery.py": "ac042325f72a04ee4a9f6854ac54e0adc1e9a496631a2f56fe12505193dc12d8"
+  },
+  "behavior_verified": [
+    "Block incorrect action while retaining goal and criteria",
+    "Fresh evidence recovers CONTINUE with still-valid authorization",
+    "No recovery under STOP or a native controller restriction",
+    "No permission revival via old receipt or old resolution",
+    "Candidate change retains applicable same-goal restrictions",
+    "Uncertain effects require reconciliation",
+    "Duplicate observations do not dispatch effects or invalidate unrelated resolutions",
+    "Independent authorized branches and verified completion remain available",
+    "Persisted CLI round-trip and Codex/Copilot payload adapters with controlled inputs"
+  ],
+  "terminal_scope": {
+    "report": "terminal-scope.json",
+    "expires_at": "Order expiry, not temporary condition or observation expiry",
+    "temporary_condition": "Use expires_at:null; observation valid_until controls freshness",
+    "new_explicit_request": "New goal instance may proceed with current applicable authority; old terminal order stays in history",
+    "same_goal_terminal_supersession": "NOT_IMPLEMENTED"
+  },
+  "limitations": [
+    {
+      "status": "NOT_RUN",
+      "item": "Six Tk UI tests require DISPLAY or xvfb; UI was not changed"
+    },
+    {
+      "status": "NOT_RUN",
+      "item": "Real Codex/Copilot hook delivery and activation in user hosts"
+    },
+    {
+      "status": "NOT_RUN",
+      "item": "Windows execution and remote memory services"
+    },
+    {
+      "status": "NOT_RUN",
+      "item": "User acceptance after release"
+    }
+  ],
+  "evidence_scope": "Executable local behavior with controlled inputs and temporary TaskStore. Hashes identify tested bytes; declared metadata does not authenticate observations or authorize effects."
+}

@@ -1,0 +1,557 @@
+"""handlers_router.py \u2014 GET /router/list[?refresh=1] for the BAGO HTTP bridge.
+
+Returns the model picker state for the current session. The picker is
+populated from the SessionManager's adapter catalog (when available) or
+from a hard-coded fallback list of BAGO-known local + cloud models.
+
+GET /router/list         \u2014 returns current picker state with `selected`
+                          flags from .bago_model_selection.json
+GET /router/list?refresh=1 \u2014 re-pulls catalog and merges in saved selection
+"""
+
+from __future__ import annotations
+import sys
+from pathlib import Path
+from typing import TYPE_CHECKING
+
+from bago_core.atomic_json import write_json_atomic
+
+_RUNTIME_DIR = Path(__file__).resolve().parents[1] / "chat"
+if str(_RUNTIME_DIR) not in sys.path:
+    sys.path.insert(0, str(_RUNTIME_DIR))
+
+if TYPE_CHECKING:
+    from http.server import BaseHTTPRequestHandler
+
+
+def _state_root(handler) -> Path:
+    from api_state import resolve_state_root
+    return resolve_state_root(handler)
+
+
+def handle(handler: "BaseHTTPRequestHandler") -> None:
+    from api_serializers import send_json
+    import urllib.parse as _up
+
+    from repl_model_router import (
+        Selection, discover_models, load_selection, render_picker,
+        render_selection, save_selection,
+    )
+
+    q = _up.parse_qs(_up.urlparse(handler.path).query)
+    refresh = q.get("refresh", ["0"])[0] in ("1", "true", "yes")
+
+    state = _state_root(handler)
+    sel = load_selection(state)
+    if refresh or not sel.entries:
+        mgr = getattr(handler, "session_mgr", None)
+        sel = Selection(entries=discover_models(mgr), auto_switch=sel.auto_switch)
+        save_selection(state, sel)
+
+    serialised = [
+        {
+            "provider": e.provider,
+            "model_id": e.model_id,
+            "wire_name": e.wire_name,
+            "context_tokens": e.context_tokens,
+            "best_for": e.best_for,
+            "available": e.available,
+            "selected": e.selected,
+            "key": e.key(),
+        }
+        for e in sel.entries
+    ]
+    send_json(handler, 200, {
+        "entries": serialised,
+        "selected_count": sum(1 for e in sel.entries if e.selected),
+        "auto_switch": sel.auto_switch,
+        "last_pick": sel.last_pick,
+        "last_pick_at": sel.last_pick_at,
+    })
+
+
+def handle_toggle(handler: "BaseHTTPRequestHandler", key: str) -> None:
+    from api_serializers import send_json
+    from event_bus import emit
+
+    from repl_model_router import (
+        Selection, discover_models, load_selection, save_selection, toggle,
+    )
+
+    state = _state_root(handler)
+    sel = load_selection(state)
+    if not sel.entries:
+        mgr = getattr(handler, "session_mgr", None)
+        sel = Selection(entries=discover_models(mgr), auto_switch=sel.auto_switch)
+    try:
+        sel = toggle(sel, key)
+    except KeyError as exc:
+        send_json(handler, 404, {"error": str(exc)})
+        return
+    save_selection(state, sel)
+    selected_count = sum(1 for e in sel.entries if e.selected)
+    send_json(handler, 200, {
+        "ok": True,
+        "key": key,
+        "selected_count": selected_count,
+        "auto_switch": sel.auto_switch,
+        "last_pick": sel.last_pick,
+        "last_pick_at": sel.last_pick_at,
+    })
+    emit("router.toggled", {
+        "key": key,
+        "selected_count": selected_count,
+        "auto_switch": sel.auto_switch,
+        "last_pick": sel.last_pick,
+    })
+
+
+def handle_auto(handler: "BaseHTTPRequestHandler", body: dict) -> None:
+    from api_serializers import send_json
+    from event_bus import emit
+
+    from repl_model_router import (
+        Selection, discover_models, load_selection, pick_best, save_selection, set_auto_switch,
+    )
+
+    state = _state_root(handler)
+    sel = load_selection(state)
+    enabled = bool(body.get("enabled", True))
+    mgr = getattr(handler, "session_mgr", None)
+    if not sel.entries:
+        sel = Selection(entries=discover_models(mgr), auto_switch=sel.auto_switch)
+    sel = set_auto_switch(sel, enabled)
+    chosen_key = None
+    if enabled:
+        chosen = pick_best(sel)
+        if chosen is not None:
+            chosen_key = chosen.key()
+            if mgr is not None and (mgr.provider != chosen.provider or mgr.model != chosen.model_id):
+                switch_result = mgr.switch(chosen.provider, chosen.model_id, force=True)
+                if not switch_result.get("ok"):
+                    send_json(handler, 400, {
+                        "ok": False,
+                        "error": switch_result.get("error") or "No se pudo activar el auto-router",
+                    })
+                    return
+    save_selection(state, sel)
+    send_json(handler, 200, {"ok": True, "auto_switch": enabled, "picked": chosen_key})
+    emit("router.auto_changed", {"enabled": enabled, "picked": chosen_key})
+
+
+def _policy_payload(handler) -> dict:
+    from repl_model_router import discover_models, load_selection
+
+    state = _state_root(handler)
+    sel = load_selection(state)
+    mgr = getattr(handler, "session_mgr", None)
+    if not sel.entries:
+        sel = sel.__class__(entries=discover_models(mgr), auto_switch=sel.auto_switch)
+    entries = [
+        {
+            "provider": e.provider,
+            "model_id": e.model_id,
+            "wire_name": e.wire_name,
+            "context_tokens": e.context_tokens,
+            "best_for": e.best_for,
+            "available": e.available,
+            "available_tokens": e.available_tokens,
+            "token_source": e.token_source,
+            "token_limited": e.token_limited,
+            "selected": e.selected,
+            "key": e.key(),
+        }
+        for e in sel.entries
+    ]
+    return {
+        "ok": True,
+        "state_root": str(state),
+        "auto_switch": sel.auto_switch,
+        "selected_count": sum(1 for e in sel.entries if e.selected),
+        "entries": entries,
+        "selected": [e["key"] for e in entries if e["selected"]],
+    }
+
+
+def handle_policy(handler: "BaseHTTPRequestHandler") -> None:
+    from api_serializers import send_json
+
+    send_json(handler, 200, _policy_payload(handler))
+
+
+# ── Session model override ────────────────────────────────────────────────────
+
+_SESSION_OVERRIDE_FILE = ".bago_session_model.json"
+_REASONING_DEPTH_FILE = ".bago_reasoning_depth.json"
+_REASONING_DEPTHS = {
+    "auto": {"label": "Automática", "effort": "auto"},
+    "normal": {"label": "Normal", "effort": "low"},
+    "media": {"label": "Media", "effort": "medium"},
+    "alta": {"label": "Alta", "effort": "high"},
+    "maxima": {"label": "Máxima", "effort": "xhigh"},
+}
+
+
+def _override_path(state: "Path") -> "Path":
+    return Path(state) / _SESSION_OVERRIDE_FILE
+
+
+def _reasoning_path(state: "Path") -> "Path":
+    return Path(state) / _REASONING_DEPTH_FILE
+
+
+def _read_reasoning(state: "Path") -> str:
+    import json
+    path = _reasoning_path(state)
+    if path.exists():
+        try:
+            value = str(json.loads(path.read_text(encoding="utf-8")).get("depth") or "").lower()
+            if value in _REASONING_DEPTHS:
+                return value
+        except Exception:
+            pass
+    return "normal"
+
+
+def handle_reasoning_depth(handler: "BaseHTTPRequestHandler", body: dict) -> None:
+    """Persist the session thinking depth and expose its provider effort mapping."""
+    from api_serializers import send_json
+    import json
+
+    state = _state_root(handler)
+    requested = str(body.get("depth") or "normal").strip().lower()
+    if requested not in _REASONING_DEPTHS:
+        send_json(handler, 400, {"ok": False, "error": "Profundidad no válida", "allowed": list(_REASONING_DEPTHS)})
+        return
+    path = _reasoning_path(state)
+    write_json_atomic(path, {"depth": requested})
+    mgr = getattr(handler, "session_mgr", None)
+    if mgr is not None:
+        mgr.reasoning_depth = requested
+        mgr.reasoning_effort = _REASONING_DEPTHS[requested]["effort"]
+    send_json(handler, 200, {"ok": True, "depth": requested, **_REASONING_DEPTHS[requested], "allowed": list(_REASONING_DEPTHS)})
+
+
+def handle_reasoning_depth_get(handler: "BaseHTTPRequestHandler") -> None:
+    from api_serializers import send_json
+    state = _state_root(handler)
+    depth = _read_reasoning(state)
+    mgr = getattr(handler, "session_mgr", None)
+    if mgr is not None:
+        mgr.reasoning_depth = depth
+        mgr.reasoning_effort = _REASONING_DEPTHS[depth]["effort"]
+    send_json(handler, 200, {"ok": True, "depth": depth, **_REASONING_DEPTHS[depth], "allowed": list(_REASONING_DEPTHS)})
+
+
+def restore_session_reasoning(mgr) -> dict:
+    """Restore a persisted session reasoning depth into the live manager."""
+    if mgr is None:
+        return {"ok": False, "restored": False, "reason": "manager_unavailable"}
+    try:
+        state = Path(mgr.state_root)
+        depth = _read_reasoning(state)
+        mgr.reasoning_depth = depth
+        mgr.reasoning_effort = _REASONING_DEPTHS[depth]["effort"]
+        return {"ok": True, "restored": _reasoning_path(state).exists(), "depth": depth, **_REASONING_DEPTHS[depth]}
+    except Exception as exc:
+        return {"ok": False, "restored": False, "reason": str(exc)}
+
+
+def restore_session_model(mgr) -> dict:
+    """Restore a persisted session override and rebuild its live adapter."""
+    import json
+
+    if mgr is None:
+        return {"ok": False, "restored": False, "reason": "manager_unavailable"}
+    path = _override_path(Path(mgr.state_root))
+    if not path.exists():
+        return {"ok": True, "restored": False, "reason": "no_override"}
+    try:
+        model_key = str(json.loads(path.read_text(encoding="utf-8")).get("model") or "").strip()
+        if not model_key:
+            return {"ok": True, "restored": False, "reason": "empty_override"}
+        parts = model_key.split("/", 1)
+        provider = parts[0] if len(parts) == 2 else mgr.provider
+        model = parts[1] if len(parts) == 2 else parts[0]
+        if mgr.provider == provider and mgr.model == model:
+            return {"ok": True, "restored": False, "reason": "already_active", "model": model_key}
+        result = mgr.switch(provider, model, force=True)
+        return {**result, "restored": bool(result.get("ok")), "model": model_key}
+    except Exception as exc:
+        return {"ok": False, "restored": False, "reason": str(exc)}
+
+
+def handle_session_model(handler: "BaseHTTPRequestHandler", body: dict) -> None:
+    """POST /router/session-model — override the model for this session.
+
+    body = {"model": "ollama-local/llama3.2:3b"} or {"model": null} to clear.
+    """
+    from api_serializers import send_json
+    from event_bus import emit
+    import json
+
+    state = _state_root(handler)
+    model_key = body.get("model")  # None means clear override
+
+    override_path = _override_path(state)
+
+    mgr = getattr(handler, "session_mgr", None)
+
+    if model_key is None or model_key == "":
+        from authorization_boundary import AuthorizationBoundary, AuthorizationError
+        from execution_gateway import ExecutionContext, ExecutionGateway, ExecutionGatewayError
+        from execution_request import ExecutionRequestError, build_execution_request
+
+        if mgr is None:
+            send_json(handler, 503, {"ok": False, "error": "SessionManager no disponible"})
+            return
+
+        trusted_state_root = Path(
+            getattr(mgr, "state_root", state),
+        ).expanduser().resolve()
+        try:
+            request = build_execution_request(
+                effect_id="state.delete",
+                actor_kind="user",
+                principal_id="interactive-local-user",
+                session_id=str(getattr(mgr, "session_id", "") or ""),
+                source_surface="api.router.session_model.clear",
+                target={
+                    "path": str(override_path),
+                    "allowed_root": str(trusted_state_root),
+                    "resource": "session_model_override",
+                },
+                arguments={"operation": "clear"},
+                scope="session",
+        world_state_authority=mgr,
+            )
+        except ExecutionRequestError as exc:
+            send_json(handler, 400, {"ok": False, "error": str(exc), "code": exc.code})
+            return
+        boundary = AuthorizationBoundary()
+        action = str(body.get("authorization_action") or "").strip().lower()
+        interaction_id = str(body.get("interaction_id") or "").strip()
+
+        try:
+            if action == "challenge":
+                challenge = boundary.create_challenge(request, interaction_id=interaction_id)
+                send_json(handler, 200, {
+                    "ok": True,
+                    "authorization": {"state": "challenge", "challenge": challenge},
+                })
+                return
+
+            if action == "approve":
+                if str(body.get("user_decision") or "").strip().lower() != "approve":
+                    raise AuthorizationError(
+                        "La decisión explícita del usuario debe ser approve",
+                        code="authorization_user_decision_required",
+                    )
+                headers = getattr(handler, "headers", {}) or {}
+                channel = headers.get("X-Bago-Channel", "") if hasattr(headers, "get") else ""
+                authorization = boundary.approve_challenge(
+                    challenge_id=str(body.get("challenge_id") or ""),
+                    interaction_id=interaction_id,
+                    session_id=request.session_id,
+                    channel=channel,
+                )
+                send_json(handler, 200, {
+                    "ok": True,
+                    "authorization": {"state": "authorized", **authorization},
+                })
+                return
+
+            if action != "execute":
+                raise AuthorizationError(
+                    "authorization_action must be challenge, approve or execute",
+                    code="authorization_action_required",
+                )
+
+            # Clearing a manual override must restore the effective automatic
+            # adapter before removing persistence. Otherwise the UI says
+            # "Automático" while the previous manual adapter remains live.
+            persisted: dict = {}
+            if override_path.exists():
+                try:
+                    persisted = json.loads(override_path.read_text(encoding="utf-8"))
+                except Exception:
+                    persisted = {}
+            automatic_provider = str(persisted.get("automatic_provider") or "").strip()
+            automatic_model = str(persisted.get("automatic_model") or "").strip()
+            automatic_provider = automatic_provider or str(getattr(getattr(mgr, "config", None), "default_provider", "") or "").strip()
+            automatic_model = automatic_model or str(getattr(getattr(mgr, "config", None), "default_model", "") or "").strip()
+            if not automatic_provider or not automatic_model:
+                send_json(handler, 409, {"ok": False, "error": "No se pudo resolver el modelo automático"})
+                return
+            if mgr.provider != automatic_provider or mgr.model != automatic_model:
+                switch_result = mgr.switch(automatic_provider, automatic_model, force=True)
+                if not switch_result.get("ok"):
+                    send_json(handler, 400, {
+                        "ok": False,
+                        "error": switch_result.get("error") or "No se pudo restaurar el modelo automático",
+                    })
+                    return
+            result, authorization = ExecutionGateway(boundary).execute(
+                permit_token=str(body.get("authorization_permit") or ""),
+                request=request,
+                context=ExecutionContext(manager=mgr),
+            )
+            response = {
+                "ok": True,
+                "session_model": None,
+                "cleared": True,
+                "effective_provider": getattr(mgr, "provider", None),
+                "effective_model": getattr(mgr, "model", None),
+                "receipt": result,
+                "authorization": {
+                    "state": "consumed",
+                    "permit_id": authorization.get("permit_id"),
+                    "decision_id": authorization.get("decision_id"),
+                    "proof_id": authorization.get("proof_id"),
+                    "operation_fingerprint": authorization.get("operation_fingerprint"),
+                },
+            }
+            send_json(handler, 200, response)
+            emit("router.session_model_cleared", {})
+        except AuthorizationError as exc:
+            status = 409 if exc.code in {
+                "authorization_challenge_not_pending",
+                "authorization_challenge_expired",
+                "authorization_permit_replay",
+                "authorization_permit_expired",
+                "authorization_operation_mismatch",
+            "authorization_world_state_stale",
+            } else 403
+            send_json(handler, status, {"ok": False, "error": str(exc), "code": exc.code})
+        except ExecutionRequestError as exc:
+            send_json(handler, 400, {"ok": False, "error": str(exc), "code": exc.code})
+        except ExecutionGatewayError as exc:
+            code = str(getattr(exc, "code", "") or "")
+            status = 500 if code == "state_delete_failed" else 403 if code.startswith("state_delete_") else 409
+            send_json(handler, status, {"ok": False, "error": str(exc), "code": code})
+        return
+
+    # Apply through SessionManager so the adapter is rebuilt. Mutating only
+    # provider/model leaves the previous adapter alive (for example Ollama
+    # answering after the user selected Copilot).
+    persisted: dict = {}
+    if override_path.exists():
+        try:
+            persisted = json.loads(override_path.read_text(encoding="utf-8"))
+        except Exception:
+            persisted = {}
+    automatic_provider = str(persisted.get("automatic_provider") or getattr(mgr, "provider", "") or "").strip()
+    automatic_model = str(persisted.get("automatic_model") or getattr(mgr, "model", "") or "").strip()
+    if mgr is not None:
+        try:
+            parts = str(model_key).split("/", 1)
+            if len(parts) == 2:
+                switch_result = mgr.switch(parts[0], parts[1], force=True)
+            else:
+                switch_result = mgr.switch(mgr.provider, str(model_key), force=True)
+            if not switch_result.get("ok"):
+                send_json(handler, 400, {"ok": False, "error": switch_result.get("error") or "No se pudo activar el modelo"})
+                return
+        except Exception as exc:
+            send_json(handler, 400, {"ok": False, "error": f"No se pudo activar el modelo: {exc}"})
+            return
+
+    override = {
+        "model": str(model_key),
+        "automatic_provider": automatic_provider,
+        "automatic_model": automatic_model,
+    }
+    write_json_atomic(override_path, override)
+
+
+    # Manual selection must turn auto-switch off so the user stays in control.
+    try:
+        from repl_model_router import (
+            Selection, discover_models, load_selection, save_selection, _mark_manual_pick,
+        )
+        sel = load_selection(state)
+        if not sel.entries:
+            mgr = getattr(handler, "session_mgr", None)
+            sel = Selection(entries=discover_models(mgr), auto_switch=sel.auto_switch)
+        sel = _mark_manual_pick(sel, str(model_key))
+        save_selection(state, sel)
+    except Exception:
+        pass
+
+    # Apply to live session manager if available
+    mgr = getattr(handler, "session_mgr", None)
+    if mgr is not None:
+        try:
+            # model key is "provider/model_id"
+            parts = str(model_key).split("/", 1)
+            if len(parts) == 2:
+                mgr.provider = parts[0]
+                mgr.model = parts[1]
+            else:
+                mgr.model = model_key
+        except Exception:
+            pass
+
+    # Buffer cleaner: prepara Ollama para el modelo nuevo.
+    # Solo aplica si el provider es local (ollama). No rompe nada si
+    # Ollama no responde.
+    buffer_report = None
+    try:
+        if mgr is not None and mgr.provider == "ollama-local":
+            from model_buffer import get_model_buffer
+            buf = get_model_buffer()
+            buffer_report = buf.prepare_for(mgr.model, policy="LRU")
+    except Exception as exc:
+        buffer_report = {"error": str(exc)}
+
+    response_body: dict = {
+        "ok": True,
+        "session_model": model_key,
+        "effective_provider": getattr(mgr, "provider", None),
+        "effective_model": getattr(mgr, "model", None),
+    }
+    if buffer_report is not None:
+        response_body["buffer"] = {
+            "target": getattr(buffer_report, "target", model_key),
+            "policy": getattr(buffer_report, "policy", "LRU"),
+            "unloaded": getattr(buffer_report, "unloaded", []),
+            "kept": getattr(buffer_report, "kept", []),
+            "freed_gb": getattr(buffer_report, "freed_gb", 0.0),
+            "elapsed_ms": getattr(buffer_report, "elapsed_ms", 0.0),
+        }
+
+    send_json(handler, 200, response_body)
+    emit("router.session_model_changed", {"model": model_key})
+
+
+def handle_session_model_get(handler: "BaseHTTPRequestHandler") -> None:
+    """GET /router/session-model — current session model override."""
+    from api_serializers import send_json
+    import json
+
+    state = _state_root(handler)
+    override_path = _override_path(state)
+
+    mgr = getattr(handler, "session_mgr", None)
+    restore_report = restore_session_model(mgr)
+
+    if override_path.exists():
+        try:
+            data = json.loads(override_path.read_text(encoding="utf-8"))
+            send_json(handler, 200, {
+                "ok": bool(restore_report.get("ok", True)),
+                "session_model": data.get("model"),
+                "effective_provider": getattr(mgr, "provider", None),
+                "effective_model": getattr(mgr, "model", None),
+                "restored": bool(restore_report.get("restored")),
+            })
+            return
+        except Exception:
+            pass
+
+    send_json(handler, 200, {
+        "ok": True,
+        "session_model": None,
+        "effective_provider": getattr(mgr, "provider", None),
+        "effective_model": getattr(mgr, "model", None),
+    })

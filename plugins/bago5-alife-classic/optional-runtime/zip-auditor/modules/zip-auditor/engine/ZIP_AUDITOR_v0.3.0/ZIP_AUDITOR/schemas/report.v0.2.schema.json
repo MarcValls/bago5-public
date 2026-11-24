@@ -1,0 +1,383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.bago.invalid/zip_auditor/report.v0.2.schema.json",
+  "title": "ZIP AUDITOR report 0.2 (additive)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "tool_version",
+    "archive_count",
+    "archives",
+    "duplicate_groups",
+    "same_path_different_content",
+    "consolidation_proposals",
+    "duplicate_classification",
+    "dependency_analysis",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2"
+    },
+    "tool_version": {
+      "const": "0.2.0"
+    },
+    "archive_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "archives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "zip",
+          "zip_sha256",
+          "status",
+          "entries",
+          "warnings"
+        ],
+        "properties": {
+          "zip": {
+            "type": "string"
+          },
+          "zip_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "enum": [
+              "ANALYZED",
+              "PARTIAL",
+              "ERROR"
+            ]
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "path",
+                "entry_index",
+                "status",
+                "sha256",
+                "issues"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "entry_index": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "sha256": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "ANALYZED",
+                    "NOT_ANALYZED",
+                    "ERROR"
+                  ]
+                },
+                "issues": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "duplicate_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sha256",
+          "classification",
+          "instances"
+        ],
+        "properties": {
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "classification": {
+            "const": "EXACT_BYTES"
+          },
+          "instances": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "zip",
+                "path",
+                "sha256",
+                "size"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "zip": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "size": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "consolidation_proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "status",
+          "automatic_action",
+          "dependency_context"
+        ],
+        "properties": {
+          "status": {
+            "const": "PROPOSED"
+          },
+          "automatic_action": {
+            "type": "null"
+          },
+          "dependency_context": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "duplicate_classification": {
+      "type": "object",
+      "required": [
+        "automatic_actions",
+        "consolidation_status",
+        "text_coverage",
+        "similarity_coverage"
+      ],
+      "properties": {
+        "automatic_actions": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "consolidation_status": {
+          "const": "PROPOSED_ONLY"
+        }
+      }
+    },
+    "dependency_analysis": {
+      "type": "object",
+      "required": [
+        "status",
+        "nodes",
+        "edges",
+        "coverage",
+        "summary",
+        "runtime_verification",
+        "consolidation_authorized"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PARTIAL",
+            "STATIC_ANALYZED_WITH_LIMITS"
+          ]
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "zip",
+              "path",
+              "sha256",
+              "size"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "zip": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source",
+              "target",
+              "kind",
+              "reference",
+              "line",
+              "status",
+              "confidence",
+              "evidence",
+              "candidates"
+            ],
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "target": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "kind": {
+                "type": "string"
+              },
+              "reference": {
+                "type": "string"
+              },
+              "line": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "RESOLVED_INTERNAL",
+                  "AMBIGUOUS_INTERNAL",
+                  "MISSING_LOCAL",
+                  "UNRESOLVED_MANIFEST_REFERENCE",
+                  "UNRESOLVED_IMPORT",
+                  "DECLARED_EXTERNAL",
+                  "STANDARD_LIBRARY",
+                  "EXTERNAL_OR_ALIAS",
+                  "DYNAMIC_NOT_RESOLVED",
+                  "OUTSIDE_ARCHIVE"
+                ]
+              },
+              "confidence": {
+                "type": "string"
+              },
+              "candidates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "evidence": {
+                "type": "object",
+                "required": [
+                  "zip_sha256",
+                  "entry_sha256",
+                  "entry_index"
+                ],
+                "properties": {
+                  "zip_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "entry_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "entry_index": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "status": {
+                      "const": "RESOLVED_INTERNAL"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "target": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "runtime_verification": {
+          "const": "NOT_RUN"
+        },
+        "consolidation_authorized": {
+          "const": false
+        }
+      }
+    }
+  }
+}

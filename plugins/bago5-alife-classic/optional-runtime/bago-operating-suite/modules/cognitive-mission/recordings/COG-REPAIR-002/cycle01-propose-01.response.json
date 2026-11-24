@@ -1,0 +1,54 @@
+{
+  "schema": "bago.cognitive.host-response.v1",
+  "request_id": "cycle01-propose-01",
+  "request_sha256": "ef321f940ddaf9f999fd1bedf63d8cc7a89357264393f8aaf93180147eccadfe",
+  "mode": "live",
+  "content": {
+    "intent": "work",
+    "objective": "Diagnosticar la pérdida de elecciones explícitas de configuración sin modificar todavía el componente.",
+    "facts": [
+      "El snapshot vinculado identifica config_manager.py como copia exacta de RC2.",
+      "_load combina defaults y después sustituye ollama-local y llama3.2:3b por valores de nube.",
+      "La misión no tiene aún una observación funcional propia; la memoria está vacía."
+    ],
+    "assumptions": [
+      "La aceptación debe comprobar consumidores reales en procesos nuevos sin pedir inferencia a un proveedor."
+    ],
+    "files_required": [
+      "config_manager.py",
+      "REQUIREMENTS.md",
+      "PROVENANCE.json"
+    ],
+    "symbols_required": [
+      "ConfigManager._load",
+      "ConfigManager.set"
+    ],
+    "evidence": [
+      {
+        "source": "source_snapshot.config_manager.py",
+        "sha256": "0bb0af77cf9ac856b76661b1fbc62cb66000c2c21879a2b2753131454791149f",
+        "supports": "sustituciones posteriores a merge_defaults"
+      }
+    ],
+    "risks": [
+      "Confundir escritura exitosa con persistencia después de cargar.",
+      "Modificar defaults legítimos o el runtime original al intentar reparar."
+    ],
+    "proposed_changes": [
+      {
+        "op": "run_check",
+        "name": "acceptance",
+        "purpose": "Observar los doce criterios de persistencia en procesos aislados antes de autorizar cualquier parche."
+      }
+    ],
+    "validation_actions": [
+      "Exigir reporte estructurado y hash del candidato.",
+      "Separar finalización del observador del resultado funcional."
+    ],
+    "missing_information": [
+      "Resultados funcionales de esta misión integrada."
+    ],
+    "confidence": 0.95
+  },
+  "author": "ChatGPT reasoning host; current conversation; fresh decision"
+}

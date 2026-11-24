@@ -1,0 +1,2258 @@
+{
+  "schema_version": "1.0",
+  "plugin": "bago5-alife-classic",
+  "plugin_version": "0.4.60-rc.5",
+  "entry_skill": "skills/bago5/SKILL.md",
+  "entry_invocation": "$bago5",
+  "routes": [
+    {
+      "command": "alife-vault",
+      "target": "skills/bago5-alife-vault/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-activity-monitor",
+      "target": "skills/bago5-monitor-actividad/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-agent-relay",
+      "target": "skills/bago5-relevo-agentes/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-architecture-audit",
+      "target": "skills/bago5-auditoria-arquitectura/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-audit",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-auditoria-arquitectura",
+      "target": "skills/bago5-auditoria-arquitectura/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-auditoria-comprimidos",
+      "target": "skills/bago5-auditoria-comprimidos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-auditoria-especializada",
+      "target": "skills/bago5-auditoria-especializada/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-auditoria-semantica",
+      "target": "skills/bago5-auditoria-semantica/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-auditors",
+      "target": "skills/bago5-auditoria-especializada/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-canon-contract",
+      "target": "skills/bago5-contrato-canonico/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-capability-demonstration",
+      "target": "skills/bago5-demostracion-capacidades/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-cognitive-mission",
+      "target": "skills/bago5-mision-cognitiva/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-context-lifecycle",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-contexto-sesion",
+      "target": "skills/bago5-contexto-sesion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-continuity-reconcile",
+      "target": "skills/bago5-revision-continuidad/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-contrato-canonico",
+      "target": "skills/bago5-contrato-canonico/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-decision-ui-engineer",
+      "target": "skills/bago5-interfaz-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-decision-ux-engineer",
+      "target": "skills/bago5-diseno-revision-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-demostracion-capacidades",
+      "target": "skills/bago5-demostracion-capacidades/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-diagnostico-reparacion",
+      "target": "skills/bago5-diagnostico-reparacion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-diseno-revision-decisiones",
+      "target": "skills/bago5-diseno-revision-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-editorial",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-ejecucion-tareas",
+      "target": "skills/bago5-ejecucion-tareas/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-equipo-decisiones",
+      "target": "skills/bago5-equipo-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-evidence-guard",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-evidence-provenance-engineer",
+      "target": "skills/bago5-procedencia-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-final-verifier",
+      "target": "skills/bago5-verificacion-cierre/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-flujo-trabajo",
+      "target": "skills/bago5-flujo-trabajo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-frontend",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-github-repository-admin",
+      "target": "skills/bago5-repositorios-github/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-goal",
+      "target": "skills/bago5-objetivos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-governance-action-engineer",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-identidad-instalador",
+      "target": "skills/bago5-identidad-instalador/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-impacto-parada",
+      "target": "skills/bago5-impacto-parada/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-installer-identity",
+      "target": "skills/bago5-identidad-instalador/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-installer-sync",
+      "target": "skills/bago5-sincronizacion-instalador/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-interfaz-decisiones",
+      "target": "skills/bago5-interfaz-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-interfaz-react",
+      "target": "skills/bago5-interfaz-react/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-aplicaciones-juegos",
+      "target": "skills/bago5-local-aplicaciones-juegos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-auditoria-zip",
+      "target": "skills/bago5-local-auditoria-zip/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-ciclo-contexto",
+      "target": "skills/bago5-local-ciclo-contexto/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-contexto-sesion",
+      "target": "skills/bago5-local-contexto-sesion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-contratos-interfaz",
+      "target": "skills/bago5-local-contratos-interfaz/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-documentos",
+      "target": "skills/bago5-local-documentos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-folder-access",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-local-lectura-carpeta",
+      "target": "skills/bago5-local-lectura-carpeta/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-mision-cognitiva",
+      "target": "skills/bago5-local-mision-cognitiva/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-procedimientos-referencia",
+      "target": "skills/bago5-local-procedimientos-referencia/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-pruebas-python",
+      "target": "skills/bago5-local-pruebas-python/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-referencia-arquitectura",
+      "target": "skills/bago5-local-referencia-arquitectura/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-local-relevo-agentes",
+      "target": "skills/bago5-local-relevo-agentes/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-locution",
+      "target": "skills/bago5-locucion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-math",
+      "target": "skills/bago5-matematicas/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-mision-cognitiva",
+      "target": "skills/bago5-mision-cognitiva/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-modularidad",
+      "target": "skills/bago5-modularidad/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-modularity",
+      "target": "skills/bago5-modularidad/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-objetivos",
+      "target": "skills/bago5-objetivos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-objetivos-rc4",
+      "target": "skills/bago5-objetivos-rc4/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-pack-delivery",
+      "target": "skills/bago5-entrega-paquetes/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-pdf",
+      "target": "skills/bago5-pdf/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-phased",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-procedencia-evidencias",
+      "target": "skills/bago5-procedencia-evidencias/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-procedural-behavior",
+      "target": "skills/bago5-revision-procedimientos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-promotion",
+      "target": "skills/bago5-dictamen-promocion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-pytest-checkpoint",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-rc4-goals",
+      "target": "skills/bago5-objetivos-rc4/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-recuperacion-objetivo",
+      "target": "skills/bago5-recuperacion-objetivo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-relevo-agentes",
+      "target": "skills/bago5-relevo-agentes/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-repair",
+      "target": "skills/bago5-reparacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-reparacion",
+      "target": "skills/bago5-reparacion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-reparador",
+      "target": "skills/bago5-diagnostico-reparacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-repository-engineering",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-revision-continuidad",
+      "target": "skills/bago5-revision-continuidad/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-revision-procedimientos",
+      "target": "skills/bago5-revision-procedimientos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-runtime-app-game-development",
+      "target": "skills/bago5-aplicaciones-locales/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-bridge",
+      "target": "skills/bago5-acceso-motor-local/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-cognitive-mission",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-context-lifecycle",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-cooperative-agent-relay",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-editorial",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-local-folder-access",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-pytest-checkpoint",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-runtime-session-context",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-semantic-audit",
+      "target": "skills/bago5-auditoria-semantica/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-session-context",
+      "target": "skills/bago5-contexto-sesion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-sincronizacion-instalador",
+      "target": "skills/bago5-sincronizacion-instalador/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-stop-impact",
+      "target": "skills/bago5-impacto-parada/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-team-orchestrator",
+      "target": "skills/bago5-equipo-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-trace-observability-engineer",
+      "target": "skills/bago5-trazas-ejecucion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-trazas-ejecucion",
+      "target": "skills/bago5-trazas-ejecucion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-ui-expert",
+      "target": "skills/bago5-interfaz-react/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-verificacion-cierre",
+      "target": "skills/bago5-verificacion-cierre/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-verificacion-decisiones",
+      "target": "skills/bago5-verificacion-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-verification",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-verification-engineer",
+      "target": "skills/bago5-verificacion-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-workers",
+      "target": "skills/bago5-ejecucion-tareas/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-workflow",
+      "target": "skills/bago5-flujo-trabajo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-zip-audit",
+      "target": "skills/bago5-auditoria-comprimidos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-zip-auditor",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "codex-memory-handoff",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "memoria-viva-plan-fase",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "entry"
+    },
+    {
+      "command": "$bago5-memoria-viva",
+      "target": "skills/bago5-memoria-viva/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-plan-por-fases",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-memoria-codex",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-alife-vault",
+      "target": "skills/bago5-alife-vault/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-ciclo-contexto",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-control-acciones",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-auditoria",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-verificacion",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-integridad-evidencias",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-ingenieria-repositorios",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-interfaces",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-documentos",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-acceso-motor-local",
+      "target": "skills/bago5-acceso-motor-local/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-pruebas-python",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-lectura-carpeta",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-entrega-paquetes",
+      "target": "skills/bago5-entrega-paquetes/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-dictamen-promocion",
+      "target": "skills/bago5-dictamen-promocion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-repositorios-github",
+      "target": "skills/bago5-repositorios-github/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-matematicas",
+      "target": "skills/bago5-matematicas/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-locucion",
+      "target": "skills/bago5-locucion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-monitor-actividad",
+      "target": "skills/bago5-monitor-actividad/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-cognitivo",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-espacio-m",
+      "target": "skills/bago5-espacio-m/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-aplicaciones-locales",
+      "target": "skills/bago5-aplicaciones-locales/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "BAGO5-GOAL",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-PHASED",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-AUDIT",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-ARCHITECTURE",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-PROCEDURAL",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-REPAIR",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-VERIFY",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-UI",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-FRONTEND",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-EDITORIAL",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-pdf",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-SESSION",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-CONTEXT",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-COGNITIVE",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-PYTEST",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-RELAY",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-ZIP-AUDIT",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-PROMOTION",
+      "target": "skills/bago5-dictamen-promocion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-STOP-IMPACT",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-DEMONSTRATE",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-RUNTIME",
+      "target": "skills/bago5-acceso-motor-local/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-CAPABILITY",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-SEMANTIC-AUDIT",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-CONTRADICCIONES",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-LOCAL-FILES",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-DIAGNOSE",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-DECISION-UI-ENGINEER",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-DECISION-UX-ENGINEER",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-EVIDENCE-PROVENANCE-ENGINEER",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-GOVERNANCE-ACTION-ENGINEER",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-TEAM-ORCHESTRATOR",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-TRACE-OBSERVABILITY-ENGINEER",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-VERIFICATION-ENGINEER",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-TEAM",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-MODULARITY",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-GITHUB-CREATE",
+      "target": "skills/bago5-repositorios-github/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-UI-AUDIT",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-REPOSITORY-ENGINEERING",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-WORKFLOW",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-AUDIT-MODE",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-FINAL-VERIFY",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-WORKERS",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-CANON-CONTRACT",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-INSTALLER-SYNC",
+      "target": "skills/bago5-entrega-paquetes/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-CONTINUITY-RECONCILE",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-INSTALLER-IDENTITY",
+      "target": "skills/bago5-entrega-paquetes/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-EVIDENCE-GUARD",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-RC4-GOALS",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-MONITOR",
+      "target": "skills/bago5-monitor-actividad/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "BAGO5-LOCUTION",
+      "target": "skills/bago5-locucion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-locution",
+      "target": "skills/bago5-locucion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-pdf",
+      "target": "skills/bago5-pdf/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-reparador",
+      "target": "skills/bago5-diagnostico-reparacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-reparador",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-ui-expert",
+      "target": "skills/bago5-interfaz-react/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-ui-expert",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-decision-ui-engineer",
+      "target": "skills/bago5-interfaz-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$decision-ui-engineer",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-decision-ux-engineer",
+      "target": "skills/bago5-diseno-revision-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$decision-ux-engineer",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-evidence-provenance-engineer",
+      "target": "skills/bago5-procedencia-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$evidence-provenance-engineer",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-github-repository-admin",
+      "target": "skills/bago5-repositorios-github/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$github-repository-admin",
+      "target": "skills/bago5-repositorios-github/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-governance-action-engineer",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$governance-action-engineer",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-local-folder-access",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$local-folder-access",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-repository-engineering",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$repository-engineering",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-team-orchestrator",
+      "target": "skills/bago5-equipo-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$team-orchestrator",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-trace-observability-engineer",
+      "target": "skills/bago5-trazas-ejecucion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$trace-observability-engineer",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-verification-engineer",
+      "target": "skills/bago5-verificacion-decisiones/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$verification-engineer",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-core-batteries",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-goal",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-cooperative-agent-relay",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-architecture-audit",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-procedural-behavior",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-frontend-contracts",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-editorial",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-cognitive-mission",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-session-context",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-context-lifecycle",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-pytest-checkpoint",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago-workflow",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$memoria-viva-plan-fase",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-activity-monitor",
+      "target": "skills/bago5-monitor-actividad/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-relevo-agentes",
+      "target": "skills/bago5-relevo-agentes/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-agent-relay",
+      "target": "skills/bago5-relevo-agentes/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-auditoria-arquitectura",
+      "target": "skills/bago5-auditoria-arquitectura/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-architecture-audit",
+      "target": "skills/bago5-auditoria-arquitectura/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-audit",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-auditoria-especializada",
+      "target": "skills/bago5-auditoria-especializada/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-auditors",
+      "target": "skills/bago5-auditoria-especializada/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-contrato-canonico",
+      "target": "skills/bago5-contrato-canonico/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-canon-contract",
+      "target": "skills/bago5-contrato-canonico/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-demostracion-capacidades",
+      "target": "skills/bago5-demostracion-capacidades/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-capability-demonstration",
+      "target": "skills/bago5-demostracion-capacidades/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-mision-cognitiva",
+      "target": "skills/bago5-mision-cognitiva/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-cognitive-mission",
+      "target": "skills/bago5-mision-cognitiva/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-context-lifecycle",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-revision-continuidad",
+      "target": "skills/bago5-revision-continuidad/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-continuity-reconcile",
+      "target": "skills/bago5-revision-continuidad/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-interfaz-decisiones",
+      "target": "skills/bago5-interfaz-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-diseno-revision-decisiones",
+      "target": "skills/bago5-diseno-revision-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-editorial",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-evidence-guard",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-procedencia-evidencias",
+      "target": "skills/bago5-procedencia-evidencias/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-verificacion-cierre",
+      "target": "skills/bago5-verificacion-cierre/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-final-verifier",
+      "target": "skills/bago5-verificacion-cierre/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-frontend",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-objetivos",
+      "target": "skills/bago5-objetivos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-goal",
+      "target": "skills/bago5-objetivos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-identidad-instalador",
+      "target": "skills/bago5-identidad-instalador/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-installer-identity",
+      "target": "skills/bago5-identidad-instalador/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-sincronizacion-instalador",
+      "target": "skills/bago5-sincronizacion-instalador/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-installer-sync",
+      "target": "skills/bago5-sincronizacion-instalador/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-math",
+      "target": "skills/bago5-matematicas/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-modularidad",
+      "target": "skills/bago5-modularidad/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-modularity",
+      "target": "skills/bago5-modularidad/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-pack-delivery",
+      "target": "skills/bago5-entrega-paquetes/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-phased",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-revision-procedimientos",
+      "target": "skills/bago5-revision-procedimientos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-procedural-behavior",
+      "target": "skills/bago5-revision-procedimientos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-promotion",
+      "target": "skills/bago5-dictamen-promocion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-pytest-checkpoint",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-objetivos-rc4",
+      "target": "skills/bago5-objetivos-rc4/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-rc4-goals",
+      "target": "skills/bago5-objetivos-rc4/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-reparacion",
+      "target": "skills/bago5-reparacion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-repair",
+      "target": "skills/bago5-reparacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-diagnostico-reparacion",
+      "target": "skills/bago5-diagnostico-reparacion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-runtime-bridge",
+      "target": "skills/bago5-acceso-motor-local/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-auditoria-semantica",
+      "target": "skills/bago5-auditoria-semantica/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-semantic-audit",
+      "target": "skills/bago5-auditoria-semantica/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-contexto-sesion",
+      "target": "skills/bago5-contexto-sesion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-session-context",
+      "target": "skills/bago5-contexto-sesion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-impacto-parada",
+      "target": "skills/bago5-impacto-parada/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-stop-impact",
+      "target": "skills/bago5-impacto-parada/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-equipo-decisiones",
+      "target": "skills/bago5-equipo-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-trazas-ejecucion",
+      "target": "skills/bago5-trazas-ejecucion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-interfaz-react",
+      "target": "skills/bago5-interfaz-react/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-verification",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-verificacion-decisiones",
+      "target": "skills/bago5-verificacion-decisiones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-ejecucion-tareas",
+      "target": "skills/bago5-ejecucion-tareas/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-workers",
+      "target": "skills/bago5-ejecucion-tareas/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-flujo-trabajo",
+      "target": "skills/bago5-flujo-trabajo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-workflow",
+      "target": "skills/bago5-flujo-trabajo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-auditoria-comprimidos",
+      "target": "skills/bago5-auditoria-comprimidos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-zip-audit",
+      "target": "skills/bago5-auditoria-comprimidos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-recuperacion-objetivo",
+      "target": "skills/bago5-recuperacion-objetivo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "BAGO5-COGNITIVE-MODE",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "memoria-codex",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-cooperative-agent-relay",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-app-game-development",
+      "target": "skills/bago5-aplicaciones-locales/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-cognitive-mission",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-context-lifecycle",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-editorial",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-pytest-checkpoint",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-session-context",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-runtime-local-folder-access",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-zip-auditor",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-local-relevo-agentes",
+      "target": "skills/bago5-local-relevo-agentes/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-ciclo-contexto",
+      "target": "skills/bago5-local-ciclo-contexto/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-contexto-sesion",
+      "target": "skills/bago5-local-contexto-sesion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-auditoria-zip",
+      "target": "skills/bago5-local-auditoria-zip/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-referencia-arquitectura",
+      "target": "skills/bago5-local-referencia-arquitectura/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-procedimientos-referencia",
+      "target": "skills/bago5-local-procedimientos-referencia/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-contratos-interfaz",
+      "target": "skills/bago5-local-contratos-interfaz/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-documentos",
+      "target": "skills/bago5-local-documentos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-pruebas-python",
+      "target": "skills/bago5-local-pruebas-python/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-lectura-carpeta",
+      "target": "skills/bago5-local-lectura-carpeta/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-mision-cognitiva",
+      "target": "skills/bago5-local-mision-cognitiva/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-aplicaciones-juegos",
+      "target": "skills/bago5-local-aplicaciones-juegos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$alife-vault",
+      "target": "skills/bago5-alife-vault/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$codex-memory-handoff",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$memoria-codex",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-local-gobierno",
+      "target": "skills/bago5-local-gobierno/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-local-gobierno",
+      "target": "skills/bago5-local-gobierno/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-aplicaciones-juegos",
+      "target": "skills/bago5-aplicaciones-juegos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-aplicaciones-juegos",
+      "target": "skills/bago5-aplicaciones-juegos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-desarrollo",
+      "target": "skills/bago5-desarrollo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-desarrollo",
+      "target": "skills/bago5-desarrollo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-distribucion",
+      "target": "skills/bago5-distribucion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-distribucion",
+      "target": "skills/bago5-distribucion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-ganchos-sesion",
+      "target": "skills/bago5-ganchos-sesion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-ganchos-sesion",
+      "target": "skills/bago5-ganchos-sesion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-memoria",
+      "target": "skills/bago5-memoria/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-memoria",
+      "target": "skills/bago5-memoria/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-acceso-motor-local",
+      "target": "skills/bago5-acceso-motor-local/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-alife-vault",
+      "target": "skills/bago5-alife-vault/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-aplicaciones-locales",
+      "target": "skills/bago5-aplicaciones-locales/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-auditoria",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-ciclo-contexto",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-cognitivo",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-control-acciones",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-dictamen-promocion",
+      "target": "skills/bago5-dictamen-promocion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-documentos",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-entrega-paquetes",
+      "target": "skills/bago5-entrega-paquetes/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-espacio-m",
+      "target": "skills/bago5-espacio-m/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-ingenieria-repositorios",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-integridad-evidencias",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-interfaces",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-lectura-carpeta",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-locucion",
+      "target": "skills/bago5-locucion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-matematicas",
+      "target": "skills/bago5-matematicas/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-memoria-codex",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-memoria-viva",
+      "target": "skills/bago5-memoria-viva/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-monitor-actividad",
+      "target": "skills/bago5-monitor-actividad/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-plan-por-fases",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-pruebas-python",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-repositorios-github",
+      "target": "skills/bago5-repositorios-github/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-verificacion",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "entry"
+    },
+    {
+      "command": "bago5-alineacion-fuentes-sites",
+      "target": "skills/bago5-alineacion-fuentes-sites/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-alineacion-fuentes-sites",
+      "target": "skills/bago5-alineacion-fuentes-sites/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-memorias-conectadas",
+      "target": "skills/bago5-memorias-conectadas/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-memorias-conectadas",
+      "target": "skills/bago5-memorias-conectadas/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-modo-privado",
+      "target": "skills/bago5-modo-privado/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "$bago5-modo-privado",
+      "target": "skills/bago5-modo-privado/SKILL.md",
+      "kind": "specialist"
+    },
+    {
+      "command": "bago5-app-game-development",
+      "target": "skills/bago5-aplicaciones-juegos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-app-game-development",
+      "target": "skills/bago5-aplicaciones-juegos/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-codex-memory-handoff",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-codex-memory-handoff",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-development",
+      "target": "skills/bago5-desarrollo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-development",
+      "target": "skills/bago5-desarrollo/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-govern",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-govern",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-memory",
+      "target": "skills/bago5-memoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-memory",
+      "target": "skills/bago5-memoria/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-memory-federation",
+      "target": "skills/bago5-memorias-conectadas/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-memory-federation",
+      "target": "skills/bago5-memorias-conectadas/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-orquestador",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-orquestador",
+      "target": "skills/bago5/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-private-mode",
+      "target": "skills/bago5-modo-privado/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-private-mode",
+      "target": "skills/bago5-modo-privado/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-session-hooks",
+      "target": "skills/bago5-ganchos-sesion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-session-hooks",
+      "target": "skills/bago5-ganchos-sesion/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-sites-source-alignment",
+      "target": "skills/bago5-alineacion-fuentes-sites/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-sites-source-alignment",
+      "target": "skills/bago5-alineacion-fuentes-sites/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "bago5-workspace-m",
+      "target": "skills/bago5-espacio-m/SKILL.md",
+      "kind": "legacy-alias"
+    },
+    {
+      "command": "$bago5-workspace-m",
+      "target": "skills/bago5-espacio-m/SKILL.md",
+      "kind": "legacy-alias"
+    }
+  ],
+  "skill_invocations": [
+    {
+      "invoke": "$bago5",
+      "target": "skills/bago5/SKILL.md",
+      "role": "entry"
+    },
+    {
+      "invoke": "$bago5-memoria-viva",
+      "target": "skills/bago5-memoria-viva/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-plan-por-fases",
+      "target": "skills/bago5-plan-por-fases/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-memoria-codex",
+      "target": "skills/bago5-memoria-codex/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-alife-vault",
+      "target": "skills/bago5-alife-vault/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-ciclo-contexto",
+      "target": "skills/bago5-ciclo-contexto/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-control-acciones",
+      "target": "skills/bago5-control-acciones/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-auditoria",
+      "target": "skills/bago5-auditoria/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-verificacion",
+      "target": "skills/bago5-verificacion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-integridad-evidencias",
+      "target": "skills/bago5-integridad-evidencias/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-ingenieria-repositorios",
+      "target": "skills/bago5-ingenieria-repositorios/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-interfaces",
+      "target": "skills/bago5-interfaces/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-documentos",
+      "target": "skills/bago5-documentos/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-acceso-motor-local",
+      "target": "skills/bago5-acceso-motor-local/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-pruebas-python",
+      "target": "skills/bago5-pruebas-python/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-lectura-carpeta",
+      "target": "skills/bago5-lectura-carpeta/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-entrega-paquetes",
+      "target": "skills/bago5-entrega-paquetes/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-dictamen-promocion",
+      "target": "skills/bago5-dictamen-promocion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-repositorios-github",
+      "target": "skills/bago5-repositorios-github/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-matematicas",
+      "target": "skills/bago5-matematicas/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-locucion",
+      "target": "skills/bago5-locucion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-monitor-actividad",
+      "target": "skills/bago5-monitor-actividad/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-cognitivo",
+      "target": "skills/bago5-cognitivo/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-espacio-m",
+      "target": "skills/bago5-espacio-m/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-aplicaciones-locales",
+      "target": "skills/bago5-aplicaciones-locales/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-gobierno",
+      "target": "skills/bago5-local-gobierno/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-relevo-agentes",
+      "target": "skills/bago5-local-relevo-agentes/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-referencia-arquitectura",
+      "target": "skills/bago5-local-referencia-arquitectura/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-aplicaciones-juegos",
+      "target": "skills/bago5-local-aplicaciones-juegos/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-mision-cognitiva",
+      "target": "skills/bago5-local-mision-cognitiva/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-ciclo-contexto",
+      "target": "skills/bago5-local-ciclo-contexto/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-documentos",
+      "target": "skills/bago5-local-documentos/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-contratos-interfaz",
+      "target": "skills/bago5-local-contratos-interfaz/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-procedimientos-referencia",
+      "target": "skills/bago5-local-procedimientos-referencia/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-pruebas-python",
+      "target": "skills/bago5-local-pruebas-python/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-contexto-sesion",
+      "target": "skills/bago5-local-contexto-sesion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-lectura-carpeta",
+      "target": "skills/bago5-local-lectura-carpeta/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-local-auditoria-zip",
+      "target": "skills/bago5-local-auditoria-zip/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-alineacion-fuentes-sites",
+      "target": "skills/bago5-alineacion-fuentes-sites/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-aplicaciones-juegos",
+      "target": "skills/bago5-aplicaciones-juegos/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-auditoria-arquitectura",
+      "target": "skills/bago5-auditoria-arquitectura/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-auditoria-comprimidos",
+      "target": "skills/bago5-auditoria-comprimidos/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-auditoria-especializada",
+      "target": "skills/bago5-auditoria-especializada/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-auditoria-semantica",
+      "target": "skills/bago5-auditoria-semantica/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-contexto-sesion",
+      "target": "skills/bago5-contexto-sesion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-contrato-canonico",
+      "target": "skills/bago5-contrato-canonico/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-demostracion-capacidades",
+      "target": "skills/bago5-demostracion-capacidades/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-desarrollo",
+      "target": "skills/bago5-desarrollo/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-diagnostico-reparacion",
+      "target": "skills/bago5-diagnostico-reparacion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-diseno-revision-decisiones",
+      "target": "skills/bago5-diseno-revision-decisiones/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-distribucion",
+      "target": "skills/bago5-distribucion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-ejecucion-tareas",
+      "target": "skills/bago5-ejecucion-tareas/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-equipo-decisiones",
+      "target": "skills/bago5-equipo-decisiones/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-flujo-trabajo",
+      "target": "skills/bago5-flujo-trabajo/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-ganchos-sesion",
+      "target": "skills/bago5-ganchos-sesion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-identidad-instalador",
+      "target": "skills/bago5-identidad-instalador/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-impacto-parada",
+      "target": "skills/bago5-impacto-parada/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-interfaz-decisiones",
+      "target": "skills/bago5-interfaz-decisiones/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-interfaz-react",
+      "target": "skills/bago5-interfaz-react/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-memoria",
+      "target": "skills/bago5-memoria/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-memorias-conectadas",
+      "target": "skills/bago5-memorias-conectadas/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-mision-cognitiva",
+      "target": "skills/bago5-mision-cognitiva/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-modo-privado",
+      "target": "skills/bago5-modo-privado/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-modularidad",
+      "target": "skills/bago5-modularidad/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-objetivos",
+      "target": "skills/bago5-objetivos/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-objetivos-rc4",
+      "target": "skills/bago5-objetivos-rc4/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-pdf",
+      "target": "skills/bago5-pdf/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-procedencia-evidencias",
+      "target": "skills/bago5-procedencia-evidencias/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-recuperacion-objetivo",
+      "target": "skills/bago5-recuperacion-objetivo/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-relevo-agentes",
+      "target": "skills/bago5-relevo-agentes/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-reparacion",
+      "target": "skills/bago5-reparacion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-revision-continuidad",
+      "target": "skills/bago5-revision-continuidad/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-revision-procedimientos",
+      "target": "skills/bago5-revision-procedimientos/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-sincronizacion-instalador",
+      "target": "skills/bago5-sincronizacion-instalador/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-trazas-ejecucion",
+      "target": "skills/bago5-trazas-ejecucion/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-verificacion-cierre",
+      "target": "skills/bago5-verificacion-cierre/SKILL.md",
+      "role": "specialist"
+    },
+    {
+      "invoke": "$bago5-verificacion-decisiones",
+      "target": "skills/bago5-verificacion-decisiones/SKILL.md",
+      "role": "specialist"
+    }
+  ],
+  "automatic_selection": {
+    "owner": "skills/bago5/SKILL.md",
+    "input": "peticion_en_lenguaje_natural",
+    "rule": "El agente interpreta la petición y lee solo las habilidades necesarias; no pide al usuario elegirlas. La habilidad bago5-cognitivo requiere selección expresa del usuario y queda excluida de la activación implícita por tema o complejidad.",
+    "limits": "No instala herramientas ni concede permisos; la selección no acredita ejecución de especialistas."
+  },
+  "sequences": "skills/bago5/references/secuencias.json"
+}

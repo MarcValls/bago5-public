@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAGO5 · Distribución"
+  short_description: "Recopila el plugin completo y construye su instalador"
+  default_prompt: "Actúa como especialista de empaquetado BAGO5: recupera release completa, inventaría, verifica y prepara ZIP instalable para Codex y Windows. No instales sin autorización."

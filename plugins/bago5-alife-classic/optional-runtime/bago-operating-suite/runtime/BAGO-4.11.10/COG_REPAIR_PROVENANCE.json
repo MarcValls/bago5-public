@@ -1,0 +1,24 @@
+{
+  "schema": "bago.runtime.cognitive-update.v1",
+  "release_id": "BAGO-SUITE-143-COG-RC1",
+  "base_package_version": "1.4.2",
+  "base_zip_sha256": "ad530ad54b886e6c3eabae50de61f38235e4d2b8ef62ef11a9235cb4bc190035",
+  "base_manifest_sha256": "cc825157839bc7b43d72fec0c568663d1e048c1735f0152851ed1929df22c67e",
+  "parent_runtime_provenance_sha256": "47c7efa12412a6bc86037eac141023325b0c445fb7174856c8324037a644cc54",
+  "package_version": "1.4.3",
+  "candidate": "COG-RC1",
+  "patches": [
+    {
+      "path": "backend/.bago/core/config_manager.py",
+      "original": {
+        "sha256": "0bb0af77cf9ac856b76661b1fbc62cb66000c2c21879a2b2753131454791149f",
+        "git_blob": "ab6c615665d24e98a2ee55aa04edbb2d8edca38c"
+      },
+      "patched": {
+        "sha256": "0cb00df8cc62d606f70ef55a123710a4beb45bd5758056cba48707a1b96a4c2d",
+        "git_blob": "39280a309251441e48b26b92b6f4fa0a4c37c457"
+      },
+      "reason": "COG-REPAIR-002: explicit persisted choices override defaults; no silent provider/model coercion."
+    }
+  ]
+}

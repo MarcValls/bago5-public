@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bago:suite:check-result.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "findings",
+    "coverage"
+  ],
+  "properties": {
+    "schema": {
+      "const": "bago.suite.check-result.v1"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage": {
+      "enum": [
+        "COMPLETE",
+        "PARTIAL"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "FAIL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "findings": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

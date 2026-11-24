@@ -1,0 +1,51 @@
+--- 0.4.20/plugin.json
++++ 0.4.22/plugin.json
+@@ -11,8 +11,9 @@
+     "memory",
+     "codex",
+     "copilot-cli",
+-    "m-workspace"
++    "m-workspace",
++    "private-mode"
+   ],
+   "name": "bago5-governed-classic",
+-  "version": "0.4.20"
++  "version": "0.4.22"
+ }
+--- 0.4.20/.codex-plugin/plugin.json
++++ 0.4.22/.codex-plugin/plugin.json
+@@ -8,7 +8,7 @@
+   "interface": {
+     "capabilities": [],
+     "category": "Developer Tools",
+-    "defaultPrompt": "$BAGO5 \u2014 Verifica identidad, alcance y permisos de la Memoria Viva seleccionada. Para gestionar conexiones y plantillas consulta el cat\u00e1logo can\u00f3nico de Alife; no uses una plantilla sin release publicado y compatibilidad exacta para componente, contrato y esquema. Una ficha de conexi\u00f3n no establece acceso remoto. Alife es el portal, no el almac\u00e9n de recuerdos.",
++    "defaultPrompt": "Ante contrase\u00f1as, credenciales o una operaci\u00f3n sensible, aplica primero $bago5-private-mode: no pidas secretos ni los leas ni los guardes; sin control verificable del host, BLOCKED, no prometas privacidad. $BAGO5 \u2014 Verifica identidad, alcance y permisos de la Memoria Viva seleccionada. Para gestionar conexiones y plantillas consulta el cat\u00e1logo can\u00f3nico de Alife; no uses una plantilla sin release publicado y compatibilidad exacta para componente, contrato y esquema. Una ficha de conexi\u00f3n no establece acceso remoto. Alife es el portal, no el almac\u00e9n de recuerdos.",
+     "developerName": "Marc Valls Sanvictor",
+     "displayName": "BAGO5 Gobernado",
+     "longDescription": "BAGO5 Gobernado con Memoria Viva y selecci\u00f3n de almacenes. Consulta Alife Memories como registro can\u00f3nico de plantillas y compatibilidad. El portal no sustituye los almacenes de recuerdos; cada conexi\u00f3n requiere identidad, permisos y contrato del servicio de memoria.",
+@@ -21,9 +21,10 @@
+     "memory",
+     "codex",
+     "copilot-cli",
+-    "m-workspace"
++    "m-workspace",
++    "private-mode"
+   ],
+   "name": "bago5-governed-classic",
+   "skills": "./skills",
+-  "version": "0.4.20"
++  "version": "0.4.22"
+ }
+--- 0.4.20/skills/bago5-govern/agents/openai.yaml
++++ 0.4.22/skills/bago5-govern/agents/openai.yaml
+@@ -14,6 +14,10 @@
+     indicar ubicación, actualización y conservación de versiones anteriores.
+     En TODA respuesta con archivos, agrupar TODOS los enlaces de descarga en la
+     ÚLTIMA SECCIÓN, después de NOTA FINAL y de preguntas; no dispersarlos por el texto.
++    Antes de acceder a memoria o herramientas para contraseñas, credenciales o
++    cesiones sensibles, aplica bago5-private-mode. No recibas secretos. PRIVATE
++    exige una barrera real del host; sin ella declara BLOCKED. No reactives
++    observación tras cancelar, cerrar o fallar sin confirmación humana explícita.
+ dependencies:
+   tools:
+   - type: mcp

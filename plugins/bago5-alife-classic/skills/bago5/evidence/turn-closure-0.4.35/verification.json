@@ -1,0 +1,205 @@
+{
+  "schema": "bago5.turn-closure-verification.v1",
+  "candidate_version": "0.4.35",
+  "captured_at_utc": "2026-11-20T00:59:31.112081+00:00",
+  "baseline": {
+    "plugin_id": "plugins_6ae7ade3ef348191988cff4718deb557",
+    "name": "bago5-governed-classic",
+    "description": "BAGO5 Gobernado: habilidades portables Codex y Copilot CLI, Memoria Viva con permisos, desarrollo multíproyecto M: y verificación trazable.",
+    "version": "0.4.34",
+    "current_release_id": "pluginrel_6aff811779b0819193b2987da5c68147",
+    "scope": "USER",
+    "discoverability": "PRIVATE"
+  },
+  "scope": "Continuity, justified pauses and bounded turn-closure review in the existing plugin; no live infrastructure operations.",
+  "local_verification": {
+    "tests": {
+      "governance": {
+        "tests": 114,
+        "seconds": 12.901,
+        "status": "PASS",
+        "log": "skills/bago5/evidence/turn-closure-0.4.35/governance-tests.log",
+        "sha256": "566d753b9c893d7b84495f0d1d7b907b45818f54eaf79e19103166d07593a449"
+      },
+      "session": {
+        "tests": 121,
+        "seconds": 19.152,
+        "status": "PASS",
+        "log": "skills/bago5/evidence/turn-closure-0.4.35/session-tests.log",
+        "sha256": "6393d30ed9c75e771fd5c7b979965fb607a25ee83a6123e6cf2302424a3c37cf"
+      },
+      "native-adapters": {
+        "tests": 24,
+        "seconds": 0.208,
+        "status": "PASS",
+        "log": "skills/bago5/evidence/turn-closure-0.4.35/native-adapters-tests.log",
+        "sha256": "faadae9de34a854a0e3701bf73906a74e0a65b14080cf22bdfcbef0f9af1994c"
+      }
+    },
+    "total": 259,
+    "python": "3.12.14",
+    "platform": "Linux"
+  },
+  "new_acceptance_tests": 55,
+  "preservation": {
+    "result": "PASS",
+    "baseline_files": 1090,
+    "modified_existing_files": 15,
+    "retained_files_unchanged": 1075,
+    "skills_preserved": 59,
+    "metadata_app_bindings_hooks_preserved": true,
+    "relative_links_checked": 78,
+    "schema_cases": 6,
+    "new_schema_fields_optional": true,
+    "changed_files": [
+      ".codex-plugin/plugin.json",
+      "plugin.json",
+      "skills/bago5-ganchos-sesion/SKILL.md",
+      "skills/bago5-ganchos-sesion/references/lifecycle.md",
+      "skills/bago5-ganchos-sesion/scripts/native_hooks.py",
+      "skills/bago5-ganchos-sesion/scripts/session_cli.py",
+      "skills/bago5-ganchos-sesion/scripts/session_engine.py",
+      "skills/bago5-modo-privado/SKILL.md",
+      "skills/bago5-plan-por-fases/SKILL.md",
+      "skills/bago5-verificacion-cierre/SKILL.md",
+      "skills/bago5/SKILL.md",
+      "skills/bago5/references/turn-decision.md",
+      "skills/bago5/references/turn-decision.schema.json",
+      "skills/bago5/scripts/runtime_turn_decision.py",
+      "skills/bago5/scripts/turn_decision.py"
+    ]
+  },
+  "source_files": {
+    ".codex-plugin/plugin.json": {
+      "sha256": "ef76e496ccf3410c4ae8279bed92e38611ca072c5b5d44cd630bbde874509b78",
+      "size_bytes": 1748
+    },
+    "plugin.json": {
+      "sha256": "363971af683edeb618bfbac53e76bbefcb7c0bc26570e87098c30f22b68777e3",
+      "size_bytes": 532
+    },
+    "skills/bago5-ganchos-sesion/SKILL.md": {
+      "sha256": "00918660d0ab87ee2d58b75bd6d95e73d0ea8bedf825235bf8dc424a5df75351",
+      "size_bytes": 8627
+    },
+    "skills/bago5-ganchos-sesion/references/lifecycle.md": {
+      "sha256": "216aaf74aa6953286021be7fccdd2e7041b3ec00b52c6273d7e2f7d2926c5646",
+      "size_bytes": 16966
+    },
+    "skills/bago5-ganchos-sesion/scripts/native_hooks.py": {
+      "sha256": "fdb005b3f7986c720cc1cee09aa8b947f5ac0da6ed9aae82af18a35a6900481a",
+      "size_bytes": 12191
+    },
+    "skills/bago5-ganchos-sesion/scripts/session_cli.py": {
+      "sha256": "8918688a5baf1bef804e323b6e06fcd06a361fe13c8e6a26f7a8b2b0abc50479",
+      "size_bytes": 3461
+    },
+    "skills/bago5-ganchos-sesion/scripts/session_engine.py": {
+      "sha256": "78f9175583a57187684d59e45eb0b09dd8cc5c5c329ae50e67d58b2a0f0f1f18",
+      "size_bytes": 33563
+    },
+    "skills/bago5-ganchos-sesion/tests/test_closure_review.py": {
+      "sha256": "b24db683f1eddf36fb2c36ef7a740a6dcfeb39ba54e71668758efa5c4fbb48a0",
+      "size_bytes": 22568
+    },
+    "skills/bago5-ganchos-sesion/tests/test_runtime_closure_review.py": {
+      "sha256": "735cca9abec7fd76fdf53f57a1d522ed8a587c2ec00b49dde94e905aa84191f0",
+      "size_bytes": 16686
+    },
+    "skills/bago5-modo-privado/SKILL.md": {
+      "sha256": "b4e089ba6ed109ade2271e95d99b3b48ab6be0366aa041df34fffba188d4576a",
+      "size_bytes": 7545
+    },
+    "skills/bago5-plan-por-fases/SKILL.md": {
+      "sha256": "a6fa4adbac4eeda9691d80dfd16e9e11b14cb224552a04ccad143e81290b35d5",
+      "size_bytes": 8288
+    },
+    "skills/bago5-verificacion-cierre/SKILL.md": {
+      "sha256": "c220881b06024fec6541105ef409f2189899cb62cf52abadeaec026a50f59b27",
+      "size_bytes": 4023
+    },
+    "skills/bago5/SKILL.md": {
+      "sha256": "670f4d6a2ccc93f8a7818a1f51eb90db32ea165632dc6c4e7bf704027979dc46",
+      "size_bytes": 36603
+    },
+    "skills/bago5/evidence/turn-closure-0.4.35/governance-tests.log": {
+      "sha256": "566d753b9c893d7b84495f0d1d7b907b45818f54eaf79e19103166d07593a449",
+      "size_bytes": 18125
+    },
+    "skills/bago5/evidence/turn-closure-0.4.35/native-adapters-tests.log": {
+      "sha256": "faadae9de34a854a0e3701bf73906a74e0a65b14080cf22bdfcbef0f9af1994c",
+      "size_bytes": 3786
+    },
+    "skills/bago5/evidence/turn-closure-0.4.35/session-tests.log": {
+      "sha256": "6393d30ed9c75e771fd5c7b979965fb607a25ee83a6123e6cf2302424a3c37cf",
+      "size_bytes": 20849
+    },
+    "skills/bago5/references/turn-decision.md": {
+      "sha256": "d594bc2019b4b055a6e309e4314a07fbad493ec77e6a0ff9b9d905d31bb06207",
+      "size_bytes": 14799
+    },
+    "skills/bago5/references/turn-decision.schema.json": {
+      "sha256": "af1bd4c6955f4460bb03438e0ec8c35fd91b326074dc62f4a49528b88881abeb",
+      "size_bytes": 16776
+    },
+    "skills/bago5/scripts/runtime_turn_decision.py": {
+      "sha256": "0b05119f8c3eed6f1c16d1f4ebc6c418f4f3fad0c15bedebeda6f093292bce3c",
+      "size_bytes": 25895
+    },
+    "skills/bago5/scripts/turn_decision.py": {
+      "sha256": "479d9ddbd4878a15d75b6e9676131e0488b00503f9d2c6985cc4e8db87f483c1",
+      "size_bytes": 24176
+    },
+    "skills/bago5/tests/test_closure_continuity.py": {
+      "sha256": "d7aa0ce6caf14250819f707c5195e62929b5eee1b4e4a5a27eb7225af22b1e06",
+      "size_bytes": 11039
+    },
+    "skills/bago5/tests/test_runtime_gate_observation.py": {
+      "sha256": "168c4e9f5265653222445eafdeaa4244cc65ae3e2ab475a145b34b80491dea66",
+      "size_bytes": 4562
+    }
+  },
+  "resolved_findings": [
+    {
+      "id": "CLOSURE-STALE",
+      "priority": "P1",
+      "status": "FIXED_AND_RETESTED",
+      "description": "A stale receipt under current RUNNING control requests bounded metadata review; STOP and unknown control remain prior boundaries."
+    },
+    {
+      "id": "CLOSURE-NATIVE-POLICY",
+      "priority": "P1",
+      "status": "FIXED_AND_RETESTED",
+      "description": "Distinguish a policy-only BLOCKED result from observed native controller gates; stale metadata uses a gate-only observation without assess."
+    }
+  ],
+  "limits": {
+    "real_host_events": "NOT_RUN",
+    "work_agent_behavior_in_live_user_task": "NOT_RUN",
+    "windows_host_integration": "NOT_RUN",
+    "private_credential_host_adapter": "NOT_IMPLEMENTED_UNCHANGED",
+    "loop_guard": "Exact last-receipt digest plus stop_hook_active; not semantic progress detection.",
+    "evidence_authentication": "Caller metadata is checked for coherence; source authenticity and current authorization must be established by the host/agent."
+  },
+  "independent_review": {
+    "status": "PASS",
+    "verdict": "GO_WITHIN_REVIEWED_SCOPE",
+    "decisive_cases": 6,
+    "method": "Independent agent reproduced run_native/native_hooks with a real temporary TaskStore; no mocked controller or _runtime_check.",
+    "cases": [
+      "CODEX fresh policy-only blocker reaches bounded review",
+      "COPILOT fresh policy-only blocker reaches bounded review",
+      "CODEX stale receipt review calls assess zero times",
+      "COPILOT stale receipt review calls assess zero times",
+      "CODEX observed native STOP overrides review and previous digest",
+      "COPILOT observed native STOP overrides review and previous digest"
+    ],
+    "remaining_blockers_observed": [],
+    "limits": [
+      "Real installed host events NOT_RUN",
+      "Operational host privacy NOT_VERIFIED",
+      "Remote services NOT_RUN",
+      "Exact-digest guard is not semantic progress detection"
+    ]
+  }
+}

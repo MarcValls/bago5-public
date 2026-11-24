@@ -1,0 +1,63 @@
+{
+  "schema": "bago.cognitive-mission.protocol.v1",
+  "experiment_id": "COG-REPAIR-002",
+  "goal": "Demostrar una misión en la composición SessionManager + contexto + ReflexiveInterpreter + SPBE + razonador del host + PlanEngine + Spiral + autorización/gateway + observación + memoria.",
+  "not_a_learning_benchmark": true,
+  "reasoner": "Actual ChatGPT conversational host, through a newly implemented ProviderAdapter mailbox; no fixed answer bank in live mode.",
+  "baseline": "BAGO5os 1.4.2 REPAIR RC2",
+  "max_cycles": 3,
+  "task": "Reparar la persistencia de la selección explícita de proveedor y modelo en ConfigManager: guardar, reiniciar y recuperar sin sustituciones silenciosas; conservar defaults, reset, opciones ajenas y aislamiento de raíces.",
+  "product_criteria": [
+    "C01 local provider set",
+    "C02 local model set",
+    "C03 property setters",
+    "C04 other choices",
+    "C05 new defaults",
+    "C06 partial config",
+    "C07 unrelated fields",
+    "C08 stable reloads",
+    "C09 explicit reset",
+    "C10 state-root isolation",
+    "C11 native SessionManager load",
+    "C12 native SessionManager rebind"
+  ],
+  "integration_criteria": [
+    "native SessionManager.send builds actual context envelopes and invokes the host adapter",
+    "native ReflexiveInterpreter and SPBE outputs reach actual host requests",
+    "host proposals, not evaluator solutions, are consumed by native PlanEngine and Spiral ACT",
+    "native authorization issues bounded single-use permits and native adapters execute writes and processes",
+    "independent test process sees real bytes and returns structured outcomes",
+    "REFLECT receives fresh observation and updates native ContextStore/LearningWriter",
+    "a new process recovers state and the host uses it without replaying the patch",
+    "STOP blocks new admission and explicit resume is required"
+  ],
+  "fail_closed": [
+    "missing host reply",
+    "mismatched request hash",
+    "invalid response contract",
+    "SPBE terminal",
+    "scope escape",
+    "wrong input hash",
+    "wrong evaluator identity",
+    "unproven product success",
+    "missing/refused grant"
+  ],
+  "limits": [
+    "No automatic standalone reasoning provider is configured",
+    "Host delivery uses local mailbox; no authenticated external-user channel is certified",
+    "Single writer and sequential requests; not an OS sandbox",
+    "Native SPBE-to-PEC binding is not implemented or claimed",
+    "No performance, transfer or learning conclusion in this milestone"
+  ],
+  "result_contract": "Each native VERIFY check emits a typed COMPLETE integration report in addition to product outcomes; a failed diagnostic product is not labeled repaired.",
+  "real_target": {
+    "source_archive": "BAGO5os_1.4.2_REPAIR_RC2.zip",
+    "archive_sha256": "ad530ad54b886e6c3eabae50de61f38235e4d2b8ef62ef11a9235cb4bc190035",
+    "source_member": "BAGO5os_1.4.2_REPAIR_RC2/suite/skill/runtime/BAGO-4.11.10/backend/.bago/core/config_manager.py",
+    "source_sha256": "0bb0af77cf9ac856b76661b1fbc62cb66000c2c21879a2b2753131454791149f",
+    "copy": "byte-identical canonical module from RC2; no fault injected",
+    "consumer": "native SessionManager.__init__ and rebind_project_root instantiate ConfigManager",
+    "target_scope": "isolated copy only; not an installed runtime"
+  },
+  "compatibility_decision": "Retain defaults, remove implicit value-based migration for explicitly stored choices. No new migration subsystem."
+}

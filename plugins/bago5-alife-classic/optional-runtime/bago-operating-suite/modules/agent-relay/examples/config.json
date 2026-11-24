@@ -1,0 +1,24 @@
+{
+  "schema": "bago.suite.collaboration.v1",
+  "workers": [
+    {
+      "id": "agent-A",
+      "role": "executor"
+    },
+    {
+      "id": "agent-B",
+      "role": "executor"
+    },
+    {
+      "id": "agent-C-verifier",
+      "role": "verifier"
+    }
+  ],
+  "verification_checks": [
+    "verify"
+  ],
+  "lease_seconds": 300,
+  "max_claims": 50,
+  "max_handoffs": 20,
+  "max_checkpoints": 100
+}

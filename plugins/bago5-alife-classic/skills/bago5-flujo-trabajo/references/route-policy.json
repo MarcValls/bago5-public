@@ -1,0 +1,103 @@
+{
+  "schema": "bago.skills_suite.route_policy.v1",
+  "version": "1.3.0",
+  "entry_skill": "bago5-flujo-trabajo",
+  "module_order": [
+    "bago-core",
+    "bago-goal",
+    "bago-core-batteries",
+    "bago-app-game-development",
+    "bago5-reparador",
+    "bago5-ui-expert"
+  ],
+  "routes": {
+    "question": {
+      "required": [],
+      "optional": []
+    },
+    "repository": {
+      "required": [
+        "bago-core"
+      ],
+      "optional": [
+        "bago-goal",
+        "bago-core-batteries"
+      ]
+    },
+    "goal": {
+      "required": [
+        "bago-core",
+        "bago-goal"
+      ],
+      "optional": [
+        "bago-core-batteries"
+      ]
+    },
+    "phased": {
+      "required": [
+        "bago-core",
+        "bago-core-batteries"
+      ],
+      "optional": [
+        "bago-goal"
+      ]
+    },
+    "app_game": {
+      "required": [
+        "bago-core",
+        "bago-app-game-development"
+      ],
+      "optional": [
+        "bago-goal",
+        "bago-core-batteries"
+      ]
+    },
+    "repair": {
+      "required": [
+        "bago-core",
+        "bago5-reparador"
+      ],
+      "optional": [
+        "bago-goal",
+        "bago-core-batteries",
+        "bago5-ui-expert"
+      ]
+    },
+    "ui": {
+      "required": [
+        "bago-core",
+        "bago5-ui-expert"
+      ],
+      "optional": [
+        "bago-goal",
+        "bago-core-batteries",
+        "bago5-reparador"
+      ]
+    }
+  },
+  "constraints": {
+    "question_forbids_modules": true,
+    "core_required_for_non_question": true,
+    "unknown_module_is_error": true,
+    "unresolved_permission_conflict": "NOT_RUN",
+    "cross_domain": "include only a listed optional module when the user request explicitly spans that domain"
+  },
+  "targets": {
+    "bago-core": "skills/bago5/SKILL.md",
+    "bago-goal": "skills/bago5-objetivos/SKILL.md",
+    "bago-core-batteries": "skills/bago5-plan-por-fases/SKILL.md",
+    "bago-app-game-development": "skills/bago5-aplicaciones-juegos/SKILL.md",
+    "bago5-reparador": "skills/bago5-diagnostico-reparacion/SKILL.md",
+    "bago5-ui-expert": "skills/bago5-interfaz-react/SKILL.md"
+  },
+  "module_aliases": {
+    "bago-reparador": "bago5-reparador",
+    "bago-ui-expert": "bago5-ui-expert",
+    "bago5-govern": "bago-core",
+    "bago5-goal": "bago-goal",
+    "bago5-phased": "bago-core-batteries",
+    "bago5-app-game-development": "bago-app-game-development",
+    "bago5-reparador": "bago5-reparador",
+    "bago5-ui-expert": "bago5-ui-expert"
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.bago.invalid/change_plan.schema.json",
+  "title": "Change Plan v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "change_id",
+    "baseline_id",
+    "baseline_snapshot_sha256",
+    "intent",
+    "change_scope",
+    "features",
+    "preservation",
+    "authorized_changes",
+    "tests",
+    "standard_first"
+  ],
+  "properties": {
+    "schema": {
+      "const": "bago.app_game.change_plan.v1"
+    },
+    "change_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "change_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "assertion",
+          "check_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assertion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "check_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "preservation": {
+      "type": "object",
+      "required": [
+        "required_properties"
+      ],
+      "properties": {
+        "required_properties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "capability_id",
+              "property_id"
+            ],
+            "properties": {
+              "capability_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "property_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorized_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "capability_id",
+          "property_id",
+          "disposition",
+          "authorization_ref",
+          "authorized_by",
+          "approved_at",
+          "expected_transition"
+        ],
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "property_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "REMOVE",
+              "REPLACE",
+              "MODIFY"
+            ]
+          },
+          "authorization_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "authorized_by": {
+            "type": "string",
+            "minLength": 1
+          },
+          "approved_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expected_transition": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "test_id",
+          "target_type",
+          "target_id",
+          "boundary",
+          "mandatory",
+          "expected"
+        ],
+        "properties": {
+          "test_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_type": {
+            "type": "string",
+            "enum": [
+              "PROPERTY",
+              "FEATURE"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "boundary": {
+            "type": "string",
+            "enum": [
+              "SOURCE",
+              "UNIT",
+              "INTEGRATION",
+              "BUILD",
+              "RUNTIME",
+              "VISUAL",
+              "ACCESSIBILITY",
+              "GAMEPLAY"
+            ]
+          },
+          "mandatory": {
+            "type": "boolean"
+          },
+          "expected": {
+            "type": "string",
+            "minLength": 1
+          },
+          "command_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "standard_first": {
+      "type": "object",
+      "required": [
+        "decision",
+        "justification",
+        "candidates_considered"
+      ],
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": [
+            "NOT_APPLICABLE",
+            "REUSE",
+            "ADAPT",
+            "EXTEND",
+            "INVENT"
+          ]
+        },
+        "justification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidates_considered": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

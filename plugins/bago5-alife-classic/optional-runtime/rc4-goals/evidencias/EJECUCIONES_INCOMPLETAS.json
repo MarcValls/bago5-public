@@ -1,0 +1,12 @@
+{
+  "schema": "bago.goals-codex.execution-limit.v1",
+  "baseline_full_pytest": {"state":"TIMEOUT","tests_collected":85,"result":"NOT_COMPROBADO","log":"BASE_RC2_PYTEST.txt"},
+  "baseline_session_context_pytest": {"state":"TIMEOUT","result":"NOT_COMPROBADO","log":"BASE_SESSION_TESTS.txt"},
+  "baseline_context_lifecycle": {"state":"PASS","tests":30,"subtests":8,"log":"BASE_CONTEXT_TESTS.txt"},
+  "baseline_cognitive_mission": {"state":"PASS","tests":18,"log":"BASE_COGNITIVE_TESTS.txt"},
+  "baseline_bundled_modules": {"state":"PASS","modules":4,"log":"BASE_VERIFY_MODULES.json"},
+  "repair_tests": {"state":"PASS","tests":17,"execution_platform":"Linux","log":"TEST_17_RESULTADOS.txt"},
+  "windows_real": {"state":"NOT_RUN"},
+  "codex_cli_real": {"state":"NOT_RUN"},
+  "full_orchestration": {"state":"NOT_RUN"}
+}

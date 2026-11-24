@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-procedencia-evidencias
+  short_description: Vincula conclusiones con evidencias y sus fuentes
+  default_prompt: Usa $bago5-procedencia-evidencias. Define contratos que vinculan conclusiones y afirmaciones con
+    sus evidencias, fuentes y versiones.

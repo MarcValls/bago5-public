@@ -1,0 +1,29 @@
+test_duplicate_keys_cannot_hide_a_memory_call (test_native_hooks.InvalidInputTests.test_duplicate_keys_cannot_hide_a_memory_call) ... ok
+test_duplicate_keys_in_copilot_argument_string_are_rejected (test_native_hooks.InvalidInputTests.test_duplicate_keys_in_copilot_argument_string_are_rejected) ... ok
+test_engine_failure_denies_memory_but_does_not_approve_or_deny_other_tools (test_native_hooks.InvalidInputTests.test_engine_failure_denies_memory_but_does_not_approve_or_deny_other_tools) ... ok
+test_invalid_engine_contract_cannot_allow_memory (test_native_hooks.InvalidInputTests.test_invalid_engine_contract_cannot_allow_memory) ... ok
+test_mismatched_event_and_invalid_argument_shapes_fail_closed_for_memory (test_native_hooks.InvalidInputTests.test_mismatched_event_and_invalid_argument_shapes_fail_closed_for_memory) ... ok
+test_noisy_engine_cannot_corrupt_stdout (test_native_hooks.InvalidInputTests.test_noisy_engine_cannot_corrupt_stdout) ... ok
+test_nonfinite_numbers_are_rejected_including_exponent_overflow (test_native_hooks.InvalidInputTests.test_nonfinite_numbers_are_rejected_including_exponent_overflow) ... ok
+test_oversized_invalid_or_nonobject_input_cannot_allow_unknown_call (test_native_hooks.InvalidInputTests.test_oversized_invalid_or_nonobject_input_cannot_allow_unknown_call) ... ok
+test_actual_posix_launchers_work_from_unrelated_cwd_and_quoted_plugin_path (test_native_hooks.LauncherTests.test_actual_posix_launchers_work_from_unrelated_cwd_and_quoted_plugin_path) ... ok
+test_bundled_manifests_use_only_supported_host_events (test_native_hooks.LauncherTests.test_bundled_manifests_use_only_supported_host_events) ... ok
+test_copilot_alias_fields_do_not_change_output_contract (test_native_hooks.NormalizeTests.test_copilot_alias_fields_do_not_change_output_contract) ... ok
+test_copilot_string_arguments_and_native_result_are_preserved (test_native_hooks.NormalizeTests.test_copilot_string_arguments_and_native_result_are_preserved) ... ok
+test_every_declared_event_projects_only_the_neutral_contract (test_native_hooks.NormalizeTests.test_every_declared_event_projects_only_the_neutral_contract) ... ok
+test_source_new_is_not_fabricated_as_codex_clear (test_native_hooks.NormalizeTests.test_source_new_is_not_fabricated_as_codex_clear) ... ok
+test_stop_event_does_not_copy_assistant_text_as_user_stop (test_native_hooks.NormalizeTests.test_stop_event_does_not_copy_assistant_text_as_user_stop) ... ok
+test_all_actions_emit_only_supported_keys_for_each_event (test_native_hooks.OutputTests.test_all_actions_emit_only_supported_keys_for_each_event) ... ok
+test_allow_does_not_grant_a_host_permission (test_native_hooks.OutputTests.test_allow_does_not_grant_a_host_permission) ... ok
+test_compaction_and_notifications_do_not_invent_context_channels (test_native_hooks.OutputTests.test_compaction_and_notifications_do_not_invent_context_channels) ... ok
+test_context_and_reason_are_bounded (test_native_hooks.OutputTests.test_context_and_reason_are_bounded) ... ok
+test_continue_blocks_turn_closure_only_once (test_native_hooks.OutputTests.test_continue_blocks_turn_closure_only_once) ... ok
+test_denial_uses_each_hosts_documented_contract (test_native_hooks.OutputTests.test_denial_uses_each_hosts_documented_contract) ... ok
+test_explicit_user_stop_can_stop_codex_prompt_processing (test_native_hooks.OutputTests.test_explicit_user_stop_can_stop_codex_prompt_processing) ... ok
+test_logical_stop_never_forces_a_continuation (test_native_hooks.OutputTests.test_logical_stop_never_forces_a_continuation) ... ok
+test_posttool_stop_preserves_original_result_and_warns (test_native_hooks.OutputTests.test_posttool_stop_preserves_original_result_and_warns) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.208s
+
+OK

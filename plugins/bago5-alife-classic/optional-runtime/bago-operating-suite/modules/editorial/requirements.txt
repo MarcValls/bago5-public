@@ -1,0 +1,13 @@
+# Versiones directas verificadas para IALP 1.1.0.
+# Pango, Graphviz (dot), Node y el navegador de Puppeteer son dependencias externas.
+mistune==3.4.0
+PyMuPDF==1.26.6
+Pillow==12.3.0
+weasyprint==68.0
+Jinja2==3.1.6
+PyYAML==6.0.3
+Pygments==2.21.0
+matplotlib==3.10.8
+openpyxl==3.1.5
+XlsxWriter==3.2.9
+graphviz==0.21

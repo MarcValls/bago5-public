@@ -1,0 +1,12 @@
+{
+  "CONTINUIDAD.md": "b28670e4031b5e1925e15309687a345c8413ea6a2d271af6e269f96b729058f8",
+  "CONTRATO.md": "49395486a203dfe3df511c86aaa721cf936c799c0f8f2ed9ed896012f72591c0",
+  "DEMO.ps1": "8c84fa51f089a901ce2c398182cfb3324a531406c66b59bb1238127c537b0dc0",
+  "README.md": "61c39f2251f131b8d428a1fc5e44c0c4701da576692d5dd26de3f921a62e5c01",
+  "hooks/session_start.py": "948bec344c3306da4f9de8063425b7c5627e9eec3b988d01cf20b9e90b896d4e",
+  "schemas/project-context-structure.v1.json": "39c33b10406c5e56b4613530e7405283c3ce0e2ebde4f4659c8ba8f9cace7177",
+  "scripts/demo.py": "6fac61ffacb891bd0caa654246a51eae6659209dec0444f307854c1c9f6852d9",
+  "scripts/print_cli_config.py": "1b1a16df21cfbb6c3cdd5106e17a28dd8bf4372ade70404ac016be8ee5d84777",
+  "tests/audit_runner.py": "3bd462bf90871fb5a5d09fb951c8d700a85616d87bf7624d4bca9f6ef0dee99d",
+  "tests/test_session_start.py": "23490a6fe50356578de70af9694d2b06c799b411d560612a62d7fb8f64a5f73b"
+}

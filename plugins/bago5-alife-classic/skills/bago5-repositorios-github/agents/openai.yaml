@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-repositorios-github
+  short_description: "Administrar el repositorio remoto y sus permisos autorizados"
+  default_prompt: "Administrar el repositorio remoto y sus permisos autorizados."

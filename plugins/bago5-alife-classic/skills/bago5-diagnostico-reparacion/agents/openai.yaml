@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-diagnostico-reparacion
+  short_description: Diagnostica y repara la instalación BAGO efectiva
+  default_prompt: Usa $bago5-diagnostico-reparacion para detectar las capacidades y copias reales de BAGO, diagnosticar
+    el fallo y validar la reparación.

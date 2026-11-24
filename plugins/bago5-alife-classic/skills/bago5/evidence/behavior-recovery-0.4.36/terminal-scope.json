@@ -1,0 +1,8 @@
+{
+  "case": "expired-order-and-future-correct-action",
+  "same_goal_replacement_decision": "BLOCKED",
+  "same_goal_replacement_state": "EXPIRED",
+  "same_goal_new_candidate_decision": "BLOCKED",
+  "explicit_new_goal_instance_decision": "CONTINUE",
+  "archived_expired_state": "EXPIRED"
+}

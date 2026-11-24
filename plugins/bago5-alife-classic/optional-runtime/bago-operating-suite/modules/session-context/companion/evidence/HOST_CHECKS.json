@@ -1,0 +1,86 @@
+{
+  "schema": "bago.scr.host-checks.v1",
+  "host": "Windows / Codex CLI",
+  "codex_version": null,
+  "python_version": null,
+  "checks": [
+    {
+      "id": "windows-demo",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "windows-tests",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-hooks-config-loaded",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-hooks-trust-reviewed",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-startup-root",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-resume-root",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-fork-root",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-compact-root",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-clear-if-supported",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "cli-subfolder-unconfirmed",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    },
+    {
+      "id": "project-files-unchanged",
+      "status": "NOT_RUN",
+      "observed_cwd": null,
+      "observed_source": null,
+      "evidence": []
+    }
+  ],
+  "acceptance": "Record actual hook output and version. A synthetic stdin event or model claim alone does not verify host invocation."
+}

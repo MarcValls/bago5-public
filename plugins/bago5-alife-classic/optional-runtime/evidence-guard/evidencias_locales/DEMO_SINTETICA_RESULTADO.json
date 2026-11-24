@@ -1,0 +1,27 @@
+{
+  "schema": "bago.evidence.guard.demo.v1",
+  "status": "PASS",
+  "r1_wrong_digest": {
+    "expected": "FAIL",
+    "observed": "FAIL",
+    "bad_hashes": 2
+  },
+  "r3_wrong_control": {
+    "expected": "FAIL",
+    "observed": "FAIL"
+  },
+  "new_json_report": {
+    "expected": "PASS",
+    "observed": "PASS",
+    "valid_hashes": 2
+  },
+  "new_manifest": {
+    "expected": "PASS",
+    "observed": "PASS",
+    "valid_hashes": 2
+  },
+  "sources_unchanged": true,
+  "temporary_outputs_cleaned": true,
+  "windows_live": "NOT_RUN",
+  "real_W12": "NOT_RUN"
+}

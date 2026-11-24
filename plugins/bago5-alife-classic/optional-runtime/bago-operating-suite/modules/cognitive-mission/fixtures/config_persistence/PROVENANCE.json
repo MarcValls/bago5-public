@@ -1,0 +1,9 @@
+{
+  "source_archive": "BAGO5os_1.4.2_REPAIR_RC2.zip",
+  "archive_sha256": "ad530ad54b886e6c3eabae50de61f38235e4d2b8ef62ef11a9235cb4bc190035",
+  "source_member": "BAGO5os_1.4.2_REPAIR_RC2/suite/skill/runtime/BAGO-4.11.10/backend/.bago/core/config_manager.py",
+  "source_sha256": "0bb0af77cf9ac856b76661b1fbc62cb66000c2c21879a2b2753131454791149f",
+  "copy": "byte-identical canonical module from RC2; no fault injected",
+  "consumer": "native SessionManager.__init__ and rebind_project_root instantiate ConfigManager",
+  "target_scope": "isolated copy only; not an installed runtime"
+}

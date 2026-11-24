@@ -1,0 +1,11 @@
+{
+  "alias": "Memoria Viva v1",
+  "plugin_id": "plugins_6ae7ade3ef348191988cff4718deb557",
+  "plugin_version": "0.1.8",
+  "release_id": "pluginrel_6aefb98583ec8191a498e76912e8f8fa",
+  "release_created_at": "2026-11-07T23:51:33.515489Z",
+  "scope": "BAGO5 Gobernado general memory with verified read/write cycle",
+  "retention": "Original complete release retrievable through Plugin Creator release history; next versions must be higher.",
+  "archive_status": "The alias references the original release, not an independently copied archive.",
+  "source": "User explicit request on 2026-11-08: conservar 0.1.8 como Memoria Viva v1"
+}

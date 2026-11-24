@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-ingenieria-repositorios
+  short_description: "Aplicar cambios de repositorio y reparar defectos en el alcance autorizado"
+  default_prompt: "Aplicar cambios de repositorio y reparar defectos en el alcance autorizado."

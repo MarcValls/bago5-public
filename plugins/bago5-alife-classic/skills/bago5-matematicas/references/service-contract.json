@@ -1,0 +1,64 @@
+{
+  "contract": "ALIFE-MATH-001",
+  "version": "0.1.1",
+  "deployment_state": "NOT_CONNECTED",
+  "endpoint": null,
+  "transport": "MCP_REMOTE_AUTHENTICATED_TARGET",
+  "commercial_policy": "SERVER_CHECK_EVERY_CALL_NO_CLIENT_BYPASS",
+  "required_server_checks": [
+    "authenticated_identity",
+    "token_issuer_and_audience",
+    "active_memory_link",
+    "feature_entitlement",
+    "expiry_and_revocation",
+    "quota_and_request_deduplication",
+    "audit"
+  ],
+  "credentials_in_tool_arguments": false,
+  "kernel_in_client_package": false,
+  "operations": [
+    {
+      "operation": "catalog",
+      "tool_name": "alife_math_catalog",
+      "feature_id": "alife.math.catalog",
+      "state": "PRIVATE_SOURCE_TESTED_LOCAL__REMOTE_NOT_RUN"
+    },
+    {
+      "operation": "lsi_check",
+      "tool_name": "alife_math_check_lsi",
+      "feature_id": "alife.math.lsi_check",
+      "state": "PRIVATE_SOURCE_TESTED_LOCAL__REMOTE_NOT_RUN"
+    },
+    {
+      "operation": "logic",
+      "tool_name": "alife_math_check_logic",
+      "feature_id": "alife.math.logic",
+      "state": "PRIVATE_SOURCE_TESTED_LOCAL__REMOTE_NOT_RUN"
+    },
+    {
+      "operation": "goal_trace",
+      "tool_name": "alife_math_goal_trace",
+      "feature_id": "alife.math.goal_trace",
+      "state": "PRIVATE_SOURCE_TESTED_LOCAL__REMOTE_NOT_RUN"
+    },
+    {
+      "operation": "symbolic",
+      "tool_name": "alife_math_symbolic",
+      "feature_id": "alife.math.symbolic",
+      "state": "PRIVATE_SOURCE_TESTED_LOCAL__REMOTE_NOT_RUN"
+    },
+    {
+      "operation": "emit_predicate",
+      "tool_name": "alife_math_emit_predicate",
+      "feature_id": "alife.math.emit_predicate",
+      "state": "PRIVATE_SOURCE_TESTED_LOCAL__REMOTE_NOT_RUN"
+    }
+  ],
+  "backend_adapters": "UNCONFIGURED_FAIL_CLOSED",
+  "owner_exemption": false,
+  "limits": {
+    "boolean_variables": 10,
+    "symbolic_variables": 6,
+    "input_bytes": 1048576
+  }
+}

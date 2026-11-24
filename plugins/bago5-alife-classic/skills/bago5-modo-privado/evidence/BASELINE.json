@@ -1,0 +1,12 @@
+{
+  "plugin_id": "plugins_6ae7ade3ef348191988cff4718deb557",
+  "version": "0.4.20",
+  "release": "pluginrel_6af9b485b98481918c00976085aeb16b",
+  "scope": "USER",
+  "discoverability": "PRIVATE",
+  "source": "Plugin Creator get_plugin_files; selected text contents recovered; baseline JSON reserialized semantically",
+  "complete_archive_download": "FAILED; signed URL not downloadable with current container bridge",
+  "overlay_only": true,
+  "preservation": "update_plugin preserves omitted paths; delete_paths omitted",
+  "original_file_count_from_listing": 968
+}

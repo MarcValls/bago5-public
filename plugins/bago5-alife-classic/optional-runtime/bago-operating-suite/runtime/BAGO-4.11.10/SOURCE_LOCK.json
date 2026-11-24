@@ -1,0 +1,2318 @@
+{
+  "schema": "bago.codex.runtime_source_lock.v1",
+  "source_repository": "MarcValls/BAGO",
+  "source_commit": "5fb6f2f0c57f29de1b42bbb2efb4a57c86aa032d",
+  "source_release": "4.11.10",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob": "f3e2ef44865fd5df3decf32122e6222c147d1b1c",
+      "sha256": "bf7db6886166d6eed6c278f8f443912840bd22c77506f903d85d6b0ef713117b"
+    },
+    {
+      "path": "backend/.bago/api/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/.bago/api/_chk_handlers.py",
+      "git_blob": "7cba1d5b7769ad8f6f86002121568782f3a12104",
+      "sha256": "e994eb7866afc46d02094f6c12ed626862f19b9be266b5d5577f9108679584a1"
+    },
+    {
+      "path": "backend/.bago/api/api_auth.py",
+      "git_blob": "55c34b5bfaacc7a1db4a5a0dc4216d6b6386b07e",
+      "sha256": "f06ee9dbeff00ef5d805012561775358d78ed7aa920dccdba17bddeb2205265f"
+    },
+    {
+      "path": "backend/.bago/api/api_dispatch.py",
+      "git_blob": "21e3fdecc3147da2bce167ef0d58de950b2368f2",
+      "sha256": "ea8bd48c7d65e56dfb235efbb51b1f300b412faf90f9deb1e48575b5e7ad3ae4"
+    },
+    {
+      "path": "backend/.bago/api/api_response.py",
+      "git_blob": "b0e2f6ccd5cb7a3b23c5e6a81d2f9724728396db",
+      "sha256": "d340cfa44c44df4dbbb1b76f8f125a7eebe329238a3b85f16dc0320f8b8f8344"
+    },
+    {
+      "path": "backend/.bago/api/api_routes.py",
+      "git_blob": "fa90d69b89ceb747a0da3e1c8f800daef03be0bc",
+      "sha256": "15bc3552f36a37af6f81ec4583bbdded963e2c8e6c85f2f4fae3582b541a377e"
+    },
+    {
+      "path": "backend/.bago/api/api_serializers.py",
+      "git_blob": "9c0fe31fe7d0b85e763e6de01fca9d01ed69a2c7",
+      "sha256": "177a3494d7a76ce4ceaf7e226cd0b8e460ee096193886ef0d096ca51906af5f2"
+    },
+    {
+      "path": "backend/.bago/api/api_state.py",
+      "git_blob": "9dbaefe66874a5c62f881059d462e95e5add832a",
+      "sha256": "b94985220a19d9ac0660b1b146eaa80f59776f2020ee8acdde05f08e511ac48f"
+    },
+    {
+      "path": "backend/.bago/api/apply_release_update.ps1",
+      "git_blob": "2828e693e1622d4f91edf1bde5d002ca3bd43a80",
+      "sha256": "45b10c37a67c6da01302c0ea0a7cc78ee87ddfed3950c8bc5c897ddfb73b2a2f"
+    },
+    {
+      "path": "backend/.bago/api/auto_configurator.py",
+      "git_blob": "ee5865991ff616f07c2dfe1d0f9064f3520b79b5",
+      "sha256": "2ab3c600bc61ee3f26703443fa9b250311450c763c5f06271244be2cc062ab70"
+    },
+    {
+      "path": "backend/.bago/api/blacklist_models.py",
+      "git_blob": "6e12a2a51842c4a5eeae5dfc135a53db7383f578",
+      "sha256": "2403f8d019fd0f28fdcc69a19cb4b3be87e9d3ba4b1a88b796277dd55ae4a69a"
+    },
+    {
+      "path": "backend/.bago/api/bridge.py",
+      "git_blob": "4c25b9485f6b0e49e8dee361adcf22f367764e58",
+      "sha256": "6fb2897193a1354077fd5c9a02204ddc9eccd3f89ef17d4d1c7567149706e2d8"
+    },
+    {
+      "path": "backend/.bago/api/capability_contract.py",
+      "git_blob": "5eba78d83aca64f6201a5a349a653ec0fde58acf",
+      "sha256": "753b384144f34b1dc2fb4f6473a8e8fda897a3e8b92affed231021cda7917e21"
+    },
+    {
+      "path": "backend/.bago/api/chat_turns.py",
+      "git_blob": "030588e092246289708e9afe66f3659ee6949217",
+      "sha256": "ab48a787603d6b4bb2689812a88e205e997a818a3b2c6df74c18cdb7478b3bcc"
+    },
+    {
+      "path": "backend/.bago/api/control_shadow.py",
+      "git_blob": "debf3763c188b78cd0f2ba14f91e8d7f8b587ff9",
+      "sha256": "b48b0f14854e8af6896fb16c3b971b3b85e76c3ae17d603be4fa59956c5a66e1"
+    },
+    {
+      "path": "backend/.bago/api/error_payload_filter.py",
+      "git_blob": "61cd95a171bd6e5bd41676bf4d4e78ce0cdd85b4",
+      "sha256": "a8d205a0cd3ec146cd2b2ab4a1bf3c6b14d0d21cb4cf8c9d9ed6db5c46ddbdc2"
+    },
+    {
+      "path": "backend/.bago/api/event_bus.py",
+      "git_blob": "7cdf4e2253759f4c3e2b055e88cf875b40c52b46",
+      "sha256": "837aa5f5b1ad55ed50af2606aad19ea24169bcc1c511e17de5c00047c0746613"
+    },
+    {
+      "path": "backend/.bago/api/handler_support.py",
+      "git_blob": "d2340d9422c74e48b8e26ae28e2716dfdb157884",
+      "sha256": "8a5783e1742b8b16b5451eb4b6afd178cc5974364bc978662c95d359be5d1f68"
+    },
+    {
+      "path": "backend/.bago/api/handlers_agents.py",
+      "git_blob": "9d75b4435de2effaf7b8cb8bfea596e9d67b73d6",
+      "sha256": "073db29f5d9edec2d9df4abeeaada4ed01befdc54383ec3c33202b0a6c643c6b"
+    },
+    {
+      "path": "backend/.bago/api/handlers_audit.py",
+      "git_blob": "2b473bf1428a3047f26a09dfe37e0d607b6f4010",
+      "sha256": "94c7fd7bf7d8f9910f986c565d632673bb808891f4238aa01b08bcdc2918398f"
+    },
+    {
+      "path": "backend/.bago/api/handlers_auto_config.py",
+      "git_blob": "5e0d0f6e7c3fb4f1f825972b3134ffc0ad7a303d",
+      "sha256": "3863f4d550884934011864e13ed34ef233b1ca920cd4e37e1415de3e6499b4a9"
+    },
+    {
+      "path": "backend/.bago/api/handlers_capabilities.py",
+      "git_blob": "7a17060e984d089ff5fd90a63d48a721880472e0",
+      "sha256": "02c4a6108f9cc82e249ee79719fbdaedf1d592a295e45b7c206f4161d00065ba"
+    },
+    {
+      "path": "backend/.bago/api/handlers_capability_packages.py",
+      "git_blob": "502087c93d2d35cf92104af9025e375b7fea60f2",
+      "sha256": "1e1f8db8e62a19b01744c13e1456f16e3610ee4e9cee7197a51596e5689b5637"
+    },
+    {
+      "path": "backend/.bago/api/handlers_catalog.py",
+      "git_blob": "b2ee6b322dbb2b9fb5cf18164af7b4b72fa04ebe",
+      "sha256": "94bbd0a0b3d6d4f477ab611b8e5ed578fc2b7010047ff2f8d8bf57d06dcc42b2"
+    },
+    {
+      "path": "backend/.bago/api/handlers_chat.py",
+      "git_blob": "5f26e7639f467adc10f6488d9c691168d6e63da6",
+      "sha256": "7d401b04da503fc6d84699fe2df1d4a02d9509fdfed060bdeb7707c6a9fc1b91"
+    },
+    {
+      "path": "backend/.bago/api/handlers_chat_stream.py",
+      "git_blob": "11c5633ea6408d9cdc346a7be229c46415878990",
+      "sha256": "6f33f642c3c065fdbd7ce743cfeaa1a1d32c69e611e2ac299fee01452f58f204"
+    },
+    {
+      "path": "backend/.bago/api/handlers_command.py",
+      "git_blob": "e457f69ece491573070733e48aef1803776b0179",
+      "sha256": "f57b941bf066dfac56f0e83280c3985ee6b7df1b0e9653aff807d2579b4f8351"
+    },
+    {
+      "path": "backend/.bago/api/handlers_context_attach.py",
+      "git_blob": "5995b771aa5cff95d5154199e95ae1069e0d54dc",
+      "sha256": "6a706fd3c4b3aa0b6b935e9627f5d21fd9af184009f0e14b1b5601331072a0f1"
+    },
+    {
+      "path": "backend/.bago/api/handlers_conversations.py",
+      "git_blob": "d709462bbdba9d34184868c4c4bae564c6748c9c",
+      "sha256": "e80fd4e6a63bcdecb0b7b713e228f05d4b29452d599403069d49bbcf5b0827ad"
+    },
+    {
+      "path": "backend/.bago/api/handlers_desktop.py",
+      "git_blob": "afc61ed3d83e545d81b229931c1102c4cbfcbbab",
+      "sha256": "e25f06b0b4f640cfec58ae4646b0295688ed006dd89d3af454f373becd8e72d8"
+    },
+    {
+      "path": "backend/.bago/api/handlers_events.py",
+      "git_blob": "b3bcb46588c660f6d325936978b941f0bb77f6e9",
+      "sha256": "67ac64b80762627fad09f936e914187c4b90f8b4b5bb04f240f962f2d41c0ce0"
+    },
+    {
+      "path": "backend/.bago/api/handlers_evidence.py",
+      "git_blob": "ab558e7b576365e8deceb365ace23dce18df6931",
+      "sha256": "49c82033a7d6dcb711692f4b42e371166700a935cb14000b84114fb30b0b6be6"
+    },
+    {
+      "path": "backend/.bago/api/handlers_files.py",
+      "git_blob": "715e8a68e8380025b3f99e7e5b141723de2d7976",
+      "sha256": "57426b3bc8ce5547a8b21ff55a2586b41f0798df1307a5e58e067442ae63167d"
+    },
+    {
+      "path": "backend/.bago/api/handlers_github.py",
+      "git_blob": "5ad950bd357340a8be7dd2b1f73bf82b92ee45ff",
+      "sha256": "af3a7e323177634356ac021686f85471e3b129ccf4bd0bc1fd4d2a5bec0f5b32"
+    },
+    {
+      "path": "backend/.bago/api/handlers_health.py",
+      "git_blob": "31c70c4a219db7646bd19f9ec7cefc9456e41b03",
+      "sha256": "e28aa15c0ab9ad311d493740f391175a789fc6f0e2300840f8e0d64ced9b7f9f"
+    },
+    {
+      "path": "backend/.bago/api/handlers_history.py",
+      "git_blob": "4f0f973a6aead42abc38527e75fa466b8980afa9",
+      "sha256": "95ae74f6cfbce3b86fef43b4ef32aa9204987c1afb34ebf3ef34f8470b0c94aa"
+    },
+    {
+      "path": "backend/.bago/api/handlers_install.py",
+      "git_blob": "f5ce1ed9419706296d99103f55e1ec9bdd8a8c1e",
+      "sha256": "64c788bc2a083ae6b5d124fec7c272010fce552e131117d5e98f2d3909776af0"
+    },
+    {
+      "path": "backend/.bago/api/handlers_interpret.py",
+      "git_blob": "7402d502198fbfd1bfd9542c34512d5cb87b2cf5",
+      "sha256": "ab8c933563c6316027cebc4f69b22670d468b1a45dbb1b8d8cbf557f5c1d3c40"
+    },
+    {
+      "path": "backend/.bago/api/handlers_interpretations.py",
+      "git_blob": "1cb380306ae49d86e59dce2fe3cc78f6106e76ff",
+      "sha256": "f49027035894e6d934b828ffbf6d9293153718eb7492c32c5eb9ae375f595c2f"
+    },
+    {
+      "path": "backend/.bago/api/handlers_jobs.py",
+      "git_blob": "b9a9f0b5f93d0af0a4a211401ad99183427e968a",
+      "sha256": "e915cbc23c8dc3f6ef6f1274f46389fa3d827e0385b977db8fbe196c27c30474"
+    },
+    {
+      "path": "backend/.bago/api/handlers_kv.py",
+      "git_blob": "70b9ba8c0dd4ea3acd586b8c830bc62e0017dfef",
+      "sha256": "5545d87c9ec96fcdd6708191a89f158c923635980087714434171923f1d0c87f"
+    },
+    {
+      "path": "backend/.bago/api/handlers_manager_settings.py",
+      "git_blob": "363d89a65deb7c2062a95eb426c9f18c7ebab20e",
+      "sha256": "9684bc2518bc3f1771891c0c312a7aee2723e6ad21a4f1014306732d56582eb7"
+    },
+    {
+      "path": "backend/.bago/api/handlers_memory.py",
+      "git_blob": "1c760f8e90e4c41fc91cd80d6669999269603466",
+      "sha256": "f897e36e3d5f1b09689b1b9d43f2db1d3558c84a3a94a9e38512530ad8fb74b1"
+    },
+    {
+      "path": "backend/.bago/api/handlers_menu.py",
+      "git_blob": "bed6dc26e795ff19a217e2461a23949b02093ba5",
+      "sha256": "0b2590b6e2287a841e159147466b11757c8698f5601109abc131c31853a34d0c"
+    },
+    {
+      "path": "backend/.bago/api/handlers_models.py",
+      "git_blob": "a35c352ea9c1fd7ff95efddfeb7aee80c9b1e042",
+      "sha256": "78a105067519e9387a05f877f0e97783040afac68422e4e6f1e3197ac4ffab9e"
+    },
+    {
+      "path": "backend/.bago/api/handlers_process.py",
+      "git_blob": "a5d31e001b95c7aff607688592eacd70b754d146",
+      "sha256": "65a8339df93702013b727723f5d9abec9c3cfc13d133f146598ed4df3359a13f"
+    },
+    {
+      "path": "backend/.bago/api/handlers_project.py",
+      "git_blob": "16dd2fd0360b828aa03ceabab5a0529a15e35149",
+      "sha256": "9ceb356cfaf2ab9938c2c796cae823a847894d9c36cc835d320e3c841cdb1d36"
+    },
+    {
+      "path": "backend/.bago/api/handlers_project_patch.py",
+      "git_blob": "454927ccff0cefde435bc0c321999e2f27ab9f75",
+      "sha256": "5426077993b6581a85627bfeb9b2d7efa7a6d9315ff01798ecbe2a4a0154b5e2"
+    },
+    {
+      "path": "backend/.bago/api/handlers_provider_buffer.py",
+      "git_blob": "4b8a0ae5f4c8f268bee04705c2239bbb51d1368f",
+      "sha256": "7152e0c11de0f6d5303dfd476766a1afad00a33af699a525d0d6ceadbbc1db0e"
+    },
+    {
+      "path": "backend/.bago/api/handlers_providers.py",
+      "git_blob": "cfa2ce88f97a237ea4899dcf7c09c07b842da1a5",
+      "sha256": "48cf2a4b92fc88f23925079be0d3a270c24675ff4f410f345fbd35f4647e9cb9"
+    },
+    {
+      "path": "backend/.bago/api/handlers_release.py",
+      "git_blob": "3aa6a795793138b66f6eb5f592949ce32602df2e",
+      "sha256": "2888919e57317085e4b2d6933e72f07b633172aab3de13ac5a90d0c1394582b8"
+    },
+    {
+      "path": "backend/.bago/api/handlers_release_jobs.py",
+      "git_blob": "f09b35174876bda5ceb68b16a0c20eb62f248a23",
+      "sha256": "4c7302eb0fe9e7950fa72226b82c8d425f0377da7ec4ef137dd692bcd83b21e0"
+    },
+    {
+      "path": "backend/.bago/api/handlers_rl.py",
+      "git_blob": "2bc0788c1ef9c2263712b5534d823ae5917366fa",
+      "sha256": "ec8fa369d016eeb7c0fc4e4ff6f51ad84634330c29ce39d2f472777195e9f9a2"
+    },
+    {
+      "path": "backend/.bago/api/handlers_router.py",
+      "git_blob": "f3cc20457a61bc907919c4a7657c251fb9c5e524",
+      "sha256": "ce16cc752a933d84122609224c11c3907685d1bd61cf269ca4bf8c1a7d7db2b9"
+    },
+    {
+      "path": "backend/.bago/api/handlers_routes.py",
+      "git_blob": "6480015a7e71cf821f83f1d08c20f01ebf2c2f2e",
+      "sha256": "15fb40e40f2a5454462babba26159d36d0cf6555bf88ffc5c9dba1ed5796ded8"
+    },
+    {
+      "path": "backend/.bago/api/handlers_schedule.py",
+      "git_blob": "198d359c0ee03d522f15e4b3388f768146b81f51",
+      "sha256": "e362ae759302fba0fd5a0ceb075dc08fd13cb958a1791d659b6840dc7289b87d"
+    },
+    {
+      "path": "backend/.bago/api/handlers_session.py",
+      "git_blob": "d0228152851cb994f8dba5974c1b34fa432436a0",
+      "sha256": "15857e390893d7a3da50adfd0d491175941231aae23831f1ebad9c046e74b75a"
+    },
+    {
+      "path": "backend/.bago/api/handlers_sessions.py",
+      "git_blob": "70853bb1d2fdada3e0e04af8a8493f230c63a356",
+      "sha256": "29abb68fbcefd72fbc3272caf41735b3486d2d6616c9c31a97a716d606ff91ea"
+    },
+    {
+      "path": "backend/.bago/api/handlers_simulation.py",
+      "git_blob": "0b15de08d2477d30143c71798cb2735919c8a049",
+      "sha256": "694bc4b78d9a0ed7bc305c3ebab1d53a739190a61434d8100e0ef50eec48a3ba"
+    },
+    {
+      "path": "backend/.bago/api/handlers_status.py",
+      "git_blob": "87c45ed60612c67a1251f4fa62f49fe0961d21f5",
+      "sha256": "3f7dd84c90076eff96dbc1eb9514ba2bfdd661c698e827ba79bcd41a813400cf"
+    },
+    {
+      "path": "backend/.bago/api/handlers_subagents.py",
+      "git_blob": "b1d4448de2cab241977a6f808e18342290d26bb6",
+      "sha256": "16ab9bb7d5c436ad98ebb2880665c9c1ea6842d8274b55fb807116543f12f8f6"
+    },
+    {
+      "path": "backend/.bago/api/handlers_switch.py",
+      "git_blob": "60a98db7bc89e8ea3915905e4ec0b5b1a26baa9c",
+      "sha256": "2edfebee2f8aea33149b3fc230804930f9c833a7133a8d11d220b48c8a94ef1a"
+    },
+    {
+      "path": "backend/.bago/api/handlers_ui_bootstrap.py",
+      "git_blob": "088a097ed0fb6f16bedf7902aadd6679c17d4c22",
+      "sha256": "d06270cc34d03a2db1dc0cbdf544e0f4fca4d7be1a24924ac7c32ef39409c892"
+    },
+    {
+      "path": "backend/.bago/api/handlers_vision.py",
+      "git_blob": "ad3ad0e91ec4721e6e17fb24f5a3aedb475e322f",
+      "sha256": "6626641065eb25ecef0ff40ef1ff632e752c93f48f8993957adace3c02edee70"
+    },
+    {
+      "path": "backend/.bago/api/handlers_workspace.py",
+      "git_blob": "8ca4f166ee9e4228b3631bed4366ccad079e9163",
+      "sha256": "5df3a4963355510499025252c7acb473620d24055b95d3a0eeb76fd27ddb7e6d"
+    },
+    {
+      "path": "backend/.bago/api/handlers_workspace_conversation.py",
+      "git_blob": "75578c68f0e8b6515186610e743e5eb65ffdab5c",
+      "sha256": "ffcddcf309b8b8c632768a2004717ac0a1badb090fc096df29c3dc40ebe748a1"
+    },
+    {
+      "path": "backend/.bago/api/legacy_aliases.py",
+      "git_blob": "2468102290672fdce5d2c347cf909c3db065bfec",
+      "sha256": "5ea11f55cf8e240a1e3e3cf186ba7fec32163c99da239b8b3912391e4426243f"
+    },
+    {
+      "path": "backend/.bago/api/provider_catalog.py",
+      "git_blob": "8d5b1e95065ad847c6bdf82030127a7779207f70",
+      "sha256": "08b04816b415c3e4da971df125626388165455436c169ec99c1f44f063080b9a"
+    },
+    {
+      "path": "backend/.bago/api/rate_limit.py",
+      "git_blob": "6dc187c3d1dcdd6194949819e81a91f2d3b8f68d",
+      "sha256": "b28c9be1e1dd5ea5c48e2205012654a3ca7c3c2f7c58382fd4eb822328f71eec"
+    },
+    {
+      "path": "backend/.bago/api/request_context.py",
+      "git_blob": "f4e61c1114c4272548191fe80b5a2a4c2ef0f2eb",
+      "sha256": "2fad88221d0c6f622294554c6e6e910db72e0ec5e4f900baa579f306004a1620"
+    },
+    {
+      "path": "backend/.bago/api/secret_store.py",
+      "git_blob": "7675f5b41d9218b40c341ed2600cb5cf7aa71dd0",
+      "sha256": "75e3ed180629999c4b91e7b4bdd1b9fdb861d961efe8a08e080f877bd1e20c44"
+    },
+    {
+      "path": "backend/.bago/api/structured_log.py",
+      "git_blob": "6b4cf9b8eb460f0806afc8f077df6d6202d2a620",
+      "sha256": "ec8bb46d2e95a01d184276a0948a2229ad14e14e6e2ab6b84eab67b7afb8ce8f"
+    },
+    {
+      "path": "backend/.bago/api/update_manager.py",
+      "git_blob": "11cdec640b32ec42f911c9392231c17b026ee539",
+      "sha256": "3af6de82f8a70421bbe0821ffa259de603a6d3ebac4f1585346d4e568154e099"
+    },
+    {
+      "path": "backend/.bago/core/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/.bago/core/agent_dispatcher.py",
+      "git_blob": "b1d14fe9d120cc9a09f658bd626344e40af011d8",
+      "sha256": "ca0730bc470e5e7766f77bbb18c19c70d85bec125be7afd1d1231e62636968f3"
+    },
+    {
+      "path": "backend/.bago/core/agent_gateway.py",
+      "git_blob": "a6b0696bcbe4085668e63cb4587f31f2c41bf14d",
+      "sha256": "e9492f6d680c6c69db55c0da5a0471b660e2e6aa7b1cfb0ec485ef3e7b22f7b7"
+    },
+    {
+      "path": "backend/.bago/core/architecture/PADRE_SIEMBRA.md",
+      "git_blob": "6f260807a3dd25d0cab58f06b5ffa5c0fe0c5ba4",
+      "sha256": "183d75421de13acafed9515aad7b31cc306e4bf6ac7e441bf8e987ace6adb4bc"
+    },
+    {
+      "path": "backend/.bago/core/architecture/README.md",
+      "git_blob": "d0edb9579afb7c65f6fcafd375eb144cc515a1f9",
+      "sha256": "a1ce38f0732a96243f3468ed2ca179fc4eaf180b7b75207b8da0dd39e5be0f8f"
+    },
+    {
+      "path": "backend/.bago/core/authorization_boundary.py",
+      "git_blob": "d4891bba410c20850f2ec35698c68a5aa7a3a717",
+      "sha256": "23d9a1bb2ecf9e27f9e3f8341a7c4629644d64a9e698a1be6273c14d1fd30b09"
+    },
+    {
+      "path": "backend/.bago/core/autonomous_loop.py",
+      "git_blob": "e6f66b1b93307cd19e533e85ea29c959ce446d43",
+      "sha256": "b51cb7f800668b556df179c94f860ad6d921fa3f75964f81435207e9982eeb1c"
+    },
+    {
+      "path": "backend/.bago/core/bago_context.py",
+      "git_blob": "c9a98457b08e5fa8ea4c5547e1366d49c9501b5f",
+      "sha256": "c5abdae03d6d963ba2175bf0ee9dd7e9107931918db5d2bbb1ad03339392a3dc"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/PACK_PROVENANCE.json",
+      "git_blob": "9241ebfb6f0a98bba4cf082fe369b055236d251c",
+      "sha256": "e26440e24414f5463febe964fa13ad1e845b414383e6d5f6c4eba132bdf1b01f"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/__init__.py",
+      "git_blob": "de17385c4c1c2d5954682c695f6a341042a0d1e2",
+      "sha256": "90203d0550d0f49753f1fbff201ec4bfceb9816a5cdfc8ba72de12381a3b37d5"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/cycles.py",
+      "git_blob": "22f0254c63eecb4894ae72c49d9dfcf39deb765c",
+      "sha256": "341c60fc63affb7d553010a925cffb679bd2464f6578a9042e0f4ce09ea16203"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/eligibility.py",
+      "git_blob": "c0307bce8744d8192f60fdb54e84427cbd6217ab",
+      "sha256": "865f4ceec118d328e9c8f5ed5ccb26f5143818cdaf7a08a758efcf4bd8933b7e"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/engine.py",
+      "git_blob": "11d860a106d5ac36cdd015bc4116f3aa9789246f",
+      "sha256": "e79f82153e5f0371015429568dda3066995535991db1d340b4375688dc0430c3"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/model.py",
+      "git_blob": "ca8d9110b721620c7eae1402468d76e801b9c84b",
+      "sha256": "f002f8de5d00dd7db1b46d77b246d86052570e849c290ad8bbc479317faed0b9"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/pipeline.py",
+      "git_blob": "50634cf293189e47ea423044590ba01f74c863d7",
+      "sha256": "4c57da9004b2361da25d90aeda4781079f9c1d855366d3c1d499ca1af6344607"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/ports.py",
+      "git_blob": "38bc47e93476f909f30e31f1ee581f022348f7c7",
+      "sha256": "538466703c29d1d85472275cccbe02d1eca14a07b088585b618d1c52489dd6ea"
+    },
+    {
+      "path": "backend/.bago/core/bago_spbe/resolution.py",
+      "git_blob": "304fbe8815ff7cf8f6e66b9284c5559dcccfccf8",
+      "sha256": "d816123c777a329c36dc2efa70ced08c893762f796862de55ef5d7f9caacf478"
+    },
+    {
+      "path": "backend/.bago/core/canon/CANON.md",
+      "git_blob": "7ae3e6e12ffbab03ab286d49d9fd628d8c3627b5",
+      "sha256": "f5e63d9d4e8a80839205b65964ab4d04525e79d998a26ecd2075d4d60772d59c"
+    },
+    {
+      "path": "backend/.bago/core/canon/CONTRATOS/README.md",
+      "git_blob": "ba7ea486ff109b24a84f20ccbc288e7505581b5f",
+      "sha256": "b2f683c5cdd87a8e2fb284394611d372504248b6e7641e4705d11f93afc5a819"
+    },
+    {
+      "path": "backend/.bago/core/canon/CONTRATOS/contrato_cambio.md",
+      "git_blob": "51d63b03f104805f4a7b440d6a68849c878f4934",
+      "sha256": "36fe7281882df1104e31533aa68d679da7eb7340593799c871aa1bea71934f3a"
+    },
+    {
+      "path": "backend/.bago/core/canon/CONTRATOS/contrato_evidencia.md",
+      "git_blob": "2f70fb00684443a8b1b32e07de63d6e1150b5b91",
+      "sha256": "239c91643ddd5620ffa681048ad8a0a8970c4a0b39795c1268d2eefee9bd639c"
+    },
+    {
+      "path": "backend/.bago/core/canon/CONTRATOS/contrato_rol.md",
+      "git_blob": "c81fe82742c6b182a3d121783ab560a18ce67853",
+      "sha256": "bbf563d131d11ea6899bdc21a252550159ffd85c80c1d6070476666f3e21235a"
+    },
+    {
+      "path": "backend/.bago/core/canon/CONTRATOS/contrato_workflow.md",
+      "git_blob": "f897167293dd58998e6bab72b320ad7ff560c3f9",
+      "sha256": "4e2cebea8bbfad957beb2cb472c9757a6624309070a0e5ab0af345da5fcb1614"
+    },
+    {
+      "path": "backend/.bago/core/canon/PROTOCOLO_DE_CAMBIO.md",
+      "git_blob": "1e7d9c02c1c0f24d228b60a12bb0663711cecafa",
+      "sha256": "4f2c3fbbb9dc4b3f197ae2ce2a8627619e73ea235ece442b73194ce0761b9656"
+    },
+    {
+      "path": "backend/.bago/core/canon/README.md",
+      "git_blob": "1125c894b110e1de5b7bf58ce8e9b4a82bd9545e",
+      "sha256": "c400a8034dc9d1255ca5a46a9895afea128df3dd67f3cbd54b9a59831fb0c902"
+    },
+    {
+      "path": "backend/.bago/core/canon/REGLAS_DE_ACTIVACION.md",
+      "git_blob": "1e35cca30efec64816c8b5a0c0b1593f498344a8",
+      "sha256": "8fe68fd725d06dd4ad2eaeca4941570cae24b431e8d827dacdac4ba2c5ae12bb"
+    },
+    {
+      "path": "backend/.bago/core/canon/TAXONOMIA.md",
+      "git_blob": "10c6a2d33e380dca12de017e8c90eaa1831465d6",
+      "sha256": "54ddb4acc3338f7078441693ca7a21fc41177ecc777a941ab201c2d637dd6c3c"
+    },
+    {
+      "path": "backend/.bago/core/capability_packages.py",
+      "git_blob": "fdc6c25e1ad7e92bd4c865f3121f7380f6f55f36",
+      "sha256": "5681f8c8372eb7216748d674cd80e58d4eabbb96378c8d50ccb3fce4ffba956c"
+    },
+    {
+      "path": "backend/.bago/core/command_intents.json",
+      "git_blob": "ca3313ab6176966970c16caee9d3881bc44b4c99",
+      "sha256": "ab3b89ed8bd1dd5c8323ee4205e756ff0700817d2c5b450c251a18b7bd087f51"
+    },
+    {
+      "path": "backend/.bago/core/config_manager.py",
+      "git_blob": "ab6c615665d24e98a2ee55aa04edbb2d8edca38c",
+      "sha256": "0bb0af77cf9ac856b76661b1fbc62cb66000c2c21879a2b2753131454791149f"
+    },
+    {
+      "path": "backend/.bago/core/context_budget.py",
+      "git_blob": "3fcd5f213afa1bd3dfaf00a8e20af4e1523aa42a",
+      "sha256": "562ead78628c69d1d9d81d6c2ce5e97ef104093bed21933d6bb1a6820e5317dc"
+    },
+    {
+      "path": "backend/.bago/core/context_compressor.py",
+      "git_blob": "e1bfccb93714b52f1bd8c73e8933d7fdd88ba847",
+      "sha256": "783ae839b511ffac37040ae6e2a3a40c9dc9b653c6c523b1f8b4f69f9a1a56b8"
+    },
+    {
+      "path": "backend/.bago/core/context_envelope.py",
+      "git_blob": "668ae39e2a76131c62f0dd5d3b41950f32b89876",
+      "sha256": "a8f0ec22bee20b99dd113802bf547cd94ded3020002e4fcd4aae16091ad87889"
+    },
+    {
+      "path": "backend/.bago/core/context_governance.py",
+      "git_blob": "6c158435ba73d8cafa85a1ed21803cf3ca31d969",
+      "sha256": "9f2e5ef81dc5e8db92f4e2490def3a10d6b246f0af0cc3445567cbf9f24af2df"
+    },
+    {
+      "path": "backend/.bago/core/context_patterns.py",
+      "git_blob": "273a19e6af61d9000658cb540933c7ca1217b866",
+      "sha256": "0b54868bf7fa86ab3f69b0c2172614831a5126587d49eb7d1ac491e4937f7c1b"
+    },
+    {
+      "path": "backend/.bago/core/context_patterns/README.md",
+      "git_blob": "c143cacee3020df289a39f1551151817c89b2aa7",
+      "sha256": "b93921d6fca38f8a68011930f47e7656bab2ec8852077fd38208a5b06dfb9f7b"
+    },
+    {
+      "path": "backend/.bago/core/context_patterns/manifest.json",
+      "git_blob": "c2535f8536195c0634f32f57c14104245a19df45",
+      "sha256": "4cb5732c9f79f6070ebea1fb0261b8aab2a7f921bb65f3ac4530aa25a85bb408"
+    },
+    {
+      "path": "backend/.bago/core/context_patterns/workspace_discourse.md",
+      "git_blob": "2fc6b44f96872ccfa5360ccec270771e2b66d218",
+      "sha256": "0881c12f6648b1e39fe078bc619a1b926f54e443672c6b5e72f7f97c02142b74"
+    },
+    {
+      "path": "backend/.bago/core/context_patterns/workspace_followups.csv",
+      "git_blob": "e8339a28f341eee1ccd15affa70995a1173bd8d5",
+      "sha256": "e32a29191d4339939398c9177337bf1fc520b233e1383d1b464d041904f64931"
+    },
+    {
+      "path": "backend/.bago/core/context_patterns/workspace_markers.json",
+      "git_blob": "44d0993a3842bdd38d39322d7fa9170c81f8b827",
+      "sha256": "594deb32c8c9a50c1fb728532f7768bdd8b97e6ce95f6cbb07ec8c55c580da3e"
+    },
+    {
+      "path": "backend/.bago/core/context_patterns/workspace_questions.toml",
+      "git_blob": "d30373710b86c8c521b1d48fa8f12f83334d68cd",
+      "sha256": "7b495e9dbb28c109ba4d96c47450ba6685e875abbf2e6766f8f0c71adecb46bd"
+    },
+    {
+      "path": "backend/.bago/core/context_receipt_validator.py",
+      "git_blob": "ae8b2f500e9dbc7132c0fd81ef8b87c0408edd72",
+      "sha256": "8eb86df58b52122e2b14faeb5711785d6dc3d687e355e86bd7c4bccd1d9bc935"
+    },
+    {
+      "path": "backend/.bago/core/context_store.py",
+      "git_blob": "3b02d300f22e46c7e76955e822bd21d3195ef59a",
+      "sha256": "4c92810273070fb4ec6666491a55bc5731c8e872a30cf98a506ad088eb064c6f"
+    },
+    {
+      "path": "backend/.bago/core/contract_state.py",
+      "git_blob": "dc69a5fbfa55ee187f304c524ed6b8f99a0e2690",
+      "sha256": "33263c71141c79c6af5ee399c076fca74cb1e1f6488194567de1ea3f08d5604d"
+    },
+    {
+      "path": "backend/.bago/core/credential_manager.py",
+      "git_blob": "82252696341b7faba4eeae928615538e8f6779ae",
+      "sha256": "7341521f82bc5e1681e0f691b4ccf7902a9398899d2e9ff8b480ad3ddebd2e04"
+    },
+    {
+      "path": "backend/.bago/core/database_write_request.py",
+      "git_blob": "b776bcdc6e7efbadf145efe57c8e116a437b8eda",
+      "sha256": "4103b8bb9372f43129eac761c799ba1f9bf253ac978c14bdc18ff314e409c938"
+    },
+    {
+      "path": "backend/.bago/core/delegation_grant.py",
+      "git_blob": "d9ba11911251fb756f34401e40d84110874da2d7",
+      "sha256": "d57c495d1327eaa12115f0e1b9ac6789e477e64f76a8499ebd6d8bd809d81454"
+    },
+    {
+      "path": "backend/.bago/core/directory_context.py",
+      "git_blob": "b186766d541de7f507e9b0c81be1dee4aa586aac",
+      "sha256": "4fb63a3b4f742bbf2f04e03d4ac3404252460c940720baa1175079cdc6180259"
+    },
+    {
+      "path": "backend/.bago/core/effect_registry.py",
+      "git_blob": "66841e2a58b1978543250dbfa3aaffdcfa261ca4",
+      "sha256": "17f5756c69fee52422ccb5b57076294c0a8546e19975ec4a80177a7c0776dd9b"
+    },
+    {
+      "path": "backend/.bago/core/embedding_store.py",
+      "git_blob": "9654ca197325a240b885cbb3a2395c6c57fae704",
+      "sha256": "2c7b9524595086d00e8c6625eae68a3fc9df904a8914c2af48202e1f7ad7f109"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapter_contract.py",
+      "git_blob": "eb6aba5006c1010475189a6ac088c1f00f946732",
+      "sha256": "26d7f196c3facad48f71ceecf19e430f6fc435f1cd5cf16e264eca06864a9f53"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/__init__.py",
+      "git_blob": "2319b7aa678c67224f89075afaf03a12c94827af",
+      "sha256": "463d5190a517e975ef632ff125b1c74f0b2b5a4ad2da1c263e084610b31f986d"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/archive_rollback.py",
+      "git_blob": "415c71a205f64b42385a2477889a2c37acb19ef8",
+      "sha256": "e31b75c07c49d89eceba98fe5314f0bffa6ace5e515724026537ad6bd6744f24"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/autonomous.py",
+      "git_blob": "173be9576f67dcd36dd79eb5d3be9603b6659ffe",
+      "sha256": "3d402cf3e2d1db0b09ab2db8b13b3c1c5dd92920b23c0c4fb036d464ae2cb502"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/canary.py",
+      "git_blob": "a606cb143b637dc7311b3b4a4bcebf0eeae77061",
+      "sha256": "ddc522adafcfe670e8ff54723163824055cee5d60cf85d08c988d4d7ac22184e"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/capability.py",
+      "git_blob": "ba73ac49886a74fd16725978bf1330e3375f91e9",
+      "sha256": "6ca7cff8ee71da55452c23d7f5ebba928bf32a40e032d675062ec6b0c803104f"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/capability_import.py",
+      "git_blob": "601b114da723c22a9bbc6bfdf3d60c246c737cd7",
+      "sha256": "510d5fdc367dbab1df40c5b001942bb6ef029b7228a8671e12203bc61ad952bc"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/context.py",
+      "git_blob": "70e4480fe839fba96da18eb5392c97c7593f3327",
+      "sha256": "195135144b1d7d0e76f757ac5005272aae4f9199eb9a13f56ad22e55a9ded5ac"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/credentials.py",
+      "git_blob": "dd6a481e922eac0ab435a77f0117390bd68ec32d",
+      "sha256": "8411ab0cde83cef013c5d861bbffb89e9d4eae72a0614b908640103ed6539237"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/database_write.py",
+      "git_blob": "41251d4c199601b540dc0508d189397d24600d57",
+      "sha256": "3a6bd203051bc0b54be29185a4bbecb90f4fc71cd7d51c2add1c13abad742baa"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/delegation.py",
+      "git_blob": "611e650b3f94ba04d6f28f2219d295f13ed7b8dd",
+      "sha256": "4334d23cee1d6b6fe5e3d0bc846a599c876c168f9626bbe6b01a98ac3c5f803c"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/evidence_bundle.py",
+      "git_blob": "17babc7ad1c2df91e83f3655c37304884a7c1dab",
+      "sha256": "9960e9a62c7750e21f31c3ed259980e5f2e83619a8c742f07cf5c21a578cce27"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/filesystem.py",
+      "git_blob": "6ed9d1a619df9f09f1ac473c42d0d6371f3e5f8a",
+      "sha256": "53111f4649a58fdae1ceb078c0215bd15be8cc0d25c70a1f544f9b3c9bc1713a"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/install_uninstall_lifecycle.py",
+      "git_blob": "e38b58db8c3c2b478472f097f04ec47071070fe4",
+      "sha256": "02b5798e3b76897417c93c7395ae8709c05e5c9866ecc10b35c5e01f8cc0b9d7"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/manager_settings.py",
+      "git_blob": "8d328e7cba49aeb658629826d790c0937cb404dd",
+      "sha256": "5576b28a582a6ad7fe71c1a0400067fcb75c3e973af39a5c67254bf3642489e8"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/monitor.py",
+      "git_blob": "9e61840059df39057713355efa9cd0a93f69550d",
+      "sha256": "3638d18d80fa4e0e85b774bc1793e49f60ba61536b1360c25150ebb3cdfd6664"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/network.py",
+      "git_blob": "2919fe7c3cda5c84c9642e4e5d8abfe7e1bfed2e",
+      "sha256": "dbcf82740db669a5804b2a916c0a0a433e1aa87ab234bd26e49480e4563bb294"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/pi_sidecar.py",
+      "git_blob": "bd688d9062dd02c16baf1e70132bbfc5a0698d19",
+      "sha256": "c548a8d8a620d1c1e025b8a6c4d231c5c53576a9cbf54c3354706049ec49b4b8"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/plan.py",
+      "git_blob": "6824fb146f4202f74330399cbc8f491ba8eed864",
+      "sha256": "d96816550c1bc51f10194a2d6dd7bf07c73ece0b75537096c01fb297e672ef0c"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/process.py",
+      "git_blob": "76b7fb484626ba4e8d0b7d5681a013219a1b3a14",
+      "sha256": "6b116b5edd57a6b140c22726e21f24759dcd20b863027a16de6608b22e1cb20b"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/project.py",
+      "git_blob": "45052aca8371f692a7c37d07f32d39433461d581",
+      "sha256": "e6c9807887c6d078597e83f1c67c688c8ca300b5ee290558d786b9520e471ff5"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/release.py",
+      "git_blob": "c6d65e625e634f418a446c4df57b8d74a9ee7642",
+      "sha256": "fdedca670ba9928549f182998c747ec005536c5dfe15a3f3daf3640f8e0915f6"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/release_job_archive.py",
+      "git_blob": "fddcc403dcac3c0606463355e290197ad6c655db",
+      "sha256": "c97ab502e1e188c32448177700095612d6f5ae62d94ff84d3db32e1fb58e8ef3"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/release_job_log.py",
+      "git_blob": "1775e99e06d15953bbf34d0d7cbfb8ae10e256b8",
+      "sha256": "ef8795a7062613fcb308602681e0b920f1d7ab2f9e22d25bd5aefebc343c6d52"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/release_job_state.py",
+      "git_blob": "cf6101c08056ce161b4fd1323fa8816d0f12d0c1",
+      "sha256": "e1af414a68c35d67ec33a9fd4ff4efd06e3b9aa16c8712d0aab15e4a6dbc2432"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/release_signature.py",
+      "git_blob": "db45224cbc0ff85a03a631e902b2a3f7f935f3db",
+      "sha256": "1976f3513d59472e5173d8d2ad4b6f377adfa1e25ce79e8ad05a087bd9f4168d"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/release_stage.py",
+      "git_blob": "e9ffd839e7524fb5969659be9ffda64f79fb4552",
+      "sha256": "ee9824dfa3287a69bdb94565575e9afcf0d3be347c712d2db5dae43035a7ceb4"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/repository_guard.py",
+      "git_blob": "42082c2db32d397062b552e5ab64ca33d69c8635",
+      "sha256": "134c52824ba57e27b58148bbf5db561e90a7220294af6664be0992f971f8a2b2"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/repository_inspection.py",
+      "git_blob": "c4a7b9be891ce25e345a511da1d4f4e55c044ce4",
+      "sha256": "6e537499e9cbc6c53a0b2e2cda373f5fba80fe0d518b4eacb5a8556a4aa64109"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/role_definition.py",
+      "git_blob": "f038949f95d88c758a40a9ae07f61044b37fc41a",
+      "sha256": "251942630e3cc7d3753e5c10b5d237340e1dabea0b9720c3369806a26decb065"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/runtime_state.py",
+      "git_blob": "931fd35f0d63275d2c8d8f966454d2550d0df9b9",
+      "sha256": "d585a8d6d4fd18efdc1d3179326ad95338282aa2bcb0e158174ac67398317647"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/session_state.py",
+      "git_blob": "1a235517488913162077ee391e66e0a314576a99",
+      "sha256": "c2126409c2597c3f21f9452a25927d80f0fa6b69ada11181a354b1c55a4fee4a"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/source_update.py",
+      "git_blob": "cd56f3dfad54f50f5c9f45e856579dba8fb875f2",
+      "sha256": "a92df8cb5d32ca270725aad4ce734abd05425ac329b0239d705fd97a645d5104"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/structured_logging.py",
+      "git_blob": "863fbfc6a14e39470a5459d9a5790559df7b0a99",
+      "sha256": "7dc12297cf9eed6e5cd31394a685cab7f2e7dee3b05fe7eeca5dbd0566f81790"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/system_install.py",
+      "git_blob": "63275282c121a053e84ba35b823bf1ee52f32578",
+      "sha256": "9343353009390b5ed44b4611bac151f1583fdc0a0fca3ae11e136ab74f5e7034"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/system_install_rollback.py",
+      "git_blob": "6fabe6e02116a57134e68f84851844eecb4c7025",
+      "sha256": "1d597e035392f54df95e9bf14a4f16375ee13e7789c098810357c0a49c78c737"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/system_install_uninstall.py",
+      "git_blob": "53370606b4ccfe6adf427f95ee417b12bdb52799",
+      "sha256": "7e15f92ad63d317e2f97cbac2b7a365f3bfc9a511e30ffc4c8063f072c9a33fe"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/system_update.py",
+      "git_blob": "7a1153c1858e27698af5f958dca1762bb774d0ef",
+      "sha256": "a33f4c9d158e1dfac0aaaf53ee70ef75d08fb61bb5d7c58563fbce7f0b4e5353"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/validation_staging.py",
+      "git_blob": "89bff86b52cf83c9cadac1dccd4a9eb9a1fce67f",
+      "sha256": "83923b4a0a8df668ab9ae7781e395fa36d7f348215dfcc745960758ae26a4263"
+    },
+    {
+      "path": "backend/.bago/core/execution_adapters/workspace.py",
+      "git_blob": "bc3c630abdc38dcf0c0b328ccc03937c17ae597d",
+      "sha256": "531d7b1a1716eada2dfdba3a89de145de6a11e1f40d6963b99539a5075e9b374"
+    },
+    {
+      "path": "backend/.bago/core/execution_claims.py",
+      "git_blob": "1669675c6aa8f7737df72fb6338db397669c2f4f",
+      "sha256": "458bad22808de9287621bd31af4c449442f11fb8d7dd795331f4c2767be41887"
+    },
+    {
+      "path": "backend/.bago/core/execution_envelope.py",
+      "git_blob": "7253854e93311e0dca03442134dbab0b44eb812d",
+      "sha256": "b6c22da159828b650da005de0afa9bbb7ee3f380f398cc4930eb2fa7c82604da"
+    },
+    {
+      "path": "backend/.bago/core/execution_gateway.py",
+      "git_blob": "f9849a1328311fd22961dccfd4f9bc9db16bc1f9",
+      "sha256": "c889d61353709c0fff94497a8eba3b8602e8ab124c985c9a721bd67dee94903a"
+    },
+    {
+      "path": "backend/.bago/core/execution_operations.py",
+      "git_blob": "e2401d221959ccfe786c7586135ac993c3feef6c",
+      "sha256": "239d291b982b7a705fc9df2caf242b9e911c7692a0bcb0b4903491b8bd5eb0b0"
+    },
+    {
+      "path": "backend/.bago/core/execution_request.py",
+      "git_blob": "0d5374408a745f87d3a9a3bdf4981f32ca8aa302",
+      "sha256": "9fc2c35ff802b1a7e041c66f7f3aba57bb8b17aa08ffca2e77a11daf3adb8ca3"
+    },
+    {
+      "path": "backend/.bago/core/filesystem_effects.py",
+      "git_blob": "039e334dbbd9f5533252d78b586b2c3ed0453c1a",
+      "sha256": "88b2986bb4d0dd799fb7c088b8484d2c9595e76b3c36dcdbe2f35f8eb5833663"
+    },
+    {
+      "path": "backend/.bago/core/gabo_connector.py",
+      "git_blob": "6a96dd9437178c22cccec511a0f3c34614a0ea7a",
+      "sha256": "5c010b8a03171ea36e58937de0fc8fd5ebeed2422d7e59ee2c7a3b05b77e2ef0"
+    },
+    {
+      "path": "backend/.bago/core/governed_work_pipeline.py",
+      "git_blob": "0ec37d6f050c98631a0966ddf178bd13364f23f0",
+      "sha256": "0bcd56010f8c6aa23bd87b99a89ef8cf179fe7dcf6ac03118709bfa8918758ba"
+    },
+    {
+      "path": "backend/.bago/core/guardrails.py",
+      "git_blob": "8073efb8551ef61394b332aeadf4b14c0a4062ca",
+      "sha256": "9132db2b516e6c733a8c2805b6f600ce24969bdf6f05573062d47e8152725f55"
+    },
+    {
+      "path": "backend/.bago/core/install_plan.py",
+      "git_blob": "e3c2307015f9723f082c4dd0aaf3d3552cbf98ae",
+      "sha256": "982f79867f83799c57b561d0691e8fa5cec9f8ef0c0ec78dba2da6e7d34312b7"
+    },
+    {
+      "path": "backend/.bago/core/install_uninstall_plan.py",
+      "git_blob": "21eb572c47bb412a07fdb52fa387979aab172041",
+      "sha256": "fc5283fbe3d9c34e55ace1c153af074f62c838699cfa233aadb116ad3272e29e"
+    },
+    {
+      "path": "backend/.bago/core/intent_engine.py",
+      "git_blob": "7556422efe8d009790796f6f8714a3dd11446b88",
+      "sha256": "810ef88cb5df4ddd338973ce570cead1f4cb87c88bdcfcb0d8ea5ca3de1428e6"
+    },
+    {
+      "path": "backend/.bago/core/intent_examples.json",
+      "git_blob": "04501e51917bdc0ebcedbb80c7f6f0cd03c2da17",
+      "sha256": "6b873c0bf4d067e9d362453754e42fbfe34c9ad2291c30b2d5c865200bdb49ba"
+    },
+    {
+      "path": "backend/.bago/core/knowledge_base.py",
+      "git_blob": "8fe2314329e43a3b7b1a79cab483e888e87cb868",
+      "sha256": "21adc7ca5bd1e5ed6e3f741a4ee89b68578f36a3bb442f16587279b75665b784"
+    },
+    {
+      "path": "backend/.bago/core/learning_writer.py",
+      "git_blob": "f37d01e6a941641f80cbb63789ca645b35b5c99e",
+      "sha256": "b29db8ac2d554c2a280b90426c4a2a201dbacdfc0151809b53986274bb108d20"
+    },
+    {
+      "path": "backend/.bago/core/memory_database_schema.py",
+      "git_blob": "c725e46e0dfa4b1ab07918e00d34dd9db2c70a2a",
+      "sha256": "0cc961a75a77878b74b52acaa49a96109577296172a2f050fe11630ec7ebefea"
+    },
+    {
+      "path": "backend/.bago/core/message_adapter.py",
+      "git_blob": "e9b5380c7b2e10ca65d503f21b0df03c3fba688f",
+      "sha256": "4e4fef38cd60689c9c21618f5bd8340df6c19c25db8721b3083fe89dcde81616"
+    },
+    {
+      "path": "backend/.bago/core/model_buffer.py",
+      "git_blob": "a17b1084a2fd941867035bea928326b016bd66b2",
+      "sha256": "ca6d2a2161495ea33bc85c70f0f2e4c78ac0f7fa529f90bcf75e0db3be08fb57"
+    },
+    {
+      "path": "backend/.bago/core/model_equivalence.py",
+      "git_blob": "45ec6d1ac0210f67dbf178120cbbd6907aa2d84c",
+      "sha256": "567469f357c6066465542a2f4a262b5e67bad09afa037ded64c67d3a78f0ccba"
+    },
+    {
+      "path": "backend/.bago/core/msix_bootstrap.py",
+      "git_blob": "02d263e4a86b4eae08b817cd67a75c726006e8e9",
+      "sha256": "ea7f24d1063907c2d98f2ba6568801f73e9b40ce7e8ac0a0d073af2c3872f3b6"
+    },
+    {
+      "path": "backend/.bago/core/native_approval.py",
+      "git_blob": "20b335dbd4d396d34ca717ef3d765fdd04f1a243",
+      "sha256": "d69351251f90e3dfa946db70bc535e91e118d0bb22f8a0f1ed9e44988d838fa4"
+    },
+    {
+      "path": "backend/.bago/core/ollama_discovery.py",
+      "git_blob": "8f8726cc661c2c0a17b4c6f4ca47c576f141cf40",
+      "sha256": "c289f2ca79e28d577a9a6c4c07807bd84ff72058ce3bce2d5ba6ac31b12b4702"
+    },
+    {
+      "path": "backend/.bago/core/operational_intent.py",
+      "git_blob": "34ca096d9d90e5a724afcc507054cff6d0067009",
+      "sha256": "f802c479fa8126e4a67811e17b61e05f616ab42d31b76dce3873fea9b18f1dd1"
+    },
+    {
+      "path": "backend/.bago/core/orchestrator/MATRIZ_DE_ENRUTADO.md",
+      "git_blob": "6d0e7139cb62a9eaa2aa8594b5118ce435b37faa",
+      "sha256": "e64d95d4a5de2e187aaab21ca795d066e57e2dc9e1933f16279af0a85ac11f36"
+    },
+    {
+      "path": "backend/.bago/core/orchestrator/ORQUESTADOR_CENTRAL.md",
+      "git_blob": "a508cc28fa8b0993dacc6bac7bc026cd823eb117",
+      "sha256": "ac2b4a4fd3a2010000d7d4d532ca44a1e80461cd73b2cdd440f590c35b957788"
+    },
+    {
+      "path": "backend/.bago/core/orchestrator/README.md",
+      "git_blob": "790cb09395f5f101e5dfa0ca3e86ef31d6f38331",
+      "sha256": "d3587ae68590e8b634f80e0d039346cdcff902d632e202ae0d922d812d80d23d"
+    },
+    {
+      "path": "backend/.bago/core/orchestrator/ROUTER_DE_ROLES.md",
+      "git_blob": "7ac6fbdf6f198b68eadad6dd60be5e2f4950f2ad",
+      "sha256": "9970f0f342bfd41035b37bb6d64893abd759011fa018e041290884dc5587572e"
+    },
+    {
+      "path": "backend/.bago/core/package_contract.py",
+      "git_blob": "a7116a95cd782c31724081be151922a5e68b9e76",
+      "sha256": "7dc1b6246b495689780a839c92fcb27777dd620489119ae29521e395d15e1c63"
+    },
+    {
+      "path": "backend/.bago/core/plan_engine.py",
+      "git_blob": "4fd136f33b6e857bb8a39efb694151af1a2f3496",
+      "sha256": "c43adec5169043ff630f96658f2314db8b9e70be3cad79fd7e0617f383faf809"
+    },
+    {
+      "path": "backend/.bago/core/project_patch_operations.py",
+      "git_blob": "8c833497f4760382fa2e9f43ae6060a08a03a951",
+      "sha256": "cecf485b0ad7b71150066465e85798d4782f0dc7a9898fef08072eb0c80de18e"
+    },
+    {
+      "path": "backend/.bago/core/prompt_loader.py",
+      "git_blob": "9ab75e0ae41141ef15a8873f77a45431c3c2bc9f",
+      "sha256": "24f25809b251cc5d324bd6659fc61c734af67ab3403b8e84f1ee284ed93c2f27"
+    },
+    {
+      "path": "backend/.bago/core/prompts/README.md",
+      "git_blob": "bfbfdcdd90e561c95dac7d2cb61c44f1e332f103",
+      "sha256": "05d809fe636b326335a810cfee37f59514eaebbfc3bcc8fa4163384147cf299a"
+    },
+    {
+      "path": "backend/.bago/core/prompts/bc_policy.md",
+      "git_blob": "88fb5c3181c8b670039554c04574d5d59a596561",
+      "sha256": "6d727a32cc6f17e84094d110ad7771756b346dea75d7724c17add278a66e0406"
+    },
+    {
+      "path": "backend/.bago/core/prompts/behavior_policy.md",
+      "git_blob": "98df428cc931e8a0eb62b525428ef9b1af1d66e4",
+      "sha256": "83bcde2c9bc0402112353c4b5e72fb535522d38a2a3506ddff558ffc0dc538f3"
+    },
+    {
+      "path": "backend/.bago/core/prompts/intent_chat.md",
+      "git_blob": "8e26c7b4a98ec98bf85c397c73aa0fa1747f5adc",
+      "sha256": "84507f9bdd55db303698ea178f22d4f9f6ed660f0756e084f79687573f370a5c"
+    },
+    {
+      "path": "backend/.bago/core/prompts/intent_execute.md",
+      "git_blob": "446faccd45aa5fa0aa4271370c3511d6ba2a0f15",
+      "sha256": "40b67c3fd2a268a60aca928f3401837fda270c081a9451410a434d82b2689bcf"
+    },
+    {
+      "path": "backend/.bago/core/prompts/intent_review.md",
+      "git_blob": "23df262ec660b5d0135fdaa3724074647448b1a9",
+      "sha256": "db4a29b65ae36450dabd764d9c0a7d0e6b48e0abba06415e0909635edc3be832"
+    },
+    {
+      "path": "backend/.bago/core/prompts/intent_work.md",
+      "git_blob": "0f0f9304e08737077871610195ef44d92595a8c5",
+      "sha256": "5732e2ea86d23093f2f7005432727537b20d362e868de513ab0119c3660ef72c"
+    },
+    {
+      "path": "backend/.bago/core/prompts/router.md",
+      "git_blob": "a8e20c579ad158a4e5224789df012eb8e55918b6",
+      "sha256": "a22e6376a8f52f39381ff8ae2cadd63b5081014b131a52910ca766c1aea0cbc8"
+    },
+    {
+      "path": "backend/.bago/core/prompts/task_response_contract.md",
+      "git_blob": "a9f54b8bbe0cc0747f1f5367611decacad105b83",
+      "sha256": "bd1c26ce8f884d74216cb7ade18251b07f9b9941e9ceb24c72e1b582760403b1"
+    },
+    {
+      "path": "backend/.bago/core/prompts/translation_en_to_es.md",
+      "git_blob": "5d3c7839aea9263e94376108ccfe157c524090a4",
+      "sha256": "2bb7de90335a6d927f560e4d5e3c8b65c067b9e5b9f06f0ca8ef9ee0aa09dd45"
+    },
+    {
+      "path": "backend/.bago/core/prompts/translation_es_to_en.md",
+      "git_blob": "bcd392b3c3d454ef2c20f0648c8439f7ee9b569b",
+      "sha256": "9722ff107d8e0c25d08294fadbf98848ed5ec4d703a1d94d22bf16a364035147"
+    },
+    {
+      "path": "backend/.bago/core/prompts/workspace_authority.md",
+      "git_blob": "318feaa01e5a4c5aaeaad4047551205a88d55fa7",
+      "sha256": "128359eb122a6b3b7a4622a537d84a96b5a5b7b70f7b301f4b47b5e19e7857fa"
+    },
+    {
+      "path": "backend/.bago/core/prompts/workspace_question.md",
+      "git_blob": "a51b7a2d6635a50ebb5460ef94f938d9c1e0eb0d",
+      "sha256": "ed1d66a07146f92ce1c611fc105241b198867c493cc25f170a8f4b3a518e294a"
+    },
+    {
+      "path": "backend/.bago/core/provider_adapter.py",
+      "git_blob": "9f2fa09e8b76f9a6c8b049217f9872ddb2239c67",
+      "sha256": "ad720828adf43134a7a0f5fbf8b1253ba53b27532ef7a386e39a7a51661e5bce"
+    },
+    {
+      "path": "backend/.bago/core/reflexive_audit_ledger.py",
+      "git_blob": "bc9008aab4d9320e2b04708bec3a9650c8f1c166",
+      "sha256": "9ef62dc07a560f8ca4506650c42d2b302dd96e97a13d33503be198662bbaaa3a"
+    },
+    {
+      "path": "backend/.bago/core/reflexive_interpreter.py",
+      "git_blob": "ca2cb3016a080b8a7d3f3b850f6c3404ae4e4078",
+      "sha256": "8cbb2698a206111e77448e79b752fcc07017fb98f20e85267d1a61541f1e7c7d"
+    },
+    {
+      "path": "backend/.bago/core/reflexive_rules.json",
+      "git_blob": "05160e4cb3eba3f1b15255ced8284c8f05df7565",
+      "sha256": "f3735ed1ede600108925085296fdab80ad4603c659e3c7e896f84dce47897bec"
+    },
+    {
+      "path": "backend/.bago/core/release_job_paths.py",
+      "git_blob": "463f20b5c27e1d4ebcf98efcd078b641fe8bb92a",
+      "sha256": "eece02db2dda3ad338df0fafdc154e480ae68b2d684a4f1c819a8027d4d83113"
+    },
+    {
+      "path": "backend/.bago/core/rl_engine.py",
+      "git_blob": "bbbdb99b23953343b0a3a5e39d95d0dfe8e87ec9",
+      "sha256": "40066efcec5c81764fbe0814046bcbd4752d22cd0107d51fa2f2509101d309a2"
+    },
+    {
+      "path": "backend/.bago/core/runtime.py",
+      "git_blob": "c96ef22d46835837376be3bfa1c3782e82f02d41",
+      "sha256": "5a62fa072d2a3e641f2ac1c81a0199006de6b4fdd39c33db59cd459e2a671084"
+    },
+    {
+      "path": "backend/.bago/core/runtime_observability.py",
+      "git_blob": "62c6a16ff7498d6b8304987237a523c78fbcfd08",
+      "sha256": "a7babcf4e7829e4c0af563c998f353cebe3dbd5470a8c6f44a7eccbb0ba17785"
+    },
+    {
+      "path": "backend/.bago/core/schedule_registry.py",
+      "git_blob": "7cbb335b39b6490a1b209ecf3a26de29b8fceb36",
+      "sha256": "5c2cf26091267c89817c9c07603687711eef5f8ed710ef2f583d388de3767dd6"
+    },
+    {
+      "path": "backend/.bago/core/script_registry.py",
+      "git_blob": "06f84db1addd0393f00314453a107932aa6f1b16",
+      "sha256": "6f93bd559608b38cc223e13cadf74d0d5d70d934f769fdaa999fed30b8c8197b"
+    },
+    {
+      "path": "backend/.bago/core/session_adapters_mixin.py",
+      "git_blob": "d09e1cf60b8589b4b815014bc8dae4136755f53d",
+      "sha256": "01fed7d0710d20a76173c710c4f864b5c5c0a2096b5aabe2056d323a27b567e4"
+    },
+    {
+      "path": "backend/.bago/core/session_context_envelope_mixin.py",
+      "git_blob": "ca5a619caef533bee8a8ea3d98a4b040860be6ee",
+      "sha256": "047ba633261bcd54006ed9696166bf3ef0a28789b25b7f0dc2d04ed55f779bdb"
+    },
+    {
+      "path": "backend/.bago/core/session_context_mixin.py",
+      "git_blob": "6659802c2123c20e6c4df4e7f22c8868e808ff88",
+      "sha256": "622e1c87267826e302c0a338bce1405c7d2e5bb3c06ccafb2d42e0c336e445cc"
+    },
+    {
+      "path": "backend/.bago/core/session_context_policy_mixin.py",
+      "git_blob": "c2ed878e549c77129c6bfed9140f6b0ca591ddd3",
+      "sha256": "a74933f7b8a14b3b1f6766a8deee68bafc793087e7605af6551a14860f88da3c"
+    },
+    {
+      "path": "backend/.bago/core/session_context_workspace_mixin.py",
+      "git_blob": "0b483fcbc41dd9f0b5b4ad289ced963c5ffb5f90",
+      "sha256": "c0f1d68df4db81d9f2f2841aa7ef6d9b8430d7605a86c3fe19fa091e042e978d"
+    },
+    {
+      "path": "backend/.bago/core/session_manager.py",
+      "git_blob": "98228269d7fcabf1365fcc4d971cbc32a35b65c2",
+      "sha256": "9b751fd537bb4b918aa6e0b5cc8f1e83816b7977b1a05c88727e4d55010cae40"
+    },
+    {
+      "path": "backend/.bago/core/session_persistence_mixin.py",
+      "git_blob": "58368452781c36cad2e4a83a932227813354c4cb",
+      "sha256": "40bba34584f41db90c866e4f309b3408aaf737d32160c3b8d3a11f60889d5eb7"
+    },
+    {
+      "path": "backend/.bago/core/session_registry.py",
+      "git_blob": "f48a376466ab5f87f400b81d78cad1de6277ea52",
+      "sha256": "11ce007b9741b140bac68ac8493b9868aa99457440abca4e5380653384ed2231"
+    },
+    {
+      "path": "backend/.bago/core/session_tools_mixin.py",
+      "git_blob": "236bf5ac656e181d7a8aaa0dd8d5944d2b39d3b9",
+      "sha256": "3f7657f0a178620e4f67623d74854d06afbcc4ddd68bc6e9bf2fe6b6024178af"
+    },
+    {
+      "path": "backend/.bago/core/session_turn_mixin.py",
+      "git_blob": "31e63c0770303c487d5b1b39576f1f56dbdfdc3c",
+      "sha256": "cb5402ac078d8a0e634450c1f5e1901f2b225b65e69c70f50b638f04d5badb65"
+    },
+    {
+      "path": "backend/.bago/core/session_utils.py",
+      "git_blob": "afd3402069bd4ac4cb36ccab019638c4fb0e383f",
+      "sha256": "e3d16dcff75fcc4216beef4fe7bb3f5e056785c441aa42373b859b63066085e0"
+    },
+    {
+      "path": "backend/.bago/core/spbe_runtime.py",
+      "git_blob": "02eac7d9b82c1dfaaa9e9c4c4a63455265e6b1f5",
+      "sha256": "a1328ac6daeffed7524b4555042710f2001c9e573a859fdf28af9a06dc4a1bf5"
+    },
+    {
+      "path": "backend/.bago/core/state_paths.py",
+      "git_blob": "9f830871d1f5c9e25dd2889af11f8057cd881deb",
+      "sha256": "7cef24608d0a56dc67a6c99edb3dc0834acaeded412cfe5f5f79ef13d0ad1d98"
+    },
+    {
+      "path": "backend/.bago/core/supervision/AUDITOR_CANONICO.md",
+      "git_blob": "c00d4c07a1348a57e437f057faf9f1deaaad85af",
+      "sha256": "345fba2516788ddc29f10f528b97a0da40c05df31d6e9b3451d0d9ac786fcccb"
+    },
+    {
+      "path": "backend/.bago/core/supervision/MATRIZ_DE_ALERTAS.md",
+      "git_blob": "70ac6c5277a8129f55a3c9195f68c33d0a7679a5",
+      "sha256": "abcdeb6a846cb1185339f72e771da65e5976c6846b9a6062f90c322678588a3e"
+    },
+    {
+      "path": "backend/.bago/core/supervision/README.md",
+      "git_blob": "3d9fe38efb82b5713eacba1e4508a86669372fc5",
+      "sha256": "fb82e5c74c67a0da5028a7c83cbbdc7b7341c6f3d2f2432fa19711d8ffcf0d00"
+    },
+    {
+      "path": "backend/.bago/core/supervision/VERTICE.md",
+      "git_blob": "0dea9f020ff0c39cfc817f315fd2806e7c7e515e",
+      "sha256": "1bbee3841ce65102b2aaabb480c5b30230af0f9266a8dfd553fc8d17ac630a86"
+    },
+    {
+      "path": "backend/.bago/core/switch_engine.py",
+      "git_blob": "0cc35fc1aeb9bf451dccf460498372d2aeb786ab",
+      "sha256": "154d195dc5527c5249b2bc4bb6fa84dd8c2d68082ad82d8918d1f15dd74aa9ec"
+    },
+    {
+      "path": "backend/.bago/core/task_response_contract.py",
+      "git_blob": "069667ba49b39e721965ba9a067bec09b3dbd521",
+      "sha256": "722ed5216222472db7a095f6008b93332ee8efd129c5a92eaa46a95a579c7ca7"
+    },
+    {
+      "path": "backend/.bago/core/task_response_presenter.py",
+      "git_blob": "646b5f671f3af75b3051bd6ca09cc09a4571c517",
+      "sha256": "b35d8d69007bf3edda367a0be2ab245f7cd0e492125f7ddfe7f8dcbc0f9dddb5"
+    },
+    {
+      "path": "backend/.bago/core/tool_receipt.py",
+      "git_blob": "71d9cc9e6bc4859f7a56548e2e0c5a4d55503800",
+      "sha256": "b0ffc2accdbbe1060c78afe03fa8495a6d41208fb81d434e4e61a4ed527c9467"
+    },
+    {
+      "path": "backend/.bago/core/tool_registry.py",
+      "git_blob": "c5a8ee82a3fbfc7cb75e7ba3096d516234b1bbdb",
+      "sha256": "120a12dc211b0f2e724b0454438362d4219d6c32fb31e046e6d84b83a2570c0c"
+    },
+    {
+      "path": "backend/.bago/core/translation_adapter.py",
+      "git_blob": "3a99f05d42a05c5fb9fa5e988e2dfeba2817f489",
+      "sha256": "5decc0764480b4b26e2d42a7a9108ac60aeff4e4558c9267211cba0dc7e6160f"
+    },
+    {
+      "path": "backend/.bago/core/translation_middleware.py",
+      "git_blob": "1d3c8b7d744d8f957757f5e1789f6c92b4227468",
+      "sha256": "42a715f491931f5c934fb49ba37db368027b40acc175e301a9e76df1b9895900"
+    },
+    {
+      "path": "backend/.bago/core/version.py",
+      "git_blob": "eca9ab0ec683b38fffb3649a45ac710e2c139327",
+      "sha256": "987732bb93f0f99c36821cfc26160f5e0b78a71453fc9e6563b87f1bcc1742bf"
+    },
+    {
+      "path": "backend/.bago/core/windows_execution.py",
+      "git_blob": "51912449dc10d0cc52faf11e898db09a40dc4ab5",
+      "sha256": "4fc4ce4d7323f72993c54dd66d817e47bd14ffea6f46ca75bd76fdcaf2c35e69"
+    },
+    {
+      "path": "backend/.bago/core/workflows/README.md",
+      "git_blob": "92045519fd0bdce25e271cf85449a7166fe7f57d",
+      "sha256": "beb76142489215599997590e45e51e584dd78f941ac8b487444376d3a5d34e38"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_analisis.md",
+      "git_blob": "bdbc5edc8f1cbbdc247684cc4e4845546ff1ca39",
+      "sha256": "e5faa4ca9381bb784bf611e4b6ce3ad7bff069a1b104fa9e0582fcbfe7a79a87"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_bootstrap_repo_first.md",
+      "git_blob": "985575581104c2fe51562ed30983749dd9964177",
+      "sha256": "f33b446ba452ac6eb045a18b2ce02817fec590cc93dc1d0a4300674ddd9c9641"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_cambio_sistemico.md",
+      "git_blob": "fb93aa0fb4756e7b747b9d0b14f225ab2e616fd8",
+      "sha256": "06ac4c506fffc2cdd10470837f784cbc046d14fc8a95f4374125f46691b0e502"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_cross_learning.md",
+      "git_blob": "136f016da51778a6c11536dd0cc703dc4c7c5096",
+      "sha256": "b85ff130012ebccf1c94359426a680a9228be9aba1ae30bd5286ca70bc175f1c"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_diseno.md",
+      "git_blob": "3797e6abeb65d2e2a02068b9a66aeab2452d8ff2",
+      "sha256": "ea5d5dd42384728155b9ec11da05f63060f967e5b306734ad77b45f992edab3f"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_ejecucion.md",
+      "git_blob": "f11b7703ee4d239c60d241830c94b1db18ca1041",
+      "sha256": "12c2dd02f92ed814203d56a67caa6213766e480d2d69dd3b07ecda05bd456a9f"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_migracion_historial.md",
+      "git_blob": "a44986af27ce97646d952aaea0a6f7a0d2d310f6",
+      "sha256": "8ce330ef19b4dd3d590a3e33fdd2f8a53f012691a60a7f7c97983b4d8022107a"
+    },
+    {
+      "path": "backend/.bago/core/workflows/workflow_validacion.md",
+      "git_blob": "c321fa74c4eb127993cf6205ddbf1aedbc5213f8",
+      "sha256": "aede84a3a36327e9186b33ba537db84c6ee3580472cb73a7f7b675fb3d686361"
+    },
+    {
+      "path": "backend/.bago/core/workspace_binding.py",
+      "git_blob": "7e0f0e62f327c25a7a0b782b50891e08e915242b",
+      "sha256": "30abc92aba840659a9b40316397bad8d4972427146445511e5a81484f00a8b84"
+    },
+    {
+      "path": "backend/.bago/core/workspace_patch_storage.py",
+      "git_blob": "649716ea926184d418969c43e561a44b8f5beaaf",
+      "sha256": "cb51c579d94f62e3cabb312c33724d3ab47d6bf85980bf46dba886c2e6cac4cc"
+    },
+    {
+      "path": "backend/.bago/core/world_state_snapshot.py",
+      "git_blob": "82d6958186b412971248ffaebe326955533715d0",
+      "sha256": "6227dbd0bafb6b742b0d0a25f058da5de4055206a8bf01de3e031b3f37c2935f"
+    },
+    {
+      "path": "backend/.bago/knowledge/README.md",
+      "git_blob": "38a5a6f21a7d4c6b6b7945da4582bc206adbbe82",
+      "sha256": "ae7e1e1989dbd2029f5067f1606e846e8c0efbe3de457cf471658b68405adef3"
+    },
+    {
+      "path": "backend/.bago/knowledge/assets/knowledge-map.svg",
+      "git_blob": "5d5f41c45a31d0750194362d22c127f760fb842e",
+      "sha256": "b17ac16ac223a1e2d59d235ab71be42995fd647b49a3e265dfdea9889f2f0132"
+    },
+    {
+      "path": "backend/.bago/knowledge/examples/engine_refresh.yml",
+      "git_blob": "6105b5b8ae0bb1b4b51597f3d9ff46143fcfd9fa",
+      "sha256": "ec68d81904c8919d636173231ce51a6a79acb4596c45118f69baa6742a006a15"
+    },
+    {
+      "path": "backend/.bago/knowledge/examples/image_generation_prompt.yml",
+      "git_blob": "82affc14c0ebcc0579087b7d30513eeed8fdfeae",
+      "sha256": "221c7ba1abb4bfe6c21c3df7cb787f875a82f42e1f88895b0c7da512db4c1017"
+    },
+    {
+      "path": "backend/.bago/knowledge/examples/knowledge_sync.yml",
+      "git_blob": "2b3c658707095b6f101e914a2e3015718d3492fa",
+      "sha256": "c4a5593f8cd74f0e550998ecd014149e012ebaa27483930b3251ba9ef8220e62"
+    },
+    {
+      "path": "backend/.bago/knowledge/examples/publication_profiles.yml",
+      "git_blob": "81ca37ea48b36975470908a292e7fc985cada69c",
+      "sha256": "abfa6ce959f54608f9b1505f77b0d5029ed117653f1f1030860740088751b0bd"
+    },
+    {
+      "path": "backend/.bago/knowledge/examples/transposition_plan.yml",
+      "git_blob": "45bec9cc51c71d73ddf77f2f7a509a9f3314488a",
+      "sha256": "6ba3220340ee69b3f539f1e57cb0bf555d8813784d41012063e74fa75b765640"
+    },
+    {
+      "path": "backend/.bago/knowledge/learned_lessons.md",
+      "git_blob": "6d1e29c95cb1b8051e486d2d35bc4d90f1bdf1ab",
+      "sha256": "2ba2557b9ea3b31b467e497a41f76c3323a95ef3301e02416a5fb081cd7c9055"
+    },
+    {
+      "path": "backend/.bago/knowledge/manifest.json",
+      "git_blob": "e8705bbd1e43b924acd6e6480d6811aa1e7f4c6f",
+      "sha256": "6e71944f205a479f4ed4114ec2bc4ff2f7995bdf80971383e731ed38e2f6b258"
+    },
+    {
+      "path": "backend/.bago/knowledge/schemas/manifest.schema.json",
+      "git_blob": "0baede9404cccc52757fc4969dfed3e00c742c82",
+      "sha256": "c9f44f20bc6133986ebb8eff543f284f620351a4a8eb2d44fc3e5fb2fcf8e6fb"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/README.md",
+      "git_blob": "ebc9cacf5fae9c3886cc8f8a33fb717a6a93c9b2",
+      "sha256": "f266e3620d3f2b24116d8df1c6d705e9defaffd26b4ad5f56e678a171a937208"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/engine-contract.md",
+      "git_blob": "cb0754e58b50dca87830cab66fcfdaeb7383df11",
+      "sha256": "9fd91885177440895ca17e96288254555d45aacc6c8b0a8b16646e75787059f4"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/image-generation.md",
+      "git_blob": "0da6a7e0926bc3d2c1b9b6fd6a3ac48b7024763f",
+      "sha256": "95c13cfefe17ac638720903a7f3a6cf610257aea2d67b549ffe7519ba742e66a"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/index.md",
+      "git_blob": "d524f3e885137d77225bc31a6d748148ded6ced7",
+      "sha256": "d60268979b93af762dcaf665bdb98184aecba640413f43a3da6aa57bdc898536"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/knowledge-curation.md",
+      "git_blob": "0b19bbf8fcef1d5cd64c57627535a22af5b168eb",
+      "sha256": "858aa07bd584084487e97ee80598f1801867bb336bca6ec7f3b82672e2257392"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/learned-lessons.md",
+      "git_blob": "0a0339ab96b6c96f4c572f1dd0ea8f1b81fd4159",
+      "sha256": "284bc7330d032cc29e22e14fe333c66dbf7217c277a6d083af68122d44eff85a"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/project-patterns.md",
+      "git_blob": "a5bfbb3b954019c2298f8ff7f46e2f3b0a660944",
+      "sha256": "b0920656abfb4493cdf6774efcdfe70079464e03e3872d00544615712c4798dd"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/publication-contract.md",
+      "git_blob": "f8d96b204e456faf5e3dcaa28cd7901de40e5ba6",
+      "sha256": "ac667dfebba9a7ffb0958e538ae3091e749c862aa8060ccad6321f8708599cd0"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/release-gates.md",
+      "git_blob": "472134997d1eafdb3049588d80522e416855873e",
+      "sha256": "4d1c409cbe63d06e35c9ae9ba3e006a327079cb8a45a6fb4198be10c82e7e8b1"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/sync-protocol.md",
+      "git_blob": "ea3a8c469c651aa9d1e1ec427bdbfd0cb6228c3f",
+      "sha256": "af53ef96e4eeb626e685b3ea5528546b474b4d77ba43e95dbe5a21da59dc81bf"
+    },
+    {
+      "path": "backend/.bago/knowledge/topics/transposition.md",
+      "git_blob": "a6fa8e89f2a535c691970a2f4126f9e1f1854e5b",
+      "sha256": "fd22d365e1cab8b8eab8c6807951425a0ba898e296e04d9a1f33e2c72557a43d"
+    },
+    {
+      "path": "backend/.bago/providers/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/.bago/providers/anthropic.py",
+      "git_blob": "5c144eae7afb49cd0d12c0e5c3bd4cf3cdfb3972",
+      "sha256": "c083c3ba6bc23335d4d7ef7cc9cf6ee3d7d69ee662afafc07ee17bac7b2bd18a"
+    },
+    {
+      "path": "backend/.bago/providers/cli_bridge.py",
+      "git_blob": "e94e84f9a20ca8f381b70c4810963816377f8081",
+      "sha256": "7af8c9a1382502d799e1d94058ddd6432d7a5354ea62a08b0684e9cd009a90f3"
+    },
+    {
+      "path": "backend/.bago/providers/codex.py",
+      "git_blob": "01d3f9de0a623b64056f1b61322198eb57e10bc7",
+      "sha256": "a50f6b48a426138c15180616e33baafb4ff4c7654d724de676f5dab6c3986228"
+    },
+    {
+      "path": "backend/.bago/providers/copilot.py",
+      "git_blob": "8d2a40e10dd1a217d944309291f10473592d0acd",
+      "sha256": "567dd381fef25cb2d100aac65c2848921e92ab94763ae31b7b5615b22563cb70"
+    },
+    {
+      "path": "backend/.bago/providers/cpp_local.py",
+      "git_blob": "6c8799e439f42d2e0e8e100d918cd9ea64b62549",
+      "sha256": "265eb950c941254bb3275604665e59da60923f982d548ede1210e5a80b5a57f9"
+    },
+    {
+      "path": "backend/.bago/providers/ollama_cloud.py",
+      "git_blob": "672eefd4da50270132749420f5f5b6b430594818",
+      "sha256": "8a8e7c3ea1c407780500ad4db5b3c973d2c0545aab31bdc55c3ba8674be86ba0"
+    },
+    {
+      "path": "backend/.bago/providers/ollama_local.py",
+      "git_blob": "a138cfc5706c9a036e55075357fce4d8c224f8bf",
+      "sha256": "8aa54112cf7c0767f07d5cb6c1a399ee3252d0276c2feddfa04e019b24136223"
+    },
+    {
+      "path": "backend/.bago/providers/opencode.py",
+      "git_blob": "709c974c55f4e10f586190466bde2f26507d2629",
+      "sha256": "ae5505d7af696e93892069fbbb289b3300e0c9fa1e18ce7d4fd8e351ec38a934"
+    },
+    {
+      "path": "backend/.bago/providers/openrouter.py",
+      "git_blob": "8a8cdcc569ac988b7413699976dd36362e2322b8",
+      "sha256": "229b223aa955c5b070702d9c90ba4b6c12b92109a8dcd41f2a9fafeb8c33a75c"
+    },
+    {
+      "path": "backend/.bago/tools/README.md",
+      "git_blob": "b244b2cc075728d24333dd57dca213d73834fcac",
+      "sha256": "f64018de17c5cbd31ae22e13b00a79f33e339558a54172e697be23f6083f6d5e"
+    },
+    {
+      "path": "backend/.bago/tools/_path_helper.py",
+      "git_blob": "2bdde9936ca06a6be839df42d43bed9577e1e1fd",
+      "sha256": "b389c479b0cada42199db1dfc11623807702d300eef40883fa506ecd18e88e31"
+    },
+    {
+      "path": "backend/.bago/tools/_registry_entries.py",
+      "git_blob": "6c7b0ca0ff02141534f67c2e88b4855da502043e",
+      "sha256": "45a777f69d959880b71e6f3c301660478afe0557c372dd22e181cfe0d449050e"
+    },
+    {
+      "path": "backend/.bago/tools/_registry_models.py",
+      "git_blob": "2aa8109bc435fc876ae2222780fb4d4241c1c570",
+      "sha256": "a4e0a6d484ca2892b6952957f3edeb20303446cf212d67b5541cf4bc26f1189d"
+    },
+    {
+      "path": "backend/.bago/tools/_registry_paths.py",
+      "git_blob": "f586f2445c3a6161a39e0c80f5544e563548a5d5",
+      "sha256": "95964750f8f8b16ced4b5e563b01f8ef1ee5486fcf5c92b5120d18049ea4ed66"
+    },
+    {
+      "path": "backend/.bago/tools/_registry_taxonomy.py",
+      "git_blob": "e8a65e504ac700bd84dfcdda87c556539b1ef3f3",
+      "sha256": "3688147887884bd6d0518bc0496a7dc9006d7b24645cb3876a96d6879467d2ac"
+    },
+    {
+      "path": "backend/.bago/tools/agent_router.py",
+      "git_blob": "f832e0226544fbb306c13531a67641ad08fe5b3a",
+      "sha256": "69c9f550993be2201bdc0dfb82cfcd8ad84d827daa79acbdaea0887129d675f1"
+    },
+    {
+      "path": "backend/.bago/tools/auto_heal.py",
+      "git_blob": "8eb26b537c3ef2fd01b57dd0e880dfffad72ed70",
+      "sha256": "b782b0fd90bc3e67398d7ace291e746cb1e5e1786ac133cd3ece3e354a3583e5"
+    },
+    {
+      "path": "backend/.bago/tools/bago_backup_vault.py",
+      "git_blob": "06a2189fd2a0131e1a5cd5301d28421252b57779",
+      "sha256": "c5f455f7976b742391f0b8d6996cbb59174fa89e82ce08d31551e35ecb62ae30"
+    },
+    {
+      "path": "backend/.bago/tools/bago_canary.py",
+      "git_blob": "65a9289efae93a76e005c7086baa0d4c5d5d0a0b",
+      "sha256": "78c4700ab80c7141426eef69adfc38d24219d5f43c4edb942ce1170fda4761f3"
+    },
+    {
+      "path": "backend/.bago/tools/bago_infra_scan.py",
+      "git_blob": "ef7c509f46dded9553fbe5730d0fe4fa1c850bdd",
+      "sha256": "c5610f0536a1f3e9b32953e3b8c0ba2f6a61ddf4103df5c3af06598d350f15d0"
+    },
+    {
+      "path": "backend/.bago/tools/bago_inventory.py",
+      "git_blob": "f17cf945627dd097026a79426f01456d9e4240ff",
+      "sha256": "f6b91b5943df026dcbaf5e8b5a49a8d03de65ff34376ebe18214982829d1ec95"
+    },
+    {
+      "path": "backend/.bago/tools/bago_security_audit.py",
+      "git_blob": "f87afa285bddbd4c2a14e4ae4cbb1eea44e204cc",
+      "sha256": "13d24948e6479f94fb955a79ea6b307f5344ab2295746c27bcd197a6b6cdd2d6"
+    },
+    {
+      "path": "backend/.bago/tools/bago_utils.py",
+      "git_blob": "ef3188fe990b7cf8b9e15f8ffb680f22d982a89f",
+      "sha256": "6fa1bce1fb660384fc477a025bf7abeab9f315b21dbbb189a44bada52d120541"
+    },
+    {
+      "path": "backend/.bago/tools/code_metrics.py",
+      "git_blob": "763be5b5b9fc101fe090453b41159f43f82ca45d",
+      "sha256": "4d79b393399cd489d7bfab4a23a75958513bdc6c82263dfaed22909983ffe796"
+    },
+    {
+      "path": "backend/.bago/tools/commit_readiness.py",
+      "git_blob": "21c9e78faae64f556f1ae3c132baddb07ec2331d",
+      "sha256": "65bf83d1570803f1fb7b35309c62ce613e57e224e1718d1f24f8388ff89e6abb"
+    },
+    {
+      "path": "backend/.bago/tools/dead_code.py",
+      "git_blob": "6e3227cb6feffc25e11c5ddebfa23124eedeaacb",
+      "sha256": "aeedcdec5e9719424c7896b6582193c2b6d93797088266f48a98f1c91cc43be3"
+    },
+    {
+      "path": "backend/.bago/tools/debt_guard.py",
+      "git_blob": "fb1652404e0f7977ee331b336762a19c718b1199",
+      "sha256": "2b0ca9f3041ad89252346c9982287947bd1a4f78e809b6b700c07ccd2474d311"
+    },
+    {
+      "path": "backend/.bago/tools/debt_scanner.py",
+      "git_blob": "5843d881da1e0e6f23bf980d7d8c5c3129f51fa6",
+      "sha256": "a15ba832316ca98412b5e922879b2588a1e19b812be56c84ff8c951281de34b4"
+    },
+    {
+      "path": "backend/.bago/tools/dep_audit.py",
+      "git_blob": "ea9480bd5905b2b2281cbeca65fca720e3c8e689",
+      "sha256": "08b87489f9f0b29bd618a299b9b20968562b3c918ebcfd1f942e74711c69e75c"
+    },
+    {
+      "path": "backend/.bago/tools/dir_list.py",
+      "git_blob": "732ffb05c9fa3d226767f20a79b689a801aa39d3",
+      "sha256": "6b08427d701d66cc76b8dd14d1d2f2ffb812e5b772397d3f3d682c48f55b67b3"
+    },
+    {
+      "path": "backend/.bago/tools/doctor.py",
+      "git_blob": "094102edb3ef8e649ad75ec36d7c55dad18d95c2",
+      "sha256": "9dabbe66026ded5e9145581fc799e8f5dc0f35599efd061356fceaa42fbb287a"
+    },
+    {
+      "path": "backend/.bago/tools/effect_sink_inventory.py",
+      "git_blob": "c5da80945189774edfe1952a7979a1df02445c85",
+      "sha256": "9171d988c3cbde467f814a4ce507639d3902d3171efb08660436e5b8ca3321d6"
+    },
+    {
+      "path": "backend/.bago/tools/file_edit.py",
+      "git_blob": "4dc31cabfcde10949d5501aa135f2552202d1c18",
+      "sha256": "b0677f3064120047997edf1faa7cfa64af8cc96451be6e613fd55a73fbe46571"
+    },
+    {
+      "path": "backend/.bago/tools/file_read.py",
+      "git_blob": "b33e56ca361f64bfc72a8b877234cbd93ce9711c",
+      "sha256": "d8dda811b4f2364941606614043bf1cb577fc4fb3247fbe1f8cb27c189938ce6"
+    },
+    {
+      "path": "backend/.bago/tools/file_write.py",
+      "git_blob": "291b1ff66f39e44c5e6e86432bf8e9fba98dad46",
+      "sha256": "dca754adcc8f03dc26a1b335742e688c5738bac8b23c63154a8f9d635bc05adf"
+    },
+    {
+      "path": "backend/.bago/tools/find_dependents.py",
+      "git_blob": "83b82ed3cd280d552bbfd4da7ce086710247cbe6",
+      "sha256": "fd9c9c9a07a95d8dc4e8f48b610633da8c89bbda56438aa2b58bc2b56bc6a276"
+    },
+    {
+      "path": "backend/.bago/tools/find_references.py",
+      "git_blob": "ddc996a2a5e146755d6799ac99bd3ac03f7f86bf",
+      "sha256": "22c07feaf237639cba19a45daabb5b60e57d39954a9fa3bb25f2319252d8cb51"
+    },
+    {
+      "path": "backend/.bago/tools/forced_dependency_scan.py",
+      "git_blob": "1322af03fbc1de6c2e2cbf733df18dfefabbd2c9",
+      "sha256": "783acad151158e25458c99eef14247ead9ecf79fce657cdb0e563163465f6390"
+    },
+    {
+      "path": "backend/.bago/tools/git_context.py",
+      "git_blob": "cb9770a8f8269b67265cd9f17fadb9b00665c600",
+      "sha256": "85c8cb79135e262241150e1e29963232690d7e1aa061f88e2b6bcbeaba359d6d"
+    },
+    {
+      "path": "backend/.bago/tools/harmony_gate.py",
+      "git_blob": "f024f664e6842b11a77a3fd4ce17ec6a6d8d818c",
+      "sha256": "ca362f6786589affe51f56b7de94dc83b3112861dbe9a4c3df6ac9024462bb29"
+    },
+    {
+      "path": "backend/.bago/tools/issues_take.py",
+      "git_blob": "93a3c323ceeda35f07b431744f6543bdd45134db",
+      "sha256": "d020515b63024bc53c53a11dcd4cecc560a41bda677b036724894e88ebb6e448"
+    },
+    {
+      "path": "backend/.bago/tools/naming_check.py",
+      "git_blob": "839836653329077e281368d4a9b3e76ca0df2418",
+      "sha256": "ce1fbd5a2facbbae35a05daeb8bc6a7474ef3f3071f4295ad6d88f714aeabbb9"
+    },
+    {
+      "path": "backend/.bago/tools/net_scan.py",
+      "git_blob": "21e85e54c9ae4290dcf32fab9ec2cc7c6e043a61",
+      "sha256": "f2a9fb157de43b12474e852556d8e8cf5209e50813e9ded81a33d70a1983b97c"
+    },
+    {
+      "path": "backend/.bago/tools/orchestrator_v4.py",
+      "git_blob": "581a640528d67417b1d9065c16e22a3268ed7a7e",
+      "sha256": "421865fd799ca303cbe26a4eb54a0f50b1a4546a1789004970b46d843c45c7b5"
+    },
+    {
+      "path": "backend/.bago/tools/preflight_engine.py",
+      "git_blob": "7809cb85ee26881394c6e3f054457738dce08ed7",
+      "sha256": "352f9c4a9d9d350fd093ea87e0199b8b710a229d5f0afcba481e678cd3bfda23"
+    },
+    {
+      "path": "backend/.bago/tools/process_monitor.py",
+      "git_blob": "baced8d029a25d4b4fec108ec510b82e9c75ea5f",
+      "sha256": "26df3f5046b896532bc01d3af5a3ecea382dc9c1965b88e7d1103fd8dbe7d697"
+    },
+    {
+      "path": "backend/.bago/tools/project_memory.py",
+      "git_blob": "b1db3703c6a3c1a9e30f736c134b6c48cbfaf7ad",
+      "sha256": "03890dc232bd63d3ef94cbf36003ae614a6a8e587fff0ec981b33ecf7173c479"
+    },
+    {
+      "path": "backend/.bago/tools/project_scaffold.py",
+      "git_blob": "728bb8fc5da56d21477d8159eb04b396edd2b552",
+      "sha256": "707f90bf383e13416f974656e3aed869a2eed4df7156d60e9084d07d81e81bec"
+    },
+    {
+      "path": "backend/.bago/tools/read_git_diff.py",
+      "git_blob": "b16fd0ca73943db83f43ef71076f95d5714139a9",
+      "sha256": "5787dfb0daa3a6098ca79bb7f93a8d285ee7184086e788874b7859d14b59414f"
+    },
+    {
+      "path": "backend/.bago/tools/read_lines.py",
+      "git_blob": "33cff02e9168c9c8e22a67268fbbaf9bbcc60779",
+      "sha256": "08f050fb658fd16a02c11b41fa4277f3ccf2ae199bc2ef4e92c3fd72344fc99e"
+    },
+    {
+      "path": "backend/.bago/tools/read_repository_map.py",
+      "git_blob": "35ece5bb1d2eacf6f86603275227a9880fe6a037",
+      "sha256": "4a5dfecd4ce509149879c03e9e30d0612f11c0550993fc4087bd5fc9257f1e78"
+    },
+    {
+      "path": "backend/.bago/tools/runtime_control.py",
+      "git_blob": "ee9ec4c1fe10a8f6d41f14e747255555592f602a",
+      "sha256": "445a4be5bbab4f827bdafe67e0b72b336483e3031ae6bf39d815b3a7a8c09878"
+    },
+    {
+      "path": "backend/.bago/tools/search_symbol.py",
+      "git_blob": "b2fea5e3ded98db77e9fb305f848933fd8577176",
+      "sha256": "41760bf14eab016685adf8f0295cdcfdf6ef6cd21f131ca579127e1540510f91"
+    },
+    {
+      "path": "backend/.bago/tools/search_text.py",
+      "git_blob": "0c23be2a1a6856a8f4815ba1f56787b8c3f1cba8",
+      "sha256": "393ec7198a4eca81bb40802eb273cdda0a16340e82a46e3fd1c610aeb6da1a4b"
+    },
+    {
+      "path": "backend/.bago/tools/secret_scan.py",
+      "git_blob": "c678737ddb056451afe8f552f7c11d82ab4a5e3c",
+      "sha256": "12d1ff87d7d93d2d1d86979d4fc7f905e97e95b1c34055e99b91306213efe559"
+    },
+    {
+      "path": "backend/.bago/tools/sincerity_detector.py",
+      "git_blob": "ba9d7d0cc161a8a82be90c22523bdb82c9768cff",
+      "sha256": "420887a6e867b678ac7d939d5ec6a69615658bb278e0c48525aaf785e39477b9"
+    },
+    {
+      "path": "backend/.bago/tools/skill_engine.py",
+      "git_blob": "b4fda5f94e5123bae6dff0710c555dab69b28b96",
+      "sha256": "af6e1aabdc1c93eb375a388b9f0d5ad359c8af941936633cd77a0a3375b4925d"
+    },
+    {
+      "path": "backend/.bago/tools/spiral_agent.py",
+      "git_blob": "936b3168b4d956622bd07ce50c382675e6ea5b26",
+      "sha256": "2377158df3f94009e683c679fd69bcc2dbf2005d00bef5eeb1535a7fe8dc8849"
+    },
+    {
+      "path": "backend/.bago/tools/todo_scan.py",
+      "git_blob": "1faeaaa010c01bb3eb834e2928f88c4c7aa67b95",
+      "sha256": "0b1c3b3e0218763bc15a580b6aa43c5b90143e2df82a1c959b44881ef0eeb64c"
+    },
+    {
+      "path": "backend/.bago/tools/token_rotation_guard.py",
+      "git_blob": "10a9d130a6181adf20b112c3bcd3f52be26bc1fb",
+      "sha256": "26a6a35394aa50484b78893c8ed7fa69e08c1821cda794b8177e69dcc4631051"
+    },
+    {
+      "path": "backend/.bago/tools/tool_registry.py",
+      "git_blob": "f8fe6b026d7415be1e298de0b4e112f346a77b16",
+      "sha256": "47cd0a49280734edef1657f8a18a377e6151015a98e8a8577e9f630c8858ea7b"
+    },
+    {
+      "path": "backend/.bago/tools/toolsmith.py",
+      "git_blob": "8ef336b4f8f67b7b8e186af4b98f31cb084da6a7",
+      "sha256": "888ebcc545f796a697017a9adde9f116ad37f200638db30426f2dd1b2d02ddd5"
+    },
+    {
+      "path": "backend/.bago/tools/validate_syntax.py",
+      "git_blob": "c8127d851d1badfdc8b401deccf96786c5e6f238",
+      "sha256": "fb4022e69113f7eff6c5925628d380af514d84d7b2713d8034a9df0690555979"
+    },
+    {
+      "path": "backend/.bago/tools/world_state_snapshot_inventory.py",
+      "git_blob": "4cd1ed2e771fef1d9f75636796094f5b9497881d",
+      "sha256": "c61fe4c5d0ba21d4c36f4aa735b35387b19fe2bc4039d052917fcf03e7d7d20e"
+    },
+    {
+      "path": "backend/bago_core/__init__.py",
+      "git_blob": "53f1ee623b0d8cbfb9c4101d3b81a30d67222b5f",
+      "sha256": "4603b6294e1a053ffcafdcc536351f9c0ce5a7f72385e27b43507a584bc1f960"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/__init__.py",
+      "git_blob": "f9b2fb563d50b42c1680f262f9e45dd125a51e16",
+      "sha256": "867eb889dd8f8b6d26b5ec7d679c1a2044f2bfef4f30481caf4ef8b7d257e3a3"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/catalog.py",
+      "git_blob": "0d43255dec403320ec99761cf5cf236d23e795d9",
+      "sha256": "ff80d14e5eb3f80d7c2d136c478212661629cba9811a86cd8c082192d92a8bbe"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/errors.py",
+      "git_blob": "9742f6791ed3f67b2d91ffe623f58d803aa35731",
+      "sha256": "65bef48f9eacee937bad2c6914e7886e36474dd41702dadc8713d8b82c39bfa0"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/llm_adapter.py",
+      "git_blob": "e013f54015730433587d94a534cc81ef196aee15",
+      "sha256": "63a0cf306961ceeed04c60121a51dac8c61959d7c904c04c4099b2fcf77703b8"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/models.py",
+      "git_blob": "4b095c06bcfbd37cac4b6a9f63bc745709809dd6",
+      "sha256": "f953097233ba24c440342246525c0173c62d5a4edd12d1a251891a384ca32ac0"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/orchestrator.py",
+      "git_blob": "cf3a60aac6474e1a9797399e6fc464248f7f3fbb",
+      "sha256": "8a9fac365e319bd4b54ddc367e238bcee6d6283ce38f6de4977be09fb451da36"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/registry.py",
+      "git_blob": "6fec43669561e460d7dfa61e76ae92457cd04e2c",
+      "sha256": "f4cf825d13f244a40156751ef2a739cbfadbbdf23470783f4795bb22c63b9f83"
+    },
+    {
+      "path": "backend/bago_core/agent_kit/runner.py",
+      "git_blob": "5a3607b7a759ee6a59dcf35143433d456e9dd000",
+      "sha256": "f0fbff21f4b60ea65d5d0d03cb70a60d4361518f516368f26c69cbbe302d2ddb"
+    },
+    {
+      "path": "backend/bago_core/atomic_json.py",
+      "git_blob": "fb81d0d81e6c6372ba60afd17b7f69ca39555c9a",
+      "sha256": "b1d2df4795b73f2a0f57bcd47d8a3b6c8da0f747d998d54950c6f9495108c1cd"
+    },
+    {
+      "path": "backend/bago_core/bago_true_bridge.py",
+      "git_blob": "a05e081bac481ee478c80f2c60de90e9f8081b38",
+      "sha256": "7e9ae5984100fba3f66a43486da3b65ccadb4a4dd07a417c42dbc65301bef274"
+    },
+    {
+      "path": "backend/bago_core/candidate_identity.py",
+      "git_blob": "4308a88c8e4bd82c5fc44ef2c112bf2744e5f9a5",
+      "sha256": "7f0d82c497e6ef9116491e67fdf9e96b96adc58782f4b90bc64980721fe08a2f"
+    },
+    {
+      "path": "backend/bago_core/claim_cli.py",
+      "git_blob": "45a022e2f1b85300a06908ae8ea7f5d33cee98fe",
+      "sha256": "4b4af972e016063a551334e600307d6e53ced30a73fec93d9dfb744c43ccdf82"
+    },
+    {
+      "path": "backend/bago_core/claim_evidence.py",
+      "git_blob": "f711ea927eca37d6d94c733f960fdecc389ce120",
+      "sha256": "03329a9c50c54826ed27571b339f6cfe5cb6c8d781f94b582b8b5578004c7a01"
+    },
+    {
+      "path": "backend/bago_core/claim_ledger.py",
+      "git_blob": "9f7682408c2ad2eff262e4b8e4775a6fc911bd2d",
+      "sha256": "d1e080a9f42c5b7b7589959913af005cbf90c636c769eee0be26d4da2e3e5750"
+    },
+    {
+      "path": "backend/bago_core/claim_model.py",
+      "git_blob": "298a042e247d995435735ab04b3e765393e8cfaf",
+      "sha256": "cdf814bca92ce3ce35229d6263cec29922b4ee6abe851e498f0bfc6ad68a1836"
+    },
+    {
+      "path": "backend/bago_core/claim_receipts.py",
+      "git_blob": "020581a28e695ccb384be0b36932e29375a8095c",
+      "sha256": "9e70efffe25f0c449fafe2e5c06e782b5a72f9b25011d2c55dd2d538ec601d0a"
+    },
+    {
+      "path": "backend/bago_core/claim_storage.py",
+      "git_blob": "cd9049085122a642e214b4bdc58c9d608a28a983",
+      "sha256": "27b4a9a2c47df99712b64335aed887abd7d20c8efbe0b2e4e98854cab38069ce"
+    },
+    {
+      "path": "backend/bago_core/cli.py",
+      "git_blob": "99d39538b3df4a7a9007cd7f51bec3933320b7b8",
+      "sha256": "8001c39c944723f7faa407fbba19bea4855f3ff51446d6b8628272eb9466db9d"
+    },
+    {
+      "path": "backend/bago_core/cli_execution.py",
+      "git_blob": "672a9c1c3ecedc694ed5f5b64e8b29a406371ec3",
+      "sha256": "de9e71f72736f080722636d3cf25dfa71d24c90da03afb7935a9d254938eac27"
+    },
+    {
+      "path": "backend/bago_core/cli_installs.py",
+      "git_blob": "c51a5fbfa121f75e7758ffc4954490ada74a3953",
+      "sha256": "3e464092e6da0361e6763f099a675a7c4483efbde61f5d384bcae92f6a0e0892"
+    },
+    {
+      "path": "backend/bago_core/cli_installs_cli.py",
+      "git_blob": "9a0b5d976b1fe9999c266ee8132f93476d17143c",
+      "sha256": "34aa7e33870f1b77e2ed57b8f5011cb8a8a744c352337012c64901810e74aaa3"
+    },
+    {
+      "path": "backend/bago_core/cli_installs_discovery.py",
+      "git_blob": "ee3b1faff78c567c7b57f608492bd7a0e11670e3",
+      "sha256": "791d596fa638872c586e3a5161fc1fa74fbe6da627880d40f1e5a950e9cdefaa"
+    },
+    {
+      "path": "backend/bago_core/cli_installs_facts.py",
+      "git_blob": "7af14fe42e42868de90a64851ea7fca1b1305d80",
+      "sha256": "f234e5a598d24b88631cc09b9c63f746514c7e1710e1bfc3f768588fa51f30b3"
+    },
+    {
+      "path": "backend/bago_core/cli_installs_summary.py",
+      "git_blob": "35a26349ee613b24df96d707b7d589d37b54e56c",
+      "sha256": "e7f9498a3f2b7d0bb0722119d4eb3a8170bc2a2de27714807dddc75c0967ae30"
+    },
+    {
+      "path": "backend/bago_core/codegen/__init__.py",
+      "git_blob": "df5f92ebdcbdd913ab39693073018fd8eb60edc2",
+      "sha256": "cab6ea7b25a9f9b5b5c3e9057df0bba8f9f5711da78be178e4cb708589f5fc06"
+    },
+    {
+      "path": "backend/bago_core/codegen/code_verdict.py",
+      "git_blob": "d8e56af7cff86285fc6eda5657a4d7df8f1812f8",
+      "sha256": "dca1a456f7fea3f77579c31f598cf3c03dc6fca99aa8a9576196754969100fe9"
+    },
+    {
+      "path": "backend/bago_core/codegen/context_builder.py",
+      "git_blob": "823f57c3069a6aa55536a4583849ed26766793f8",
+      "sha256": "5dc37fee745db9a74e582159c5674a1561b93d71802ed4385a7da8a15d88b2ef"
+    },
+    {
+      "path": "backend/bago_core/codegen/evidence_builder.py",
+      "git_blob": "91cd3dbab9933e9d21fa18bd0edf5597640731ec",
+      "sha256": "92f701e951bed6d520286caa301231404c1d7903ee92aff39470774de8a4e3c9"
+    },
+    {
+      "path": "backend/bago_core/codegen/patch_parser.py",
+      "git_blob": "00199f3fd8d82a8b174b013eee9060919ff4cdc2",
+      "sha256": "2a2e2f0e82b279442cd92b3e97e254b6a52ad55f435fd6e3a704db8b1fc5e415"
+    },
+    {
+      "path": "backend/bago_core/codegen/repair_loop.py",
+      "git_blob": "67c5924807f82175f8468d8ae9ec92bd86c76036",
+      "sha256": "a585d12c3b2bcf3f0a450eebceedf4be086dd24063a358bb09bd88c3e39a21d7"
+    },
+    {
+      "path": "backend/bago_core/codegen/task_classifier.py",
+      "git_blob": "e12c1da07666125faf952f61d60f5ccc45698585",
+      "sha256": "32764c61c248fe3e740fcd0b85e5dc9b6a2e76ac936063a6ea46ff891330139a"
+    },
+    {
+      "path": "backend/bago_core/codegen/task_compiler.py",
+      "git_blob": "ddb1e1e421e14a30585bd92b5636cc385e5a2f1d",
+      "sha256": "666fe2d8e850356b0eb210bcd8f8c300262d901cfc07399350c36b5c13901b88"
+    },
+    {
+      "path": "backend/bago_core/commands/__init__.py",
+      "git_blob": "27fa571c573686e2d3dcd7c110d303bc7408b97a",
+      "sha256": "b97baad89acfcf1aa7fb17e38aaca427a904c491ed22065a3e6041d552ae3a48"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_android.py",
+      "git_blob": "f98e0cf7065686f832549413f2bffb6e5f0a1212",
+      "sha256": "a24e0c98dd5fc5d47f1c6176f6234f644500ca609700684b416ff0bab62a4720"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_chat.py",
+      "git_blob": "92e5c7eeccb11261050361868885274146b0528a",
+      "sha256": "c5a4469253c958609360b9acafac1d717d166439c9534ca7f0a819b9d7c43fec"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_content.py",
+      "git_blob": "d2efa9b0bdbd91096970ea3a783e0a6b601acfd9",
+      "sha256": "7c1b655d6d59478eaff1c516cad97e4a5e535a332965ac11ce0028cd4709e87b"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_doctor.py",
+      "git_blob": "69fc534cd6528d0ca34bcd80253e328ca0b78fd7",
+      "sha256": "d2ebc4dff08422ed67c68fda8496968150553b1dd079f1a13ad86b8d10ce1e0c"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_layer.py",
+      "git_blob": "2f6f507def2e25122c0f0ba3ffe62b4936806418",
+      "sha256": "55983fb30bf4f9d77fa05714a760326df2b08eb9b0f3136cf681aeb15d0437e8"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_lifecycle.py",
+      "git_blob": "ba87d178296ec657274c1ce0658aa2cf43999b88",
+      "sha256": "23bbbf0728563378a0d50e4d613bced92c85776481e38845836d6631a8f1258e"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_provider.py",
+      "git_blob": "8698b9940c47437bb94662e67f63e87357a7a487",
+      "sha256": "3fdccde2061362034b74587fd7dd83f124bb2142126d56bf9e69d5137751cefe"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_release_check.py",
+      "git_blob": "5379197a56b7dbff9b57a2e5dcf3753821d14d5f",
+      "sha256": "98e2994b135ce3d3a22bd4f54917b4788fa1ab3a72f2ed95d625880d9f917db4"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_route_v2.py",
+      "git_blob": "e72a008f635d3de2db44cc74de5dc4ce60923f7b",
+      "sha256": "c5672855b7c5af838d469488ad737ccc654bca2c30bf8bb8320c3f314a3ba998"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_system.py",
+      "git_blob": "65b6fa4ef34aa0dfe7961a9933b8b33625af702b",
+      "sha256": "639e28cd653419b9c3ea2c49c97e2f3587c05187e298c77650de1e321d43711b"
+    },
+    {
+      "path": "backend/bago_core/commands/cmd_tools.py",
+      "git_blob": "3dac7f54d1318a35e5f1c2e54248e747aefac1fe",
+      "sha256": "3c313f4d2d08889cb42683601f9df9b7c84452b84d79b123db07fc45fedb1e6c"
+    },
+    {
+      "path": "backend/bago_core/evidence_authorized.py",
+      "git_blob": "da2e9a22193ec91dc14cc74120fc1e56883e149f",
+      "sha256": "81bb4390f5a02e29af6f58729c8f5155e49fe368e7347c7129f684cf4ab8e732"
+    },
+    {
+      "path": "backend/bago_core/evidence_bundle.py",
+      "git_blob": "06654aae8bd1f6cb1e2dd71b58a61af8a22b7ba5",
+      "sha256": "ef315ccd786955e77e02f95e95c56f1ea97f6a60ab4c1343893e917f0bc96cd7"
+    },
+    {
+      "path": "backend/bago_core/evidence_cli.py",
+      "git_blob": "411f820e8e8731ac4f1b6f31f3668d813ae3e4bb",
+      "sha256": "12f4af2d438abdd1bcbb506b5a751b25a8daba4fec9a72a34075481acb6dcdce"
+    },
+    {
+      "path": "backend/bago_core/evidence_generator.py",
+      "git_blob": "c20bdf1093bcaf7d21123df008a5ba3f6307d311",
+      "sha256": "7ab0084ab888281e5a3e7bf40e9beeaae478a2b2ee9e99b7fb75cb9bcd8b1b64"
+    },
+    {
+      "path": "backend/bago_core/evidence_io.py",
+      "git_blob": "83891e1f397f49af6438090a376327c061e58433",
+      "sha256": "e5dac1ee6b61ab53ca2e447ff5f53727fdb081e0e7fd96a768a8dc0bfc6263c8"
+    },
+    {
+      "path": "backend/bago_core/evidence_model.py",
+      "git_blob": "cc9434d76e2e18238f632df05b454a5066c59fac",
+      "sha256": "db87f9954947855ef1f46b54debee6c13fb4d68913209621c2a0e4c2766b83bc"
+    },
+    {
+      "path": "backend/bago_core/evidence_report.py",
+      "git_blob": "815c8d558862014cccc47b056717bc7155ff5dd3",
+      "sha256": "c2b1e84b71fda01926fe0c73955897ee98693484c66eda41fc910ae6b0727803"
+    },
+    {
+      "path": "backend/bago_core/execution/__init__.py",
+      "git_blob": "23e8ace987ba4fdd188e5d5937fe9222ae65adab",
+      "sha256": "f41489170e4e387885ebd6af73ccfe1f6b9679ff8f58ec2da87955b2c0de9651"
+    },
+    {
+      "path": "backend/bago_core/execution/atomic_patch.py",
+      "git_blob": "a39ccc980c23f16eef561830192e11eaa7ff5215",
+      "sha256": "bbb47434e92c5dcd804f7fc4415f371d3f7d30e09b1cedf33cf99c98c0c566c5"
+    },
+    {
+      "path": "backend/bago_core/execution/process_runner.py",
+      "git_blob": "3f701270ae640cbb2ba3f01dd96201a6c1451299",
+      "sha256": "dc077be9fcff4251923b1407756ce0851d73b9c6f7965d1f72ecbb4ca4d9dc08"
+    },
+    {
+      "path": "backend/bago_core/execution/staging_workspace.py",
+      "git_blob": "9fd4318f2e3667f1685274b1d22089257b5f3f08",
+      "sha256": "a51d598dce972d636e0b70378179f82b1a6c318a21e855961eedf23eaec5ac7b"
+    },
+    {
+      "path": "backend/bago_core/install_roles.py",
+      "git_blob": "a8a501cc06dcec1dee493f06b53af39919925885",
+      "sha256": "318d1766ba6ffb09e1cc7d822270beafe7211ad2e915b7235fe9409ae69d27e7"
+    },
+    {
+      "path": "backend/bago_core/instance_lock.py",
+      "git_blob": "165e4c410429f35196954dbec2c8d8e9083f1798",
+      "sha256": "a4cfa83695cbdc98c918e5499bb4b53376262458f5f836c7dffe286af1acdde8"
+    },
+    {
+      "path": "backend/bago_core/launcher.py",
+      "git_blob": "f54560eca1508cfb0585cf448d4c3911acbceb2e",
+      "sha256": "a8216598cd6acad8467c2c32340d42abf7ad9b4227faafc8874511c223acec73"
+    },
+    {
+      "path": "backend/bago_core/layered_artifact_engine.py",
+      "git_blob": "a237845c27519b1cecdf440d8e62c8ad6134bbe6",
+      "sha256": "5b173323376fa6869ff01766383deb1afa6f1df8e8d011f63dbfcaf0e916d274"
+    },
+    {
+      "path": "backend/bago_core/memory_database.py",
+      "git_blob": "0a316f5f241c340617f651ff0da41c5b7d6fcd98",
+      "sha256": "9f2e19abc828c9afd2f538554d34e75c4cb6127ce522115913d39d0ec36780ff"
+    },
+    {
+      "path": "backend/bago_core/node_control.py",
+      "git_blob": "2e1506f7a738bad891d9cde60e6c7d36357c0fa4",
+      "sha256": "6331d7ad3e9280eb0c62d7643cb1e7a48d01c549bdda030bafaa190b7734f8b4"
+    },
+    {
+      "path": "backend/bago_core/node_control_cli.py",
+      "git_blob": "ddf9e1c806437a82e83ce2b30010215740fd5582",
+      "sha256": "2052bcfd723adc8120c5ea4d2442188923d08039f53dbf2415b06e0ae92203bf"
+    },
+    {
+      "path": "backend/bago_core/node_control_connect.py",
+      "git_blob": "3e466badf8c946b2658a0afcddb67e3bdb6b256f",
+      "sha256": "d12f52ab552aed0238ab62e2778a472d9cae456a9d0dfe3589f7b3dc28da207f"
+    },
+    {
+      "path": "backend/bago_core/node_control_policy.py",
+      "git_blob": "0e37f7a03c590bb28e218af22034b539a37c9abd",
+      "sha256": "17b94133dbe8bfcf0652ecca0ee3b81b39c528b38f27643a683d92324d6bbc26"
+    },
+    {
+      "path": "backend/bago_core/node_control_render.py",
+      "git_blob": "3299230864835ee2472805fa19b03734e264d59f",
+      "sha256": "7e3424476bb47e3b9102790c9800c8ee47e40d44d2f4df96c28bbbd3ebd3bd80"
+    },
+    {
+      "path": "backend/bago_core/node_control_ssot.py",
+      "git_blob": "04ecf4882ee9d6b4fa1e8c34fa721034f55ef152",
+      "sha256": "276ff2bbf9e61dab450912a2b9767e5448a263d4a5f3243bb600dbc0f85a4c94"
+    },
+    {
+      "path": "backend/bago_core/node_control_state.py",
+      "git_blob": "4e1cf048daed41e9ba711cb6184daf34be0881ac",
+      "sha256": "ab029800dd718b6fd341e5ddbf54e8112f279fd05f9a4d316092c724766b0bd8"
+    },
+    {
+      "path": "backend/bago_core/node_control_store.py",
+      "git_blob": "53a56d850b6181585c7cdae354ad01429f718655",
+      "sha256": "00fe4467c73330d0cb04dec0251a5644c8f16e7383171ecd141af29579e826e9"
+    },
+    {
+      "path": "backend/bago_core/node_control_translator.py",
+      "git_blob": "713cc2386bc092d85067a58da6f6a74313352305",
+      "sha256": "3bd69c62d8f6233da88ed63806b763c1e18950583a1dc63a571b3d9bd788a85a"
+    },
+    {
+      "path": "backend/bago_core/node_control_tui.py",
+      "git_blob": "4745e00232fcc6fd4cc3e0f273b9fc458b86b1ef",
+      "sha256": "6348440ef25f11c9b62b6f02196476151c4edfdb8bd490026bf039865f710123"
+    },
+    {
+      "path": "backend/bago_core/node_control_tui_info.py",
+      "git_blob": "167a7ccb9f68a160f7fadef66f371c4f14703953",
+      "sha256": "aa32cb3598994c55052640e1e19341d89f003a6018c41bc8780868e00835bc7c"
+    },
+    {
+      "path": "backend/bago_core/node_control_tui_io.py",
+      "git_blob": "35041d1963eec77121fa6fc07bc3894eca5ed2b2",
+      "sha256": "75187955989e452fd9ece9e799698927b408a1e0824f2d27b5bd3570ff938fb3"
+    },
+    {
+      "path": "backend/bago_core/node_control_tui_keys.py",
+      "git_blob": "9f791719c143eaa45e7810eba71a96e74a190595",
+      "sha256": "1d53d52b02274f257decc3275dec5923838df138053862e6fb9de4a9fe1bbea9"
+    },
+    {
+      "path": "backend/bago_core/node_control_tui_write.py",
+      "git_blob": "8281dd78cc0ed6f763995fd165a21f2a6ad60f1c",
+      "sha256": "d6bd46bc751de202a4a83158589bb9e0e5d48d6276cfe51f97f7b21cf1ba2728"
+    },
+    {
+      "path": "backend/bago_core/operational_integrity.py",
+      "git_blob": "bef71a8e407f0c575c81eb5446c84d19ed87898d",
+      "sha256": "77aa13f084b6d8f4c82a097cd66f537aeea1c098a1a6a090d4a51a4c7968b18f"
+    },
+    {
+      "path": "backend/bago_core/parsers.py",
+      "git_blob": "ac473218cca978175e6598b313a10f21ad5ebe77",
+      "sha256": "74237b65ed32d163b23977c52084b25070a81b3a599d5b4f93298cfda5685a9f"
+    },
+    {
+      "path": "backend/bago_core/parsers_sections.py",
+      "git_blob": "f534ff1d3407c1ce1459c9b97e7c3c2b38dc69f1",
+      "sha256": "d76388b41b988b5d8ff399db0a613dac1e5d4ee259964e6d076e7383d12fe840"
+    },
+    {
+      "path": "backend/bago_core/providers/__init__.py",
+      "git_blob": "572ba1a430525305e56d551096297ba589c55d36",
+      "sha256": "c967d5bb4b024b4107327be0fd5c6b788d455ada1402667831cee99417f59235"
+    },
+    {
+      "path": "backend/bago_core/providers/contracts.py",
+      "git_blob": "4370e7e62c09a05ac41c2b560b45d2333904bdef",
+      "sha256": "1de20cf82486539f9d047a5884858452c2d341252df0612f1ce4772ee1d2d931"
+    },
+    {
+      "path": "backend/bago_core/providers/routing.py",
+      "git_blob": "e65c4aee737094c984959448c041116719f8cb92",
+      "sha256": "14e608b59e708f2f52e7aeff48ccc8ab55ee324e6b3e02383150871d21fa95b2"
+    },
+    {
+      "path": "backend/bago_core/resolver/__init__.py",
+      "git_blob": "3285aecdde7eeef7bbebc8df96f974d1d8c4c265",
+      "sha256": "165840b85fc5010c9e28a9ae237d185eeec9b8999419e7aaa522e35510042548"
+    },
+    {
+      "path": "backend/bago_core/resolver/aliases.py",
+      "git_blob": "d7e114d4f0a4f4b712487b6cacfaa669e59984f4",
+      "sha256": "76e9045f46fb21fa4dff70ae9369a58f6900357020205c3b544c8dc151b8c4ce"
+    },
+    {
+      "path": "backend/bago_core/resolver/discovery.py",
+      "git_blob": "6e0260193d98e913f0994baad8d6dc3bb4ca1cda",
+      "sha256": "b8a9a4f094993bdc8221a351d698f5ce803a8fb92b872ffc785c082e8b9737f0"
+    },
+    {
+      "path": "backend/bago_core/resolver/loader.py",
+      "git_blob": "0f7a01d7976cfcc063a343b5a6273d845a697812",
+      "sha256": "58c843e1e22248681b6aa71b639fdcb153f32799440644ff23de9ea1dac06aa8"
+    },
+    {
+      "path": "backend/bago_core/resolver/manifest.py",
+      "git_blob": "2b8ea11163c492277907536525d5fd6336e9e5be",
+      "sha256": "f7fef40af357ae8f18888854b9ace80d01db58673f5cc25fc2b540c4a5e57929"
+    },
+    {
+      "path": "backend/bago_core/resolver/paths.py",
+      "git_blob": "23582720b2e063cbc12d3c82f00ff29b7dd37522",
+      "sha256": "974fd6884d98095701c1a808580ed722c71f4e73dc94fa0cad013e2fd6ae4ba4"
+    },
+    {
+      "path": "backend/bago_core/resolver/policy.py",
+      "git_blob": "8c0e744580d5826384b324c5649a020f54aa5208",
+      "sha256": "e5d92a91e8b4b555ce330e3f6713cb00838ecd823a72fdff44f1e06fd6d92a1e"
+    },
+    {
+      "path": "backend/bago_core/resolver/roots.py",
+      "git_blob": "4127b5eb5664f95e1582dc2650bae02a6a0ac7b5",
+      "sha256": "cbc8ae519936b51b837efc7f49348263f7411be39892b2206fc21e5ec1ff5899"
+    },
+    {
+      "path": "backend/bago_core/resolver/snapshot.py",
+      "git_blob": "982b6dcc60ec00f55a6a0928039d5d43cd833e65",
+      "sha256": "796b0a0ce7343064afb345564026313d0f915431fe52884a687437d9fcd1f874"
+    },
+    {
+      "path": "backend/bago_core/rl_bridge.py",
+      "git_blob": "bc43777cc945f2dd8fe7a7b4d80e5194b1d9ecad",
+      "sha256": "c577d90ca589693a3c73f0b08b7d9effcb5f576529ac3e709dca5333eea130eb"
+    },
+    {
+      "path": "backend/bago_core/rl_policies.py",
+      "git_blob": "f6497a6057b4467c64d0e04e1be0be9915506210",
+      "sha256": "fe3f72043d923a266dccbfde122d7eaac3bed4754545a76e3faa11527a78b05f"
+    },
+    {
+      "path": "backend/bago_core/secrets.py",
+      "git_blob": "61f0a63ec3d2d36c8daf91c80c03d99ae06e34ec",
+      "sha256": "a0266ee32742832272a8e799ecdd4e5009fac79e8f45bdf78d34f53ac671abf8"
+    },
+    {
+      "path": "backend/bago_core/server_effects.py",
+      "git_blob": "fdd5bde23a28b30c8e1b7e7989b69e0fdd33a48e",
+      "sha256": "d816e4d64d956bbbaa48eacb0b9eeb2cf9788ded98d69fc80c6fe168f292c86f"
+    },
+    {
+      "path": "backend/bago_core/session_control.py",
+      "git_blob": "8fb05e252bc8e7f23b5cd41953b6c51a5a78ee01",
+      "sha256": "e5d7662b73acb033df9c1e9f66b5c1983ca864e942a1529d3f48f8a9078d88af"
+    },
+    {
+      "path": "backend/bago_core/tags/v4.1.5.json",
+      "git_blob": "a8bd6e985b781fca54ce7be02f53c82e74599dc2",
+      "sha256": "26bb87450df8e630b354e5fd4c1cdc663083377f4cefb848c1c445635c0f7f9f"
+    },
+    {
+      "path": "backend/bago_core/tags/v4.2.0.json",
+      "git_blob": "7347f0e4d4bcfb93d439e723580a092b9db89562",
+      "sha256": "2997d252c32904c11c326a45329fefc3ad9ec214b48ae1aa71091ff42751b0ab"
+    },
+    {
+      "path": "backend/bago_core/tags/v4.2.1.json",
+      "git_blob": "e525dc29790317365b426063fa59824a0f2a4a76",
+      "sha256": "53cd04e4c775eaa999e0b76c5f78c7fd63b2ee02f8dabeb0274feea5e05a2d24"
+    },
+    {
+      "path": "backend/bago_core/tags/v4.2.2.json",
+      "git_blob": "e5b2333461b28f52472e9798a4506c765b00fbf0",
+      "sha256": "c10f0b4b7e7f3d7c9b2e262e06c1a73467a38ee1741c2271baf9efc5047a9a82"
+    },
+    {
+      "path": "backend/bago_core/tags/v4.3.0.json",
+      "git_blob": "ce76434464dbd844594cc97eb451c43a79a9850b",
+      "sha256": "bc14d89232291e81b013c6592a1693b3ae90bbb7b28b1e31e858c6c5d310a0f0"
+    },
+    {
+      "path": "backend/bago_core/translators/__init__.py",
+      "git_blob": "a50bc0f41cdd16f8faea93f8532bced9c4ec4efe",
+      "sha256": "c1c72123709ba5f3aac61d68acb7db0295231094d8ce6b38c04b80e2e0998542"
+    },
+    {
+      "path": "backend/bago_core/translators/bootstrap.py",
+      "git_blob": "02a7fc8451af036b68668f77c274570aada668c0",
+      "sha256": "5d16b6636c6cdd2bead71848946029af2466cea920ef01789b1033fe8d46d0fc"
+    },
+    {
+      "path": "backend/bago_core/translators/evidence_gate.py",
+      "git_blob": "2428e1476c62c2f43d26396ff23257fdefef3684",
+      "sha256": "72c001c5f5eaf3951eaf9ef51d8fef4884e72ddb2752cc394589a685823bf2a0"
+    },
+    {
+      "path": "backend/bago_core/user_state_paths.py",
+      "git_blob": "83d02fe1f04da8bf67a1fa3b6ab6c381273c3f6b",
+      "sha256": "a3719a50730295e1e58051fa5f9ef3ac2327e485f79948778f9931628f13aa42"
+    },
+    {
+      "path": "backend/bago_core/validation/__init__.py",
+      "git_blob": "0e5f87797f2aa86aee5dc8cdc4a98cb650f019ba",
+      "sha256": "7a7d47af2dea3200da6d4b5205995804cb77dd1e90609fcaf458aed1505a0249"
+    },
+    {
+      "path": "backend/bago_core/validation/adapters/__init__.py",
+      "git_blob": "f2afe9c1094f9ebd0db0b3c6f2966e0900d34090",
+      "sha256": "b03a0136b6feb916e215cbb3067d9a7a45c30db6392c5724eaab0d29c5e26dc7"
+    },
+    {
+      "path": "backend/bago_core/validation/adapters/python_adapter.py",
+      "git_blob": "d66b55b6dcac3999c5f4320303164d002318dcf3",
+      "sha256": "ef8f130651053c88efd0ab3c9bbcab859892805402ac6055ee6331edc691d191"
+    },
+    {
+      "path": "backend/bago_core/validation/language_adapter.py",
+      "git_blob": "0ecc82f27f0e79b2dfdade28c2d3dbc8bf9e4a48",
+      "sha256": "348db4dba7afe8ddd0503f7c947a2fde369a0657bbacfd647bb82c77b9e5e835"
+    },
+    {
+      "path": "backend/bago_core/validation/validation_pipeline.py",
+      "git_blob": "95253f790f327706f60e3a1acfa6e3bd1ed7a7df",
+      "sha256": "6cc36c2ba85d7d9c029db345f8a6e71f94f534d81f20aabae4b0a04849742b1e"
+    },
+    {
+      "path": "backend/bago_core/validation/validation_result.py",
+      "git_blob": "17b4b1df4c28f653cfcf56f8a206fd2b71729fc1",
+      "sha256": "a0c98f42f89a3251a4b9b12fc5b71ab3decac30fed199c2686eb2bdedecd8a65"
+    },
+    {
+      "path": "backend/bago_core/version.py",
+      "git_blob": "28bd665e461d16402739869bd5c68a7befc4fd9a",
+      "sha256": "f70d1c56480d9743f5b880586597fdc0583c4d83bfac93ae60b8ba7c6884e82c"
+    },
+    {
+      "path": "backend/bago_core/versioning.py",
+      "git_blob": "93f8bb2cc9b02af2139282e71bd677dd612cd875",
+      "sha256": "fbe6694c899d64211274b3c47cf7ace4aea279e2e77b46df6760523e7a8ce5b5"
+    },
+    {
+      "path": "backend/bago_core/workspace_paths.py",
+      "git_blob": "ff11c389ee685aec12e710d1b4c9e9555bdb4022",
+      "sha256": "9c9cc991a7ef934927a909898873197fd34fd0b3a7713bddcf467e441e28e77d"
+    },
+    {
+      "path": "backend/contracts/api_routes.generated.json",
+      "git_blob": "31f218bdf205be1a01e71c0ef96928bfc979b7f5",
+      "sha256": "940b6c00b60d2b60aea9bccec06b5d43dc63f7cff1f0e7fbd0b153c1a5eabd30"
+    },
+    {
+      "path": "backend/contracts/import_migration_inventory.v1.json",
+      "git_blob": "46ccd9193e4d25c491031b31848ed8c1a1101008",
+      "sha256": "f5a1217b6407f0db2a002d71294cf96e4af22f64f1d4ff0d609fb50581edc00f"
+    },
+    {
+      "path": "backend/contracts/model_routing_policy.v1.json",
+      "git_blob": "3da7faae2bd42aea74976b6c0056b365470bfa8e",
+      "sha256": "2fe263a219963bbcdbd755300a40e1d400d787f0f02d93e676aac827328ab3c2"
+    },
+    {
+      "path": "backend/contracts/readme_projection.v1.json",
+      "git_blob": "5223fb6aae2ed2d4991eb8f7aea6b55f39224eee",
+      "sha256": "b2878fb04b4e042390640d3f38f59157c8adff7281690f599ea1903e89c68533"
+    },
+    {
+      "path": "backend/requirements-runtime.txt",
+      "git_blob": "6b31c9e067c54969ec6fa268f142cfcca8ba0311",
+      "sha256": "a63d98894e719b12dbffa314da19b91ddd5d9c57c4b1c6b2a84bc050253e85ee"
+    },
+    {
+      "path": "backend/tools/audit_orphans_and_duplicates.py",
+      "git_blob": "9a831bbe53a83edc2f92ab0549f74ca48c2869eb",
+      "sha256": "7c1c11904e9dad039f58d0549beb9a895fe6507fbc5acee3eb8a7499810b6afa"
+    },
+    {
+      "path": "release_version.txt",
+      "git_blob": "7f4ebf82c6eabc3e7bd7a92c63dc02efc0f0c3f5",
+      "sha256": "20a66063e3ac790517587559321f9591fb8db668645239b53290ee2f7c793d3e"
+    }
+  ]
+}

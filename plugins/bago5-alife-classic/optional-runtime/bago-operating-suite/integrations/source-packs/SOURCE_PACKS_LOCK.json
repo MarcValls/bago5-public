@@ -1,0 +1,29 @@
+{
+  "schema": "bago.suite.integrations.sources.v1",
+  "intent": "Bundled inputs are read-only references; not host-executed automatically",
+  "sources": {
+    "BAGO5_FRONTEND_PACKS_v0.1.zip": {
+      "sha256": "a40d2b32f8ecc77240693f4ec9d79342f2dd070461eabb817171072008776a22",
+      "size": 3519894,
+      "role": "UI contracts and mock; not production UI"
+    },
+    "BPBR_v0.1_REFERENCE_20261011.zip": {
+      "sha256": "581d2d23b973a02e5704c27f8c480de8bd7817bf93e0db3078352529818b103b",
+      "size": 42548,
+      "role": "reference-only procedural engine; not host execution authority"
+    },
+    "AUDITORIA_EXTERNA_BAGO5_ARQUITECTURA_001.zip": {
+      "sha256": "6c88b082fe3f3fd0d6e6cffe176bee15a3e81e750459f7edefe8e6e1686e8dd1",
+      "size": 377207,
+      "role": "pinned historical audit input; not current repo state"
+    },
+    "IALP_EDITORIAL_1.1.0_BAGO_RUNTIME.zip": {
+      "sha256": "9d1bcd0c6aa7ea63723fe699dd748353d1f7b2167d4be8aa05cef7c3676b1852",
+      "size": 163424,
+      "kind": "DERIVED_RUNTIME",
+      "upstream_sha256": "a0436e15cbea64d2bd7fa37e27f19452c1307059759081aadeeef47726f7e0f6",
+      "version": "1.1.0",
+      "derivation_manifest": "SOURCE_DERIVATION.json"
+    }
+  }
+}

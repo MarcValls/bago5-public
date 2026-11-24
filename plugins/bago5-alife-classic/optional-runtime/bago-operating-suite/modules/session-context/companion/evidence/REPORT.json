@@ -1,0 +1,79 @@
+{
+  "schema": "bago.scr.verification.v1",
+  "candidate": "BAGO_SessionStart_CLI_READONLY_v0.1.0_RC1",
+  "verified_at_utc": "2026-10-29T09:39:09.090246+00:00",
+  "environment": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "codex_available": false,
+    "powershell_available": false
+  },
+  "implementation": "IMPLEMENTED",
+  "verification": "VERIFIED_LOCAL_SYNTHETIC",
+  "local_tests": {
+    "passed": 28,
+    "failed": 0,
+    "skipped": 0
+  },
+  "demo": "PASS",
+  "checks": [
+    {
+      "id": "tests",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/afe9a3e9a6fc/work/bago-session-context-readonly",
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "tests.log",
+      "log_sha256": "f094622ee4611cea3c913385c977878b7aa86873bca7635f69e1de3a30f84042"
+    },
+    {
+      "id": "demo",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-I",
+        "scripts/demo.py"
+      ],
+      "cwd": "/workspace/scratch/afe9a3e9a6fc/work/bago-session-context-readonly",
+      "exit_code": 0,
+      "result": "PASS",
+      "log": "demo.log",
+      "log_sha256": "7698ea40a321bb5639ae0eda09f4e2657f1b6e2e7b6553e620f508bd694d1696"
+    }
+  ],
+  "candidate_manifest": "candidate-files.json",
+  "candidate_manifest_sha256": "e5cdf3f642db839e4e075169e9cc0a24902c2b4cd50fdb03c7233c83cea9fda4",
+  "preservation": {
+    "original_zip_unchanged": true,
+    "canonical_structure_byte_identical": true,
+    "source_archive_sha256": "3ab2af79c7e9c3dc1929ee109ed9a8a9f9cc0696662e7471ae2ac1e800a48f36",
+    "old_suite_functional_tests": "NOT_RUN; original archive untouched; no claim of whole-suite verification"
+  },
+  "host": {
+    "codex_cli": "NOT_RUN",
+    "windows": "NOT_RUN",
+    "powershell_launcher": "NOT_RUN",
+    "trust_flow": "NOT_RUN",
+    "real_cwd_binding": "NOT_RUN",
+    "windows_reparse_runtime": "NOT_RUN"
+  },
+  "verdict": "GO_LOCAL_PROTOTYPE",
+  "production_activation": "NOT_PERFORMED",
+  "limits": [
+    "Synthetic events exercise the hook process; not Codex itself",
+    "No semantic review or authorization attestation",
+    "No OS sandbox against hostile concurrent path replacement",
+    "No complete write barrier; advisory SessionStart only",
+    "No original installed skill or CLI configuration changed"
+  ]
+}

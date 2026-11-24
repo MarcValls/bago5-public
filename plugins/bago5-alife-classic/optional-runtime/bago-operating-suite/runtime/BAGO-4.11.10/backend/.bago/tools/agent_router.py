@@ -1,0 +1,524 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+import unicodedata
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+from _path_helper import ensure_tools_path
+ensure_tools_path()  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from bago_core.server_effects import gateway_urlopen
+from bago_utils import get_scan_root, load_json, print_test_results, save_json, timestamp_iso
+
+
+def _default_ollama_url() -> str:
+    return os.environ.get('OLLAMA_HOST', 'http://localhost:11434')
+
+
+def _resolve_ollama_models_dir() -> Path:
+    if sys.platform == 'win32':
+        base = Path(os.environ.get('LOCALAPPDATA', Path.home() / 'AppData' / 'Local'))
+        return base / 'Ollama' / 'models'
+    if sys.platform == 'darwin':
+        return Path.home() / '.ollama' / 'models'
+    return Path(os.environ.get('OLLAMA_MODELS', Path.home() / '.ollama' / 'models'))
+
+
+OLLAMA_MODELS_DIR = _resolve_ollama_models_dir()
+SCAN_ROOT = Path.cwd()
+BAGO_ROOT = SCAN_ROOT / '.bago'
+FRAMEWORK_BAGO_ROOT = Path(__file__).resolve().parents[1]
+STATE_DIR = BAGO_ROOT / 'state'
+ROUTER_HISTORY = STATE_DIR / 'route_history.json'
+ROUTER_POLICY = STATE_DIR / 'llm_config.json'
+MAX_CONCURRENT = 3
+
+_CABINET_RULES = (
+    {
+        'task_type': 'system_change',
+        'terms': ('governance', 'canon', 'contract', 'architecture', 'system change'),
+        'workflow': 'workflow_system_change',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_supervision_auditor_canonico',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': False,
+    },
+    {
+        'task_type': 'organization',
+        'terms': ('organize', 'organization', 'organización', 'organizar'),
+        'workflow': 'workflow_execution',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_production_organizador',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': False,
+    },
+    {
+        'task_type': 'project_bootstrap',
+        'terms': ('bootstrap this project', 'bootstrap project', 'project bootstrap', 'bootstrap', 'inicializa el proyecto'),
+        'workflow': 'workflow_bootstrap_repo_first',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_production_analista',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': False,
+    },
+    {
+        'task_type': 'security',
+        'terms': ('security', 'secret', 'credential', 'permission', 'seguridad', 'secreto', 'credencial', 'permiso'),
+        'workflow': 'workflow_validation',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_specialist_security_reviewer',
+            'role_supervision_centinela_sinceridad',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': False,
+    },
+    {
+        'task_type': 'history_migration',
+        'terms': ('migration', 'migrate', 'legacy', 'archive', 'historical', 'migracion', 'migrar', 'legado', 'archivo', 'histori'),
+        'workflow': 'workflow_history_migration',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_production_analista',
+            'role_supervision_auditor_canonico',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': False,
+    },
+    {
+        'task_type': 'validation',
+        'terms': ('verify', 'validate', 'test', 'audit', 'check', 'verifica', 'valid', 'prueba', 'audita', 'comprueba'),
+        'workflow': 'workflow_validation',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': True,
+    },
+    {
+        'task_type': 'design',
+        'terms': ('design', 'architecture', 'contract', 'dise', 'arquitectura', 'contrato'),
+        'workflow': 'workflow_design',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_production_analista',
+            'role_production_arquitecto',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': True,
+    },
+    {
+        'task_type': 'execution',
+        'terms': ('implement', 'fix', 'refactor', 'build', 'code', 'write', 'edit', 'implemen', 'corrige', 'refactor', 'codigo', 'escribe', 'edita'),
+        'workflow': 'workflow_execution',
+        'roles': (
+            'role_government_orquestador_central',
+            'role_production_generador',
+            'role_production_validador',
+        ),
+        'skip_if_explicit_change': False,
+    },
+)
+
+_HIGH_RISK_ROLE_OVERRIDES = {
+    'system_change': (
+        'role_government_orquestador_central',
+        'role_production_arquitecto',
+        'role_supervision_auditor_canonico',
+        'role_production_validador',
+    ),
+    'execution': (
+        'role_government_orquestador_central',
+        'role_production_arquitecto',
+        'role_production_generador',
+        'role_production_validador',
+    ),
+}
+
+_POLITE_PREFIX_RE = re.compile(
+    r'^[\s¿¡?!.,:;]*(?:(?:please|por favor|can you|could you|would you|puedes|podrías)[\s¿¡?!.,:;]+)+',
+    re.IGNORECASE,
+)
+_CHANGE_VERB_PREFIXES = (
+    'implement', 'fix', 'refactor', 'build', 'write', 'edit',
+    'corrig', 'correg', 'constru', 'escrib',
+)
+
+
+def _resolve_bago_root(scan_root: Path) -> Path:
+    scan_root = Path(scan_root).resolve()
+    if scan_root.name == '.bago':
+        return scan_root
+    return scan_root / '.bago'
+
+
+def _strip_polite_prefix(task: str) -> str:
+    return _POLITE_PREFIX_RE.sub('', task.lower()).strip(' ,:;')
+
+
+def _normalize_task_token(token: str) -> str:
+    stripped = token.strip("¿¡?!.,:;()[]{}\"'")
+    normalized = unicodedata.normalize('NFKD', stripped)
+    without_marks = ''.join(
+        char for char in normalized
+        if not unicodedata.combining(char)
+    )
+    return without_marks.lower()
+
+
+def _has_change_verb(task: str) -> bool:
+    primary_verb = task.split(maxsplit=1)[0] if task else ''
+    normalized = _normalize_task_token(primary_verb)
+    return any(normalized.startswith(prefix) for prefix in _CHANGE_VERB_PREFIXES)
+
+
+def _select_cabinet_rule(lowered_task: str, explicit_change_request: bool) -> dict | None:
+    for rule in _CABINET_RULES:
+        if explicit_change_request and rule['skip_if_explicit_change']:
+            continue
+        if any(term in lowered_task for term in rule['terms']):
+            return rule
+        if rule['task_type'] == 'execution' and explicit_change_request:
+            return rule
+    return None
+
+
+def _apply_high_risk_roles(task_type: str, role_ids: tuple[str, ...], high_risk_change: bool) -> tuple[str, ...]:
+    if not high_risk_change:
+        return role_ids
+    return _HIGH_RISK_ROLE_OVERRIDES.get(task_type, role_ids)
+
+
+def configure_paths(root_override: str | None = None) -> Path:
+    global SCAN_ROOT, BAGO_ROOT, STATE_DIR, ROUTER_HISTORY, ROUTER_POLICY
+    SCAN_ROOT = get_scan_root(root_override)
+    BAGO_ROOT = _resolve_bago_root(SCAN_ROOT)
+    STATE_DIR = BAGO_ROOT / 'state'
+    ROUTER_HISTORY = STATE_DIR / 'route_history.json'
+    ROUTER_POLICY = STATE_DIR / 'llm_config.json'
+    return SCAN_ROOT
+
+
+configure_paths()
+
+
+def load_policy() -> dict:
+    default = {
+        'default_agent': 'copilot',
+        'prefer_local': True,
+        'model_preferences': {
+            'ollama': 'qwen2.5-coder:7b',
+            'codex': 'gpt-5',
+            'copilot': 'gpt-5',
+        },
+    }
+    if not ROUTER_POLICY.exists():
+        return default
+    data = load_json(ROUTER_POLICY, default)
+    if not isinstance(data, dict):
+        return default
+    merged = default.copy()
+    merged.update(data)
+    merged['model_preferences'] = {**default['model_preferences'], **dict(data.get('model_preferences', {}))}
+    return merged
+
+
+def _ollama_server_up(url: str | None = None) -> bool:
+    target = f'{(url or _default_ollama_url()).rstrip("/")}/api/tags'
+    try:
+        with gateway_urlopen(target, timeout=1.5, network_class="runtime_probe") as response:
+            return 200 <= response.status < 300
+    except Exception:
+        return False
+
+
+def detect_agents() -> list[dict]:
+    agents = [
+        {'id': 'copilot', 'agent': 'copilot', 'available': True, 'reason': 'cloud'},
+        {'id': 'codex', 'agent': 'codex', 'available': True, 'reason': 'cloud'},
+        {
+            'id': 'ollama',
+            'agent': 'ollama',
+            'available': bool(OLLAMA_MODELS_DIR.exists() or _ollama_server_up()),
+            'reason': 'local-runtime',
+            'url': _default_ollama_url(),
+            'models_dir': str(OLLAMA_MODELS_DIR),
+        },
+    ]
+    return agents
+
+
+def _available_agents(agents: list[dict] | None = None) -> dict[str, dict]:
+    source = agents if agents is not None else detect_agents()
+    return {item['id']: item for item in source if item.get('available', True)}
+
+
+def _classify_with_ollama(task: str) -> dict | None:
+    if not _ollama_server_up():
+        return None
+    prompt = {
+        'model': 'qwen2.5-coder:7b',
+        'stream': False,
+        'prompt': 'Classify this engineering task into one of: ollama, codex, copilot. Return JSON with keys agent and reason. Task: ' + task,
+    }
+    request = urllib.request.Request(
+        f'{_default_ollama_url().rstrip("/")}/api/generate',
+        data=json.dumps(prompt).encode('utf-8'),
+        headers={'Content-Type': 'application/json'},
+    )
+    try:
+        with gateway_urlopen(request, timeout=3.0, network_class="runtime_probe") as response:
+            payload = json.loads(response.read().decode('utf-8', errors='replace'))
+            raw_text = payload.get('response', '{}')
+            parsed = json.loads(raw_text)
+            if isinstance(parsed, dict) and parsed.get('agent'):
+                return parsed
+    except Exception:
+        return None
+    return None
+
+
+def _signals(task: str) -> dict[str, int | bool]:
+    lowered = task.lower()
+    code_terms = ('code', 'fix', 'bug', 'test', 'refactor', 'implement', 'build', 'debug', 'python', 'js', 'ts', 'file', 'repo')
+    local_terms = ('brainstorm', 'idea', 'summary', 'explain', 'offline', 'quick', 'draft', 'chat')
+    gh_terms = ('pr', 'pull request', 'review', 'issue', 'workflow', 'actions', 'github')
+    return {
+        'code_hits': sum(1 for term in code_terms if term in lowered),
+        'local_hits': sum(1 for term in local_terms if term in lowered),
+        'gh_hits': sum(1 for term in gh_terms if term in lowered),
+        'large_change': any(term in lowered for term in ('multi-file', 'several files', 'many files', 'across modules', 'end-to-end')),
+    }
+
+
+def _hard_route(task: str, available: dict[str, dict]) -> str | None:
+    lowered = task.lower()
+    if any(term in lowered for term in ('pr review', 'pull request review', 'review pr', 'github review')) and 'copilot' in available:
+        return 'copilot'
+    if any(term in lowered for term in ('issue triage', 'workflow run', 'github actions', 'repository settings')) and 'copilot' in available:
+        return 'copilot'
+    if any(term in lowered for term in ('multi-file', 'many files', 'end-to-end', 'execute tests', 'run tests', 'implement')) and 'codex' in available:
+        return 'codex'
+    return None
+
+
+def _fallback_route(task: str, available: dict[str, dict], policy: dict) -> str:
+    signals = _signals(task)
+    scores = {agent_id: 0 for agent_id in available}
+    if 'ollama' in available:
+        scores['ollama'] += int(signals['local_hits']) * 10
+        scores['ollama'] += 5 if policy.get('prefer_local', True) else 0
+    if 'codex' in available:
+        scores['codex'] += int(signals['code_hits']) * 8
+        scores['codex'] += 8 if signals['large_change'] else 0
+    if 'copilot' in available:
+        scores['copilot'] += int(signals['code_hits']) * 6
+        scores['copilot'] += int(signals['gh_hits']) * 12
+    best_score = max(scores.values()) if scores else 0
+    best = [agent_id for agent_id, score in scores.items() if score == best_score]
+    priority = ['copilot', 'codex', 'ollama']
+    for agent_id in priority:
+        if agent_id in best:
+            return agent_id
+    return next(iter(available.keys()), policy.get('default_agent', 'copilot'))
+
+
+def _record_route(route: dict) -> None:
+    history = load_json(ROUTER_HISTORY, {})
+    if not isinstance(history, list):
+        history = []
+    history.append(route)
+    save_json(ROUTER_HISTORY, history[-200:])
+
+
+def _load_active_roles() -> dict[str, dict]:
+    framework_manifest = FRAMEWORK_BAGO_ROOT / 'roles' / 'manifest.json'
+    project_manifest = BAGO_ROOT / 'roles' / 'manifest.json'
+    manifest_root = FRAMEWORK_BAGO_ROOT if framework_manifest.is_file() else BAGO_ROOT
+    manifest_path = manifest_root / 'roles' / 'manifest.json'
+    manifest = load_json(manifest_path, {})
+    roles = manifest.get('roles') if isinstance(manifest, dict) else None
+    if not isinstance(roles, dict):
+        raise RuntimeError(f'Invalid or missing role manifest: {manifest_path}')
+
+    active_roles: dict[str, dict] = {}
+    for role_id, role in roles.items():
+        if not isinstance(role, dict) or role.get('status') != 'active':
+            continue
+        relative_file = role.get('file')
+        if not isinstance(relative_file, str) or not (manifest_root / 'roles' / relative_file).is_file():
+            raise RuntimeError(f'Active role {role_id!r} has no readable role file')
+        active_roles[role_id] = role
+    return active_roles
+
+
+def plan_cabinet(task: str) -> dict:
+    """Return a role plan; role execution remains an explicit caller action."""
+    normalized_task = task.strip()
+    if not normalized_task:
+        raise ValueError('Cabinet planning requires a non-empty task')
+
+    lowered = normalized_task.lower()
+    primary_request = _strip_polite_prefix(normalized_task)
+    explicit_change_request = _has_change_verb(primary_request)
+    high_risk_change = any(term in lowered for term in (
+        'high-risk', 'high risk', 'cross-module', 'cross module',
+        'production', 'destructive', 'alto riesgo', 'entre módulos',
+    ))
+    task_type, workflow, role_ids = 'analysis', 'workflow_analysis', (
+        'role_government_orquestador_central',
+        'role_production_analista',
+        'role_production_validador',
+    )
+    rule = _select_cabinet_rule(lowered, explicit_change_request)
+    if rule is not None:
+        task_type = rule['task_type']
+        workflow = rule['workflow']
+        role_ids = rule['roles']
+
+    role_ids = _apply_high_risk_roles(task_type, role_ids, high_risk_change)
+
+    active_roles = _load_active_roles()
+    missing_roles = [role_id for role_id in role_ids if role_id not in active_roles]
+    if missing_roles:
+        raise RuntimeError(f'Cabinet plan requires unavailable active roles: {", ".join(missing_roles)}')
+
+    waves = [list(role_ids[index:index + MAX_CONCURRENT]) for index in range(0, len(role_ids), MAX_CONCURRENT)]
+    return {
+        'task': normalized_task,
+        'task_type': task_type,
+        'workflow': workflow,
+        'max_concurrent': MAX_CONCURRENT,
+        'waves': waves,
+        'roles': [
+            {
+                'id': role_id,
+                'name': active_roles[role_id].get('name', role_id),
+                'file': f"roles/{active_roles[role_id]['file']}",
+            }
+            for role_id in role_ids
+        ],
+        'execution': 'plan-only; explicit approval and executor are required before roles run',
+    }
+
+
+def route_task(task: str, agents: list[dict] | None = None, use_classifier: bool = True, record: bool = False) -> dict:
+    policy = load_policy()
+    available = _available_agents(agents)
+
+    # ── Optional brief integration (does not activate roles) ───────────────────
+    brief_id: str = ''
+    if os.environ.get('BAGO_ORCHESTRATE') == '1':
+        import importlib.util as _ilu
+        _orc_path = Path(__file__).parent / 'orchestrator_v4.py'
+        _spec = _ilu.spec_from_file_location('orchestrator_v4', _orc_path)
+        if _spec is None or _spec.loader is None:
+            raise RuntimeError(f'Cannot load orchestrator integration: {_orc_path}')
+        _orc = _ilu.module_from_spec(_spec)
+        sys.modules[_spec.name] = _orc
+        _spec.loader.exec_module(_orc)
+        _orc.configure_paths(str(SCAN_ROOT))
+        _brief = _orc.create_brief(task=task)
+        brief_id = getattr(_brief, 'id', '')
+        if not isinstance(brief_id, str) or not brief_id:
+            raise RuntimeError('Orchestrator integration returned a brief without an id')
+    # ─────────────────────────────────────────────────────────────────────────
+
+    if not available:
+        agent_id = policy.get('default_agent', 'copilot')
+        result = {'agent': agent_id, 'model': policy.get('model_preferences', {}).get(agent_id, ''), 'reason': 'default-no-agents', 'task': task, 'timestamp': timestamp_iso()}
+        if brief_id:
+            result['brief_id'] = brief_id
+        if record:
+            _record_route(result)
+        return result
+
+    agent_id = _hard_route(task, available)
+    reason = 'hard-route' if agent_id else ''
+
+    if not agent_id and use_classifier:
+        classified = _classify_with_ollama(task)
+        if classified and classified.get('agent') in available:
+            agent_id = classified['agent']
+            reason = f'classifier:{classified.get("reason", "ollama")}'
+
+    if not agent_id:
+        agent_id = _fallback_route(task, available, policy)
+        reason = reason or 'fallback'
+
+    result = {
+        'agent': agent_id,
+        'model': policy.get('model_preferences', {}).get(agent_id, ''),
+        'reason': reason,
+        'task': task,
+        'timestamp': timestamp_iso(),
+    }
+    if brief_id:
+        result['brief_id'] = brief_id
+    if record:
+        _record_route(result)
+    return result
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description='Route tasks to the best available AI agent')
+    parser.add_argument('--root', default='', help='Scan root override')
+    parser.add_argument('--task', default='', help='Task text to route')
+    parser.add_argument('--json', action='store_true', help='Print route JSON')
+    parser.add_argument('--history', action='store_true', help='Show routing history and exit')
+    parser.add_argument('--limit', type=int, default=10, help='History entry limit')
+    parser.add_argument('--no-classifier', action='store_true', help='Disable ollama classifier')
+    parser.add_argument('--cabinet', action='store_true', help='Plan cabinet roles without activating them')
+    parser.add_argument('task_words', nargs='*')
+    args = parser.parse_args(argv)
+    configure_paths(args.root or None)
+
+    if args.history:
+        history = load_json(ROUTER_HISTORY, {})
+        if not isinstance(history, list):
+            history = []
+        payload = history[-args.limit:]
+        if args.json:
+            print(json.dumps(payload, indent=2, ensure_ascii=False))
+        else:
+            for item in payload:
+                print(f"{item.get('timestamp', '-')} {item.get('agent', '-')} {item.get('reason', '-')} {item.get('task', '')}")
+        return 0
+
+    task_text = args.task.strip() or ' '.join(args.task_words).strip()
+    if not task_text:
+        parser.print_help()
+        return 0
+    if args.cabinet:
+        plan = plan_cabinet(task_text)
+        if args.json:
+            print(json.dumps(plan, indent=2, ensure_ascii=False))
+        else:
+            print(f"workflow={plan['workflow']} task_type={plan['task_type']} max_concurrent={plan['max_concurrent']}")
+            for number, wave in enumerate(plan['waves'], start=1):
+                print(f"wave={number} roles={','.join(wave)}")
+            print(plan['execution'])
+        return 0
+    route = route_task(task_text, use_classifier=not args.no_classifier, record=True)
+    if args.json:
+        print(json.dumps(route, indent=2, ensure_ascii=False))
+    else:
+        print(f"agent={route['agent']} model={route['model']} reason={route['reason']}")
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

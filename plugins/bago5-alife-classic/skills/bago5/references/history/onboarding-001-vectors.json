@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ONB01",
+    "case": "new_user_no_store",
+    "outcome": "ONBOARDING_OFFERED",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB02",
+    "case": "existing_owned_verified",
+    "outcome": "CONNECTED_VERIFIED",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB03",
+    "case": "author_bound_site_other_user",
+    "outcome": "OWNERSHIP_NOT_VERIFIED",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB04",
+    "case": "user_selects_create_no_site_tool",
+    "outcome": "CREATE_BLOCKED",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB05",
+    "case": "user_selects_connect_url_without_consent",
+    "outcome": "CONNECT_BLOCKED",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB06",
+    "case": "user_selects_continue",
+    "outcome": "SKIPPED",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB07",
+    "case": "stop_active",
+    "outcome": "no_new_read_or_write",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB08",
+    "case": "no_uses_memory",
+    "outcome": "no_memory_access",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB09",
+    "case": "new_user_without_write_consent",
+    "outcome": "no_memory_write_offer_choice_continue_independent_work",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB10",
+    "case": "creator_own_memory_with_existing_valid_authorization",
+    "outcome": "preserve_existing_authorization_without_reasking",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB11",
+    "case": "other_user_author_binding_without_explicit_share",
+    "outcome": "no_content_read_no_write_offer_own_memory",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB12",
+    "case": "explicit_shared_memory_with_owner_grant_and_recipient_selection",
+    "outcome": "verify_identity_and_scope_before_authorized_operation",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB13",
+    "case": "user_requests_new_memory_with_verified_existing_memory",
+    "outcome": "preserve_existing_and_use_packaged_empty_template",
+    "provision": "requires_host_tools_and_authorization"
+  },
+  {
+    "id": "ONB14",
+    "case": "template_unavailable_in_host",
+    "outcome": "TEMPLATE_NOT_AVAILABLE",
+    "provision": "NOT_RUN"
+  },
+  {
+    "id": "ONB15",
+    "case": "site_created_from_template",
+    "outcome": "own_site_empty_memory_no_reference_credentials_or_database",
+    "provision": "requires_real_verification"
+  },
+  {
+    "id": "ONB16",
+    "case": "user_requests_non_memory_site",
+    "outcome": "do_not_apply_memory_template_without_explicit_request",
+    "provision": "independent_workflow"
+  }
+]

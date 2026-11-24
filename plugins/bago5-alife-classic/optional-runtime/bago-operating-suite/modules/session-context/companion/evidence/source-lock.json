@@ -1,0 +1,8 @@
+{
+  "source_archive": "BAGO5os_1.4.5_RELAY-RC1_CONTEXT-BOOTSTRAP.zip",
+  "archive_sha256": "3ab2af79c7e9c3dc1929ee109ed9a8a9f9cc0696662e7471ae2ac1e800a48f36",
+  "source_entry": "bago-operating-suite/schemas/project-context-structure.v1.json",
+  "entry_sha256": "39c33b10406c5e56b4613530e7405283c3ce0e2ebde4f4659c8ba8f9cace7177",
+  "archive_entries": 570,
+  "preservation": "Original archive is not modified; additive standalone companion; no installed skill is changed."
+}

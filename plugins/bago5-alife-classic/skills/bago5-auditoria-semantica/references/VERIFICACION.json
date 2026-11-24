@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-06",
+  "base_version": "0.1.5",
+  "candidate_version": "0.1.6",
+  "base_release": "pluginrel_6aed8af36a488191b3cc541d108cd40d",
+  "checks": {
+    "boolean_helper_tests": {
+      "status": "PASS",
+      "tests": 24,
+      "log": "test_assumption_isolation (test_boolean_audit.BooleanAuditTests.test_assumption_isolation) ... ok\ntest_atom_meaning_isolation (test_boolean_audit.BooleanAuditTests.test_atom_meaning_isolation) ... ok\ntest_bounded_formula (test_boolean_audit.BooleanAuditTests.test_bounded_formula) ... ok\ntest_cli_and_source_integrity (test_boolean_audit.BooleanAuditTests.test_cli_and_source_integrity) ... ok\ntest_constants (test_boolean_audit.BooleanAuditTests.test_constants) ... ok\ntest_context_isolation (test_boolean_audit.BooleanAuditTests.test_context_isolation) ... ok\ntest_demorgan_counterexample (test_boolean_audit.BooleanAuditTests.test_demorgan_counterexample) ... ok\ntest_demorgan_equivalence (test_boolean_audit.BooleanAuditTests.test_demorgan_equivalence) ... ok\ntest_double_negation (test_boolean_audit.BooleanAuditTests.test_double_negation) ... ok\ntest_incomplete_context (test_boolean_audit.BooleanAuditTests.test_incomplete_context) ... ok\ntest_input_unchanged (test_boolean_audit.BooleanAuditTests.test_input_unchanged) ... ok\ntest_invalid_expression (test_boolean_audit.BooleanAuditTests.test_invalid_expression) ... ok\ntest_invalid_global_input (test_boolean_audit.BooleanAuditTests.test_invalid_global_input) ... ok\ntest_joint_inconsistency_without_pair_conflict (test_boolean_audit.BooleanAuditTests.test_joint_inconsistency_without_pair_conflict) ... ok\ntest_normalization_preserves_polarity (test_boolean_audit.BooleanAuditTests.test_normalization_preserves_polarity) ... ok\ntest_opposites (test_boolean_audit.BooleanAuditTests.test_opposites) ... ok\ntest_pair_limit (test_boolean_audit.BooleanAuditTests.test_pair_limit) ... ok\ntest_repetition_is_not_contradiction (test_boolean_audit.BooleanAuditTests.test_repetition_is_not_contradiction) ... ok\ntest_self_contradiction (test_boolean_audit.BooleanAuditTests.test_self_contradiction) ... ok\ntest_tautology_is_not_automatic_defect (test_boolean_audit.BooleanAuditTests.test_tautology_is_not_automatic_defect) ... ok\ntest_truth_tables_against_independent_boolean_functions (test_boolean_audit.BooleanAuditTests.test_truth_tables_against_independent_boolean_functions) ... ok\ntest_unreviewed_span_is_preserved (test_boolean_audit.BooleanAuditTests.test_unreviewed_span_is_preserved) ... ok\ntest_unsafe_or_unsupported_expressions (test_boolean_audit.BooleanAuditTests.test_unsafe_or_unsupported_expressions) ... ok\ntest_variable_limit (test_boolean_audit.BooleanAuditTests.test_variable_limit) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.070s\n\nOK\n"
+    },
+    "synthetic_cli_demo": {
+      "status": "PASS",
+      "coverage": "COMPLETE_FOR_ACCEPTED_BOOLEAN_MODELS",
+      "claims": 2,
+      "finding": "CONTRADICTION_IN_MODEL",
+      "source_semantics": "NOT_VERIFIED_BY_SCRIPT"
+    },
+    "structure_and_route_preservation": "PASS",
+    "existing_files_unchanged": 32,
+    "existing_files_modified": [
+      ".codex-plugin/plugin.json",
+      "plugin.json",
+      "skills/bago5-auditoria/SKILL.md",
+      "skills/bago5/SKILL.md",
+      "skills/bago5/references/ROUTES.json",
+      "skills/bago5-auditoria-comprimidos/SKILL.md"
+    ],
+    "deleted_files": [],
+    "manifest_changes": "version only",
+    "semantic_example_review": {
+      "status": "PASS_FOR_SEVEN_EXAMPLES",
+      "scope": "One isolated agent applied the new procedure, not a general accuracy benchmark",
+      "cases": [
+        "Spanish negative concord handled",
+        "lack of prohibition not authorization",
+        "admin guard counterexample with inner enforcement unverified",
+        "double not on list retained as bool conversion",
+        "different times kept separate",
+        "exclusive ports conflict conditioned on same instant",
+        "effectful calls not collapsed into stable atom"
+      ],
+      "note": "PROCEDENCIA.md was not yet present at start of review; reference existence separately verified on final candidate"
+    }
+  },
+  "not_run": [
+    "New ChatGPT Classic session activation",
+    "Windows runtime",
+    "Universal semantic detection or performance benchmark"
+  ],
+  "acceptance": "USER_ACCEPTANCE_PENDING",
+  "files_sha256": {
+    ".codex-plugin/plugin.json": "174e77ad5b3c0c15a31ac3c5f90fcb1a173dbb8a72915ca056f4f0b5623dfcec",
+    "plugin.json": "3760a7e60895197b1ae847d0a07913dc88da91e6d9432e4cb96580434d1c6287",
+    "skills/bago5-relevo-agentes/SKILL.md": "4fbfd21bd8023b2c8761d7b1023928f7bd9e5e9b54a5ca6cf998c35541cb7ec3",
+    "skills/bago5-relevo-agentes/references/worker-handoff.schema.json": "9ac7905853eb3d36220a10e5eb028ce912004ba695cac6f985011b4240f169c2",
+    "skills/bago5-aplicaciones-juegos/SKILL.md": "eac4be786a7ea7b1c3397c71b49018892633ea56768188fb7d4428fb8ac5ef06",
+    "skills/bago5-auditoria-arquitectura/SKILL.md": "193013892014b536808eb6a97e59e7a4cf00102cdd3fc0af824dffe04a26927e",
+    "skills/bago5-auditoria/SKILL.md": "3238f526d2ee8b3383cbe364e7e0c0ccec08219d3da47513be26a6b5c1079f2f",
+    "skills/bago5-demostracion-capacidades/SKILL.md": "3312e4a24335757f8a67d7b394956b4fe35e8814741129208a9b421f857b5350",
+    "skills/bago5-demostracion-capacidades/references/capability-record.schema.json": "2887af97d7405b1e04ecbb73389e31421df59d1697e4a3af4b5daa6567715ddf",
+    "skills/bago5-mision-cognitiva/SKILL.md": "368b9779b92d8caac8b1897422063fadb99403abb61ef97715e490b214735a8c",
+    "skills/bago5-ciclo-contexto/SKILL.md": "a7ded76222ce3373da7210ce4eb19398145647e99e9b4aa25953081d8b0d0dba",
+    "skills/bago5-desarrollo/SKILL.md": "02386f45f3e47ad7e74e898c732183b770b58871b8ed11b7673bb5f79e13b9a3",
+    "skills/bago5-documentos/SKILL.md": "dcfab493ec851f2ecbca95c24004dc7c5267bddd9f094e9162aa42d447958ec7",
+    "skills/bago5-interfaces/SKILL.md": "d6893ab44659a2e84e673d5e5822dfd41f87d310d9d61a4e74cbf2873965e3ad",
+    "skills/bago5-objetivos/SKILL.md": "61cfd9176a9e33b615937cd26596cc7a2e9274bd5a6851dd57bd7a4722e4479f",
+    "skills/bago5/SKILL.md": "7d3a1795db41a2335eb7d42fbac317cc05185d2d77b97d90227b6d98a708c83c",
+    "skills/bago5/references/CONTRATOS.md": "47e3c44a95e2b4183f050d292a2dbfee4cdd83a3a06f10a52df4d44c4e512777",
+    "skills/bago5/references/FUENTES.md": "4d6caaa05e86512560567bdd458ecb5f0c8592c2a613973122a36e25ff69f8b3",
+    "skills/bago5/references/HANDOFF.schema.json": "60fd48fafedab1c911c6971141e68054d1a55b064aa033b981fcd2b854d10d65",
+    "skills/bago5/references/ROUTES.json": "917cfabde1a351c8f7b4d420dbbbbf762efd0c6afff4fc35d86b277de4180c80",
+    "skills/bago5-memoria/SKILL.md": "05d22884046290c4b0aaabff21cb0acbae84bd1ad76369a9fcbf3b4c3793d0bc",
+    "skills/bago5-memoria/references/conexion-mcp.md": "6205259722c445504e8db855f421f1615335527c6648c54257fc78d6bbf90854",
+    "skills/bago5-memoria/references/contrato-datos.md": "8e8625704823eaaa41a4dac1d2932a2aa8bd1a88e50efb43eb434a06c3ada70b",
+    "skills/bago5-revision-procedimientos/SKILL.md": "240adaf415d4949694db203f78dd223f9bb45a0d8a5f26336ad9a33d19ec34d7",
+    "skills/bago5-dictamen-promocion/SKILL.md": "02492f244e8a017a83e9b6abee1eebe2648407d6dafb720bc3bcc52f8aa3d285",
+    "skills/bago5-pruebas-python/SKILL.md": "fff78d57676d821d5db38ba5a33c3cef509863fbbd765a63350109fda76be8ff",
+    "skills/bago5-pruebas-python/references/checkpoint.schema.json": "d3ccc8e5168a29327dd74050ff2e3305bf1d89221b2291a2271575341ddcc5d0",
+    "skills/bago5-reparacion/SKILL.md": "ba349b119077c78943f2625a4bf4cbc1f826b99ab95ba40e23e934bbe853e8ac",
+    "skills/bago5-acceso-motor-local/SKILL.md": "63796f27e76054f7fc058500ed226d339c0c66fce52850fa690369821df17bb6",
+    "skills/bago5-auditoria-semantica/SKILL.md": "e098411ce0fcf71e36f9a4996a4dcee7cbf0809e2ba086bee3bf73816aea2feb",
+    "skills/bago5-auditoria-semantica/examples/contradiccion.json": "22af3248b6b1e07b003b7773fc67f252dab2650ee503a433be23bc857888e34b",
+    "skills/bago5-auditoria-semantica/references/CONTRATO.md": "b64da9dd88465a7c0980edcbbc85d34bd85c967b273a91f7cc0d374975261ed2",
+    "skills/bago5-auditoria-semantica/references/INPUT.md": "a46e2c217dde7af38c83c750130bc0b05adbed0ea1733f43fc0c237c262f47d6",
+    "skills/bago5-auditoria-semantica/references/PROCEDENCIA.md": "e36a7c800e311cc839256a14fefd1d37496878b4eb92903543f64ba375dc2031",
+    "skills/bago5-auditoria-semantica/references/input.schema.json": "6ad16c9e859b931e899cf2a669c1d6db802ddcdb4b551c81fb490f7090e3a3a6",
+    "skills/bago5-auditoria-semantica/scripts/boolean_audit.py": "cf29f13548c4141a4a26f452052d2a35ab9fdec5a55f22879be8cc508ae459ed",
+    "skills/bago5-auditoria-semantica/tests/test_boolean_audit.py": "0d4b2fa228ba4453f46a8967972db23688b67b403897f79bb731a3a7eb32aef3",
+    "skills/bago5-contexto-sesion/SKILL.md": "6d888c0c97f35922c99af170ab3df8480c0a311de23f494d3a5aa7e0d689c8c8",
+    "skills/bago5-impacto-parada/SKILL.md": "96a21fd83f735a9c455e442d2170998f3863e4b8e26a1480890a8dc8dd24fbc1",
+    "skills/bago5-verificacion/SKILL.md": "757a1d53c4ad48419f087a6624b41bdcbbea10a5f20cf6661c33e2f61d1b0665",
+    "skills/bago5-auditoria-comprimidos/SKILL.md": "586064d5e2fc394dc01687a6213cfa4a4ee4eac81bc289bf6cae8563a971632d",
+    "skills/memoria-viva/SKILL.md": "0c89091f546f385e913282361bc0623b6eb1aaed6e5e80e5301ab9e16308ecea",
+    "skills/memoria-viva/agents/openai.yaml": "0701cff920aaf4b93f165d959265b469e189cf8503b4a3ea89d97bdaa8681333",
+    "skills/memoria-viva/assets/icon.svg": "9be88f8dd4c5e658961515c71389eafd45142ffa68bcae58e8dcff57d178ed91",
+    "skills/memoria-viva/references/conexion-mcp.md": "6205259722c445504e8db855f421f1615335527c6648c54257fc78d6bbf90854",
+    "skills/memoria-viva/references/contrato-datos.md": "8e8625704823eaaa41a4dac1d2932a2aa8bd1a88e50efb43eb434a06c3ada70b"
+  }
+}

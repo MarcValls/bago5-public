@@ -1,0 +1,14 @@
+{
+  "kind": "HISTORICAL_HOST_RESPONSES",
+  "source_archive_sha256": "d3cf19c041d7b8808feafce17cea5cacc13ff76b221b3fb5372bd30cdf78a38c",
+  "mode_when_reused": "REPLAY",
+  "not_new_reasoning": true,
+  "files": {
+    "cycle01-propose-01.response.json": "d8dba4a88ccc29701b0c23224ad6954d76ed51c930856c5647f017c23bd04bf4",
+    "cycle01-reflect-01.response.json": "73d4e5767ee73609291e44440a5381cbf9bb60ec8adcc7655719de32c960f5ba",
+    "cycle02-propose-01.response.json": "500b9cfe01cc027b0b27e0d1941113644c00e666c97d9a091b38a92b23636dd0",
+    "cycle02-reflect-01.response.json": "2ec67e7f0afc24b1a98b78e1e4f60863a0f180950ba040817a50c9e512a00c27",
+    "cycle03-propose-01.response.json": "30a23acae686cf6fac7ad2f226b86f7c4c54284946afd2fd923767f9f06e1a71",
+    "cycle03-reflect-01.response.json": "5ccf4919f2e4db1ffafed5b94654dc412c9ff8c0e632849c8ce154d9d9cedaa9"
+  }
+}

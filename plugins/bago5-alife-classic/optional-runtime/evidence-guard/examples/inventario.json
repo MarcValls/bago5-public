@@ -1,0 +1,13 @@
+{
+  "schema": "bago.evidence.guard.spec.v1",
+  "files": [
+    {
+      "path": "frontend/src/ExternalConnections.css",
+      "role": "source"
+    },
+    {
+      "path": "logs/node-test-wrong-project-root-control.txt",
+      "role": "log"
+    }
+  ]
+}

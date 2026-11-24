@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-equipo-decisiones
+  short_description: Coordina el equipo de interfaces de decisiones
+  default_prompt: Usa $bago5-equipo-decisiones. Coordina especialistas, tareas y relevos para construir interfaces
+    de decisiones con alcance y evidencias compartidos.

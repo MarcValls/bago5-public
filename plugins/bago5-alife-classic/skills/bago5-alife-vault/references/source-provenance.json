@@ -1,0 +1,61 @@
+{
+  "schema": "bago5.vault-source.v1",
+  "source_plugin": "dev-5e83b8e8f5448191901a5d787ee17334",
+  "source_version": "1.0.4",
+  "source_skill": "alife-vault",
+  "files": [
+    {
+      "source_path": "scripts/vault_bytes.py",
+      "source_sha256": "0a1c34f169b585631fcdeb683944a562ee7ada26335ce837c68a8ba4c91ce1a1",
+      "packaged_path": "scripts/vault_bytes.py",
+      "packaged_sha256": "0a1c34f169b585631fcdeb683944a562ee7ada26335ce837c68a8ba4c91ce1a1",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source_path": "tests/test_vault_bytes.py",
+      "source_sha256": "ba90ce3d770380db18cd54b87357b5c01722478f471f61b4a5ac30d56b8c308b",
+      "packaged_path": "tests/test_vault_bytes.py",
+      "packaged_sha256": "ba90ce3d770380db18cd54b87357b5c01722478f471f61b4a5ac30d56b8c308b",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source_path": "SKILL.md",
+      "source_sha256": "d00a6d3325a6550567fda36a59e7e9788c8f25538a82b3da6befe54fe169b559",
+      "packaged_path": "references/vault-protocol.md",
+      "packaged_sha256": "4589716f7d9bc2f0c2a8798aaf0a1b1f42f6e4a29d5931a6d2b623a90129ceda",
+      "adaptation": "relative helper link; native PHP identity profile and explicit file scopes"
+    }
+  ],
+  "scope": "client instructions and local bytes; no remote server, credentials or data",
+  "native_service": {
+    "repository": "MarcValls/alifememories.com",
+    "commit": "5f9ea9a802b5fd6419d5e5178a015ae084a345db",
+    "contract": "alife-vault-mcp/1.0.0",
+    "toolset_sha256": "4fcb52fa1b68bb0055e21f7ef7b5829b4894ab6d1d24705f033b10e20ed4acf8",
+    "identity": [
+      "service_instance",
+      "memory_id",
+      "authenticated_subject"
+    ],
+    "scopes": [
+      "vault.read",
+      "vault.write"
+    ],
+    "source_implementation": "Memoria Viva v34, 68c2f956cfb39a4d816728c93fa66a541521fa2f",
+    "production": "NOT_RUN",
+    "host_connection": "NOT_RUN",
+    "verification": {
+      "status": "PASS_CI",
+      "run_id": 44803109660,
+      "job_id": 136520035726,
+      "tested_commit": "5f9ea9a802b5fd6419d5e5178a015ae084a345db",
+      "database_checks": 97,
+      "http_oauth_checks": 30,
+      "full_file_roundtrip_bytes": 33554432,
+      "evidence_url": "https://github.com/MarcValls/alifememories.com/actions/runs/44803109660",
+      "limits": "Synthetic identities; no production deployment, real email, user host connection or historical-data migration"
+    }
+  },
+  "package_version": "0.4.57",
+  "native_skill_source_sha256": "efeb13f2e5d6d203493672ba35b085fdbf82ed48acdff1edfa033ab01cde1a10"
+}

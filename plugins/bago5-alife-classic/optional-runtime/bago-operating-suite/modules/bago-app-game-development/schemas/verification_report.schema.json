@@ -1,0 +1,379 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.bago.invalid/verification_report.schema.json",
+  "title": "Differential Verification Report v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "run_id",
+    "change_id",
+    "baseline_id",
+    "baseline_snapshot_sha256",
+    "candidate",
+    "environment",
+    "test_results",
+    "preservation_results",
+    "feature_results",
+    "evidence",
+    "decision"
+  ],
+  "properties": {
+    "schema": {
+      "const": "bago.app_game.verification_report.v1"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "change_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "revision",
+        "snapshot_sha256"
+      ],
+      "properties": {
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "snapshot_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "platform",
+        "target",
+        "runtime",
+        "configuration"
+      ],
+      "properties": {
+        "platform": {
+          "type": "string",
+          "enum": [
+            "Windows",
+            "Linux",
+            "macOS",
+            "Other"
+          ]
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "configuration": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visual_profile": {
+          "type": "object",
+          "required": [
+            "viewport_width",
+            "viewport_height",
+            "dpr",
+            "locale",
+            "theme",
+            "reduced_motion"
+          ],
+          "properties": {
+            "viewport_width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "viewport_height": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "dpr": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "locale": {
+              "type": "string",
+              "minLength": 1
+            },
+            "theme": {
+              "type": "string",
+              "enum": [
+                "light",
+                "dark",
+                "system"
+              ]
+            },
+            "reduced_motion": {
+              "type": "boolean"
+            },
+            "browser_version": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "stable_data_ref": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "masks": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "test_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "test_id",
+          "boundary",
+          "status",
+          "candidate_sha256",
+          "evidence_refs"
+        ],
+        "properties": {
+          "test_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "boundary": {
+            "type": "string",
+            "enum": [
+              "SOURCE",
+              "UNIT",
+              "INTEGRATION",
+              "BUILD",
+              "RUNTIME",
+              "VISUAL",
+              "ACCESSIBILITY",
+              "GAMEPLAY"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "ERROR",
+              "NOT_RUN"
+            ]
+          },
+          "candidate_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "preservation_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "capability_id",
+          "property_id",
+          "result",
+          "test_ids",
+          "reason"
+        ],
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "property_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "PRESERVED",
+              "REGRESSED",
+              "AUTHORIZED_CHANGE",
+              "UNKNOWN"
+            ]
+          },
+          "test_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "feature_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "feature_id",
+          "result",
+          "test_ids"
+        ],
+        "properties": {
+          "feature_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "test_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "locator",
+          "sha256"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "LOG",
+              "DOM",
+              "SCREENSHOT",
+              "TEST_RESULT",
+              "BUILD",
+              "GAME_TRACE",
+              "SOURCE_INSPECTION",
+              "OTHER"
+            ]
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "extensions": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": [
+        "status",
+        "claim_level",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "GO",
+            "NO_GO",
+            "INCONCLUSIVE"
+          ]
+        },
+        "claim_level": {
+          "type": "string",
+          "enum": [
+            "SOURCE",
+            "TESTED",
+            "BUILT",
+            "RUNTIME",
+            "RELEASE"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
