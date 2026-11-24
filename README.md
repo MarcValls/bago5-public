@@ -2,6 +2,15 @@
 
 BAGO5 Classic 0.4.59 te ayuda a organizar un proyecto en fases, ejecutar tareas y comprobar el resultado. Puedes empezar en una carpeta local y conectar tu propia Memoria Viva de ALIFE cuando la necesites.
 
+
+## Complemento para ChatGPT Classic: BAGO5 ALIFE
+
+- [Descargar BAGO5 ALIFE Classic 0.4.60-rc.11 (ZIP)](https://raw.githubusercontent.com/MarcValls/bago5-public/main/dist/bago5-alife-classic-0.4.60-rc.11.zip)
+- SHA-256: `9e26debddebc556dad66571684c067a69dea00868ff16a5138b9566cd1386774` (archivo [dist/bago5-alife-classic-0.4.60-rc.11.zip.sha256](https://raw.githubusercontent.com/MarcValls/bago5-public/main/dist/bago5-alife-classic-0.4.60-rc.11.zip.sha256))
+- Ficha del servicio ALIFE: [alifememories.com](https://alifememories.com/soporte#classic)
+
+Este paquete corresponde al complemento de ChatGPT Classic y es independiente del plugin BAGO5 para Codex descrito abajo.
+
 ## Instalar en Windows con doble clic
 
 1. [Descarga Instalar-BAGO5-Classic.cmd](https://github.com/MarcValls/bago5-public/releases/latest/download/Instalar-BAGO5-Classic.cmd) y ábrelo con doble clic. Windows abre una terminal. Si falta Git o Codex CLI, el instalador te ofrece instalar cada herramienta con WinGet y te pide permiso. También ofrece Python si lo necesitas para los hooks y auxiliares locales.
