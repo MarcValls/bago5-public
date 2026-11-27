@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-ciclo-contexto
+  short_description: "Recuperar y mantener el contexto de una sesión"
+  default_prompt: "Recuperar y mantener el contexto de una sesión."

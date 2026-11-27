@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-pdf
+  short_description: Crea y revisa PDF conservando sus fuentes
+  default_prompt: $bago5-pdf — Crea o revisa el PDF solicitado y comprueba el contenido y todas sus páginas.

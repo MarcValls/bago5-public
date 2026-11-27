@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-cognitivo
+  short_description: "Contrastar hipótesis mediante deliberación solicitada expresamente"
+  default_prompt: "Contrastar hipótesis mediante deliberación solicitada expresamente."

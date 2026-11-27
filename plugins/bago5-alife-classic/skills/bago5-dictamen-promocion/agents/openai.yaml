@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-dictamen-promocion
+  short_description: "Decidir si una candidata puede promoverse al destino"
+  default_prompt: "Decidir si una candidata puede promoverse al destino."

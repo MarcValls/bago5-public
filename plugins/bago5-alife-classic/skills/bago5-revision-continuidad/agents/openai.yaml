@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: false
+interface:
+  display_name: $bago5-revision-continuidad
+  short_description: Contrasta la continuidad con el estado actual
+  default_prompt: Usa $bago5-revision-continuidad. Contrasta resúmenes, relevos y objetivos con el repositorio y
+    el controlador actuales antes de continuar.

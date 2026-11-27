@@ -1,0 +1,7 @@
+interface:
+  display_name: $bago5-memorias-conectadas
+  short_description: Gestiona conexiones e intercambios entre memorias
+  default_prompt: $memorias — Descubre memorias autorizadas y distingue conexión real, registro local y permisos.
+    Selecciona explícitamente el destino cuando haya varios; no mezcles almacenes.
+policy:
+  allow_implicit_invocation: true

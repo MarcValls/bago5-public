@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-auditoria-semantica
+  short_description: Detecta contradicciones entre textos, contratos y código
+  default_prompt: Usa $bago5-auditoria-semantica. Detecta contradicciones, negaciones y discrepancias entre textos,
+    contratos y código con evidencia contrastable.

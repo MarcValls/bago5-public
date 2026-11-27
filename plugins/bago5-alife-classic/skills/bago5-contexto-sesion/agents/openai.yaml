@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-contexto-sesion
+  short_description: Inventaría el contexto disponible de la sesión
+  default_prompt: Usa $bago5-contexto-sesion. Inventaría las instrucciones y fuentes de contexto disponibles del
+    proyecto, sin modificarlas ni reanudar STOP.

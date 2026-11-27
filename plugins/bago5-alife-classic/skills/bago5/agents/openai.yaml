@@ -1,0 +1,6 @@
+interface:
+  display_name: "$bago5 (0.4.60-rc.13)"
+  short_description: "Configurar ALIFE y continuar el trabajo con memoria"
+  default_prompt: "Usa $bago5 para configurar ALIFE o continuar mi trabajo con la memoria, los permisos y las capacidades disponibles."
+  icon_small: "./assets/alife.png"
+  icon_large: "./assets/alife.png"

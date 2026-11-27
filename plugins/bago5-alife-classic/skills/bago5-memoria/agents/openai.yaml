@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-memoria
+  short_description: Coordina la memoria y el guardado verificado del proyecto
+  default_prompt: Usa $bago5-memoria. Coordina la recuperación y el guardado de memoria del proyecto, respetando
+    el destino y los permisos vigentes.

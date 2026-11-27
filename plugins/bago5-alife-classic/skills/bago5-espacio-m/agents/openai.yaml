@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-espacio-m
+  short_description: "Localizar el proyecto apropiado en la unidad M"
+  default_prompt: "Localizar el proyecto apropiado en la unidad M."

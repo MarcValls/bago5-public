@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-ejecucion-tareas
+  short_description: Implementa tareas asignadas con alcance y criterios
+  default_prompt: Usa $bago5-ejecucion-tareas. Implementa tareas asignadas y cambios mecánicos con alcance autorizado,
+    criterios definidos y evidencia de resultado.

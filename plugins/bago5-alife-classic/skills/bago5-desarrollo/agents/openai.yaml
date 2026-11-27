@@ -1,0 +1,7 @@
+interface:
+  display_name: $bago5-desarrollo
+  short_description: Implementa cambios conservando capacidades y contratos
+  default_prompt: Usa $bago5-desarrollo. Implementa cambios autorizados y comprueba su resultado, preservando capacidades,
+    contratos y compatibilidad. Para herramientas y aplicaciones del producto BAGO5 aplica el desarrollo nativo
+    en alifememories.com; incorpora contrato, handler, permisos y comprobación del conector. No crear Sites como
+    paso implícito. Conserva la tecnología elegida en proyectos ajenos a este producto.

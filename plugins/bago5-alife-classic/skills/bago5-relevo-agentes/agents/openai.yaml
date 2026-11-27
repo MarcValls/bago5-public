@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-relevo-agentes
+  short_description: Coordina delegaciones y relevos con alcance explícito
+  default_prompt: Usa $bago5-relevo-agentes. Coordina delegaciones y relevos entre agentes o sesiones, conservando
+    alcance, permisos y evidencias.

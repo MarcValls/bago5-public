@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-matematicas
+  short_description: "Resolver un cálculo con las herramientas disponibles"
+  default_prompt: "Resolver un cálculo con las herramientas disponibles."

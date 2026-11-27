@@ -1,0 +1,6 @@
+interface:
+  display_name: $bago5-alife-vault
+  short_description: "Transferir archivos con integridad y permisos de Vault"
+  default_prompt: "Transferir archivos con integridad y permisos de Vault."
+  icon_small: "./assets/alife.png"
+  icon_large: "./assets/alife.png"

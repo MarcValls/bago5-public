@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-alineacion-fuentes-sites
+  short_description: Contrasta las fuentes de Sites y sus componentes
+  default_prompt: Usa $bago5-alineacion-fuentes-sites. Contrasta las fuentes de ChatGPT Sites con repositorio, plantillas,
+    plugin y memoria antes de afirmar su alineación.
