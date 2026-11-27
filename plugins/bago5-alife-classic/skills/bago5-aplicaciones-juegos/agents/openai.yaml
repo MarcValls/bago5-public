@@ -1,0 +1,7 @@
+interface:
+  display_name: $bago5-aplicaciones-juegos
+  short_description: Desarrolla y revisa aplicaciones y juegos
+  default_prompt: Usa $bago5-aplicaciones-juegos. Desarrolla, revisa y prepara aplicaciones o juegos con las herramientas
+    y la tecnología del proyecto. Las aplicaciones y herramientas del producto BAGO5 se desarrollan en el servicio
+    nativo alifememories.com; reutiliza su backend e interfaz. Usa Sites únicamente para un encargo explícito
+    sobre ese destino, no como dependencia ni sustituto del servicio ALIFE.

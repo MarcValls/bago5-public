@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-verificacion-decisiones
+  short_description: Verifica el inspector de decisiones y sus contratos
+  default_prompt: Usa $bago5-verificacion-decisiones. Verifica el inspector de decisiones y sus contratos con casos
+    adversos; emite hallazgos sin reparar la implementación.

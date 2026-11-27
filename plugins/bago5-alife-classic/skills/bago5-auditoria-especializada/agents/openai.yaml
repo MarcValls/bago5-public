@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-auditoria-especializada
+  short_description: Revisa código, contratos, seguridad y rendimiento
+  default_prompt: Usa $bago5-auditoria-especializada. Aplica auditorías de código, contratos, seguridad, rendimiento
+    y pruebas sobre el repositorio seleccionado.

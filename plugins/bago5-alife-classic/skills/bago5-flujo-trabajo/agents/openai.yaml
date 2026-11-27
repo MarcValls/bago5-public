@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-flujo-trabajo
+  short_description: Selecciona especialistas según la tarea y el alcance
+  default_prompt: Usa $bago5-flujo-trabajo. Selecciona especialistas y combinaciones permitidas para la tarea, sin
+    crear objetivos ni conceder permisos.

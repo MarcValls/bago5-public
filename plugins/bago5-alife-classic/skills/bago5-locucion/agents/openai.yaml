@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-locucion
+  short_description: "Producir una locución a partir de un texto"
+  default_prompt: "Producir una locución a partir de un texto."

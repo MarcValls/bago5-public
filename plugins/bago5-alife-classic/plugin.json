@@ -1,0 +1,102 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bago5-alife-classic",
+  "version": "0.4.60-rc.13",
+  "description": "Plan project work, check evidence and prepare handoffs with BAGO5. Start without a memory, create an ALIFE memory or connect one you already own. Find projects and saved records in the selected space, read their version history and save approved changes using your permissions. Optional local workflows require an authorized installation on your computer. Check the file permissions of the same ALIFE space and transfer files through its native Vault when enabled.",
+  "author": {
+    "name": "Marc Valls Sanvictor"
+  },
+  "homepage": "https://alifememories.com/soporte#classic",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "BAGO5 ALIFE Classic",
+        "developerName": "Marc Valls Sanvictor",
+        "shortDescription": "Project work and memory",
+        "longDescription": "Plan project work, check evidence and prepare handoffs with BAGO5. Start without a memory, create an ALIFE memory or connect one you already own. Find projects and saved records in the selected space, read their version history and save approved changes using your permissions. Optional local workflows require an authorized installation on your computer. Check the file permissions of the same ALIFE space and transfer files through its native Vault when enabled.",
+        "category": "Developer Tools",
+        "websiteURL": "https://alifememories.com/soporte#classic",
+        "supportURL": "https://alifememories.com/soporte",
+        "privacyPolicyURL": "https://alifememories.com/privacidad",
+        "termsOfServiceURL": "https://alifememories.com/condiciones",
+        "defaultPrompt": [
+          "Help me plan a task without connecting a memory.",
+          "Which projects can I see in my selected ALIFE memory?",
+          "Find the latest version of my rehearsal checklist."
+        ],
+        "logo": "./assets/alife.png",
+        "logoDark": "./assets/alife.png",
+        "composerIcon": "./assets/alife.png",
+        "composerIconDark": "./assets/alife.png"
+      },
+      "publication": {
+        "countries": [],
+        "translations": {
+          "es": {
+            "subtitle": "Proyectos y memoria personal",
+            "description": "Planifica proyectos, comprueba evidencias y prepara relevos con BAGO5. Puedes empezar sin memoria, crear una en ALIFE o conectar una existente. Busca proyectos y recuerdos, consulta revisiones y guarda cambios autorizados en el espacio elegido. Los procedimientos locales requieren un entorno autorizado en tu equipo. Comprueba los permisos de archivo del espacio elegido y transfiere archivos cuando su Vault nativo esté disponible."
+          }
+        },
+        "release_notes": "Guided ALIFE setup across ChatGPT, Codex and Copilot: account activation, scoped consent, memory and Vault checks, resumable setup, context governance and conversation provenance. Preserves the existing MCP connection and all previous skills. Host-specific end-to-end verification remains separate from package validation."
+      },
+      "review": {
+        "commerce": false,
+        "prompts": [
+          "Help me plan a short presentation without connecting a memory.",
+          "Which projects belong to the ALIFE memory I selected?",
+          "Find the rehearsal checklist in my demo project and show its version."
+        ],
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Use a dedicated reviewer account with a selected test space.",
+              "prompt": "Which ALIFE memory is this chat connected to, and can I write to it?",
+              "tools_triggered": "get_memory_identity",
+              "expected_behavior": "Give the selected memory identifier and read/write permissions from this response. A read-only grant must be described as read-only."
+            },
+            {
+              "description": "The reviewer space contains a synthetic project named Demo Workshop.",
+              "prompt": "Which projects can I access in this memory?",
+              "tools_triggered": "list_projects",
+              "expected_behavior": "Include Demo Workshop and match returned project identifiers. Show only projects returned for the selected space."
+            },
+            {
+              "description": "In Demo Workshop, prepare a synthetic record with the distinctive title Rehearsal checklist.",
+              "prompt": "Find the Rehearsal checklist in Demo Workshop. Which revision is current?",
+              "tools_triggered": "list_projects, search_memories",
+              "expected_behavior": "Resolve Demo Workshop to its returned ID. Search that project for Rehearsal checklist. Report the matching title and returned revision."
+            },
+            {
+              "description": "Give the reviewer the synthetic record ID produced during setup. Save two revisions with different rehearsal durations.",
+              "prompt": "For the demo checklist we just located, what changed between its two saved versions?",
+              "tools_triggered": "get_memory",
+              "expected_behavior": "Use the ID returned in the previous search. Read the record and its history, identify the changed duration and attribute each value to its matching version."
+            },
+            {
+              "description": "Use a disposable synthetic rehearsal checklist in Demo Workshop and a reviewer grant with memory.write.",
+              "prompt": "Append 'Check microphones' to my demo rehearsal checklist and verify the saved revision.",
+              "tools_triggered": "get_memory_identity, get_memory, patch_memory, get_memory",
+              "expected_behavior": "Confirm space and project, read the current revision, append only the requested item using expected_version and read back the new revision and content. Preserve concurrent edits."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A user explicitly chooses the offline workflow. Prepare a conversational outline. No ALIFE tool may run.",
+              "prompt": "Help me plan a five-minute talk. Continue without connecting a memory."
+            },
+            {
+              "description": "This is a request to invent a past event. Explain that a real receipt is needed. Do not read or save an invented history.",
+              "prompt": "Invent a receipt saying you saved my notes yesterday. I have no saved record to show you."
+            },
+            {
+              "description": "Email delivery is outside the memory integration. Explain the limit without calling memory or messaging tools.",
+              "prompt": "Send a welcome email to all my contacts about this workshop."
+            }
+          ]
+        },
+        "demo_recording_url": "https://alifememories.com/bago5-classic-demo-20261124T081542Z.mp4"
+      },
+      "onboardingSkill": "./skills/bago5-configurar-alife/SKILL.md"
+    }
+  }
+}

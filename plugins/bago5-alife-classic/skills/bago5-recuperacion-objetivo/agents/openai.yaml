@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAGO5 · Recuperación del objetivo"
+  short_description: "Corrige la caducidad de una acción sin cancelar su objetivo"
+  default_prompt: "Aplica $bago5-recuperacion-objetivo y verifica autorización, STOP, objetivo y criterios. No reanudes efectos automáticamente."

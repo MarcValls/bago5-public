@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-interfaz-react
+  short_description: Audita y mejora la interfaz React de BAGO
+  default_prompt: Usa $bago5-interfaz-react. Audita y mejora la interfaz React de BAGO, conservando su arquitectura
+    y comprobando los cambios por bloques.

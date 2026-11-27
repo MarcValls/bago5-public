@@ -1,0 +1,4 @@
+interface:
+  display_name: $bago5-monitor-actividad
+  short_description: "Consultar actividad efectiva y su historial"
+  default_prompt: "Consultar actividad efectiva y su historial."

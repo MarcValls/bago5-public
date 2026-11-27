@@ -1,0 +1,1 @@
+Identifica el procedimiento, sus entradas y el resultado esperado. Comprueba la coherencia de cada paso y sus dependencias frente al proyecto y el entorno real. Separa revisión documental, ensayo y ejecución. Para aplicar una corrección, conserva la fuente y compara el recorrido antes y después.

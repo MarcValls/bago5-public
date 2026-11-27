@@ -1,0 +1,6 @@
+interface:
+  display_name: "Configurar ALIFE"
+  short_description: "Cuenta, memoria, permisos, Vault y continuidad"
+  default_prompt: "Usa $bago5-configurar-alife para guiarme desde mi situación actual hasta poder usar mi memoria y Vault, verificando cada paso y pidiendo los permisos necesarios."
+policy:
+  allow_implicit_invocation: true

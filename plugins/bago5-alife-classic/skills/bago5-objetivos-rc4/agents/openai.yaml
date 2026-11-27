@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-objetivos-rc4
+  short_description: Coordina objetivos RC4 con el controlador existente
+  default_prompt: Usa $bago5-objetivos-rc4. Coordina objetivos y recuperación RC4 con el controlador existente,
+    respetando STOP y la autorización de ejecución.

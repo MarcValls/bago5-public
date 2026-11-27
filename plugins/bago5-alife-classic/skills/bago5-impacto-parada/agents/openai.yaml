@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-impacto-parada
+  short_description: Delimita el impacto de paradas y desviaciones
+  default_prompt: Usa $bago5-impacto-parada. Delimita acciones, tiempos y dependencias afectados por STOP o una
+    desviación, distinguiendo daño y riesgo.

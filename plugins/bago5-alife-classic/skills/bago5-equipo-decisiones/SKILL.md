@@ -1,0 +1,8 @@
+---
+name: bago5-equipo-decisiones
+description: "Coordina especialistas, tareas y relevos para construir interfaces de decisiones con alcance y evidencias compartidos."
+---
+
+Define el problema de la interfaz, el responsable de cada decisión y los criterios de aceptación. Reúne observaciones de accesibilidad, interacción y arquitectura. Recoge por separado los acuerdos y las discrepancias. Si existen agentes y permiso para delegar, identifica el responsable y comprueba su resultado. Un panel de perspectivas dentro de un chat constituye una sola revisión.
+
+En Codex, aplica el [formato de respuesta de BAGO](../bago5/SKILL.md#respuestas-en-codex) al comunicar el resultado.

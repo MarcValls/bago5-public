@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-objetivos
+  short_description: Organiza objetivos con alcance y aceptación explícitos
+  default_prompt: Usa $bago5-objetivos. Organiza un objetivo como misión con alcance, criterios de aceptación, acciones
+    y evidencias de avance.

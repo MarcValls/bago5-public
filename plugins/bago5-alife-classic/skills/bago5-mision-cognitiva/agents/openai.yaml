@@ -1,0 +1,5 @@
+interface:
+  display_name: $bago5-mision-cognitiva
+  short_description: Contrasta propuestas y avances con evidencias
+  default_prompt: Usa $bago5-mision-cognitiva. Desarrolla ciclos acotados de propuestas y revisión sobre un objetivo,
+    contrastando cada avance con evidencias.

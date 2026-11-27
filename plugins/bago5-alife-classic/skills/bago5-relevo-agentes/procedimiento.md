@@ -1,0 +1,1 @@
+Registra objetivo, alcance, candidata, cambios realizados, comprobaciones y bloqueos. Identifica al receptor y las rutas a la evidencia. Si el anfitrión permite delegar y la persona lo ha autorizado, espera un resultado verificable y contrasta el informe recibido. Un relevo se completa cuando el receptor comprueba el encargo y las evidencias.

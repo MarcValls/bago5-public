@@ -1,0 +1,6 @@
+interface:
+  display_name: $bago5-modo-privado
+  short_description: Autenticación en la pantalla oficial del servicio
+  default_prompt: Usa la pantalla oficial para autenticación y consentimiento. Comprueba después la identidad y los permisos. Mantén los secretos fuera del chat.
+policy:
+  allow_implicit_invocation: true

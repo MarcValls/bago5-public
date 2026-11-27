@@ -1,0 +1,1 @@
+Delimita la pregunta y las fuentes autorizadas. Explicita las hipótesis y los hechos que podrían descartarlas. Comprueba cada conclusión contra sus fuentes y conserva las alternativas que sigan abiertas. Vincula el resultado a la evidencia concreta y al próximo experimento. La ejecución de un motor cognitivo externo requiere que el cliente lo tenga instalado y autorizado.
